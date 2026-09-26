@@ -1,6 +1,23 @@
 {
   "name": "beatroute",
-  "version": "0.1.0",
+  "version": "1.0.0",
+  "description": "Production-grade concert travel arbitrage engine for Indian music tours.",
+  "author": "Saksham Vashishtha",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/saksha-collab/beatRoute.git"
+  },
+  "keywords": [
+    "concert-travel",
+    "arbitrage-engine",
+    "nextjs16",
+    "turbopack",
+    "leaflet",
+    "cartodb-dark-matter",
+    "indian-railways",
+    "nuqs"
+  ],
   "private": true,
   "scripts": {
     "dev": "next dev",
