@@ -2,7 +2,7 @@
 ### *The Concert Travel Arbitrage Engine*
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-[![Next.js 15](https://img.shields.io/badge/Next.js-15.2-black?logo=next.js)](https://nextjs.org/)
+[![Next.js 16](https://img.shields.io/badge/Next.js-16.3-black?logo=next.js)](https://nextjs.org/)
 [![React 19](https://img.shields.io/badge/React-19.0-61dafb?logo=react)](https://react.dev/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.7-blue?logo=typescript)](https://www.typescriptlang.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4-38bdf8?logo=tailwindcss)](https://tailwindcss.com/)
@@ -25,7 +25,7 @@
   - Integrated with live event registries for real-time artist tour stops, venues, and dates.
   - Curated showcases for major domestic tours: *Coldplay, Diljit Dosanjh, Karan Aujla, Ed Sheeran, Alan Walker, Bryan Adams*.
 - **Zero Cumulative Layout Shift (CLS) & Sub-Second Latency**:
-  - Next.js 15 App Router with React Suspense streaming boundaries and matching skeleton loaders.
+  - Next.js 16 App Router with React Suspense streaming boundaries and matching skeleton loaders.
   - Centralized design system driven by CSS custom variables in [`app/tokens.css`](file:///Users/sakshamvashishtha/Projects/beatroute/app/tokens.css).
 
 ---
@@ -34,7 +34,7 @@
 
 | Layer | Technology |
 | :--- | :--- |
-| **Framework** | Next.js 15 (App Router, React 19 Server Components) |
+| **Framework** | Next.js 16 (App Router, Turbopack, React 19 Server Components) |
 | **State Sync** | `nuqs` (URL search parameters as single source of truth) |
 | **Styling** | Tailwind CSS with centralized Design Tokens ([`app/tokens.css`](file:///Users/sakshamvashishtha/Projects/beatroute/app/tokens.css)) |
 | **Mapping Engine** | Leaflet + CartoDB Dark Matter tiles (zero API key dependency) |
