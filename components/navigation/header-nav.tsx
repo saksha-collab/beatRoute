@@ -37,7 +37,7 @@ export function HeaderNav({
                 </span>
               </div>
               <p className="hidden md:block text-[11px] font-medium text-text-muted">
-                Concert Travel Arbitrage Engine
+                All-India Live Concert & Tour Radar
               </p>
             </div>
           </Link>

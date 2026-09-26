@@ -13,6 +13,8 @@ export function formatINR(amount: number): string {
   }).format(amount);
 }
 
+export const formatCurrency = formatINR;
+
 export function formatDuration(minutes: number): string {
   const hours = Math.floor(minutes / 60);
   const mins = minutes % 60;

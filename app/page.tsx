@@ -4,12 +4,19 @@ import * as React from "react";
 import { useQueryState, parseAsString, parseAsStringLiteral } from "nuqs";
 import { FEATURED_TOURS, CITIES } from "@/lib/mock-data";
 import {
+  ALL_INDIAN_CONCERTS,
+  getCityFilterOptions,
+  filterConcertsByCity,
+  searchConcerts,
+} from "@/lib/data/all-concerts";
+import {
   CityCode,
   RailClass,
   StayPreference,
   TourStop,
   TransitMode,
   ArbitrageResult,
+  ConcertEvent,
 } from "@/lib/types";
 import { calculateArbitrageMatrix } from "@/lib/arbitrage";
 import { HeaderNav } from "@/components/navigation/header-nav";
@@ -18,19 +25,61 @@ import { MetricsSummaryStrip } from "@/components/search/metrics-summary-strip";
 import { ArbitrageMatrix } from "@/components/matrix/arbitrage-matrix";
 import { ConcertMapWrapper } from "@/components/map/concert-map-wrapper";
 import { ExpensePlannerDrawer } from "@/components/planner/expense-planner-drawer";
+import { ConcertTimelineFeed } from "@/components/feed/concert-timeline-feed";
 import { ErrorState } from "@/components/ui/error-state";
 import { Skeleton } from "@/components/ui/skeleton";
+import { Radio, Compass, Sparkles, Calendar, MapPin } from "lucide-react";
+
+function tourStopToConcertEvent(stop: TourStop): ConcertEvent {
+  return {
+    id: stop.id,
+    artist: stop.artistName,
+    tourName: stop.tourName,
+    artistImageUrl:
+      "https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=800&q=80",
+    date: stop.date,
+    time: "18:00 IST",
+    cityCode: stop.cityCode,
+    cityName: stop.cityName,
+    venue: stop.venue,
+    coordinates: stop.coordinates,
+    genres: ["Live Tour", "Concert"],
+    startingPriceINR: stop.startingPriceINR,
+    ticketTiers: stop.ticketTiers,
+    ticketStatus: "available",
+    bookingUrl: stop.externalTicketUrl || "https://in.bookmyshow.com",
+    source: "live_api",
+    highlights: ["Live Bandsintown V3.1 verified tour date"],
+  };
+}
 
 function BeatRouteDashboard() {
-  // 1. URL search params synchronization via nuqs
-  const [origin, setOrigin] = useQueryState(
-    "origin",
-    parseAsString.withDefault("BOM")
+  // 1. Primary View Mode: 'radar' (Phase 1 Concert Radar) vs 'arbitrage' (Travel Arbitrage Engine)
+  const [activeTab, setActiveTab] = useQueryState(
+    "tab",
+    parseAsStringLiteral(["radar", "arbitrage"] as const).withDefault("radar")
   );
-  const [tourId, setTourId] = useQueryState(
-    "tour",
-    parseAsString.withDefault("coldplay")
+
+  // 2. Concert Radar State (Phase 1)
+  const [selectedCity, setSelectedCity] = useQueryState(
+    "city",
+    parseAsString.withDefault("ALL")
   );
+  const [searchQuery, setSearchQuery] = useQueryState(
+    "q",
+    parseAsString.withDefault("")
+  );
+  const [isSearchingLive, setIsSearchingLive] = React.useState(false);
+  const [liveConcerts, setLiveConcerts] = React.useState<ConcertEvent[] | null>(null);
+  const [radarError, setRadarError] = React.useState<{
+    title: string;
+    message: string;
+    code?: string;
+  } | null>(null);
+
+  // 3. Travel Arbitrage URL Params (Phase 3 integrated engine)
+  const [origin, setOrigin] = useQueryState("origin", parseAsString.withDefault("BOM"));
+  const [tourId, setTourId] = useQueryState("tour", parseAsString.withDefault("coldplay"));
   const [transitMode, setTransitMode] = useQueryState(
     "mode",
     parseAsStringLiteral(["flight", "rail"] as const).withDefault("flight")
@@ -47,7 +96,7 @@ function BeatRouteDashboard() {
     "tier",
     parseAsString.withDefault("silver")
   );
-  const [view, setView] = useQueryState(
+  const [arbitrageView, setArbitrageView] = useQueryState(
     "view",
     parseAsStringLiteral(["list", "map"] as const).withDefault("list")
   );
@@ -56,86 +105,120 @@ function BeatRouteDashboard() {
     parseAsStringLiteral(["curated", "live"] as const).withDefault("curated")
   );
 
-  // 2. Live API Search State
-  const [liveArtistQuery, setLiveArtistQuery] = React.useState("");
-  const [isSearchingLive, setIsSearchingLive] = React.useState(false);
-  const [liveStops, setLiveStops] = React.useState<TourStop[] | null>(null);
-  const [apiError, setApiError] = React.useState<{
-    message: string;
-    code?: string;
-  } | null>(null);
-
-  // 3. Planner Drawer State
+  // 4. Planner Drawer State
   const [plannerStop, setPlannerStop] = React.useState<TourStop | null>(null);
   const [isPlannerOpen, setIsPlannerOpen] = React.useState(false);
 
-  // Current Tour / Stops
+  // City options for filter chips
+  const cityOptions = React.useMemo(() => getCityFilterOptions(), []);
+
+  // Filter and search concerts for the Radar feed
+  const displayedConcerts: ConcertEvent[] = React.useMemo(() => {
+    if (liveConcerts) {
+      if (selectedCity && selectedCity !== "ALL") {
+        return liveConcerts.filter(
+          (c) => c.cityCode.toUpperCase() === selectedCity.toUpperCase()
+        );
+      }
+      return liveConcerts;
+    }
+
+    let results = ALL_INDIAN_CONCERTS;
+
+    if (selectedCity && selectedCity !== "ALL") {
+      results = filterConcertsByCity(selectedCity);
+    }
+
+    if (searchQuery.trim()) {
+      const q = searchQuery.toLowerCase().trim();
+      results = results.filter((c) => {
+        return (
+          c.artist.toLowerCase().includes(q) ||
+          c.tourName.toLowerCase().includes(q) ||
+          c.cityName.toLowerCase().includes(q) ||
+          c.venue.toLowerCase().includes(q) ||
+          c.genres.some((g) => g.toLowerCase().includes(q))
+        );
+      });
+    }
+
+    return results;
+  }, [liveConcerts, selectedCity, searchQuery]);
+
+  // Handle Live Artist Search via Bandsintown V3.1
+  const handleLiveArtistSearch = React.useCallback(
+    async (artistName: string) => {
+      const cleanArtist = artistName.trim();
+      if (!cleanArtist) return;
+
+      setIsSearchingLive(true);
+      setRadarError(null);
+
+      try {
+        const res = await fetch(`/api/concerts?artist=${encodeURIComponent(cleanArtist)}`);
+        const data = await res.json();
+
+        if (!res.ok || !data.success) {
+          setLiveConcerts(null);
+          setRadarError({
+            title: `No Indian Tour Dates for "${cleanArtist}"`,
+            message:
+              data.error ||
+              `We couldn't find confirmed live concerts in India for "${cleanArtist}". Explore our featured Indian stadium tours below!`,
+            code: data.code || "NO_CONCERTS",
+          });
+        } else {
+          const stops: TourStop[] = data.data || [];
+          if (stops.length === 0) {
+            setLiveConcerts(null);
+            setRadarError({
+              title: `No Indian Tour Dates for "${cleanArtist}"`,
+              message: `No upcoming concert stops in India found for "${cleanArtist}". Try another artist.`,
+              code: "NO_CONCERTS",
+            });
+          } else {
+            const mapped = stops.map((s) => tourStopToConcertEvent(s));
+            setLiveConcerts(mapped);
+          }
+        }
+      } catch (err: unknown) {
+        const msg = err instanceof Error ? err.message : "Network error";
+        setRadarError({
+          title: "API Connection Notice",
+          message: `Failed to query live concert pipeline: ${msg}`,
+          code: "NETWORK_ERROR",
+        });
+        setLiveConcerts(null);
+      } finally {
+        setIsSearchingLive(false);
+      }
+    },
+    []
+  );
+
+  const handleResetRadar = () => {
+    setLiveConcerts(null);
+    setRadarError(null);
+    setSearchQuery("");
+    setSelectedCity("ALL");
+  };
+
+  // Arbitrage Engine Calculations
   const selectedCuratedTour =
     FEATURED_TOURS.find((t) => t.id === tourId) || FEATURED_TOURS[0];
+  const arbitrageStops = selectedCuratedTour.stops;
 
-  const currentStops: TourStop[] =
-    tourMode === "curated"
-      ? selectedCuratedTour.stops
-      : liveStops || [];
-
-  // Live Artist Query Handler
-  const handleSearchLiveArtist = React.useCallback(async (queryOverride?: string) => {
-    const targetQuery = (queryOverride || liveArtistQuery).trim();
-    if (!targetQuery) return;
-
-    setIsSearchingLive(true);
-    setApiError(null);
-
-    try {
-      const res = await fetch(
-        `/api/concerts?artist=${encodeURIComponent(targetQuery)}`
-      );
-      const data = await res.json();
-
-      if (!res.ok || !data.success) {
-        setLiveStops(null);
-        setApiError({
-          message:
-            data.error ||
-            `No upcoming concerts in India found for "${targetQuery}".`,
-          code: data.code || "API_ERROR",
-        });
-      } else {
-        setLiveStops(data.data || []);
-      }
-    } catch (err: unknown) {
-      const message = err instanceof Error ? err.message : "Network error";
-      setApiError({
-        message: `Failed to query live concert API: ${message}`,
-        code: "NETWORK_ERROR",
-      });
-      setLiveStops(null);
-    } finally {
-      setIsSearchingLive(false);
-    }
-  }, [liveArtistQuery]);
-
-  // Compute Arbitrage Matrix Results
   const arbitrageResults: ArbitrageResult[] = React.useMemo(() => {
-    if (!currentStops || currentStops.length === 0) return [];
     return calculateArbitrageMatrix({
       originCityCode: origin,
-      tourStops: currentStops,
+      tourStops: arbitrageStops,
       selectedTierId,
       transitMode,
       railClass,
       stayPreference,
     });
-  }, [
-    origin,
-    currentStops,
-    selectedTierId,
-    transitMode,
-    railClass,
-    stayPreference,
-  ]);
+  }, [origin, arbitrageStops, selectedTierId, transitMode, railClass, stayPreference]);
 
-  // Plan trip from card or map pin
   const handleOpenPlanner = (stopOrResult: TourStop | ArbitrageResult) => {
     if ("tourStop" in stopOrResult) {
       setPlannerStop(stopOrResult.tourStop);
@@ -149,106 +232,127 @@ function BeatRouteDashboard() {
     <div className="min-h-screen flex flex-col bg-background text-text-primary selection:bg-cyan-500/20 selection:text-cyan-300">
       {/* Header Navigation */}
       <HeaderNav
-        view={view}
-        onViewChange={setView}
+        view={arbitrageView}
+        onViewChange={setArbitrageView}
         tourMode={tourMode}
         onTourModeChange={setTourMode}
       />
 
       {/* Main Content Area */}
       <main className="flex-1 mx-auto w-full max-w-7xl px-4 py-6 sm:px-6 lg:px-8 space-y-6">
-        {/* Intro / Mission Sub-Header */}
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 py-2 border-b border-border-subtle">
+        {/* Navigation Tabs: Concert Radar vs Travel Arbitrage */}
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-2 border-b border-border-subtle">
           <div>
             <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-text-primary">
-              Live Concert Travel Arbitrage
+              {activeTab === "radar"
+                ? "All-India Live Concert & Tour Radar"
+                : "Concert Travel Arbitrage Engine"}
             </h1>
             <p className="text-xs sm:text-sm text-text-secondary mt-1">
-              Save thousands on tickets and travel by identifying cheaper out-of-city tour dates across India.
+              {activeTab === "radar"
+                ? "Verified stadium dates, stadium coordinates, ticket tiers, and direct box office booking across India."
+                : "Compare round-trip flights, Indian Railways, hotels, and ticket prices across cities to find net travel savings."}
             </p>
           </div>
 
-          <div className="flex items-center gap-2">
-            <span className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-elevated text-xs font-semibold text-text-secondary border border-border-subtle">
-              <span className="h-2 w-2 rounded-full bg-emerald-400" />
-              Telescopic Rail & Flight Fare Engine
-            </span>
+          {/* Mode Switcher Pill */}
+          <div className="flex items-center rounded-xl bg-surface-elevated p-1.5 border border-border-strong self-start sm:self-center shadow-lg">
+            <button
+              onClick={() => setActiveTab("radar")}
+              className={`flex items-center gap-2 px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all ${
+                activeTab === "radar"
+                  ? "bg-gradient-to-r from-cyan-500 to-indigo-600 text-white shadow-glowCyan"
+                  : "text-text-secondary hover:text-text-primary hover:bg-surface"
+              }`}
+            >
+              <Radio className="h-3.5 w-3.5" />
+              <span>Concert Radar</span>
+              <span className="ml-1 px-1.5 py-0.2 rounded-full bg-cyan-400/20 text-cyan-200 text-[10px] font-mono">
+                {ALL_INDIAN_CONCERTS.length}
+              </span>
+            </button>
+
+            <button
+              onClick={() => setActiveTab("arbitrage")}
+              className={`flex items-center gap-2 px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all ${
+                activeTab === "arbitrage"
+                  ? "bg-gradient-to-r from-purple-600 to-indigo-600 text-white shadow-sm"
+                  : "text-text-secondary hover:text-text-primary hover:bg-surface"
+              }`}
+            >
+              <Compass className="h-3.5 w-3.5" />
+              <span>Travel Arbitrage</span>
+            </button>
           </div>
         </div>
 
-        {/* Filter & Search Bar */}
-        <FilterBar
-          origin={origin}
-          onOriginChange={setOrigin}
-          tourId={tourId}
-          onTourIdChange={setTourId}
-          transitMode={transitMode}
-          onTransitModeChange={setTransitMode}
-          railClass={railClass}
-          onRailClassChange={setRailClass}
-          stayPreference={stayPreference}
-          onStayPreferenceChange={setStayPreference}
-          selectedTierId={selectedTierId}
-          onTierChange={setSelectedTierId}
-          tourMode={tourMode}
-          onTourModeChange={setTourMode}
-          liveArtistQuery={liveArtistQuery}
-          onLiveArtistQueryChange={setLiveArtistQuery}
-          onSearchLiveArtist={handleSearchLiveArtist}
-          isSearchingLive={isSearchingLive}
-        />
-
-        {/* Live API Error State (ADR-005: Never mask with fake mock data) */}
-        {apiError ? (
-          <ErrorState
-            title="Concert Discovery Notice"
-            message={apiError.message}
-            code={apiError.code}
-            onRetry={handleSearchLiveArtist}
-            onExploreFeatured={() => {
-              setTourMode("curated");
-              setApiError(null);
-            }}
-          />
-        ) : (
-          <>
-            {/* Metrics Strip */}
-            <MetricsSummaryStrip results={arbitrageResults} />
-
-            {/* View Switch: List View vs Concert Map */}
-            {view === "list" ? (
-              <ArbitrageMatrix
-                results={arbitrageResults}
-                isLoading={isSearchingLive}
-                onPlanTrip={handleOpenPlanner}
-                onExploreFeatured={() => {
-                  setTourMode("curated");
-                  setApiError(null);
-                }}
+        {/* TAB 1: ALL-INDIA CONCERT RADAR (Phase 1 Approved Scope) */}
+        {activeTab === "radar" && (
+          <div className="space-y-6">
+            {/* Live Search Notice or Error State */}
+            {radarError ? (
+              <ErrorState
+                title={radarError.title}
+                message={radarError.message}
+                code={radarError.code}
+                onRetry={() => handleLiveArtistSearch(searchQuery)}
+                onExploreFeatured={handleResetRadar}
               />
             ) : (
-              <div className="space-y-3">
-                <div className="flex items-center justify-between px-1">
-                  <div>
-                    <h2 className="text-lg font-bold text-text-primary">
-                      Interactive Venue Discovery Map
-                    </h2>
-                    <p className="text-xs text-text-secondary">
-                      CartoDB Dark Matter tiles showing verified tour stops across India
-                    </p>
-                  </div>
-                  <span className="text-xs text-cyan-400 font-mono">
-                    {currentStops.length} Venues Plotted
-                  </span>
-                </div>
-
-                <ConcertMapWrapper
-                  stops={currentStops}
-                  onPlanTrip={handleOpenPlanner}
-                />
-              </div>
+              <ConcertTimelineFeed
+                concerts={displayedConcerts}
+                cityOptions={cityOptions}
+                selectedCity={selectedCity}
+                onSelectCity={setSelectedCity}
+                searchQuery={searchQuery}
+                onSearchChange={setSearchQuery}
+                onLiveSearchSubmit={handleLiveArtistSearch}
+                isSearchingLive={isSearchingLive}
+              />
             )}
-          </>
+          </div>
+        )}
+
+        {/* TAB 2: TRAVEL ARBITRAGE ENGINE (Preserved & Integrated) */}
+        {activeTab === "arbitrage" && (
+          <div className="space-y-6">
+            <FilterBar
+              origin={origin}
+              onOriginChange={setOrigin}
+              tourId={tourId}
+              onTourIdChange={setTourId}
+              transitMode={transitMode}
+              onTransitModeChange={setTransitMode}
+              railClass={railClass}
+              onRailClassChange={setRailClass}
+              stayPreference={stayPreference}
+              onStayPreferenceChange={setStayPreference}
+              selectedTierId={selectedTierId}
+              onTierChange={setSelectedTierId}
+              tourMode={tourMode}
+              onTourModeChange={setTourMode}
+              liveArtistQuery=""
+              onLiveArtistQueryChange={() => {}}
+              onSearchLiveArtist={() => {}}
+              isSearchingLive={false}
+            />
+
+            <MetricsSummaryStrip results={arbitrageResults} />
+
+            {arbitrageView === "list" ? (
+              <ArbitrageMatrix
+                results={arbitrageResults}
+                isLoading={false}
+                onPlanTrip={handleOpenPlanner}
+                onExploreFeatured={() => setTourMode("curated")}
+              />
+            ) : (
+              <ConcertMapWrapper
+                stops={arbitrageStops}
+                onPlanTrip={handleOpenPlanner}
+              />
+            )}
+          </div>
         )}
       </main>
 
@@ -265,11 +369,17 @@ function BeatRouteDashboard() {
         <div className="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p>© 2026 BeatRoute — High-Polish Concert Travel Arbitrage Engine.</p>
           <div className="flex items-center gap-4">
-            <span className="hover:text-text-primary transition-colors">Next.js 15 App Router</span>
+            <span className="hover:text-text-primary transition-colors">
+              Next.js 16.3.6 (Turbopack)
+            </span>
             <span>•</span>
-            <span className="hover:text-text-primary transition-colors">CartoDB Dark Matter</span>
+            <span className="hover:text-text-primary transition-colors">
+              CartoDB Dark Matter
+            </span>
             <span>•</span>
-            <span className="hover:text-text-primary transition-colors">0 CLS Architecture</span>
+            <span className="hover:text-text-primary transition-colors">
+              0 CLS Architecture
+            </span>
           </div>
         </div>
       </footer>
@@ -284,14 +394,9 @@ function DashboardSkeleton() {
       <main className="mx-auto w-full max-w-7xl px-4 py-6 sm:px-6 lg:px-8 space-y-6">
         <Skeleton className="h-14 w-3/4 rounded-xl" />
         <Skeleton className="h-44 w-full rounded-2xl" />
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <Skeleton className="h-20 w-full rounded-xl" />
-          <Skeleton className="h-20 w-full rounded-xl" />
-          <Skeleton className="h-20 w-full rounded-xl" />
-        </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <Skeleton className="h-64 w-full rounded-xl" />
-          <Skeleton className="h-64 w-full rounded-xl" />
+          <Skeleton className="h-48 w-full rounded-xl" />
+          <Skeleton className="h-48 w-full rounded-xl" />
         </div>
       </main>
     </div>

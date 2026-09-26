@@ -19,11 +19,43 @@ export interface City {
 export type ArtistId = 'karan-aujla' | 'diljit-dosanjh' | 'coldplay' | string;
 export type ConcertSource = 'live_api' | 'curated_catalog';
 
+export type TicketTierAvailability = 'available' | 'low_stock' | 'sold_out';
+export type TicketStatus = 'available' | 'low_stock' | 'sold_out' | 'announced';
+
 export interface TicketTier {
   tierId: string;
   name: string; // e.g. 'Silver (GA)', 'Gold (Fan Pit)', 'VIP Lounge'
   priceINR: number;
-  availability: 'available' | 'low_stock' | 'sold_out';
+  availability: TicketTierAvailability;
+}
+
+export interface ConcertSocials {
+  spotify?: string;
+  instagram?: string;
+  website?: string;
+  youtube?: string;
+}
+
+export interface ConcertEvent {
+  id: string;
+  artist: string;
+  tourName: string;
+  artistImageUrl: string;
+  date: string; // 'YYYY-MM-DD'
+  time?: string; // e.g. '18:00'
+  cityCode: CityCode;
+  cityName: string;
+  venue: string;
+  venueCapacity?: string;
+  coordinates: GeoCoordinates;
+  genres: string[];
+  startingPriceINR: number;
+  ticketTiers: TicketTier[];
+  ticketStatus: TicketStatus;
+  bookingUrl: string;
+  source: ConcertSource;
+  socials?: ConcertSocials;
+  highlights?: string[];
 }
 
 export interface TourStop {
