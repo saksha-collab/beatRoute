@@ -1,159 +1,114 @@
-# BeatRoute 🎵✈️
-### *The Concert Travel Arbitrage Engine*
+# BeatRoute 🎫✈️
+> *Stop paying ₹35,000 to scalpers in Mumbai. BeatRoute tracks live Indian stadium concerts and calculates whether traveling to another city saves you real money.*
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-[![Next.js 16](https://img.shields.io/badge/Next.js-16.3-black?logo=next.js)](https://nextjs.org/)
-[![Turbopack](https://img.shields.io/badge/Turbopack-Enabled-0070F3?logo=vercel)](https://turbo.build/)
-[![React 19](https://img.shields.io/badge/React-19.0-61dafb?logo=react)](https://react.dev/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.7-blue?logo=typescript)](https://www.typescriptlang.org/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4-38bdf8?logo=tailwindcss)](https://tailwindcss.com/)
-[![Zero CLS](https://img.shields.io/badge/CLS-0.00-brightgreen)](https://web.dev/cls/)
-
-**BeatRoute** is a production-grade concert travel arbitrage engine designed for Indian music tours. When tickets sell out in tier-1 cities like Mumbai or Delhi—or surge to exorbitant scalper prices—BeatRoute calculates whether traveling to another tour stop (e.g. Ahmedabad, Indore, Chandigarh, Bengaluru, Pune) via flights or Indian Railways saves you net thousands of rupees, all-inclusive.
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-beatroute--jade.vercel.app-00F0FF?style=flat-square&logo=vercel)](https://beatroute-jade.vercel.app)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](LICENSE)
+[![Next.js 16](https://img.shields.io/badge/Next.js-16.3-black?style=flat-square&logo=next.js)](https://nextjs.org/)
+[![Turbopack](https://img.shields.io/badge/Turbopack-Enabled-0070F3?style=flat-square&logo=vercel)](https://turbo.build/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.7-blue?style=flat-square&logo=typescript)](https://www.typescriptlang.org/)
 
 ---
 
-## 🎯 The Arbitrage Problem
+## 💡 The Story Behind BeatRoute
 
-When major stadium tours hit India, fans in metro cities face:
-1. **Instant Sellouts**: Standing tickets sell out in seconds, forcing fans onto black-market reseller platforms at 3x–5x face value (₹25,000–₹40,000+).
-2. **Ignored Alternative Stops**: The same artist often plays stadium or arena dates in secondary hubs (Ahmedabad, Indore, Chandigarh, Pune) where tickets remain accessible at standard face value (₹3,500–₹6,500).
-3. **The Hidden Equation**: Traveling for a concert involves flight/train fares, hotel stays, and local transfers. BeatRoute automates this trade-off in real time to show you the **true net savings**.
+If you’ve tried getting concert tickets in India over the past year, you already know the story:
 
-$$\text{Net Arbitrage} = \text{Home Show Outlay} - \text{Away Trip Outlay}$$
+1. You sit in an online queue with **300,000 people ahead of you**.
+2. General admission tickets sell out in **90 seconds**.
+3. Ten minutes later, those same tickets are listed on resale and black-market platforms for **₹25,000 to ₹50,000+**.
 
-$$\text{Total Trip Outlay} = \text{Ticket Tier} + \text{Round-Trip Transit} + \text{1-Night Hotel} + \text{Local Station/Airport Venue Cabs}$$
+Meanwhile, the exact same artist often plays another show in **Ahmedabad, Indore, Chandigarh, Bengaluru, or Pune**—where tickets are still available at regular face value (₹3,500 – ₹6,500).
 
----
+We built **BeatRoute** to answer a simple, honest question:
 
-## 🏗️ System Architecture
+> **What if flying to another city, booking a good hotel, eating great food, and watching the show with a face-value ticket is actually thousands of rupees cheaper than buying one overpriced ticket in your hometown?**
 
-```mermaid
-flowchart TD
-    User["User Selection\n(Origin, Tour, Transit Mode)"] --> URLState["nuqs URL State Sync\n(?origin=BOM&tour=coldplay&mode=flight)"]
-    URLState --> Engine["Arbitrage Calculation Engine\n(/lib/arbitrage.ts)"]
-    
-    subgraph Data Sources
-        Fares["Curated Rail Matrix\n(IRCTC Slabs: SL, 3AC, 2AC, VB)"] --> Engine
-        Flights["Direct Flight Baselines\n(Round-Trip Slabs)"] --> Engine
-        Lodging["Hotel Surge Engine\n(Budget, Comfort, Luxury)"] --> Engine
-        LiveAPI["V3.1 Live Event Feed\n(GPS Coordinates & Dates)"] --> Engine
-    end
-
-    Engine --> Matrix["Arbitrage Matrix View\n(Boarding Pass Comparison Cards)"]
-    Engine --> Map["Concert Map\n(CartoDB Dark Matter + Leaflet Pins)"]
-    Engine --> Drawer["Expense Planner Drawer\n(Itemized Cost Breakdown)"]
-```
+Turns out, more often than not, **it is**.
 
 ---
 
-## ✨ Core Features
+## 🌟 What You Can Do
 
-- **Multi-Modal Travel Arbitrage**:
-  - Compares round-trip direct flight baselines vs. Indian Railways telescopic distance slabs (`SL`, `3AC`, `2AC`, `Vande Bharat`).
-  - Itemized trip budgets: `Concert Ticket + Transit + 1-Night Hotel + Local Venue Transfers`.
-- **Interactive Dark Matter Concert Map**:
-  - High-performance Leaflet map using **CartoDB Dark Matter** raster tiles ($0 zero-key footprint).
-  - Custom SVG venue pin markers with city price previews, smooth pan/zoom (`flyTo`), and zero-memory-leak unmount cleanup.
-- **Slide-Over Expense Planner Drawer**:
-  - Live itemized breakdown modal allowing users to customize origin city, transit mode, rail seat class, and lodging tier (`budget`, `comfort`, `luxury`).
-- **Live Event Discovery & Curated Tours**:
-  - Integrated with the **V3.1 Live Event Engine** for real-time tour dates, GPS venue coordinates, and official ticket links without API key friction.
-  - Curated showcases for major domestic tours: *Coldplay, Diljit Dosanjh, Karan Aujla, Ed Sheeran, Alan Walker, Bryan Adams*.
-- **Zero Cumulative Layout Shift (CLS) & Sub-Second Latency**:
-  - Next.js 16 App Router with React Suspense streaming boundaries and matching skeleton loaders.
-  - Centralized design system driven by CSS custom variables in [`app/tokens.css`](file:///Users/sakshamvashishtha/Projects/beatroute/app/tokens.css).
+### 1. 📡 All-India Live Concert Radar
+A clean, chronological feed of all verified mega-tours heading to India.
+- **Confirmed Indian Stadium Dates**: Coldplay (Mumbai & Ahmedabad), Diljit Dosanjh (7 cities), Dua Lipa (Mumbai), Alan Walker (10 cities), Bryan Adams (6 cities), Karan Aujla (5 cities), and Cigarettes After Sex (3 cities).
+- **Humanized Countdowns**: Know at a glance when shows are happening (*"Tonight"*, *"Tomorrow"*, *"In 14 days"*).
+- **One-Click City Filters**: Instantly see what's happening in Mumbai, Delhi NCR, Bengaluru, Ahmedabad, Pune, Kolkata, Chandigarh, and more.
 
----
+### 2. 🗺️ Inline Stadium Mini-Maps
+Never wonder where a stadium is or how far it is from the airport.
+- Click **"View Stadium Map"** on any concert card to reveal an interactive dark-matter map powered by CartoDB and Leaflet.
+- See exact venue coordinates, copy them with one click, or jump straight into **Google Maps Directions**.
 
-## 🛠️ Tech Stack & Decisions
+### 3. 🏷️ Real Ticket Tiers & Official Links
+- See verified starting prices and full tier breakdowns (Silver / Gold / VIP).
+- Live stock status badges (*Available*, *Fast Filling*, *Sold Out*).
+- Direct buttons that open the official box office (BookMyShow, Zomato Live, LiveNation)—no affiliate redirects or sketchy links.
 
-| Layer | Technology | Decision Rationale |
-| :--- | :--- | :--- |
-| **Framework** | Next.js 16 (Turbopack) | Sub-2s builds, React 19 compiler optimizations, 0 CLS streaming |
-| **State Sync** | `nuqs` | URL search params as single source of truth; 100% shareable links |
-| **Styling** | Tailwind CSS + `tokens.css` | Canonical CSS variables for neon concert glows, surfaces, and radii |
-| **Mapping Engine** | Leaflet + CartoDB Dark Matter | Ultra-clean dark theme with 0 API keys and $0 infrastructure footprint |
-| **UI Primitives** | Radix UI (`Dialog/Sheet`, `Slider`, `Tabs`), Framer Motion | Accessible primitives with layout-animated comparison cards |
-| **Architecture Audit** | [`ARCH_LOG.md`](file:///Users/sakshamvashishtha/Projects/beatroute/ARCH_LOG.md) | ADR-001 through ADR-008 documenting all technical choices |
+### 4. ⚖️ The Travel Arbitrage Engine
+Curious how much you'd save by traveling? Switch over to the **Travel Arbitrage** view:
+- Pick your starting city (Mumbai, Delhi, Bengaluru, etc.).
+- Choose between **Direct Flights** or **Indian Railways** (`Sleeper`, `3AC`, `2AC`, `Vande Bharat`).
+- Set your stay preference (`Budget`, `Comfort`, `Luxury`).
+- BeatRoute calculates:
+  $$\text{Net Savings} = \text{Home City Outlay} - (\text{Ticket} + \text{Round-Trip Travel} + \text{1-Night Hotel} + \text{Local Cabs})$$
+- Shows you the **"Sweet Spot"** pick: maximum money saved without spending 24 hours on a train.
 
----
-
-## 📂 Project Structure
-
-```
-beatroute/
-├── app/
-│   ├── api/concerts/route.ts     # Live concert discovery route handler
-│   ├── error.tsx                 # Route-level error boundary
-│   ├── global-error.tsx          # Root-level layout crash boundary
-│   ├── globals.css               # Global Tailwind & Leaflet styles
-│   ├── layout.tsx                # App root layout with font & providers
-│   ├── not-found.tsx             # 404 Route Not Found page
-│   ├── page.tsx                  # Main arbitrage dashboard (Suspense wrapped)
-│   ├── providers.tsx             # NuqsAdapter wrapper
-│   └── tokens.css                # Global design tokens (colors, glows, radii)
-├── components/
-│   ├── map/
-│   │   ├── concert-map.tsx       # Leaflet map with CartoDB Dark Matter tiles
-│   │   ├── concert-map-wrapper.tsx # Dynamic client loader with 0 CLS skeleton
-│   │   └── concert-preview-sheet.tsx # Venue popover preview card
-│   ├── matrix/
-│   │   ├── arbitrage-matrix.tsx  # Comparison cards container
-│   │   └── city-card.tsx         # Boarding-pass style comparison card
-│   ├── navigation/
-│   │   ├── header-nav.tsx        # Top navigation header with tour mode switch
-│   │   └── view-toggle.tsx       # Accessible [List View | Concert Map] toggle
-│   ├── planner/
-│   │   └── expense-planner-drawer.tsx # Slide-over itemized expense calculator
-│   ├── search/
-│   │   ├── filter-bar.tsx        # Search, origin picker & trending artist pills
-│   │   └── metrics-summary-strip.tsx # Highlights max savings & sweet-spot pick
-│   └── ui/                       # Standardized reusable UI primitives
-│       ├── badge.tsx
-│       ├── button.tsx
-│       ├── card.tsx
-│       ├── empty-state.tsx
-│       ├── error-state.tsx
-│       ├── sheet.tsx
-│       ├── skeleton.tsx
-│       ├── slider.tsx
-│       └── tabs.tsx
-├── lib/
-│   ├── api/concerts.ts           # V3.1 live event pipeline adapter
-│   ├── arbitrage.ts              # Pure mathematical arbitrage calculation engine
-│   ├── data/rail-fares.ts        # IRCTC telescopic distance & fare slabs
-│   ├── mock-data.ts              # Curated tour catalog & baseline quotes
-│   ├── types.ts                  # Domain models & TypeScript contracts
-│   └── utils.ts                  # Tailwind class merge utility (cn)
-├── ARCH_LOG.md                   # Architectural Audit Log (ADR-001 to ADR-008)
-├── LICENSE                       # MIT License
-└── README.md                     # Project documentation
-```
+### 5. 🔍 Live Global Artist Search
+Looking for someone who isn't on the featured list?
+- Type any artist into the search bar (e.g., Ed Sheeran, Cigarettes After Sex, Alan Walker).
+- BeatRoute queries Bandsintown's live V3.1 event pipeline in real time to fetch upcoming confirmed dates and GPS coordinates in India.
 
 ---
 
-## 🚀 Quickstart
+## 🌐 Live Demo
+
+The app is deployed on Vercel's Mumbai Edge:
+
+👉 **[https://beatroute-jade.vercel.app](https://beatroute-jade.vercel.app)**
+
+- **No login or sign-up required**.
+- **100% free** with zero ads.
+- **Deep-linkable**: Every city, artist, and travel filter updates the URL (`nuqs`), so you can copy and share exact trip comparisons directly with friends on WhatsApp.
+
+---
+
+## 🛠️ Tech Stack & Architecture
+
+BeatRoute is built with a focus on speed, polish, and zero layout shift:
+
+- **Framework**: [Next.js 16.3](https://nextjs.org/) with [Turbopack](https://turbo.build/) (sub-second local builds and React 19 compiler optimizations).
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/) backed by centralized CSS variables in `app/tokens.css` for dark-mode neon glows and custom surfaces.
+- **Maps**: [Leaflet](https://leafletjs.com/) with **CartoDB Dark Matter** tiles (clean dark aesthetics, $0 infrastructure cost, and zero API keys needed).
+- **URL State**: [nuqs](https://nuqs.47ng.com/) for bidirectional URL search parameter synchronization.
+- **Icons & Motion**: Lucide React + lightweight CSS animations for smooth map and drawer transitions.
+- **No Fake Data Policy ([ADR-005](ARCH_LOG.md))**: If a live artist search returns no Indian tour dates, the app tells you honestly instead of generating synthetic dummy concerts.
+
+---
+
+## 🚀 Running Locally
+
+Want to run BeatRoute on your machine or contribute? It takes about two minutes:
 
 ### Prerequisites
-- Node.js 18.17+ or 20+
-- npm or pnpm
+- Node.js 18.17+ or Node 20+
+- npm, pnpm, or yarn
 
-### Setup
+### Quickstart
 
 ```bash
-# 1. Clone repository
+# 1. Clone the repository
 git clone https://github.com/saksha-collab/beatRoute.git
 cd beatroute
 
 # 2. Install dependencies
 npm install
 
-# 3. Start development server
+# 3. Start the dev server
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) (or the port specified in terminal) in your browser.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ### Production Build
 
@@ -164,6 +119,44 @@ npm run start
 
 ---
 
+## 🗺️ Master Roadmap
+
+- [x] **Phase 1: All-India Live Concert Radar & Stadium Maps** (✅ *Shipped & Live*)
+  - Chronological Indian tour feed with countdown badges
+  - Inline CartoDB dark-matter stadium mini-maps with directions
+  - City filter chips and live Bandsintown V3.1 search
+  - Integrated travel arbitrage matrix & slide-over expense planner
+
+- [ ] **Phase 2: Live Ticket Availability & Scalper Price Monitor** (⏳ *Up Next*)
+  - Real-time seat inventory tracking on BookMyShow and Zomato Live
+  - Resale price delta tracking across Viagogo and secondary marketplaces
+  - Sold-out drop alerts
+
+- [ ] **Phase 3: Real-Time Travel APIs** (⏳ *Upcoming*)
+  - Live domestic airfare APIs (Amadeus / Duffel)
+  - Real IRCTC train seat availability & Tatkal fare curves
+  - Dynamic hotel surge pricing within 5km of concert stadiums
+
+- [ ] **Phase 4: Fan Travel Companion** (⏳ *Upcoming*)
+  - Day-of-concert timeline & stadium gate guide
+  - Offline digital concert pass & calendar export
+  - Split-fare group cost calculator for concert crews
+
+---
+
+## 🤝 Contributing
+
+Got an idea for a feature, spotted a bug, or want to add confirmed dates for an upcoming tour?
+
+1. Fork the repository.
+2. Create your branch (`git checkout -b feat/new-concert-data`).
+3. Commit your changes (`git commit -m 'feat: add upcoming tour dates'`).
+4. Push to your branch (`git push origin feat/new-concert-data`).
+5. Open a Pull Request!
+
+---
+
 ## 📄 License
 
-This project is open-source and available under the [MIT License](LICENSE) — see the [LICENSE](LICENSE) file for details.
+BeatRoute is open-source software licensed under the [MIT License](LICENSE).
+Feel free to use the code, fork it, or build on top of it.
