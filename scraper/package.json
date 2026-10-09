@@ -1,0 +1,17 @@
+{
+  "name": "beatroute-scraper",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "tsx index.ts"
+  },
+  "dependencies": {
+    "axios": "^1.7.2",
+    "https-proxy-agent": "^7.0.5"
+  },
+  "devDependencies": {
+    "tsx": "^4.23.15",
+    "typescript": "^5.0.0",
+    "@types/node": "^20.0.0"
+  }
+}
