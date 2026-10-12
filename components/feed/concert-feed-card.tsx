@@ -84,8 +84,18 @@ export function ConcertFeedCard({ concert, className = "" }: ConcertFeedCardProp
                 <h3 className="text-lg sm:text-xl font-black text-text-primary tracking-tight">
                   {concert.artist}
                 </h3>
-                <span className="flex items-center gap-1 px-2 py-0.5 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-[11px] font-semibold text-cyan-300">
-                  <Sparkles className="h-2.5 w-2.5" />
+                {concert.source === "bookmyshow" ? (
+                  <span className="flex items-center gap-1 px-2 py-0.5 rounded-full bg-rose-500/10 border border-rose-500/30 text-[10px] font-semibold text-rose-300">
+                    <Radio className="h-2.5 w-2.5 animate-pulse text-rose-400" />
+                    BookMyShow Live
+                  </span>
+                ) : (
+                  <span className="flex items-center gap-1 px-2 py-0.5 rounded-full bg-indigo-500/10 border border-indigo-500/30 text-[10px] font-semibold text-indigo-300">
+                    <Sparkles className="h-2.5 w-2.5 text-indigo-400" />
+                    Curated Mega-Tour
+                  </span>
+                )}
+                <span className="flex items-center gap-1 px-2 py-0.5 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-[10px] font-semibold text-cyan-300">
                   {countdownText}
                 </span>
               </div>

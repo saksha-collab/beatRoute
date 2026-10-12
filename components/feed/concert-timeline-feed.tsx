@@ -8,6 +8,8 @@ import { EmptyState } from "@/components/ui/empty-state";
 import { Button } from "@/components/ui/button";
 import { Search, X, Sparkles, Filter, Music } from "lucide-react";
 
+import { CatalogSourceToggle, CatalogSourceFilter } from "./catalog-source-toggle";
+
 interface ConcertTimelineFeedProps {
   concerts: ConcertEvent[];
   cityOptions: CityOption[];
@@ -17,6 +19,13 @@ interface ConcertTimelineFeedProps {
   onSearchChange: (q: string) => void;
   onLiveSearchSubmit: (artistName: string) => void;
   isSearchingLive: boolean;
+  catalogSource: CatalogSourceFilter;
+  onCatalogSourceChange: (source: CatalogSourceFilter) => void;
+  sourceCounts: {
+    all: number;
+    curated: number;
+    bookmyshow: number;
+  };
 }
 
 const FEATURED_ARTIST_SUGGESTIONS = [
@@ -38,6 +47,9 @@ export function ConcertTimelineFeed({
   onSearchChange,
   onLiveSearchSubmit,
   isSearchingLive,
+  catalogSource,
+  onCatalogSourceChange,
+  sourceCounts,
 }: ConcertTimelineFeedProps) {
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter" && searchQuery.trim()) {
@@ -48,12 +60,33 @@ export function ConcertTimelineFeed({
   const handleClearFilters = () => {
     onSearchChange("");
     onSelectCity("ALL");
+    onCatalogSourceChange("all");
   };
 
-  const isFiltered = (selectedCity && selectedCity !== "ALL") || searchQuery.trim().length > 0;
+  const isFiltered =
+    (selectedCity && selectedCity !== "ALL") ||
+    searchQuery.trim().length > 0 ||
+    catalogSource !== "all";
 
   return (
     <div className="space-y-6">
+      {/* Source View Switcher: Curated vs BMS Live */}
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+        <div>
+          <span className="text-xs font-semibold text-text-muted uppercase tracking-wider block">
+            Select Discovery View
+          </span>
+          <span className="text-sm text-text-secondary">
+            Switch between curated arena tours and live BookMyShow gigs
+          </span>
+        </div>
+        <CatalogSourceToggle
+          currentSource={catalogSource}
+          onChangeSource={onCatalogSourceChange}
+          counts={sourceCounts}
+        />
+      </div>
+
       {/* Search & Discovery Header Controls */}
       <div className="p-4 sm:p-5 rounded-2xl bg-surface/80 border border-border-strong backdrop-blur-md space-y-4 shadow-xl">
         {/* Search Input Bar */}

@@ -8,7 +8,10 @@ import {
   getCityFilterOptions,
   filterConcertsByCity,
   searchConcerts,
+  filterConcertsBySource,
+  getCatalogSourceCounts,
 } from "@/lib/data/all-concerts";
+import { CatalogSourceFilter } from "@/components/feed/catalog-source-toggle";
 import {
   CityCode,
   RailClass,
@@ -60,7 +63,11 @@ function BeatRouteDashboard() {
     parseAsStringLiteral(["radar", "arbitrage"] as const).withDefault("radar")
   );
 
-  // 2. Concert Radar State (Phase 1)
+  // 2. Concert Radar State (Phase 1 & Phase 2 Discovery)
+  const [catalogSource, setCatalogSource] = useQueryState(
+    "source",
+    parseAsStringLiteral(["all", "curated", "bookmyshow"] as const).withDefault("curated")
+  );
   const [selectedCity, setSelectedCity] = useQueryState(
     "city",
     parseAsString.withDefault("ALL")
@@ -109,7 +116,8 @@ function BeatRouteDashboard() {
   const [plannerStop, setPlannerStop] = React.useState<TourStop | null>(null);
   const [isPlannerOpen, setIsPlannerOpen] = React.useState(false);
 
-  // City options for filter chips
+  // Source counts & City options for filter chips
+  const sourceCounts = React.useMemo(() => getCatalogSourceCounts(), []);
   const cityOptions = React.useMemo(() => getCityFilterOptions(), []);
 
   // Filter and search concerts for the Radar feed
@@ -125,8 +133,13 @@ function BeatRouteDashboard() {
 
     let results = ALL_INDIAN_CONCERTS;
 
+    // Apply Catalog Source Filter (Curated Mega-Tours vs BMS Live vs All)
+    results = filterConcertsBySource(results, catalogSource);
+
     if (selectedCity && selectedCity !== "ALL") {
-      results = filterConcertsByCity(selectedCity);
+      results = results.filter(
+        (c) => c.cityCode.toUpperCase() === selectedCity.toUpperCase()
+      );
     }
 
     if (searchQuery.trim()) {
@@ -143,7 +156,7 @@ function BeatRouteDashboard() {
     }
 
     return results;
-  }, [liveConcerts, selectedCity, searchQuery]);
+  }, [liveConcerts, selectedCity, searchQuery, catalogSource]);
 
   // Handle Live Artist Search via Bandsintown V3.1
   const handleLiveArtistSearch = React.useCallback(
@@ -308,6 +321,9 @@ function BeatRouteDashboard() {
                 onSearchChange={setSearchQuery}
                 onLiveSearchSubmit={handleLiveArtistSearch}
                 isSearchingLive={isSearchingLive}
+                catalogSource={catalogSource}
+                onCatalogSourceChange={setCatalogSource}
+                sourceCounts={sourceCounts}
               />
             )}
           </div>

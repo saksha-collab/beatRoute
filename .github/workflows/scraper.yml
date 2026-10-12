@@ -25,6 +25,7 @@ jobs:
         working-directory: ./scraper
         run: npm start
         env:
+          SCRAPER_API_KEY: ${{ secrets.SCRAPER_API_KEY }}
           ANYIP_PROXY_URL: ${{ secrets.ANYIP_PROXY_URL }}
           
       - name: Commit and Push changes

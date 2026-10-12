@@ -23,7 +23,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "scrape": "npm run start --prefix scraper"
   },
   "dependencies": {
     "@radix-ui/react-dialog": "^1.1.6",

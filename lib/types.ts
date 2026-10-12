@@ -17,7 +17,7 @@ export interface City {
 }
 
 export type ArtistId = 'karan-aujla' | 'diljit-dosanjh' | 'coldplay' | string;
-export type ConcertSource = 'live_api' | 'curated_catalog';
+export type ConcertSource = 'live_api' | 'curated_catalog' | 'bookmyshow';
 
 export type TicketTierAvailability = 'available' | 'low_stock' | 'sold_out';
 export type TicketStatus = 'available' | 'low_stock' | 'sold_out' | 'announced';

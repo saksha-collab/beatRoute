@@ -61,3 +61,43 @@ export function getCityFilterOptions(): { code: string; name: string; count: num
     ...list,
   ];
 }
+
+/**
+ * Filter concerts by source ('all' | 'curated' | 'bookmyshow').
+ */
+export function filterConcertsBySource(
+  concerts: ConcertEvent[],
+  source: 'all' | 'curated' | 'bookmyshow'
+): ConcertEvent[] {
+  if (source === 'all') return concerts;
+  if (source === 'curated') {
+    return concerts.filter((c) => c.source === 'curated_catalog');
+  }
+  if (source === 'bookmyshow') {
+    return concerts.filter((c) => c.source === 'bookmyshow');
+  }
+  return concerts;
+}
+
+/**
+ * Get total counts for each catalog category.
+ */
+export function getCatalogSourceCounts(concerts: ConcertEvent[] = ALL_INDIAN_CONCERTS) {
+  let curated = 0;
+  let bookmyshow = 0;
+
+  for (const c of concerts) {
+    if (c.source === 'bookmyshow') {
+      bookmyshow++;
+    } else {
+      curated++;
+    }
+  }
+
+  return {
+    all: concerts.length,
+    curated,
+    bookmyshow,
+  };
+}
+

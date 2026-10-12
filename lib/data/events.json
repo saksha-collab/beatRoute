@@ -1,5 +1,678 @@
 [
   {
+    "id": "alan-walker-blr",
+    "artist": "Alan Walker",
+    "tourName": "WalkerWorld India Tour",
+    "artistImageUrl": "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=800&q=80",
+    "date": "2024-10-04",
+    "time": "17:00 IST",
+    "cityCode": "BLR",
+    "cityName": "Bengaluru",
+    "venue": "Nice Grounds, Tumkur Road",
+    "venueCapacity": "25,000",
+    "coordinates": {
+      "lat": 13.0538,
+      "lng": 77.4697
+    },
+    "genres": [
+      "EDM",
+      "Electro House",
+      "Synth-Pop"
+    ],
+    "startingPriceINR": 2000,
+    "ticketTiers": [
+      {
+        "tierId": "silver",
+        "name": "Early Bird GA",
+        "priceINR": 2000,
+        "availability": "sold_out"
+      },
+      {
+        "tierId": "gold",
+        "name": "VIP Fan Pit",
+        "priceINR": 4500,
+        "availability": "available"
+      },
+      {
+        "tierId": "vip",
+        "name": "Walker Fan Lounge",
+        "priceINR": 9000,
+        "availability": "available"
+      }
+    ],
+    "ticketStatus": "available",
+    "bookingUrl": "https://in.bookmyshow.com/events/sunburn-arena-ft-alan-walker",
+    "source": "curated_catalog",
+    "socials": {
+      "spotify": "https://open.spotify.com/artist/7vk5e3vY1uw9plTHJAMwjN",
+      "instagram": "https://www.instagram.com/alanwalkermusic/",
+      "website": "https://alanwalker.com"
+    },
+    "highlights": [
+      "10-city Sunburn Arena tour kickoff",
+      "Signature drone and laser visual setup"
+    ]
+  },
+  {
+    "id": "alan-walker-del",
+    "artist": "Alan Walker",
+    "tourName": "WalkerWorld India Tour",
+    "artistImageUrl": "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=800&q=80",
+    "date": "2024-10-06",
+    "time": "17:00 IST",
+    "cityCode": "DEL",
+    "cityName": "Delhi NCR",
+    "venue": "Airia Mall Arena, Gurugram",
+    "venueCapacity": "22,000",
+    "coordinates": {
+      "lat": 28.4063,
+      "lng": 77.0421
+    },
+    "genres": [
+      "EDM",
+      "Electro House"
+    ],
+    "startingPriceINR": 2200,
+    "ticketTiers": [
+      {
+        "tierId": "silver",
+        "name": "General Admission",
+        "priceINR": 2200,
+        "availability": "available"
+      },
+      {
+        "tierId": "gold",
+        "name": "VIP Fan Pit",
+        "priceINR": 4800,
+        "availability": "available"
+      }
+    ],
+    "ticketStatus": "available",
+    "bookingUrl": "https://in.bookmyshow.com/events/sunburn-arena-ft-alan-walker",
+    "source": "curated_catalog",
+    "socials": {
+      "spotify": "https://open.spotify.com/artist/7vk5e3vY1uw9plTHJAMwjN",
+      "instagram": "https://www.instagram.com/alanwalkermusic/"
+    },
+    "highlights": [
+      "Delhi NCR outdoor arena show"
+    ]
+  },
+  {
+    "id": "alan-walker-bom",
+    "artist": "Alan Walker",
+    "tourName": "WalkerWorld India Tour",
+    "artistImageUrl": "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=800&q=80",
+    "date": "2024-10-19",
+    "time": "17:00 IST",
+    "cityCode": "BOM",
+    "cityName": "Mumbai",
+    "venue": "Jio World Garden, BKC",
+    "venueCapacity": "18,000",
+    "coordinates": {
+      "lat": 19.0634,
+      "lng": 72.8687
+    },
+    "genres": [
+      "EDM",
+      "Electro House"
+    ],
+    "startingPriceINR": 2500,
+    "ticketTiers": [
+      {
+        "tierId": "silver",
+        "name": "General Admission",
+        "priceINR": 2500,
+        "availability": "available"
+      },
+      {
+        "tierId": "gold",
+        "name": "VIP Lounge",
+        "priceINR": 5500,
+        "availability": "available"
+      }
+    ],
+    "ticketStatus": "available",
+    "bookingUrl": "https://in.bookmyshow.com/events/sunburn-arena-ft-alan-walker",
+    "source": "curated_catalog",
+    "socials": {
+      "spotify": "https://open.spotify.com/artist/7vk5e3vY1uw9plTHJAMwjN",
+      "instagram": "https://www.instagram.com/alanwalkermusic/"
+    },
+    "highlights": [
+      "BKC urban garden venue with custom 360-degree sound"
+    ]
+  },
+  {
+    "id": "diljit-del",
+    "artist": "Diljit Dosanjh",
+    "tourName": "DIL-LUMINATI Tour India",
+    "artistImageUrl": "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=800&q=80",
+    "date": "2024-10-26",
+    "time": "19:00 IST",
+    "cityCode": "DEL",
+    "cityName": "Delhi NCR",
+    "venue": "Jawaharlal Nehru Stadium Arena",
+    "venueCapacity": "50,000",
+    "coordinates": {
+      "lat": 28.5828,
+      "lng": 77.2344
+    },
+    "genres": [
+      "Punjabi",
+      "Pop",
+      "Bhangra",
+      "Urban"
+    ],
+    "startingPriceINR": 11000,
+    "ticketTiers": [
+      {
+        "tierId": "silver",
+        "name": "Silver Zone",
+        "priceINR": 11000,
+        "availability": "sold_out"
+      },
+      {
+        "tierId": "gold",
+        "name": "Gold Fan Pit",
+        "priceINR": 19500,
+        "availability": "low_stock"
+      },
+      {
+        "tierId": "vip",
+        "name": "Dil-Luminati Lounge",
+        "priceINR": 36000,
+        "availability": "low_stock"
+      }
+    ],
+    "ticketStatus": "low_stock",
+    "bookingUrl": "https://www.zomato.com/live/dil-luminati-tour",
+    "source": "curated_catalog",
+    "socials": {
+      "spotify": "https://open.spotify.com/artist/2FKWNmZWDBZR4dAtQiZZKX",
+      "instagram": "https://www.instagram.com/diljitdosanjh/",
+      "youtube": "https://www.youtube.com/diljitdosanjh"
+    },
+    "highlights": [
+      "Opening night of the historic DIL-LUMINATI India leg",
+      "Record stadium attendance in Delhi"
+    ]
+  },
+  {
+    "id": "dua-lipa-bom",
+    "artist": "Dua Lipa",
+    "tourName": "Feeding India Concert / Radical Optimism",
+    "artistImageUrl": "https://photos.bandsintown.com/large/18065877.jpeg",
+    "date": "2024-11-30",
+    "time": "17:30 IST",
+    "cityCode": "BOM",
+    "cityName": "Mumbai",
+    "venue": "MMRDA Grounds, Bandra Kurla Complex (BKC)",
+    "venueCapacity": "40,000",
+    "coordinates": {
+      "lat": 19.0664,
+      "lng": 72.8687
+    },
+    "genres": [
+      "Pop",
+      "Disco-Pop",
+      "Dance"
+    ],
+    "startingPriceINR": 6500,
+    "ticketTiers": [
+      {
+        "tierId": "silver",
+        "name": "Silver Fan Zone",
+        "priceINR": 6500,
+        "availability": "low_stock"
+      },
+      {
+        "tierId": "gold",
+        "name": "Gold Fan Pit",
+        "priceINR": 12500,
+        "availability": "available"
+      },
+      {
+        "tierId": "vip",
+        "name": "Optima VIP Lounge",
+        "priceINR": 26000,
+        "availability": "low_stock"
+      }
+    ],
+    "ticketStatus": "low_stock",
+    "bookingUrl": "https://www.zomato.com/live/feeding-india-concert-with-dua-lipa",
+    "source": "curated_catalog",
+    "socials": {
+      "spotify": "https://open.spotify.com/artist/6M2wZ9GZgrQXHCFfjv46we",
+      "instagram": "https://www.instagram.com/dualipa/",
+      "website": "https://www.dualipa.com"
+    },
+    "highlights": [
+      "Headlining Feeding India philanthropic concert",
+      "Support acts: Jonita Gandhi, Talwiinder"
+    ]
+  },
+  {
+    "id": "diljit-blr",
+    "artist": "Diljit Dosanjh",
+    "tourName": "DIL-LUMINATI Tour India",
+    "artistImageUrl": "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=800&q=80",
+    "date": "2024-12-06",
+    "time": "19:00 IST",
+    "cityCode": "BLR",
+    "cityName": "Bengaluru",
+    "venue": "NICE Exhibition Grounds, Tumkur Road",
+    "venueCapacity": "35,000",
+    "coordinates": {
+      "lat": 13.0538,
+      "lng": 77.4697
+    },
+    "genres": [
+      "Punjabi",
+      "Pop",
+      "Bhangra"
+    ],
+    "startingPriceINR": 6500,
+    "ticketTiers": [
+      {
+        "tierId": "silver",
+        "name": "Silver Zone",
+        "priceINR": 6500,
+        "availability": "available"
+      },
+      {
+        "tierId": "gold",
+        "name": "Gold Fan Pit",
+        "priceINR": 12500,
+        "availability": "available"
+      },
+      {
+        "tierId": "vip",
+        "name": "Dil-Luminati Lounge",
+        "priceINR": 25000,
+        "availability": "available"
+      }
+    ],
+    "ticketStatus": "available",
+    "bookingUrl": "https://www.zomato.com/live/dil-luminati-tour",
+    "source": "curated_catalog",
+    "socials": {
+      "spotify": "https://open.spotify.com/artist/2FKWNmZWDBZR4dAtQiZZKX",
+      "instagram": "https://www.instagram.com/diljitdosanjh/"
+    },
+    "highlights": [
+      "First South India show of the tour",
+      "Metro connectivity via Nagasandra Station"
+    ]
+  },
+  {
+    "id": "diljit-idr",
+    "artist": "Diljit Dosanjh",
+    "tourName": "DIL-LUMINATI Tour India",
+    "artistImageUrl": "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=800&q=80",
+    "date": "2024-12-08",
+    "time": "19:00 IST",
+    "cityCode": "IDR",
+    "cityName": "Indore",
+    "venue": "Holkar Stadium Grounds",
+    "venueCapacity": "28,000",
+    "coordinates": {
+      "lat": 22.7244,
+      "lng": 75.8752
+    },
+    "genres": [
+      "Punjabi",
+      "Pop",
+      "Bhangra"
+    ],
+    "startingPriceINR": 3800,
+    "ticketTiers": [
+      {
+        "tierId": "silver",
+        "name": "Silver Zone",
+        "priceINR": 3800,
+        "availability": "available"
+      },
+      {
+        "tierId": "gold",
+        "name": "Gold Fan Pit",
+        "priceINR": 7500,
+        "availability": "available"
+      },
+      {
+        "tierId": "vip",
+        "name": "Dil-Luminati Lounge",
+        "priceINR": 16000,
+        "availability": "available"
+      }
+    ],
+    "ticketStatus": "available",
+    "bookingUrl": "https://www.zomato.com/live/dil-luminati-tour",
+    "source": "curated_catalog",
+    "socials": {
+      "spotify": "https://open.spotify.com/artist/2FKWNmZWDBZR4dAtQiZZKX",
+      "instagram": "https://www.instagram.com/diljitdosanjh/"
+    },
+    "highlights": [
+      "Cheapest ticket tier of Diljit's national tour (₹3,800)",
+      "Central India mega-production"
+    ]
+  },
+  {
+    "id": "bryan-adams-kol",
+    "artist": "Bryan Adams",
+    "tourName": "So Happy It Hurts World Tour",
+    "artistImageUrl": "https://images.unsplash.com/photo-1465847899084-d164df4dedc6?auto=format&fit=crop&w=800&q=80",
+    "date": "2024-12-08",
+    "time": "18:30 IST",
+    "cityCode": "CCU",
+    "cityName": "Kolkata",
+    "venue": "Aquatica Ground, Rajarhat",
+    "venueCapacity": "20,000",
+    "coordinates": {
+      "lat": 22.5855,
+      "lng": 88.4682
+    },
+    "genres": [
+      "Classic Rock",
+      "Soft Rock",
+      "Acoustic"
+    ],
+    "startingPriceINR": 3500,
+    "ticketTiers": [
+      {
+        "tierId": "silver",
+        "name": "Bronze Standing",
+        "priceINR": 3500,
+        "availability": "available"
+      },
+      {
+        "tierId": "gold",
+        "name": "Gold Seated",
+        "priceINR": 7500,
+        "availability": "available"
+      },
+      {
+        "tierId": "vip",
+        "name": "Platinum VIP",
+        "priceINR": 15000,
+        "availability": "available"
+      }
+    ],
+    "ticketStatus": "available",
+    "bookingUrl": "https://in.bookmyshow.com/events/bryan-adams-so-happy-it-hurts-tour",
+    "source": "curated_catalog",
+    "socials": {
+      "spotify": "https://open.spotify.com/artist/3ZztVuWxHz999ucvtYxIyQ",
+      "instagram": "https://www.instagram.com/bryanadams/",
+      "website": "https://www.bryanadams.com"
+    },
+    "highlights": [
+      "Legendary rocker returns to Kolkata after 13 years",
+      "Performing Summer of 69 & Cuts Like a Knife"
+    ]
+  },
+  {
+    "id": "bryan-adams-bom",
+    "artist": "Bryan Adams",
+    "tourName": "So Happy It Hurts World Tour",
+    "artistImageUrl": "https://images.unsplash.com/photo-1465847899084-d164df4dedc6?auto=format&fit=crop&w=800&q=80",
+    "date": "2024-12-13",
+    "time": "18:30 IST",
+    "cityCode": "BOM",
+    "cityName": "Mumbai",
+    "venue": "Nesco Exhibition Centre, Goregaon",
+    "venueCapacity": "16,000",
+    "coordinates": {
+      "lat": 19.1554,
+      "lng": 72.8533
+    },
+    "genres": [
+      "Classic Rock",
+      "Soft Rock"
+    ],
+    "startingPriceINR": 4200,
+    "ticketTiers": [
+      {
+        "tierId": "silver",
+        "name": "Bronze Standing",
+        "priceINR": 4200,
+        "availability": "available"
+      },
+      {
+        "tierId": "gold",
+        "name": "Gold Seated",
+        "priceINR": 8500,
+        "availability": "available"
+      },
+      {
+        "tierId": "vip",
+        "name": "Platinum VIP",
+        "priceINR": 18000,
+        "availability": "available"
+      }
+    ],
+    "ticketStatus": "available",
+    "bookingUrl": "https://in.bookmyshow.com/events/bryan-adams-so-happy-it-hurts-tour",
+    "source": "curated_catalog",
+    "socials": {
+      "spotify": "https://open.spotify.com/artist/3ZztVuWxHz999ucvtYxIyQ",
+      "instagram": "https://www.instagram.com/bryanadams/"
+    },
+    "highlights": [
+      "Air-conditioned indoor arena format in Western Mumbai"
+    ]
+  },
+  {
+    "id": "diljit-ixc",
+    "artist": "Diljit Dosanjh",
+    "tourName": "DIL-LUMINATI Tour India",
+    "artistImageUrl": "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=800&q=80",
+    "date": "2024-12-14",
+    "time": "19:00 IST",
+    "cityCode": "IXC",
+    "cityName": "Chandigarh",
+    "venue": "Sector 34 Exhibition Grounds",
+    "venueCapacity": "32,000",
+    "coordinates": {
+      "lat": 30.7225,
+      "lng": 76.7681
+    },
+    "genres": [
+      "Punjabi",
+      "Pop",
+      "Bhangra"
+    ],
+    "startingPriceINR": 8500,
+    "ticketTiers": [
+      {
+        "tierId": "silver",
+        "name": "Silver Zone",
+        "priceINR": 8500,
+        "availability": "low_stock"
+      },
+      {
+        "tierId": "gold",
+        "name": "Gold Fan Pit",
+        "priceINR": 15000,
+        "availability": "available"
+      },
+      {
+        "tierId": "vip",
+        "name": "Dil-Luminati Lounge",
+        "priceINR": 28000,
+        "availability": "available"
+      }
+    ],
+    "ticketStatus": "low_stock",
+    "bookingUrl": "https://www.zomato.com/live/dil-luminati-tour",
+    "source": "curated_catalog",
+    "socials": {
+      "spotify": "https://open.spotify.com/artist/2FKWNmZWDBZR4dAtQiZZKX",
+      "instagram": "https://www.instagram.com/diljitdosanjh/"
+    },
+    "highlights": [
+      "Home turf stadium show in Punjab",
+      "Massive regional demand"
+    ]
+  },
+  {
+    "id": "karan-aujla-del",
+    "artist": "Karan Aujla",
+    "tourName": "It Was All A Dream Tour",
+    "artistImageUrl": "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=800&q=80",
+    "date": "2024-12-15",
+    "time": "19:00 IST",
+    "cityCode": "DEL",
+    "cityName": "Delhi NCR",
+    "venue": "Airia Mall Arena / JLN",
+    "venueCapacity": "25,000",
+    "coordinates": {
+      "lat": 28.5828,
+      "lng": 77.2344
+    },
+    "genres": [
+      "Punjabi",
+      "Hip-Hop",
+      "Desi Hip-Hop"
+    ],
+    "startingPriceINR": 6000,
+    "ticketTiers": [
+      {
+        "tierId": "silver",
+        "name": "General Admission",
+        "priceINR": 6000,
+        "availability": "available"
+      },
+      {
+        "tierId": "gold",
+        "name": "Fan Pit Gold",
+        "priceINR": 11000,
+        "availability": "available"
+      },
+      {
+        "tierId": "vip",
+        "name": "Dream VIP Table",
+        "priceINR": 22000,
+        "availability": "available"
+      }
+    ],
+    "ticketStatus": "available",
+    "bookingUrl": "https://in.bookmyshow.com/events/karan-aujla-it-was-all-a-dream-tour",
+    "source": "curated_catalog",
+    "socials": {
+      "spotify": "https://open.spotify.com/artist/2a6q9k88xWc3UqJ7V5v6wP",
+      "instagram": "https://www.instagram.com/karanaujla_official/"
+    },
+    "highlights": [
+      "Featuring viral hits Tauba Tauba & Softly",
+      "Live 12-piece brass band"
+    ]
+  },
+  {
+    "id": "diljit-bom",
+    "artist": "Diljit Dosanjh",
+    "tourName": "DIL-LUMINATI Tour India",
+    "artistImageUrl": "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=800&q=80",
+    "date": "2024-12-19",
+    "time": "19:00 IST",
+    "cityCode": "BOM",
+    "cityName": "Mumbai",
+    "venue": "Mahalaxmi Racecourse Arena",
+    "venueCapacity": "45,000",
+    "coordinates": {
+      "lat": 18.9826,
+      "lng": 72.8228
+    },
+    "genres": [
+      "Punjabi",
+      "Pop",
+      "Bhangra"
+    ],
+    "startingPriceINR": 9800,
+    "ticketTiers": [
+      {
+        "tierId": "silver",
+        "name": "Silver Zone",
+        "priceINR": 9800,
+        "availability": "low_stock"
+      },
+      {
+        "tierId": "gold",
+        "name": "Gold Fan Pit",
+        "priceINR": 18000,
+        "availability": "available"
+      },
+      {
+        "tierId": "vip",
+        "name": "Dil-Luminati Lounge",
+        "priceINR": 34000,
+        "availability": "available"
+      }
+    ],
+    "ticketStatus": "low_stock",
+    "bookingUrl": "https://www.zomato.com/live/dil-luminati-tour",
+    "source": "curated_catalog",
+    "socials": {
+      "spotify": "https://open.spotify.com/artist/2FKWNmZWDBZR4dAtQiZZKX",
+      "instagram": "https://www.instagram.com/diljitdosanjh/"
+    },
+    "highlights": [
+      "Open-air seaside arena in South Mumbai"
+    ]
+  },
+  {
+    "id": "karan-aujla-bom",
+    "artist": "Karan Aujla",
+    "tourName": "It Was All A Dream Tour",
+    "artistImageUrl": "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=800&q=80",
+    "date": "2024-12-21",
+    "time": "19:00 IST",
+    "cityCode": "BOM",
+    "cityName": "Mumbai",
+    "venue": "Dome SVP Stadium NSCI, Worli",
+    "venueCapacity": "15,000",
+    "coordinates": {
+      "lat": 18.9899,
+      "lng": 72.8164
+    },
+    "genres": [
+      "Punjabi",
+      "Hip-Hop"
+    ],
+    "startingPriceINR": 7500,
+    "ticketTiers": [
+      {
+        "tierId": "silver",
+        "name": "General Admission",
+        "priceINR": 7500,
+        "availability": "available"
+      },
+      {
+        "tierId": "gold",
+        "name": "Fan Pit Gold",
+        "priceINR": 13500,
+        "availability": "available"
+      },
+      {
+        "tierId": "vip",
+        "name": "Dream VIP Table",
+        "priceINR": 26000,
+        "availability": "available"
+      }
+    ],
+    "ticketStatus": "available",
+    "bookingUrl": "https://in.bookmyshow.com/events/karan-aujla-it-was-all-a-dream-tour",
+    "source": "curated_catalog",
+    "socials": {
+      "spotify": "https://open.spotify.com/artist/2a6q9k88xWc3UqJ7V5v6wP",
+      "instagram": "https://www.instagram.com/karanaujla_official/"
+    },
+    "highlights": [
+      "Grand tour finale at South Mumbai's premier indoor dome"
+    ]
+  },
+  {
     "id": "coldplay-bom-18",
     "artist": "Coldplay",
     "tourName": "Music of the Spheres World Tour",
@@ -165,6 +838,53 @@
     ]
   },
   {
+    "id": "cas-del",
+    "artist": "Cigarettes After Sex",
+    "tourName": "X's World Tour India",
+    "artistImageUrl": "https://images.unsplash.com/photo-1464375117522-1311d6a5b81f?auto=format&fit=crop&w=800&q=80",
+    "date": "2025-01-24",
+    "time": "19:30 IST",
+    "cityCode": "DEL",
+    "cityName": "Delhi NCR",
+    "venue": "Indira Gandhi Indoor Stadium",
+    "venueCapacity": "14,000",
+    "coordinates": {
+      "lat": 28.6315,
+      "lng": 77.2472
+    },
+    "genres": [
+      "Dream Pop",
+      "Ambient Pop",
+      "Slowcore"
+    ],
+    "startingPriceINR": 4800,
+    "ticketTiers": [
+      {
+        "tierId": "silver",
+        "name": "General Admission",
+        "priceINR": 4800,
+        "availability": "available"
+      },
+      {
+        "tierId": "gold",
+        "name": "Front Row Seated",
+        "priceINR": 8800,
+        "availability": "available"
+      }
+    ],
+    "ticketStatus": "available",
+    "bookingUrl": "https://in.bookmyshow.com/events/cigarettes-after-sex-xs-tour",
+    "source": "curated_catalog",
+    "socials": {
+      "spotify": "https://open.spotify.com/artist/1QAJqy2RA7KiEZU3f0QB8a",
+      "instagram": "https://www.instagram.com/cigsaftersex/"
+    },
+    "highlights": [
+      "First arena tour in India",
+      "Aesthetic monochrome ambient visual staging"
+    ]
+  },
+  {
     "id": "coldplay-amd-25",
     "artist": "Coldplay",
     "tourName": "Music of the Spheres World Tour",
@@ -217,6 +937,51 @@
     "highlights": [
       "Biggest concert in Indian history (100k+ capacity)",
       "Cheapest starting tier in India (₹4,500)"
+    ]
+  },
+  {
+    "id": "cas-bom",
+    "artist": "Cigarettes After Sex",
+    "tourName": "X's World Tour India",
+    "artistImageUrl": "https://images.unsplash.com/photo-1464375117522-1311d6a5b81f?auto=format&fit=crop&w=800&q=80",
+    "date": "2025-01-25",
+    "time": "19:30 IST",
+    "cityCode": "BOM",
+    "cityName": "Mumbai",
+    "venue": "MMRDA Grounds, BKC",
+    "venueCapacity": "18,000",
+    "coordinates": {
+      "lat": 19.0664,
+      "lng": 72.8687
+    },
+    "genres": [
+      "Dream Pop",
+      "Ambient Pop"
+    ],
+    "startingPriceINR": 5200,
+    "ticketTiers": [
+      {
+        "tierId": "silver",
+        "name": "General Admission",
+        "priceINR": 5200,
+        "availability": "available"
+      },
+      {
+        "tierId": "gold",
+        "name": "Fan Pit",
+        "priceINR": 9500,
+        "availability": "available"
+      }
+    ],
+    "ticketStatus": "available",
+    "bookingUrl": "https://in.bookmyshow.com/events/cigarettes-after-sex-xs-tour",
+    "source": "curated_catalog",
+    "socials": {
+      "spotify": "https://open.spotify.com/artist/1QAJqy2RA7KiEZU3f0QB8a",
+      "instagram": "https://www.instagram.com/cigsaftersex/"
+    },
+    "highlights": [
+      "Saturday night BKC open-air performance"
     ]
   },
   {
@@ -274,768 +1039,536 @@
     ]
   },
   {
-    "id": "dua-lipa-bom",
-    "artist": "Dua Lipa",
-    "tourName": "Feeding India Concert / Radical Optimism",
-    "artistImageUrl": "https://photos.bandsintown.com/large/18065877.jpeg",
-    "date": "2024-11-30",
-    "time": "17:30 IST",
-    "cityCode": "BOM",
-    "cityName": "Mumbai",
-    "venue": "MMRDA Grounds, Bandra Kurla Complex (BKC)",
-    "venueCapacity": "40,000",
-    "coordinates": {
-      "lat": 19.0664,
-      "lng": 72.8687
-    },
-    "genres": [
-      "Pop",
-      "Disco-Pop",
-      "Dance"
-    ],
-    "startingPriceINR": 6500,
-    "ticketTiers": [
-      {
-        "tierId": "silver",
-        "name": "Silver Fan Zone",
-        "priceINR": 6500,
-        "availability": "low_stock"
-      },
-      {
-        "tierId": "gold",
-        "name": "Gold Fan Pit",
-        "priceINR": 12500,
-        "availability": "available"
-      },
-      {
-        "tierId": "vip",
-        "name": "Optima VIP Lounge",
-        "priceINR": 26000,
-        "availability": "low_stock"
-      }
-    ],
-    "ticketStatus": "low_stock",
-    "bookingUrl": "https://www.zomato.com/live/feeding-india-concert-with-dua-lipa",
-    "source": "curated_catalog",
-    "socials": {
-      "spotify": "https://open.spotify.com/artist/6M2wZ9GZgrQXHCFfjv46we",
-      "instagram": "https://www.instagram.com/dualipa/",
-      "website": "https://www.dualipa.com"
-    },
-    "highlights": [
-      "Headlining Feeding India philanthropic concert",
-      "Support acts: Jonita Gandhi, Talwiinder"
-    ]
-  },
-  {
-    "id": "diljit-del",
-    "artist": "Diljit Dosanjh",
-    "tourName": "DIL-LUMINATI Tour India",
-    "artistImageUrl": "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=800&q=80",
-    "date": "2024-10-26",
+    "id": "bms-et00450623",
+    "artist": "Travis Scott: Circus Maximus Stadium Tour - Mumbai",
+    "tourName": "Travis Scott: Circus Maximus Stadium Tour - Mumbai",
+    "artistImageUrl": "https://assets-in.bmscdn.com/nmcms/events/banner/desktop/media-desktop-travis-scott-circus-maximus-stadium-tour-mumbai-0-2025-11-10-t-10-2-58.jpg",
+    "date": "2025-11-19",
     "time": "19:00 IST",
-    "cityCode": "DEL",
-    "cityName": "Delhi NCR",
-    "venue": "Jawaharlal Nehru Stadium Arena",
-    "venueCapacity": "50,000",
+    "cityCode": "CCU",
+    "cityName": "Kolkata",
+    "venue": "Kolkata Venue",
     "coordinates": {
-      "lat": 28.5828,
-      "lng": 77.2344
+      "lat": 22.5726,
+      "lng": 88.3639
     },
     "genres": [
-      "Punjabi",
-      "Pop",
-      "Bhangra",
-      "Urban"
+      "Live Music",
+      "BookMyShow Live"
     ],
-    "startingPriceINR": 11000,
+    "startingPriceINR": 499,
     "ticketTiers": [
       {
-        "tierId": "silver",
-        "name": "Silver Zone",
-        "priceINR": 11000,
-        "availability": "sold_out"
-      },
-      {
-        "tierId": "gold",
-        "name": "Gold Fan Pit",
-        "priceINR": 19500,
-        "availability": "low_stock"
-      },
-      {
-        "tierId": "vip",
-        "name": "Dil-Luminati Lounge",
-        "priceINR": 36000,
-        "availability": "low_stock"
-      }
-    ],
-    "ticketStatus": "low_stock",
-    "bookingUrl": "https://www.zomato.com/live/dil-luminati-tour",
-    "source": "curated_catalog",
-    "socials": {
-      "spotify": "https://open.spotify.com/artist/2FKWNmZWDBZR4dAtQiZZKX",
-      "instagram": "https://www.instagram.com/diljitdosanjh/",
-      "youtube": "https://www.youtube.com/diljitdosanjh"
-    },
-    "highlights": [
-      "Opening night of the historic DIL-LUMINATI India leg",
-      "Record stadium attendance in Delhi"
-    ]
-  },
-  {
-    "id": "diljit-blr",
-    "artist": "Diljit Dosanjh",
-    "tourName": "DIL-LUMINATI Tour India",
-    "artistImageUrl": "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=800&q=80",
-    "date": "2024-12-06",
-    "time": "19:00 IST",
-    "cityCode": "BLR",
-    "cityName": "Bengaluru",
-    "venue": "NICE Exhibition Grounds, Tumkur Road",
-    "venueCapacity": "35,000",
-    "coordinates": {
-      "lat": 13.0538,
-      "lng": 77.4697
-    },
-    "genres": [
-      "Punjabi",
-      "Pop",
-      "Bhangra"
-    ],
-    "startingPriceINR": 6500,
-    "ticketTiers": [
-      {
-        "tierId": "silver",
-        "name": "Silver Zone",
-        "priceINR": 6500,
-        "availability": "available"
-      },
-      {
-        "tierId": "gold",
-        "name": "Gold Fan Pit",
-        "priceINR": 12500,
-        "availability": "available"
-      },
-      {
-        "tierId": "vip",
-        "name": "Dil-Luminati Lounge",
-        "priceINR": 25000,
-        "availability": "available"
-      }
-    ],
-    "ticketStatus": "available",
-    "bookingUrl": "https://www.zomato.com/live/dil-luminati-tour",
-    "source": "curated_catalog",
-    "socials": {
-      "spotify": "https://open.spotify.com/artist/2FKWNmZWDBZR4dAtQiZZKX",
-      "instagram": "https://www.instagram.com/diljitdosanjh/"
-    },
-    "highlights": [
-      "First South India show of the tour",
-      "Metro connectivity via Nagasandra Station"
-    ]
-  },
-  {
-    "id": "diljit-idr",
-    "artist": "Diljit Dosanjh",
-    "tourName": "DIL-LUMINATI Tour India",
-    "artistImageUrl": "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=800&q=80",
-    "date": "2024-12-08",
-    "time": "19:00 IST",
-    "cityCode": "IDR",
-    "cityName": "Indore",
-    "venue": "Holkar Stadium Grounds",
-    "venueCapacity": "28,000",
-    "coordinates": {
-      "lat": 22.7244,
-      "lng": 75.8752
-    },
-    "genres": [
-      "Punjabi",
-      "Pop",
-      "Bhangra"
-    ],
-    "startingPriceINR": 3800,
-    "ticketTiers": [
-      {
-        "tierId": "silver",
-        "name": "Silver Zone",
-        "priceINR": 3800,
-        "availability": "available"
-      },
-      {
-        "tierId": "gold",
-        "name": "Gold Fan Pit",
-        "priceINR": 7500,
-        "availability": "available"
-      },
-      {
-        "tierId": "vip",
-        "name": "Dil-Luminati Lounge",
-        "priceINR": 16000,
-        "availability": "available"
-      }
-    ],
-    "ticketStatus": "available",
-    "bookingUrl": "https://www.zomato.com/live/dil-luminati-tour",
-    "source": "curated_catalog",
-    "socials": {
-      "spotify": "https://open.spotify.com/artist/2FKWNmZWDBZR4dAtQiZZKX",
-      "instagram": "https://www.instagram.com/diljitdosanjh/"
-    },
-    "highlights": [
-      "Cheapest ticket tier of Diljit's national tour (₹3,800)",
-      "Central India mega-production"
-    ]
-  },
-  {
-    "id": "diljit-ixc",
-    "artist": "Diljit Dosanjh",
-    "tourName": "DIL-LUMINATI Tour India",
-    "artistImageUrl": "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=800&q=80",
-    "date": "2024-12-14",
-    "time": "19:00 IST",
-    "cityCode": "IXC",
-    "cityName": "Chandigarh",
-    "venue": "Sector 34 Exhibition Grounds",
-    "venueCapacity": "32,000",
-    "coordinates": {
-      "lat": 30.7225,
-      "lng": 76.7681
-    },
-    "genres": [
-      "Punjabi",
-      "Pop",
-      "Bhangra"
-    ],
-    "startingPriceINR": 8500,
-    "ticketTiers": [
-      {
-        "tierId": "silver",
-        "name": "Silver Zone",
-        "priceINR": 8500,
-        "availability": "low_stock"
-      },
-      {
-        "tierId": "gold",
-        "name": "Gold Fan Pit",
-        "priceINR": 15000,
-        "availability": "available"
-      },
-      {
-        "tierId": "vip",
-        "name": "Dil-Luminati Lounge",
-        "priceINR": 28000,
-        "availability": "available"
-      }
-    ],
-    "ticketStatus": "low_stock",
-    "bookingUrl": "https://www.zomato.com/live/dil-luminati-tour",
-    "source": "curated_catalog",
-    "socials": {
-      "spotify": "https://open.spotify.com/artist/2FKWNmZWDBZR4dAtQiZZKX",
-      "instagram": "https://www.instagram.com/diljitdosanjh/"
-    },
-    "highlights": [
-      "Home turf stadium show in Punjab",
-      "Massive regional demand"
-    ]
-  },
-  {
-    "id": "diljit-bom",
-    "artist": "Diljit Dosanjh",
-    "tourName": "DIL-LUMINATI Tour India",
-    "artistImageUrl": "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=800&q=80",
-    "date": "2024-12-19",
-    "time": "19:00 IST",
-    "cityCode": "BOM",
-    "cityName": "Mumbai",
-    "venue": "Mahalaxmi Racecourse Arena",
-    "venueCapacity": "45,000",
-    "coordinates": {
-      "lat": 18.9826,
-      "lng": 72.8228
-    },
-    "genres": [
-      "Punjabi",
-      "Pop",
-      "Bhangra"
-    ],
-    "startingPriceINR": 9800,
-    "ticketTiers": [
-      {
-        "tierId": "silver",
-        "name": "Silver Zone",
-        "priceINR": 9800,
-        "availability": "low_stock"
-      },
-      {
-        "tierId": "gold",
-        "name": "Gold Fan Pit",
-        "priceINR": 18000,
-        "availability": "available"
-      },
-      {
-        "tierId": "vip",
-        "name": "Dil-Luminati Lounge",
-        "priceINR": 34000,
-        "availability": "available"
-      }
-    ],
-    "ticketStatus": "low_stock",
-    "bookingUrl": "https://www.zomato.com/live/dil-luminati-tour",
-    "source": "curated_catalog",
-    "socials": {
-      "spotify": "https://open.spotify.com/artist/2FKWNmZWDBZR4dAtQiZZKX",
-      "instagram": "https://www.instagram.com/diljitdosanjh/"
-    },
-    "highlights": [
-      "Open-air seaside arena in South Mumbai"
-    ]
-  },
-  {
-    "id": "alan-walker-blr",
-    "artist": "Alan Walker",
-    "tourName": "WalkerWorld India Tour",
-    "artistImageUrl": "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=800&q=80",
-    "date": "2024-10-04",
-    "time": "17:00 IST",
-    "cityCode": "BLR",
-    "cityName": "Bengaluru",
-    "venue": "Nice Grounds, Tumkur Road",
-    "venueCapacity": "25,000",
-    "coordinates": {
-      "lat": 13.0538,
-      "lng": 77.4697
-    },
-    "genres": [
-      "EDM",
-      "Electro House",
-      "Synth-Pop"
-    ],
-    "startingPriceINR": 2000,
-    "ticketTiers": [
-      {
-        "tierId": "silver",
-        "name": "Early Bird GA",
-        "priceINR": 2000,
-        "availability": "sold_out"
-      },
-      {
-        "tierId": "gold",
-        "name": "VIP Fan Pit",
-        "priceINR": 4500,
-        "availability": "available"
-      },
-      {
-        "tierId": "vip",
-        "name": "Walker Fan Lounge",
-        "priceINR": 9000,
-        "availability": "available"
-      }
-    ],
-    "ticketStatus": "available",
-    "bookingUrl": "https://in.bookmyshow.com/events/sunburn-arena-ft-alan-walker",
-    "source": "curated_catalog",
-    "socials": {
-      "spotify": "https://open.spotify.com/artist/7vk5e3vY1uw9plTHJAMwjN",
-      "instagram": "https://www.instagram.com/alanwalkermusic/",
-      "website": "https://alanwalker.com"
-    },
-    "highlights": [
-      "10-city Sunburn Arena tour kickoff",
-      "Signature drone and laser visual setup"
-    ]
-  },
-  {
-    "id": "alan-walker-del",
-    "artist": "Alan Walker",
-    "tourName": "WalkerWorld India Tour",
-    "artistImageUrl": "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=800&q=80",
-    "date": "2024-10-06",
-    "time": "17:00 IST",
-    "cityCode": "DEL",
-    "cityName": "Delhi NCR",
-    "venue": "Airia Mall Arena, Gurugram",
-    "venueCapacity": "22,000",
-    "coordinates": {
-      "lat": 28.4063,
-      "lng": 77.0421
-    },
-    "genres": [
-      "EDM",
-      "Electro House"
-    ],
-    "startingPriceINR": 2200,
-    "ticketTiers": [
-      {
-        "tierId": "silver",
+        "tierId": "tier-ga",
         "name": "General Admission",
-        "priceINR": 2200,
-        "availability": "available"
-      },
-      {
-        "tierId": "gold",
-        "name": "VIP Fan Pit",
-        "priceINR": 4800,
+        "priceINR": 499,
         "availability": "available"
       }
     ],
     "ticketStatus": "available",
-    "bookingUrl": "https://in.bookmyshow.com/events/sunburn-arena-ft-alan-walker",
-    "source": "curated_catalog",
-    "socials": {
-      "spotify": "https://open.spotify.com/artist/7vk5e3vY1uw9plTHJAMwjN",
-      "instagram": "https://www.instagram.com/alanwalkermusic/"
-    },
+    "bookingUrl": "https://in.bookmyshow.com/events/travis-scott-circus-maximus-stadium-tour-india/ET00450623",
+    "source": "bookmyshow",
     "highlights": [
-      "Delhi NCR outdoor arena show"
+      "Live performance discovered from BookMyShow",
+      "Venue: Kolkata Venue"
     ]
   },
   {
-    "id": "alan-walker-bom",
-    "artist": "Alan Walker",
-    "tourName": "WalkerWorld India Tour",
-    "artistImageUrl": "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=800&q=80",
-    "date": "2024-10-19",
-    "time": "17:00 IST",
-    "cityCode": "BOM",
-    "cityName": "Mumbai",
-    "venue": "Jio World Garden, BKC",
-    "venueCapacity": "18,000",
+    "id": "bms-et00519189",
+    "artist": "Naacho Navratri ",
+    "tourName": "Naacho Navratri ",
+    "artistImageUrl": "https://assets-in.bmscdn.com/nmcms/events/banner/desktop/media-desktop-naacho-navaratri-0-2026-9-25-t-14-19-21.jpg",
+    "date": "2026-10-16",
+    "time": "18:00 IST",
+    "cityCode": "HYD",
+    "cityName": "Hyderabad",
+    "venue": "Kalyana Lakshmi Gardens: Hyderabad",
     "coordinates": {
-      "lat": 19.0634,
-      "lng": 72.8687
+      "lat": 17.3789,
+      "lng": 78.5676
     },
     "genres": [
-      "EDM",
-      "Electro House"
+      "Live Music",
+      "BookMyShow Live"
     ],
-    "startingPriceINR": 2500,
+    "startingPriceINR": 199,
     "ticketTiers": [
       {
-        "tierId": "silver",
-        "name": "General Admission",
+        "tierId": "tier-1",
+        "name": "GROUP OF 4",
+        "priceINR": 1299,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-2",
+        "name": "VIP COUPLE ENTRY",
+        "priceINR": 899,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-3",
+        "name": "EARLY BIRD COUPLE",
+        "priceINR": 649,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-4",
+        "name": "VIP SINGLE PASS",
+        "priceINR": 499,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-5",
+        "name": "EARLY BIRD SINGLE ENTRY",
+        "priceINR": 349,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-6",
+        "name": "GROUP OF 6",
+        "priceINR": 1899,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-7",
+        "name": "KIDS",
+        "priceINR": 199,
+        "availability": "available"
+      }
+    ],
+    "ticketStatus": "available",
+    "bookingUrl": "https://in.bookmyshow.com/events/naacho-navaratri/ET00519189",
+    "source": "bookmyshow",
+    "highlights": [
+      "Live performance discovered from BookMyShow",
+      "Venue: Kalyana Lakshmi Gardens: Hyderabad"
+    ]
+  },
+  {
+    "id": "bms-et00146560",
+    "artist": "INDIAN OCEAN LIVE AT PHOENIX MUMBAI",
+    "tourName": "INDIAN OCEAN LIVE AT PHOENIX MUMBAI",
+    "artistImageUrl": "https://assets-in.bmscdn.com/nmcms/events/banner/desktop/media-desktop-indian-ocean-live-at-phoenix-mumbai-0-2026-5-12-t-17-16-43.jpg",
+    "date": "2026-10-17",
+    "time": "19:00 IST",
+    "cityCode": "BOM",
+    "cityName": "Mumbai",
+    "venue": "Dublin Square, Phoenix Marketcity: Mumbai",
+    "coordinates": {
+      "lat": 19.0863,
+      "lng": 72.8888
+    },
+    "genres": [
+      "Live Music",
+      "BookMyShow Live"
+    ],
+    "startingPriceINR": 799,
+    "ticketTiers": [
+      {
+        "tierId": "tier-1",
+        "name": "EB FAN PIT",
+        "priceINR": 1999,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-2",
+        "name": "PHASE 1 FAN PIT",
+        "priceINR": 2499,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-3",
+        "name": "EB GENERAL ACCESS -",
+        "priceINR": 999,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-4",
+        "name": "PHASE 1 VIP STANDING",
+        "priceINR": 1999,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-5",
+        "name": "KIDS PASS (5 TO 14 YEARS)",
+        "priceINR": 799,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-6",
+        "name": "PHASE 1 GA",
+        "priceINR": 1299,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-7",
+        "name": "EB VIP STANDING",
+        "priceINR": 1499,
+        "availability": "available"
+      }
+    ],
+    "ticketStatus": "available",
+    "bookingUrl": "https://in.bookmyshow.com/events/indian-ocean-live-at-phoenix-mumbai/ET00146560",
+    "source": "bookmyshow",
+    "highlights": [
+      "Live performance discovered from BookMyShow",
+      "Venue: Dublin Square, Phoenix Marketcity: Mumbai"
+    ]
+  },
+  {
+    "id": "bms-et00518198",
+    "artist": "Backstage Siblings - Bhakti Dance Floor",
+    "tourName": "Backstage Siblings - Bhakti Dance Floor",
+    "artistImageUrl": "https://assets-in.bmscdn.com/nmcms/events/banner/desktop/media-desktop-backstage-siblings-bhakti-dance-floor-0-2026-9-20-t-14-12-26.jpg",
+    "date": "2026-10-18",
+    "time": "18:00 IST",
+    "cityCode": "CCU",
+    "cityName": "Kolkata",
+    "venue": "Biswa Bangla Mela Prangan: Kolkata",
+    "coordinates": {
+      "lat": 22.544423,
+      "lng": 88.396526
+    },
+    "genres": [
+      "Live Music",
+      "BookMyShow Live"
+    ],
+    "startingPriceINR": 999,
+    "ticketTiers": [
+      {
+        "tierId": "tier-1",
+        "name": "GROUP OF 4 - FANPIT",
+        "priceINR": 7499,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-2",
+        "name": "PHASE ONE FANPIT",
+        "priceINR": 1799,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-3",
+        "name": "EARLY BIRD FANPIT",
+        "priceINR": 1399,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-4",
+        "name": "VVIP SEATING",
+        "priceINR": 6999,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-5",
+        "name": "EARLY BIRD VIP",
+        "priceINR": 999,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-6",
+        "name": "PHASE TWO FANPIT",
+        "priceINR": 2199,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-7",
+        "name": "GROUP OF 4 - VIP",
+        "priceINR": 4499,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-8",
+        "name": "PHASE ONE VIP",
+        "priceINR": 1299,
+        "availability": "available"
+      }
+    ],
+    "ticketStatus": "available",
+    "bookingUrl": "https://in.bookmyshow.com/events/backstage-siblings-bhakti-dance-floor/ET00518198",
+    "source": "bookmyshow",
+    "highlights": [
+      "Live performance discovered from BookMyShow",
+      "Venue: Biswa Bangla Mela Prangan: Kolkata"
+    ]
+  },
+  {
+    "id": "bms-et00510410",
+    "artist": "The Usha Uthup Experience",
+    "tourName": "The Usha Uthup Experience",
+    "artistImageUrl": "https://assets-in.bmscdn.com/nmcms/events/banner/desktop/media-desktop-the-usha-uthup-experience-0-2026-9-16-t-14-39-5.jpg",
+    "date": "2026-10-23",
+    "time": "19:00 IST",
+    "cityCode": "BOM",
+    "cityName": "Mumbai",
+    "venue": "Shanmukhananda Hall: Mumbai",
+    "coordinates": {
+      "lat": 19.0316,
+      "lng": 72.8598
+    },
+    "genres": [
+      "Live Music",
+      "BookMyShow Live"
+    ],
+    "startingPriceINR": 999,
+    "ticketTiers": [
+      {
+        "tierId": "tier-1",
+        "name": "Premium",
         "priceINR": 2500,
         "availability": "available"
       },
       {
-        "tierId": "gold",
-        "name": "VIP Lounge",
-        "priceINR": 5500,
-        "availability": "available"
-      }
-    ],
-    "ticketStatus": "available",
-    "bookingUrl": "https://in.bookmyshow.com/events/sunburn-arena-ft-alan-walker",
-    "source": "curated_catalog",
-    "socials": {
-      "spotify": "https://open.spotify.com/artist/7vk5e3vY1uw9plTHJAMwjN",
-      "instagram": "https://www.instagram.com/alanwalkermusic/"
-    },
-    "highlights": [
-      "BKC urban garden venue with custom 360-degree sound"
-    ]
-  },
-  {
-    "id": "bryan-adams-kol",
-    "artist": "Bryan Adams",
-    "tourName": "So Happy It Hurts World Tour",
-    "artistImageUrl": "https://images.unsplash.com/photo-1465847899084-d164df4dedc6?auto=format&fit=crop&w=800&q=80",
-    "date": "2024-12-08",
-    "time": "18:30 IST",
-    "cityCode": "CCU",
-    "cityName": "Kolkata",
-    "venue": "Aquatica Ground, Rajarhat",
-    "venueCapacity": "20,000",
-    "coordinates": {
-      "lat": 22.5855,
-      "lng": 88.4682
-    },
-    "genres": [
-      "Classic Rock",
-      "Soft Rock",
-      "Acoustic"
-    ],
-    "startingPriceINR": 3500,
-    "ticketTiers": [
-      {
-        "tierId": "silver",
-        "name": "Bronze Standing",
+        "tierId": "tier-2",
+        "name": "Platinum",
         "priceINR": 3500,
         "availability": "available"
       },
       {
-        "tierId": "gold",
-        "name": "Gold Seated",
-        "priceINR": 7500,
+        "tierId": "tier-3",
+        "name": "2nd Floor Balcony",
+        "priceINR": 999,
         "availability": "available"
       },
       {
-        "tierId": "vip",
-        "name": "Platinum VIP",
-        "priceINR": 15000,
+        "tierId": "tier-4",
+        "name": "Diamond",
+        "priceINR": 5000,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-5",
+        "name": "1st Floor Balcony",
+        "priceINR": 1499,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-6",
+        "name": "Elite",
+        "priceINR": 8000,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-7",
+        "name": "Standard",
+        "priceINR": 2000,
         "availability": "available"
       }
     ],
     "ticketStatus": "available",
-    "bookingUrl": "https://in.bookmyshow.com/events/bryan-adams-so-happy-it-hurts-tour",
-    "source": "curated_catalog",
-    "socials": {
-      "spotify": "https://open.spotify.com/artist/3ZztVuWxHz999ucvtYxIyQ",
-      "instagram": "https://www.instagram.com/bryanadams/",
-      "website": "https://www.bryanadams.com"
-    },
+    "bookingUrl": "https://in.bookmyshow.com/events/the-usha-uthup-experience/ET00510410",
+    "source": "bookmyshow",
     "highlights": [
-      "Legendary rocker returns to Kolkata after 13 years",
-      "Performing Summer of 69 & Cuts Like a Knife"
+      "Live performance discovered from BookMyShow",
+      "Venue: Shanmukhananda Hall: Mumbai"
     ]
   },
   {
-    "id": "bryan-adams-bom",
-    "artist": "Bryan Adams",
-    "tourName": "So Happy It Hurts World Tour",
-    "artistImageUrl": "https://images.unsplash.com/photo-1465847899084-d164df4dedc6?auto=format&fit=crop&w=800&q=80",
-    "date": "2024-12-13",
-    "time": "18:30 IST",
-    "cityCode": "BOM",
-    "cityName": "Mumbai",
-    "venue": "Nesco Exhibition Centre, Goregaon",
-    "venueCapacity": "16,000",
+    "id": "bms-et00498933",
+    "artist": "Sunburn Arena Ft. The Chainsmokers",
+    "tourName": "Sunburn Arena Ft. The Chainsmokers",
+    "artistImageUrl": "https://assets-in.bmscdn.com/nmcms/events/banner/desktop/media-desktop-sunburn-arena-ft-the-chainsmokers-0-2026-8-4-t-11-35-53.jpg",
+    "date": "2026-12-20",
+    "time": "16:00 IST",
+    "cityCode": "BLR",
+    "cityName": "Bengaluru",
+    "venue": "NICE Grounds: Bengaluru",
     "coordinates": {
-      "lat": 19.1554,
-      "lng": 72.8533
+      "lat": 13.057528,
+      "lng": 77.473719
     },
     "genres": [
-      "Classic Rock",
-      "Soft Rock"
+      "Live Music",
+      "BookMyShow Live"
     ],
-    "startingPriceINR": 4200,
+    "startingPriceINR": 1500,
     "ticketTiers": [
       {
-        "tierId": "silver",
-        "name": "Bronze Standing",
-        "priceINR": 4200,
+        "tierId": "tier-1",
+        "name": "GA Phase 1",
+        "priceINR": 2000,
         "availability": "available"
       },
       {
-        "tierId": "gold",
-        "name": "Gold Seated",
-        "priceINR": 8500,
+        "tierId": "tier-2",
+        "name": "VIP Phase 4",
+        "priceINR": 4500,
         "availability": "available"
       },
       {
-        "tierId": "vip",
-        "name": "Platinum VIP",
-        "priceINR": 18000,
+        "tierId": "tier-3",
+        "name": "Fanpit Combo",
+        "priceINR": 12000,
         "availability": "available"
-      }
-    ],
-    "ticketStatus": "available",
-    "bookingUrl": "https://in.bookmyshow.com/events/bryan-adams-so-happy-it-hurts-tour",
-    "source": "curated_catalog",
-    "socials": {
-      "spotify": "https://open.spotify.com/artist/3ZztVuWxHz999ucvtYxIyQ",
-      "instagram": "https://www.instagram.com/bryanadams/"
-    },
-    "highlights": [
-      "Air-conditioned indoor arena format in Western Mumbai"
-    ]
-  },
-  {
-    "id": "karan-aujla-del",
-    "artist": "Karan Aujla",
-    "tourName": "It Was All A Dream Tour",
-    "artistImageUrl": "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=800&q=80",
-    "date": "2024-12-15",
-    "time": "19:00 IST",
-    "cityCode": "DEL",
-    "cityName": "Delhi NCR",
-    "venue": "Airia Mall Arena / JLN",
-    "venueCapacity": "25,000",
-    "coordinates": {
-      "lat": 28.5828,
-      "lng": 77.2344
-    },
-    "genres": [
-      "Punjabi",
-      "Hip-Hop",
-      "Desi Hip-Hop"
-    ],
-    "startingPriceINR": 6000,
-    "ticketTiers": [
+      },
       {
-        "tierId": "silver",
-        "name": "General Admission",
+        "tierId": "tier-4",
+        "name": "GA Combo",
+        "priceINR": 5000,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-5",
+        "name": "VIP Phase 2",
+        "priceINR": 3500,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-6",
+        "name": "VIP Phase 6",
         "priceINR": 6000,
         "availability": "available"
       },
       {
-        "tierId": "gold",
-        "name": "Fan Pit Gold",
-        "priceINR": 11000,
+        "tierId": "tier-7",
+        "name": "Early Bird Fanpit",
+        "priceINR": 4000,
         "availability": "available"
       },
       {
-        "tierId": "vip",
-        "name": "Dream VIP Table",
-        "priceINR": 22000,
+        "tierId": "tier-8",
+        "name": "GA Phase 3",
+        "priceINR": 3000,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-9",
+        "name": "VIP Combo",
+        "priceINR": 7000,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-10",
+        "name": "GA Phase 2",
+        "priceINR": 2500,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-11",
+        "name": "Fanpit Phase 3",
+        "priceINR": 10000,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-12",
+        "name": "Tuborg Lounge",
+        "priceINR": 12999,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-13",
+        "name": "Fanpit Phase 1",
+        "priceINR": 6000,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-14",
+        "name": "GA Phase 4",
+        "priceINR": 3500,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-15",
+        "name": "Early Bird VIP",
+        "priceINR": 2500,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-16",
+        "name": "VIP Phase 3",
+        "priceINR": 4000,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-17",
+        "name": "VIP Phase 1",
+        "priceINR": 3000,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-18",
+        "name": "VIP Phase 5",
+        "priceINR": 5000,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-19",
+        "name": "Early Bird GA",
+        "priceINR": 1500,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-20",
+        "name": "Fanpit Phase 2",
+        "priceINR": 8000,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-21",
+        "name": "GA Phase 5",
+        "priceINR": 4000,
         "availability": "available"
       }
     ],
     "ticketStatus": "available",
-    "bookingUrl": "https://in.bookmyshow.com/events/karan-aujla-it-was-all-a-dream-tour",
-    "source": "curated_catalog",
-    "socials": {
-      "spotify": "https://open.spotify.com/artist/2a6q9k88xWc3UqJ7V5v6wP",
-      "instagram": "https://www.instagram.com/karanaujla_official/"
-    },
+    "bookingUrl": "https://in.bookmyshow.com/events/sunburn-arena-ft-the-chainsmokers/ET00498933",
+    "source": "bookmyshow",
     "highlights": [
-      "Featuring viral hits Tauba Tauba & Softly",
-      "Live 12-piece brass band"
+      "Live performance discovered from BookMyShow",
+      "Venue: NICE Grounds: Bengaluru"
     ]
   },
   {
-    "id": "karan-aujla-bom",
-    "artist": "Karan Aujla",
-    "tourName": "It Was All A Dream Tour",
-    "artistImageUrl": "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=800&q=80",
-    "date": "2024-12-21",
-    "time": "19:00 IST",
-    "cityCode": "BOM",
-    "cityName": "Mumbai",
-    "venue": "Dome SVP Stadium NSCI, Worli",
-    "venueCapacity": "15,000",
-    "coordinates": {
-      "lat": 18.9899,
-      "lng": 72.8164
-    },
-    "genres": [
-      "Punjabi",
-      "Hip-Hop"
-    ],
-    "startingPriceINR": 7500,
-    "ticketTiers": [
-      {
-        "tierId": "silver",
-        "name": "General Admission",
-        "priceINR": 7500,
-        "availability": "available"
-      },
-      {
-        "tierId": "gold",
-        "name": "Fan Pit Gold",
-        "priceINR": 13500,
-        "availability": "available"
-      },
-      {
-        "tierId": "vip",
-        "name": "Dream VIP Table",
-        "priceINR": 26000,
-        "availability": "available"
-      }
-    ],
-    "ticketStatus": "available",
-    "bookingUrl": "https://in.bookmyshow.com/events/karan-aujla-it-was-all-a-dream-tour",
-    "source": "curated_catalog",
-    "socials": {
-      "spotify": "https://open.spotify.com/artist/2a6q9k88xWc3UqJ7V5v6wP",
-      "instagram": "https://www.instagram.com/karanaujla_official/"
-    },
-    "highlights": [
-      "Grand tour finale at South Mumbai's premier indoor dome"
-    ]
-  },
-  {
-    "id": "cas-del",
-    "artist": "Cigarettes After Sex",
-    "tourName": "X's World Tour India",
-    "artistImageUrl": "https://images.unsplash.com/photo-1464375117522-1311d6a5b81f?auto=format&fit=crop&w=800&q=80",
-    "date": "2025-01-24",
-    "time": "19:30 IST",
+    "id": "bms-et00458267",
+    "artist": "Lollapalooza India 2027",
+    "tourName": "Lollapalooza India 2027",
+    "artistImageUrl": "https://assets-in.bmscdn.com/nmcms/events/banner/desktop/media-desktop-lollapalooza-india-2027-0-2026-9-30-t-15-56-56.jpg",
+    "date": "2027-01-23",
+    "time": "14:00 IST",
     "cityCode": "DEL",
     "cityName": "Delhi NCR",
-    "venue": "Indira Gandhi Indoor Stadium",
-    "venueCapacity": "14,000",
+    "venue": "Mahalaxmi Race Course: Mumbai",
     "coordinates": {
-      "lat": 28.6315,
-      "lng": 77.2472
+      "lat": 18.9842,
+      "lng": 72.8201
     },
     "genres": [
-      "Dream Pop",
-      "Ambient Pop",
-      "Slowcore"
+      "Live Music",
+      "BookMyShow Live"
     ],
-    "startingPriceINR": 4800,
+    "startingPriceINR": 5999,
     "ticketTiers": [
       {
-        "tierId": "silver",
-        "name": "General Admission",
-        "priceINR": 4800,
+        "tierId": "tier-1",
+        "name": "Lolla VIP Sunday",
+        "priceINR": 15999,
         "availability": "available"
       },
       {
-        "tierId": "gold",
-        "name": "Front Row Seated",
-        "priceINR": 8800,
+        "tierId": "tier-2",
+        "name": "Rupay Comfort Sunday",
+        "priceINR": 9999,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-3",
+        "name": "GA Sunday P1",
+        "priceINR": 5999,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-4",
+        "name": "JW Platinum Sunday",
+        "priceINR": 34999,
         "availability": "available"
       }
     ],
     "ticketStatus": "available",
-    "bookingUrl": "https://in.bookmyshow.com/events/cigarettes-after-sex-xs-tour",
-    "source": "curated_catalog",
-    "socials": {
-      "spotify": "https://open.spotify.com/artist/1QAJqy2RA7KiEZU3f0QB8a",
-      "instagram": "https://www.instagram.com/cigsaftersex/"
-    },
+    "bookingUrl": "https://in.bookmyshow.com/events/lollapalooza-india-2026/ET00458267",
+    "source": "bookmyshow",
     "highlights": [
-      "First arena tour in India",
-      "Aesthetic monochrome ambient visual staging"
-    ]
-  },
-  {
-    "id": "cas-bom",
-    "artist": "Cigarettes After Sex",
-    "tourName": "X's World Tour India",
-    "artistImageUrl": "https://images.unsplash.com/photo-1464375117522-1311d6a5b81f?auto=format&fit=crop&w=800&q=80",
-    "date": "2025-01-25",
-    "time": "19:30 IST",
-    "cityCode": "BOM",
-    "cityName": "Mumbai",
-    "venue": "MMRDA Grounds, BKC",
-    "venueCapacity": "18,000",
-    "coordinates": {
-      "lat": 19.0664,
-      "lng": 72.8687
-    },
-    "genres": [
-      "Dream Pop",
-      "Ambient Pop"
-    ],
-    "startingPriceINR": 5200,
-    "ticketTiers": [
-      {
-        "tierId": "silver",
-        "name": "General Admission",
-        "priceINR": 5200,
-        "availability": "available"
-      },
-      {
-        "tierId": "gold",
-        "name": "Fan Pit",
-        "priceINR": 9500,
-        "availability": "available"
-      }
-    ],
-    "ticketStatus": "available",
-    "bookingUrl": "https://in.bookmyshow.com/events/cigarettes-after-sex-xs-tour",
-    "source": "curated_catalog",
-    "socials": {
-      "spotify": "https://open.spotify.com/artist/1QAJqy2RA7KiEZU3f0QB8a",
-      "instagram": "https://www.instagram.com/cigsaftersex/"
-    },
-    "highlights": [
-      "Saturday night BKC open-air performance"
+      "Live performance discovered from BookMyShow",
+      "Venue: Mahalaxmi Race Course: Mumbai"
     ]
   }
 ]
