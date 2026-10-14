@@ -1095,44 +1095,44 @@
     "ticketTiers": [
       {
         "tierId": "tier-1",
-        "name": "GROUP OF 4",
-        "priceINR": 1299,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-2",
-        "name": "EARLY BIRD COUPLE",
-        "priceINR": 649,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-3",
-        "name": "VIP COUPLE ENTRY",
-        "priceINR": 899,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-4",
-        "name": "EARLY BIRD SINGLE ENTRY",
-        "priceINR": 349,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-5",
         "name": "VIP SINGLE PASS",
         "priceINR": 499,
         "availability": "available"
       },
       {
-        "tierId": "tier-6",
+        "tierId": "tier-2",
+        "name": "EARLY BIRD SINGLE ENTRY",
+        "priceINR": 349,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-3",
         "name": "KIDS",
         "priceINR": 199,
         "availability": "available"
       },
       {
-        "tierId": "tier-7",
+        "tierId": "tier-4",
         "name": "GROUP OF 6",
         "priceINR": 1899,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-5",
+        "name": "GROUP OF 4",
+        "priceINR": 1299,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-6",
+        "name": "VIP COUPLE ENTRY",
+        "priceINR": 899,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-7",
+        "name": "EARLY BIRD COUPLE",
+        "priceINR": 649,
         "availability": "available"
       }
     ],
@@ -1213,6 +1213,124 @@
     "highlights": [
       "Live performance discovered from BookMyShow",
       "Venue: Dublin Square, Phoenix Marketcity: Mumbai"
+    ]
+  },
+  {
+    "id": "bms-et00514450",
+    "artist": "Max Urbn Unmute Delhi x Spotify RAP 91",
+    "tourName": "Max Urbn Unmute Delhi x Spotify RAP 91",
+    "artistImageUrl": "https://assets-in.bmscdn.com/nmcms/events/banner/desktop/media-desktop-max-urbn-unmute-delhi-x-spotify-rap-91-0-2026-8-27-t-18-42-4.jpg",
+    "date": "2026-10-17",
+    "time": "17:00 IST",
+    "cityCode": "DEL",
+    "cityName": "Delhi NCR",
+    "venue": "Vegas Mall: New Delhi",
+    "coordinates": {
+      "lat": 28.6008,
+      "lng": 77.0297
+    },
+    "genres": [
+      "Live Music",
+      "BookMyShow Live"
+    ],
+    "startingPriceINR": 899,
+    "ticketTiers": [
+      {
+        "tierId": "tier-1",
+        "name": "GA PHASE 2",
+        "priceINR": 899,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-2",
+        "name": "GA COUPLE ENTRY",
+        "priceINR": 1099,
+        "availability": "available"
+      }
+    ],
+    "ticketStatus": "available",
+    "bookingUrl": "https://in.bookmyshow.com/events/max-urbn-unmute-delhi-x-spotify-rap-91/ET00514450",
+    "source": "bookmyshow",
+    "highlights": [
+      "Live performance discovered from BookMyShow",
+      "Venue: Vegas Mall: New Delhi"
+    ]
+  },
+  {
+    "id": "bms-et00517749",
+    "artist": "Raftaar Live Concert - Delhi",
+    "tourName": "Raftaar Live Concert - Delhi",
+    "artistImageUrl": "https://assets-in.bmscdn.com/nmcms/events/banner/desktop/media-desktop-raftaar-live-concert-delhi-0-2026-9-17-t-19-8-55.jpg",
+    "date": "2026-10-17",
+    "time": "19:00 IST",
+    "cityCode": "DEL",
+    "cityName": "Delhi NCR",
+    "venue": "Major Dhyanchand National Stadium: Delhi",
+    "coordinates": {
+      "lat": 28.6127,
+      "lng": 77.2373
+    },
+    "genres": [
+      "Live Music",
+      "BookMyShow Live"
+    ],
+    "startingPriceINR": 999,
+    "ticketTiers": [
+      {
+        "tierId": "tier-1",
+        "name": "VIP SEATING FOR 2",
+        "priceINR": 9999,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-2",
+        "name": "SILVER GROUP OF 5",
+        "priceINR": 2999,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-3",
+        "name": "EARLY BIRD GOLD",
+        "priceINR": 1999,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-4",
+        "name": "EARLY BIRD GOLD COUPLE",
+        "priceINR": 3499,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-5",
+        "name": "EARLY BIRD SILVER COUPLE",
+        "priceINR": 1749,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-6",
+        "name": "EARLY BIRD SILVER",
+        "priceINR": 999,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-7",
+        "name": "PLATINUM LOUNGE 5 PAX",
+        "priceINR": 49999,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-8",
+        "name": "GOLD GROUP OF 5",
+        "priceINR": 5999,
+        "availability": "available"
+      }
+    ],
+    "ticketStatus": "available",
+    "bookingUrl": "https://in.bookmyshow.com/events/raftaar-live-concert-delhi/ET00517749",
+    "source": "bookmyshow",
+    "highlights": [
+      "Live performance discovered from BookMyShow",
+      "Venue: Major Dhyanchand National Stadium: Delhi"
     ]
   },
   {
@@ -1485,128 +1603,128 @@
     "ticketTiers": [
       {
         "tierId": "tier-1",
-        "name": "Early Bird VIP",
-        "priceINR": 2500,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-2",
-        "name": "VIP Phase 3",
-        "priceINR": 4000,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-3",
-        "name": "Tuborg Lounge",
-        "priceINR": 12999,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-4",
-        "name": "Fanpit Phase 1",
-        "priceINR": 6000,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-5",
-        "name": "GA Phase 4",
-        "priceINR": 3500,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-6",
-        "name": "Early Bird GA",
-        "priceINR": 1500,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-7",
-        "name": "Fanpit Phase 2",
-        "priceINR": 8000,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-8",
-        "name": "GA Phase 5",
-        "priceINR": 4000,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-9",
-        "name": "VIP Phase 1",
-        "priceINR": 3000,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-10",
-        "name": "VIP Phase 5",
-        "priceINR": 5000,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-11",
-        "name": "VIP Phase 6",
-        "priceINR": 6000,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-12",
-        "name": "GA Phase 1",
-        "priceINR": 2000,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-13",
-        "name": "VIP Phase 4",
-        "priceINR": 4500,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-14",
-        "name": "Fanpit Combo",
-        "priceINR": 12000,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-15",
         "name": "GA Combo",
         "priceINR": 5000,
         "availability": "available"
       },
       {
-        "tierId": "tier-16",
+        "tierId": "tier-2",
         "name": "VIP Phase 2",
         "priceINR": 3500,
         "availability": "available"
       },
       {
-        "tierId": "tier-17",
-        "name": "Early Bird Fanpit",
-        "priceINR": 4000,
+        "tierId": "tier-3",
+        "name": "VIP Phase 6",
+        "priceINR": 6000,
         "availability": "available"
       },
       {
-        "tierId": "tier-18",
-        "name": "GA Phase 3",
-        "priceINR": 3000,
+        "tierId": "tier-4",
+        "name": "GA Phase 1",
+        "priceINR": 2000,
         "availability": "available"
       },
       {
-        "tierId": "tier-19",
-        "name": "VIP Combo",
-        "priceINR": 7000,
+        "tierId": "tier-5",
+        "name": "VIP Phase 4",
+        "priceINR": 4500,
         "availability": "available"
       },
       {
-        "tierId": "tier-20",
+        "tierId": "tier-6",
+        "name": "Fanpit Combo",
+        "priceINR": 12000,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-7",
         "name": "GA Phase 2",
         "priceINR": 2500,
         "availability": "available"
       },
       {
-        "tierId": "tier-21",
+        "tierId": "tier-8",
         "name": "Fanpit Phase 3",
         "priceINR": 10000,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-9",
+        "name": "Early Bird Fanpit",
+        "priceINR": 4000,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-10",
+        "name": "GA Phase 3",
+        "priceINR": 3000,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-11",
+        "name": "VIP Combo",
+        "priceINR": 7000,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-12",
+        "name": "GA Phase 4",
+        "priceINR": 3500,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-13",
+        "name": "Early Bird VIP",
+        "priceINR": 2500,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-14",
+        "name": "VIP Phase 3",
+        "priceINR": 4000,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-15",
+        "name": "Tuborg Lounge",
+        "priceINR": 12999,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-16",
+        "name": "Fanpit Phase 1",
+        "priceINR": 6000,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-17",
+        "name": "Early Bird GA",
+        "priceINR": 1500,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-18",
+        "name": "Fanpit Phase 2",
+        "priceINR": 8000,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-19",
+        "name": "GA Phase 5",
+        "priceINR": 4000,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-20",
+        "name": "VIP Phase 1",
+        "priceINR": 3000,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-21",
+        "name": "VIP Phase 5",
+        "priceINR": 5000,
         "availability": "available"
       }
     ],
