@@ -1405,6 +1405,65 @@
     ]
   },
   {
+    "id": "bms-et00498558",
+    "artist": "Sunburn Festival 2026",
+    "tourName": "Sunburn Festival 2026",
+    "artistImageUrl": "https://assets-in.bmscdn.com/nmcms/events/banner/desktop/media-desktop-sunburn-festival-2026-0-2026-10-12-t-18-12-22.jpg",
+    "date": "2026-12-18",
+    "time": "14:04 IST",
+    "cityCode": "BOM",
+    "cityName": "Mumbai",
+    "venue": "Mahalaxmi Race Course: Mumbai",
+    "coordinates": {
+      "lat": 18.9842,
+      "lng": 72.8201
+    },
+    "genres": [
+      "Live Music",
+      "BookMyShow Live"
+    ],
+    "startingPriceINR": 3500,
+    "ticketTiers": [
+      {
+        "tierId": "tier-1",
+        "name": "VIP Any One Day",
+        "priceINR": 6000,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-2",
+        "name": "Fanpit Any One Day P1",
+        "priceINR": 8000,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-3",
+        "name": "GA Any One Day",
+        "priceINR": 3500,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-4",
+        "name": "Core Lounge - Any One Day",
+        "priceINR": 25000,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-5",
+        "name": "Fanpit Any One Day",
+        "priceINR": 7000,
+        "availability": "available"
+      }
+    ],
+    "ticketStatus": "available",
+    "bookingUrl": "https://in.bookmyshow.com/events/sunburn-festival-2026/ET00498558",
+    "source": "bookmyshow",
+    "highlights": [
+      "Live performance discovered from BookMyShow",
+      "Venue: Mahalaxmi Race Course: Mumbai"
+    ]
+  },
+  {
     "id": "bms-et00498933",
     "artist": "Sunburn Arena Ft. The Chainsmokers",
     "tourName": "Sunburn Arena Ft. The Chainsmokers",
