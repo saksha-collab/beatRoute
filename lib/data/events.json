@@ -1101,38 +1101,38 @@
       },
       {
         "tierId": "tier-2",
-        "name": "VIP COUPLE ENTRY",
-        "priceINR": 899,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-3",
         "name": "EARLY BIRD COUPLE",
         "priceINR": 649,
         "availability": "available"
       },
       {
-        "tierId": "tier-4",
-        "name": "VIP SINGLE PASS",
-        "priceINR": 499,
+        "tierId": "tier-3",
+        "name": "VIP COUPLE ENTRY",
+        "priceINR": 899,
         "availability": "available"
       },
       {
-        "tierId": "tier-5",
+        "tierId": "tier-4",
         "name": "EARLY BIRD SINGLE ENTRY",
         "priceINR": 349,
         "availability": "available"
       },
       {
+        "tierId": "tier-5",
+        "name": "VIP SINGLE PASS",
+        "priceINR": 499,
+        "availability": "available"
+      },
+      {
         "tierId": "tier-6",
-        "name": "GROUP OF 6",
-        "priceINR": 1899,
+        "name": "KIDS",
+        "priceINR": 199,
         "availability": "available"
       },
       {
         "tierId": "tier-7",
-        "name": "KIDS",
-        "priceINR": 199,
+        "name": "GROUP OF 6",
+        "priceINR": 1899,
         "availability": "available"
       }
     ],
@@ -1166,44 +1166,44 @@
     "ticketTiers": [
       {
         "tierId": "tier-1",
-        "name": "EB FAN PIT",
-        "priceINR": 1999,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-2",
-        "name": "PHASE 1 FAN PIT",
-        "priceINR": 2499,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-3",
-        "name": "EB GENERAL ACCESS -",
-        "priceINR": 999,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-4",
         "name": "PHASE 1 VIP STANDING",
         "priceINR": 1999,
         "availability": "available"
       },
       {
-        "tierId": "tier-5",
+        "tierId": "tier-2",
+        "name": "EB GENERAL ACCESS -",
+        "priceINR": 999,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-3",
         "name": "KIDS PASS (5 TO 14 YEARS)",
         "priceINR": 799,
         "availability": "available"
       },
       {
-        "tierId": "tier-6",
+        "tierId": "tier-4",
         "name": "PHASE 1 GA",
         "priceINR": 1299,
         "availability": "available"
       },
       {
-        "tierId": "tier-7",
+        "tierId": "tier-5",
         "name": "EB VIP STANDING",
         "priceINR": 1499,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-6",
+        "name": "PHASE 1 FAN PIT",
+        "priceINR": 2499,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-7",
+        "name": "EB FAN PIT",
+        "priceINR": 1999,
         "availability": "available"
       }
     ],
@@ -1237,50 +1237,50 @@
     "ticketTiers": [
       {
         "tierId": "tier-1",
-        "name": "GROUP OF 4 - FANPIT",
-        "priceINR": 7499,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-2",
-        "name": "PHASE ONE FANPIT",
-        "priceINR": 1799,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-3",
-        "name": "EARLY BIRD FANPIT",
-        "priceINR": 1399,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-4",
-        "name": "VVIP SEATING",
-        "priceINR": 6999,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-5",
-        "name": "EARLY BIRD VIP",
-        "priceINR": 999,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-6",
         "name": "PHASE TWO FANPIT",
         "priceINR": 2199,
         "availability": "available"
       },
       {
-        "tierId": "tier-7",
+        "tierId": "tier-2",
+        "name": "EARLY BIRD VIP",
+        "priceINR": 999,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-3",
         "name": "GROUP OF 4 - VIP",
         "priceINR": 4499,
         "availability": "available"
       },
       {
-        "tierId": "tier-8",
+        "tierId": "tier-4",
         "name": "PHASE ONE VIP",
         "priceINR": 1299,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-5",
+        "name": "GROUP OF 4 - FANPIT",
+        "priceINR": 7499,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-6",
+        "name": "PHASE ONE FANPIT",
+        "priceINR": 1799,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-7",
+        "name": "VVIP SEATING",
+        "priceINR": 6999,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-8",
+        "name": "EARLY BIRD FANPIT",
+        "priceINR": 1399,
         "availability": "available"
       }
     ],
@@ -1314,44 +1314,44 @@
     "ticketTiers": [
       {
         "tierId": "tier-1",
-        "name": "Premium",
-        "priceINR": 2500,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-2",
-        "name": "Platinum",
-        "priceINR": 3500,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-3",
-        "name": "2nd Floor Balcony",
-        "priceINR": 999,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-4",
         "name": "Diamond",
         "priceINR": 5000,
         "availability": "available"
       },
       {
-        "tierId": "tier-5",
+        "tierId": "tier-2",
         "name": "1st Floor Balcony",
         "priceINR": 1499,
         "availability": "available"
       },
       {
-        "tierId": "tier-6",
+        "tierId": "tier-3",
         "name": "Elite",
         "priceINR": 8000,
         "availability": "available"
       },
       {
-        "tierId": "tier-7",
+        "tierId": "tier-4",
         "name": "Standard",
         "priceINR": 2000,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-5",
+        "name": "Premium",
+        "priceINR": 2500,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-6",
+        "name": "Platinum",
+        "priceINR": 3500,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-7",
+        "name": "2nd Floor Balcony",
+        "priceINR": 999,
         "availability": "available"
       }
     ],
@@ -1361,6 +1361,47 @@
     "highlights": [
       "Live performance discovered from BookMyShow",
       "Venue: Shanmukhananda Hall: Mumbai"
+    ]
+  },
+  {
+    "id": "bms-et00521948",
+    "artist": "The Band Agam Live in Bengaluru",
+    "tourName": "The Band Agam Live in Bengaluru",
+    "artistImageUrl": "https://assets-in.bmscdn.com/nmcms/events/banner/desktop/media-desktop-the-band-agam-live-in-benglauru-0-2026-10-11-t-16-22-45.jpg",
+    "date": "2026-11-15",
+    "time": "20:00 IST",
+    "cityCode": "BLR",
+    "cityName": "Bengaluru",
+    "venue": "DND - The Venue: Bengaluru",
+    "coordinates": {
+      "lat": 12.9152,
+      "lng": 77.6663
+    },
+    "genres": [
+      "Live Music",
+      "BookMyShow Live"
+    ],
+    "startingPriceINR": 1399,
+    "ticketTiers": [
+      {
+        "tierId": "tier-1",
+        "name": "P2 Regular Entry",
+        "priceINR": 1399,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-2",
+        "name": "Final Phase Fanpit Entry",
+        "priceINR": 2499,
+        "availability": "available"
+      }
+    ],
+    "ticketStatus": "available",
+    "bookingUrl": "https://in.bookmyshow.com/events/the-band-agam-live-in-bengaluru/ET00521948",
+    "source": "bookmyshow",
+    "highlights": [
+      "Live performance discovered from BookMyShow",
+      "Venue: DND - The Venue: Bengaluru"
     ]
   },
   {
@@ -1385,128 +1426,128 @@
     "ticketTiers": [
       {
         "tierId": "tier-1",
-        "name": "GA Phase 1",
-        "priceINR": 2000,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-2",
-        "name": "VIP Phase 4",
-        "priceINR": 4500,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-3",
-        "name": "Fanpit Combo",
-        "priceINR": 12000,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-4",
-        "name": "GA Combo",
-        "priceINR": 5000,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-5",
-        "name": "VIP Phase 2",
-        "priceINR": 3500,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-6",
-        "name": "VIP Phase 6",
-        "priceINR": 6000,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-7",
-        "name": "Early Bird Fanpit",
-        "priceINR": 4000,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-8",
-        "name": "GA Phase 3",
-        "priceINR": 3000,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-9",
-        "name": "VIP Combo",
-        "priceINR": 7000,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-10",
-        "name": "GA Phase 2",
-        "priceINR": 2500,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-11",
-        "name": "Fanpit Phase 3",
-        "priceINR": 10000,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-12",
-        "name": "Tuborg Lounge",
-        "priceINR": 12999,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-13",
-        "name": "Fanpit Phase 1",
-        "priceINR": 6000,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-14",
-        "name": "GA Phase 4",
-        "priceINR": 3500,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-15",
         "name": "Early Bird VIP",
         "priceINR": 2500,
         "availability": "available"
       },
       {
-        "tierId": "tier-16",
+        "tierId": "tier-2",
         "name": "VIP Phase 3",
         "priceINR": 4000,
         "availability": "available"
       },
       {
-        "tierId": "tier-17",
-        "name": "VIP Phase 1",
-        "priceINR": 3000,
+        "tierId": "tier-3",
+        "name": "Tuborg Lounge",
+        "priceINR": 12999,
         "availability": "available"
       },
       {
-        "tierId": "tier-18",
-        "name": "VIP Phase 5",
-        "priceINR": 5000,
+        "tierId": "tier-4",
+        "name": "Fanpit Phase 1",
+        "priceINR": 6000,
         "availability": "available"
       },
       {
-        "tierId": "tier-19",
+        "tierId": "tier-5",
+        "name": "GA Phase 4",
+        "priceINR": 3500,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-6",
         "name": "Early Bird GA",
         "priceINR": 1500,
         "availability": "available"
       },
       {
-        "tierId": "tier-20",
+        "tierId": "tier-7",
         "name": "Fanpit Phase 2",
         "priceINR": 8000,
         "availability": "available"
       },
       {
-        "tierId": "tier-21",
+        "tierId": "tier-8",
         "name": "GA Phase 5",
         "priceINR": 4000,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-9",
+        "name": "VIP Phase 1",
+        "priceINR": 3000,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-10",
+        "name": "VIP Phase 5",
+        "priceINR": 5000,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-11",
+        "name": "VIP Phase 6",
+        "priceINR": 6000,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-12",
+        "name": "GA Phase 1",
+        "priceINR": 2000,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-13",
+        "name": "VIP Phase 4",
+        "priceINR": 4500,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-14",
+        "name": "Fanpit Combo",
+        "priceINR": 12000,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-15",
+        "name": "GA Combo",
+        "priceINR": 5000,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-16",
+        "name": "VIP Phase 2",
+        "priceINR": 3500,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-17",
+        "name": "Early Bird Fanpit",
+        "priceINR": 4000,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-18",
+        "name": "GA Phase 3",
+        "priceINR": 3000,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-19",
+        "name": "VIP Combo",
+        "priceINR": 7000,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-20",
+        "name": "GA Phase 2",
+        "priceINR": 2500,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-21",
+        "name": "Fanpit Phase 3",
+        "priceINR": 10000,
         "availability": "available"
       }
     ],
@@ -1524,7 +1565,7 @@
     "tourName": "Lollapalooza India 2027",
     "artistImageUrl": "https://assets-in.bmscdn.com/nmcms/events/banner/desktop/media-desktop-lollapalooza-india-2027-0-2026-9-30-t-15-56-56.jpg",
     "date": "2027-01-23",
-    "time": "14:00 IST",
+    "time": "14:01 IST",
     "cityCode": "DEL",
     "cityName": "Delhi NCR",
     "venue": "Mahalaxmi Race Course: Mumbai",
@@ -1536,30 +1577,12 @@
       "Live Music",
       "BookMyShow Live"
     ],
-    "startingPriceINR": 5999,
+    "startingPriceINR": 4499,
     "ticketTiers": [
       {
         "tierId": "tier-1",
-        "name": "Lolla VIP Sunday",
-        "priceINR": 15999,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-2",
-        "name": "Rupay Comfort Sunday",
-        "priceINR": 9999,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-3",
-        "name": "GA Sunday P1",
-        "priceINR": 5999,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-4",
-        "name": "JW Platinum Sunday",
-        "priceINR": 34999,
+        "name": "GA Weekend P3 - Pay 50%",
+        "priceINR": 4499,
         "availability": "available"
       }
     ],

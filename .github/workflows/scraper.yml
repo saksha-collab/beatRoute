@@ -8,6 +8,8 @@ on:
 jobs:
   scrape:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write # Grants permission to push updated events.json
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v4
@@ -16,14 +18,13 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
+          cache: 'npm'
           
       - name: Install dependencies
-        working-directory: ./scraper
         run: npm install
         
       - name: Run Scraper
-        working-directory: ./scraper
-        run: npm start
+        run: npm run scrape
         env:
           SCRAPER_API_KEY: ${{ secrets.SCRAPER_API_KEY }}
           ANYIP_PROXY_URL: ${{ secrets.ANYIP_PROXY_URL }}

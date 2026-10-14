@@ -1,4 +1,3 @@
-import axios from 'axios';
 import * as cheerio from 'cheerio';
 import { ConcertEvent, TicketTier, TicketStatus, TicketTierAvailability } from '../../lib/types';
 
@@ -23,15 +22,38 @@ function buildScraperApiUrl(targetUrl: string, apiKey: string): string {
 }
 
 /**
+ * Fetch HTML using Node.js native fetch with timeout
+ */
+async function fetchHtml(targetUrl: string, apiKey: string): Promise<string> {
+  const url = buildScraperApiUrl(targetUrl, apiKey);
+  const res = await fetch(url, {
+    signal: AbortSignal.timeout(30000),
+    headers: {
+      'Accept': 'text/html,application/xhtml+xml',
+    },
+  });
+
+  if (!res.ok) {
+    throw new Error(`HTTP ${res.status}: ${res.statusText}`);
+  }
+
+  return await res.text();
+}
+
+/**
  * Discover music event codes from a city's music explore page.
  */
-export async function discoverEventsForCity(city: BMSCityConfig, apiKey: string, limit = 4): Promise<{ slug: string; code: string; url: string }[]> {
+export async function discoverEventsForCity(
+  city: BMSCityConfig,
+  apiKey: string,
+  limit = 2
+): Promise<{ slug: string; code: string; url: string }[]> {
   const exploreUrl = `https://in.bookmyshow.com/explore/music-shows-${city.slug}`;
   console.log(`[BMS] Discovering events in ${city.cityName} (${exploreUrl})...`);
 
   try {
-    const res = await axios.get(buildScraperApiUrl(exploreUrl, apiKey), { timeout: 30000 });
-    const $ = cheerio.load(res.data);
+    const html = await fetchHtml(exploreUrl, apiKey);
+    const $ = cheerio.load(html);
     const discovered: { slug: string; code: string; url: string }[] = [];
     const seenCodes = new Set<string>();
 
@@ -73,8 +95,8 @@ export async function scrapeEventDetails(
 ): Promise<ConcertEvent | null> {
   try {
     console.log(`[BMS] Scraping details for ${eventMeta.slug} (${eventMeta.code})...`);
-    const res = await axios.get(buildScraperApiUrl(eventMeta.url, apiKey), { timeout: 30000 });
-    const $ = cheerio.load(res.data);
+    const html = await fetchHtml(eventMeta.url, apiKey);
+    const $ = cheerio.load(html);
 
     let eventSchema: any = null;
 
