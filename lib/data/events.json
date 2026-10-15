@@ -1107,14 +1107,14 @@
       },
       {
         "tierId": "tier-3",
-        "name": "KIDS",
-        "priceINR": 199,
+        "name": "GROUP OF 6",
+        "priceINR": 1899,
         "availability": "available"
       },
       {
         "tierId": "tier-4",
-        "name": "GROUP OF 6",
-        "priceINR": 1899,
+        "name": "KIDS",
+        "priceINR": 199,
         "availability": "available"
       },
       {
@@ -1166,44 +1166,44 @@
     "ticketTiers": [
       {
         "tierId": "tier-1",
-        "name": "PHASE 1 VIP STANDING",
-        "priceINR": 1999,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-2",
-        "name": "EB GENERAL ACCESS -",
-        "priceINR": 999,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-3",
-        "name": "KIDS PASS (5 TO 14 YEARS)",
-        "priceINR": 799,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-4",
-        "name": "PHASE 1 GA",
-        "priceINR": 1299,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-5",
-        "name": "EB VIP STANDING",
-        "priceINR": 1499,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-6",
         "name": "PHASE 1 FAN PIT",
         "priceINR": 2499,
         "availability": "available"
       },
       {
-        "tierId": "tier-7",
+        "tierId": "tier-2",
         "name": "EB FAN PIT",
         "priceINR": 1999,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-3",
+        "name": "EB GENERAL ACCESS -",
+        "priceINR": 999,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-4",
+        "name": "PHASE 1 VIP STANDING",
+        "priceINR": 1999,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-5",
+        "name": "KIDS PASS (5 TO 14 YEARS)",
+        "priceINR": 799,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-6",
+        "name": "PHASE 1 GA",
+        "priceINR": 1299,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-7",
+        "name": "EB VIP STANDING",
+        "priceINR": 1499,
         "availability": "available"
       }
     ],
@@ -1432,44 +1432,44 @@
     "ticketTiers": [
       {
         "tierId": "tier-1",
-        "name": "Diamond",
-        "priceINR": 5000,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-2",
-        "name": "1st Floor Balcony",
-        "priceINR": 1499,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-3",
-        "name": "Elite",
-        "priceINR": 8000,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-4",
-        "name": "Standard",
-        "priceINR": 2000,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-5",
         "name": "Premium",
         "priceINR": 2500,
         "availability": "available"
       },
       {
-        "tierId": "tier-6",
+        "tierId": "tier-2",
+        "name": "2nd Floor Balcony",
+        "priceINR": 999,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-3",
         "name": "Platinum",
         "priceINR": 3500,
         "availability": "available"
       },
       {
+        "tierId": "tier-4",
+        "name": "1st Floor Balcony",
+        "priceINR": 1499,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-5",
+        "name": "Diamond",
+        "priceINR": 5000,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-6",
+        "name": "Standard",
+        "priceINR": 2000,
+        "availability": "available"
+      },
+      {
         "tierId": "tier-7",
-        "name": "2nd Floor Balcony",
-        "priceINR": 999,
+        "name": "Elite",
+        "priceINR": 8000,
         "availability": "available"
       }
     ],
@@ -1479,6 +1479,101 @@
     "highlights": [
       "Live performance discovered from BookMyShow",
       "Venue: Shanmukhananda Hall: Mumbai"
+    ]
+  },
+  {
+    "id": "bms-et00512735",
+    "artist": "RAGHU DIXIT LIVE IN CONCERT ",
+    "tourName": "RAGHU DIXIT LIVE IN CONCERT ",
+    "artistImageUrl": "https://assets-in.bmscdn.com/nmcms/events/banner/desktop/media-desktop-raghu-dixit-live-in-concert-0-2026-8-16-t-13-7-28.jpg",
+    "date": "2026-10-24",
+    "time": "18:30 IST",
+    "cityCode": "BLR",
+    "cityName": "Bengaluru",
+    "venue": "Orion Mall, Rajajinagar: Bengaluru",
+    "coordinates": {
+      "lat": 13.0111,
+      "lng": 77.5551
+    },
+    "genres": [
+      "Live Music",
+      "BookMyShow Live"
+    ],
+    "startingPriceINR": 699,
+    "ticketTiers": [
+      {
+        "tierId": "tier-1",
+        "name": "COUPLE TICKET",
+        "priceINR": 1899,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-2",
+        "name": "PHASE 4",
+        "priceINR": 1699,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-3",
+        "name": "10 PEOPLE GROUP",
+        "priceINR": 10000,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-4",
+        "name": "PHASE 1",
+        "priceINR": 999,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-5",
+        "name": "FIVE PEOPLE ENTRY",
+        "priceINR": 6000,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-6",
+        "name": "EARLY BIRD COUPLE",
+        "priceINR": 1200,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-7",
+        "name": "PHASE 3 COUPLE",
+        "priceINR": 2899,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-8",
+        "name": "PHASE 2 COUPLE",
+        "priceINR": 2699,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-9",
+        "name": "PHASE 2",
+        "priceINR": 1399,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-10",
+        "name": "EARLY BIRD",
+        "priceINR": 699,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-11",
+        "name": "PHASE 3",
+        "priceINR": 1499,
+        "availability": "available"
+      }
+    ],
+    "ticketStatus": "available",
+    "bookingUrl": "https://in.bookmyshow.com/events/raghu-dixit-live-in-concert/ET00512735",
+    "source": "bookmyshow",
+    "highlights": [
+      "Live performance discovered from BookMyShow",
+      "Venue: Orion Mall, Rajajinagar: Bengaluru"
     ]
   },
   {
@@ -1503,14 +1598,14 @@
     "ticketTiers": [
       {
         "tierId": "tier-1",
-        "name": "P2 Regular Entry",
-        "priceINR": 1399,
+        "name": "Final Phase Fanpit Entry",
+        "priceINR": 2499,
         "availability": "available"
       },
       {
         "tierId": "tier-2",
-        "name": "Final Phase Fanpit Entry",
-        "priceINR": 2499,
+        "name": "P2 Regular Entry",
+        "priceINR": 1399,
         "availability": "available"
       }
     ],
@@ -1742,7 +1837,7 @@
     "tourName": "Lollapalooza India 2027",
     "artistImageUrl": "https://assets-in.bmscdn.com/nmcms/events/banner/desktop/media-desktop-lollapalooza-india-2027-0-2026-9-30-t-15-56-56.jpg",
     "date": "2027-01-23",
-    "time": "14:01 IST",
+    "time": "14:00 IST",
     "cityCode": "DEL",
     "cityName": "Delhi NCR",
     "venue": "Mahalaxmi Race Course: Mumbai",
@@ -1754,12 +1849,36 @@
       "Live Music",
       "BookMyShow Live"
     ],
-    "startingPriceINR": 4499,
+    "startingPriceINR": 8999,
     "ticketTiers": [
       {
         "tierId": "tier-1",
-        "name": "GA Weekend P3 - Pay 50%",
-        "priceINR": 4499,
+        "name": "RuPay Comfort Weekend P5",
+        "priceINR": 17999,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-2",
+        "name": "JW Platinum Wknd U25",
+        "priceINR": 31999,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-3",
+        "name": "Lolla VIP Weekend P6",
+        "priceINR": 29999,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-4",
+        "name": "JW Platinum Weekend P3",
+        "priceINR": 59999,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-5",
+        "name": "GA Weekend P3",
+        "priceINR": 8999,
         "availability": "available"
       }
     ],
