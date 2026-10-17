@@ -60,6 +60,9 @@ jobs:
           node-version: '20'
           cache: 'npm'
 
+      - name: Install Dependencies
+        run: npm ci
+
       - name: Install Vercel CLI
         run: npm install --global vercel@latest
 
@@ -68,6 +71,10 @@ jobs:
 
       - name: Build Project Artifacts
         run: vercel build --token=$VERCEL_TOKEN
+        env:
+          NEXT_TELEMETRY_DISABLED: 1
+          UPSTASH_REDIS_REST_URL: ${{ secrets.UPSTASH_REDIS_REST_URL }}
+          UPSTASH_REDIS_REST_TOKEN: ${{ secrets.UPSTASH_REDIS_REST_TOKEN }}
 
       - name: Deploy to Vercel (Preview)
         id: deploy
@@ -105,6 +112,9 @@ jobs:
           node-version: '20'
           cache: 'npm'
 
+      - name: Install Dependencies
+        run: npm ci
+
       - name: Install Vercel CLI
         run: npm install --global vercel@latest
 
@@ -113,6 +123,10 @@ jobs:
 
       - name: Build Production Artifacts
         run: vercel build --prod --token=$VERCEL_TOKEN
+        env:
+          NEXT_TELEMETRY_DISABLED: 1
+          UPSTASH_REDIS_REST_URL: ${{ secrets.UPSTASH_REDIS_REST_URL }}
+          UPSTASH_REDIS_REST_TOKEN: ${{ secrets.UPSTASH_REDIS_REST_TOKEN }}
 
       - name: Deploy to Vercel (Production)
         run: vercel deploy --prebuilt --prod --token=$VERCEL_TOKEN
