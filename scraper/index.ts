@@ -2,80 +2,163 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import dotenv from 'dotenv';
-import { TOP_BMS_CITIES, discoverEventsForCity, scrapeEventDetails } from './platforms/bms';
-import { ConcertEvent } from '../lib/types';
+import { TOP_BMS_CITIES, scrapeBMSCatalog, scrapeEventDetails, discoverEventsForCity } from './platforms/bms';
+import { DISTRICT_CITIES, scrapeDistrictCatalog } from './platforms/district';
+import { CatalogItem, ConcertEvent } from '../lib/types';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-
-// Load .env from root
 dotenv.config({ path: path.join(__dirname, '../.env') });
 
+const CATALOG_FILE_PATH = path.join(__dirname, '../lib/data/catalog.json');
 const EVENTS_FILE_PATH = path.join(__dirname, '../lib/data/events.json');
 
 async function main() {
-  console.log('==============================================');
-  console.log('🚀 BeatRoute Automated Live Discovery Engine');
-  console.log('==============================================');
+  console.log('====================================================');
+  console.log('🚀 BeatRoute Unified Master Scraper (BMS + District)');
+  console.log('====================================================');
 
-  const apiKey = process.env.SCRAPER_API_KEY;
-  if (!apiKey) {
-    console.error('❌ ERROR: SCRAPER_API_KEY environment variable is missing.');
-    console.error('Please configure it in .env or GitHub Secrets.');
-    process.exit(1);
-  }
+  const catalogMap = new Map<string, CatalogItem>();
 
-  // 1. Read existing events
-  let existingEvents: ConcertEvent[] = [];
-  try {
-    const raw = fs.readFileSync(EVENTS_FILE_PATH, 'utf-8');
-    existingEvents = JSON.parse(raw);
-    console.log(`[Storage] Loaded ${existingEvents.length} existing events.`);
-  } catch (err: any) {
-    console.warn('[Storage] Could not read existing events.json:', err.message);
-  }
-
-  // Map existing events by ID
-  const eventMap = new Map<string, ConcertEvent>();
-  existingEvents.forEach((ev) => eventMap.set(ev.id, ev));
-
-  let newlyAddedCount = 0;
-  let updatedCount = 0;
-
-  // 2. Iterate through cities
-  for (const city of TOP_BMS_CITIES) {
-    console.log(`\n--- Fetching live shows for ${city.cityName} (${city.cityCode}) ---`);
-    const discovered = await discoverEventsForCity(city, apiKey, 2); // 2 per city for balanced quota
-
-    for (const item of discovered) {
-      const details = await scrapeEventDetails(item, city, apiKey);
-      if (details) {
-        if (!eventMap.has(details.id)) {
-          newlyAddedCount++;
-          console.log(`✨ [NEW] Added: ${details.artist} (${details.cityName})`);
-        } else {
-          updatedCount++;
-          console.log(`🔄 [UPDATE] Refreshed: ${details.artist} (${details.cityName})`);
-        }
-        eventMap.set(details.id, details);
-      }
+  // 1. Load existing catalog.json if available
+  if (fs.existsSync(CATALOG_FILE_PATH)) {
+    try {
+      const rawCatalog = fs.readFileSync(CATALOG_FILE_PATH, 'utf-8');
+      const parsed: CatalogItem[] = JSON.parse(rawCatalog);
+      parsed.forEach((item) => catalogMap.set(item.id, item));
+      console.log(`[Storage] Loaded ${catalogMap.size} existing items from catalog.json.`);
+    } catch (e: any) {
+      console.warn('[Storage] Could not parse catalog.json, will rebuild:', e.message);
     }
   }
 
-  // 3. Sort chronologically
-  const mergedEvents = Array.from(eventMap.values()).sort((a, b) => {
-    return new Date(a.date).getTime() - new Date(b.date).getTime();
+  // 2. Also import existing events from events.json to ensure full backwards compatibility
+  let existingEvents: ConcertEvent[] = [];
+  if (fs.existsSync(EVENTS_FILE_PATH)) {
+    try {
+      const rawEvents = fs.readFileSync(EVENTS_FILE_PATH, 'utf-8');
+      existingEvents = JSON.parse(rawEvents);
+      console.log(`[Storage] Loaded ${existingEvents.length} existing events from events.json.`);
+
+      for (const ev of existingEvents) {
+        if (!catalogMap.has(ev.id)) {
+          catalogMap.set(ev.id, {
+            id: ev.id,
+            type: 'concert',
+            source: ev.source,
+            title: ev.artist,
+            description: ev.tourName,
+            category: ev.genres?.[0] || 'Concert',
+            posterUrl: ev.artistImageUrl,
+            cityCode: ev.cityCode,
+            cityName: ev.cityName,
+            venue: ev.venue,
+            coordinates: ev.coordinates,
+            date: ev.date,
+            time: ev.time,
+            startingPriceINR: ev.startingPriceINR,
+            bookingUrl: ev.bookingUrl,
+            rawDetails: {
+              ticketTiers: ev.ticketTiers,
+              ticketStatus: ev.ticketStatus,
+              highlights: ev.highlights,
+            },
+          });
+        }
+      }
+    } catch (e: any) {
+      console.warn('[Storage] Could not read events.json:', e.message);
+    }
+  }
+
+  // 3. Scrape District (by Zomato) for Top Hubs
+  console.log('\n--- 🎟️ Scraping District by Zomato (Movies & Events) ---');
+  for (const city of DISTRICT_CITIES.slice(0, 3)) { // Top 3 hubs for batch cycle
+    try {
+      const districtItems = await scrapeDistrictCatalog(city, 3);
+      districtItems.forEach((item) => {
+        const isNew = !catalogMap.has(item.id);
+        catalogMap.set(item.id, item);
+        console.log(`${isNew ? '✨ [NEW]' : '🔄 [UPDATE]'} [District] ${item.type.toUpperCase()}: ${item.title} (${item.cityName})`);
+      });
+    } catch (err: any) {
+      console.error(`Error scraping District for ${city.cityName}:`, err.message);
+    }
+  }
+
+  // 4. Scrape BookMyShow (Events & Movies) for Top Hubs
+  console.log('\n--- 🎫 Scraping BookMyShow (Movies & Events) ---');
+  for (const city of TOP_BMS_CITIES.slice(0, 3)) {
+    try {
+      const bmsItems = await scrapeBMSCatalog(city, 2);
+      bmsItems.forEach((item) => {
+        const isNew = !catalogMap.has(item.id);
+        catalogMap.set(item.id, item);
+        console.log(`${isNew ? '✨ [NEW]' : '🔄 [UPDATE]'} [BMS] ${item.type.toUpperCase()}: ${item.title} (${item.cityName})`);
+      });
+    } catch (err: any) {
+      console.error(`Error scraping BMS for ${city.cityName}:`, err.message);
+    }
+  }
+
+  // 5. Save updated catalog.json
+  const finalCatalog = Array.from(catalogMap.values()).sort((a, b) => {
+    return (a.date || '').localeCompare(b.date || '');
   });
 
-  // 4. Save to events.json
-  fs.writeFileSync(EVENTS_FILE_PATH, JSON.stringify(mergedEvents, null, 2), 'utf-8');
-  console.log('\n==============================================');
-  console.log(`🎉 Scraping cycle finished!`);
-  console.log(`   - Total catalog events: ${mergedEvents.length}`);
-  console.log(`   - Newly added: ${newlyAddedCount}`);
-  console.log(`   - Updated: ${updatedCount}`);
-  console.log(`   - Saved to: ${EVENTS_FILE_PATH}`);
-  console.log('==============================================');
+  fs.writeFileSync(CATALOG_FILE_PATH, JSON.stringify(finalCatalog, null, 2), 'utf-8');
+  console.log(`\n💾 Saved ${finalCatalog.length} total catalog items to ${CATALOG_FILE_PATH}`);
+
+  // 6. Keep events.json synchronized for active UI compatibility
+  const eventsForFeed: ConcertEvent[] = [];
+  const seenEventIds = new Set<string>();
+
+  // Add all existing curated and live events
+  for (const ev of existingEvents) {
+    eventsForFeed.push(ev);
+    seenEventIds.add(ev.id);
+  }
+
+  // Add any newly discovered events from District
+  for (const item of finalCatalog) {
+    if (item.type !== 'movie' && !seenEventIds.has(item.id)) {
+      eventsForFeed.push({
+        id: item.id,
+        artist: item.title,
+        tourName: item.description || item.title,
+        artistImageUrl: item.posterUrl,
+        date: item.date || new Date().toISOString().slice(0, 10),
+        time: item.time || '19:00 IST',
+        cityCode: item.cityCode,
+        cityName: item.cityName,
+        venue: item.venue || `${item.cityName} Venue`,
+        coordinates: item.coordinates || { lat: 19.076, lng: 72.8777 },
+        genres: [item.category, 'District Live'],
+        startingPriceINR: item.startingPriceINR || 499,
+        ticketTiers: [
+          {
+            tierId: 'tier-ga',
+            name: 'General Entry',
+            priceINR: item.startingPriceINR || 499,
+            availability: 'available',
+          },
+        ],
+        ticketStatus: 'available',
+        bookingUrl: item.bookingUrl,
+        source: item.source as any,
+        highlights: ['Live event discovered from District by Zomato'],
+      });
+      seenEventIds.add(item.id);
+    }
+  }
+
+  eventsForFeed.sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
+  fs.writeFileSync(EVENTS_FILE_PATH, JSON.stringify(eventsForFeed, null, 2), 'utf-8');
+  console.log(`💾 Synchronized ${eventsForFeed.length} live events to ${EVENTS_FILE_PATH}`);
+
+  console.log('====================================================');
+  console.log('🎉 Unified Scraping cycle completed successfully!');
+  console.log('====================================================');
 }
 
 main().catch((err) => {

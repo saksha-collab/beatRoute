@@ -17,7 +17,32 @@ export interface City {
 }
 
 export type ArtistId = 'karan-aujla' | 'diljit-dosanjh' | 'coldplay' | string;
-export type ConcertSource = 'live_api' | 'curated_catalog' | 'bookmyshow';
+export type ConcertSource = 'live_api' | 'curated_catalog' | 'bookmyshow' | 'district';
+
+export type CatalogItemType = 'movie' | 'concert' | 'event';
+export type CatalogSource = 'bookmyshow' | 'district' | 'curated_catalog' | 'live_api';
+
+export interface CatalogItem {
+  id: string; // e.g. bms-movie-et..., district-event-...
+  type: CatalogItemType;
+  source: CatalogSource;
+  title: string;
+  description?: string;
+  category: string; // e.g. 'Action', 'EDM', 'Bollywood', 'Comedy'
+  languages?: string[];
+  posterUrl: string;
+  bannerUrl?: string;
+  cityCode: CityCode;
+  cityName: string;
+  venue?: string; // Cinema name or stadium
+  coordinates?: GeoCoordinates;
+  date?: string; // Release date or show date
+  time?: string;
+  startingPriceINR?: number;
+  bookingUrl: string;
+  rating?: string;
+  rawDetails?: Record<string, any>;
+}
 
 export type TicketTierAvailability = 'available' | 'low_stock' | 'sold_out';
 export type TicketStatus = 'available' | 'low_stock' | 'sold_out' | 'announced';
