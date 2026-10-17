@@ -13,7 +13,7 @@ import {
   Sparkles,
 } from "lucide-react";
 import { CITIES, FEATURED_TOURS } from "@/lib/mock-data";
-import { CityCode, RailClass, StayPreference, TransitMode } from "@/lib/types";
+import { CityCode, RailClass, StayPreference, TransitMode, Tour, TicketTier } from "@/lib/types";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 
@@ -36,6 +36,7 @@ interface FilterBarProps {
   onLiveArtistQueryChange: (query: string) => void;
   onSearchLiveArtist: () => void;
   isSearchingLive?: boolean;
+  availableTours?: Tour[];
 }
 
 const QUICK_ARTISTS = [
@@ -66,9 +67,11 @@ export function FilterBar({
   onLiveArtistQueryChange,
   onSearchLiveArtist,
   isSearchingLive = false,
+  availableTours,
 }: FilterBarProps) {
   const [showAdvanced, setShowAdvanced] = React.useState(false);
-  const selectedTour = FEATURED_TOURS.find((t) => t.id === tourId) || FEATURED_TOURS[0];
+  const activeToursList = availableTours && availableTours.length > 0 ? availableTours : FEATURED_TOURS;
+  const selectedTour = activeToursList.find((t) => t.id === tourId) || activeToursList[0];
   const availableTiers = selectedTour?.stops[0]?.ticketTiers || [];
 
   return (
@@ -179,37 +182,25 @@ export function FilterBar({
             <Sparkles className="h-3 w-3 text-cyan-400" />
             Trending:
           </span>
-          {QUICK_ARTISTS.map((artist) => {
-            const isCurrent =
-              tourMode === "curated"
-                ? artist.curatedId === tourId
-                : liveArtistQuery.toLowerCase() === artist.name.toLowerCase();
+          {activeToursList.slice(0, 8).map((tour) => {
+            const isCurrent = tour.id === tourId;
 
             return (
               <button
-                key={artist.name}
+                key={tour.id}
                 type="button"
                 onClick={() => {
-                  if (artist.curatedId) {
-                    onTourModeChange("curated");
-                    onTourIdChange(artist.curatedId);
-                    onLiveArtistQueryChange("");
-                  } else {
-                    onTourModeChange("live");
-                    onLiveArtistQueryChange(artist.name);
-                    // Trigger search automatically for live chip
-                    setTimeout(() => {
-                      onSearchLiveArtist();
-                    }, 50);
-                  }
+                  onTourModeChange("curated");
+                  onTourIdChange(tour.id);
+                  onLiveArtistQueryChange("");
                 }}
                 className={`px-3 py-1 rounded-full text-xs font-semibold whitespace-nowrap transition-all duration-200 border ${
                   isCurrent
-                    ? "bg-gradient-to-r from-cyan-500 to-indigo-600 text-white border-transparent shadow-glowCyan scale-[1.02]"
+                    ? "bg-text-primary text-surface border-transparent scale-[1.02] shadow-sm"
                     : "bg-surface-elevated text-text-secondary border-border-subtle hover:border-border-strong hover:text-text-primary"
                 }`}
               >
-                {artist.name}
+                {tour.artist}
               </button>
             );
           })}
@@ -267,7 +258,7 @@ export function FilterBar({
             <div className="space-y-1.5">
               <span className="font-semibold text-text-secondary">Ticket Tier Level</span>
               <div className="flex items-center gap-1.5 flex-wrap">
-                {availableTiers.map((tier) => (
+                {availableTiers.map((tier: TicketTier) => (
                   <Button
                     key={tier.tierId}
                     type="button"

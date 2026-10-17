@@ -37,6 +37,14 @@ export function HybridAggregatorFeed({
   const filteredItems = React.useMemo(() => {
     let list = [...items];
 
+    // Strict upcoming date filter (prune past shows)
+    const today = new Date().toISOString().slice(0, 10);
+    list = list.filter((item) => {
+      if (item.type === "movie") return true;
+      if (!item.date) return true;
+      return item.date >= today;
+    });
+
     // Platform filter
     if (platformFilter !== "all") {
       list = list.filter((i) => i.source === platformFilter);

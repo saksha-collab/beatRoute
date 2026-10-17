@@ -38,6 +38,19 @@ async function scrapeCityFresh(cityCode: string): Promise<CatalogItem[]> {
   return items;
 }
 
+function filterActiveItems(items: CatalogItem[], typeParam?: string | null): CatalogItem[] {
+  const today = new Date().toISOString().slice(0, 10);
+  let list = items.filter((item) => {
+    if (item.type === 'movie') return true;
+    if (!item.date) return true;
+    return item.date >= today;
+  });
+  if (typeParam && typeParam !== 'all') {
+    list = list.filter((i) => i.type === typeParam);
+  }
+  return list;
+}
+
 export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url);
 
@@ -52,10 +65,7 @@ export async function GET(request: NextRequest) {
 
   // SCENARIO A: Fresh Cache Hit (< 1 Hour Old)
   if (cacheResult.exists && !cacheResult.isStale && !forceRefresh) {
-    let filtered = cacheResult.items;
-    if (typeParam && typeParam !== 'all') {
-      filtered = filtered.filter((i) => i.type === typeParam);
-    }
+    const filtered = filterActiveItems(cacheResult.items, typeParam);
 
     return NextResponse.json({
       success: true,
@@ -94,10 +104,7 @@ export async function GET(request: NextRequest) {
       }
     });
 
-    let filtered = cacheResult.items;
-    if (typeParam && typeParam !== 'all') {
-      filtered = filtered.filter((i) => i.type === typeParam);
-    }
+    const filtered = filterActiveItems(cacheResult.items, typeParam);
 
     // Return existing data immediately to client with SWR flag
     return NextResponse.json({
@@ -124,10 +131,7 @@ export async function GET(request: NextRequest) {
       await setCachedCityCatalog(cityCode, freshItems, 3600);
     }
 
-    let filtered = freshItems;
-    if (typeParam && typeParam !== 'all') {
-      filtered = filtered.filter((i) => i.type === typeParam);
-    }
+    const filtered = filterActiveItems(freshItems, typeParam);
 
     return NextResponse.json({
       success: true,

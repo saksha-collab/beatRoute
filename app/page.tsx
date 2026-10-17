@@ -3,8 +3,7 @@
 import * as React from "react";
 import { useQueryState, parseAsString, parseAsStringLiteral } from "nuqs";
 import initialCatalog from "@/lib/data/catalog.json";
-import { FEATURED_TOURS } from "@/lib/mock-data";
-import { ALL_INDIAN_CONCERTS } from "@/lib/data/all-concerts";
+import { extractLiveTours } from "@/lib/services/live-tours";
 import { useCityCatalog } from "@/hooks/use-city-catalog";
 import {
   CityCode,
@@ -69,45 +68,28 @@ function BeatRouteDashboard() {
   } = useCityCatalog(selectedCity === "ALL" ? "BOM" : selectedCity);
 
   // 4. Master Catalog compiling (curated tours + local catalog.json + live SWR updates)
+  // 4. Master Catalog compiling: Pure live scraped data with strict upcoming date filter
+  const today = React.useMemo(() => new Date().toISOString().slice(0, 10), []);
+
   const masterCatalog = React.useMemo(() => {
     const map = new Map<string, CatalogItem>();
 
-    // A. Baseline catalog.json items
-    (initialCatalog as CatalogItem[]).forEach((item) => map.set(item.id, item));
-
-    // B. Curated mega-tours
-    ALL_INDIAN_CONCERTS.forEach((c) => {
-      if (!map.has(c.id)) {
-        map.set(c.id, {
-          id: c.id,
-          type: "concert",
-          source: c.source as any,
-          title: c.artist,
-          description: c.tourName,
-          category: c.genres?.[0] || "Concert",
-          posterUrl: c.artistImageUrl,
-          cityCode: c.cityCode,
-          cityName: c.cityName,
-          venue: c.venue,
-          coordinates: c.coordinates,
-          date: c.date,
-          time: c.time,
-          startingPriceINR: c.startingPriceINR,
-          bookingUrl: c.bookingUrl,
-          rawDetails: {
-            ticketTiers: c.ticketTiers,
-            ticketStatus: c.ticketStatus,
-            highlights: c.highlights,
-          },
-        });
+    // A. Baseline catalog.json items (strictly active / upcoming)
+    (initialCatalog as CatalogItem[]).forEach((item) => {
+      if (item.type === "movie" || !item.date || item.date >= today) {
+        map.set(item.id, item);
       }
     });
 
-    // C. Live SWR updates from BMS & District
-    (liveCatalogItems || []).forEach((item) => map.set(item.id, item));
+    // B. Live SWR updates from BMS & District (strictly active / upcoming)
+    (liveCatalogItems || []).forEach((item) => {
+      if (item.type === "movie" || !item.date || item.date >= today) {
+        map.set(item.id, item);
+      }
+    });
 
     return Array.from(map.values());
-  }, [liveCatalogItems]);
+  }, [liveCatalogItems, today]);
 
   const concertItems = React.useMemo(
     () => masterCatalog.filter((i) => i.type === "concert"),
@@ -122,9 +104,16 @@ function BeatRouteDashboard() {
     [masterCatalog]
   );
 
-  // 5. Travel Arbitrage Engine State
+  // 5. Dynamic Live Tours derived purely from upcoming live events
+  const dynamicTours = React.useMemo(
+    () => extractLiveTours(concertItems),
+    [concertItems]
+  );
+
+  // 6. Travel Arbitrage Engine State
   const [origin, setOrigin] = useQueryState("origin", parseAsString.withDefault("BOM"));
-  const [tourId, setTourId] = useQueryState("tour", parseAsString.withDefault("coldplay"));
+  const defaultTourId = dynamicTours[0]?.id || "live-tour";
+  const [tourId, setTourId] = useQueryState("tour", parseAsString.withDefault(defaultTourId));
   const [transitMode, setTransitMode] = useQueryState(
     "mode",
     parseAsStringLiteral(["flight", "rail"] as const).withDefault("flight")
@@ -154,9 +143,9 @@ function BeatRouteDashboard() {
   const [plannerStop, setPlannerStop] = React.useState<TourStop | null>(null);
   const [isPlannerOpen, setIsPlannerOpen] = React.useState(false);
 
-  const selectedCuratedTour =
-    FEATURED_TOURS.find((t) => t.id === tourId) || FEATURED_TOURS[0];
-  const arbitrageStops = selectedCuratedTour.stops;
+  const selectedTour =
+    dynamicTours.find((t) => t.id === tourId) || dynamicTours[0];
+  const arbitrageStops = selectedTour?.stops || [];
 
   const arbitrageResults: ArbitrageResult[] = React.useMemo(() => {
     return calculateArbitrageMatrix({
@@ -179,10 +168,11 @@ function BeatRouteDashboard() {
   };
 
   const handleOpenArbitrageFromPreview = (item: CatalogItem) => {
-    const matchTour = FEATURED_TOURS.find(
+    const matchTour = dynamicTours.find(
       (t) =>
         t.artist.toLowerCase() === item.title.toLowerCase() ||
-        item.title.toLowerCase().includes(t.artist.toLowerCase())
+        item.title.toLowerCase().includes(t.artist.toLowerCase()) ||
+        t.stops.some((s) => s.id === item.id)
     );
     if (matchTour) {
       setTourId(matchTour.id);
@@ -306,6 +296,7 @@ function BeatRouteDashboard() {
               onLiveArtistQueryChange={() => {}}
               onSearchLiveArtist={() => {}}
               isSearchingLive={false}
+              availableTours={dynamicTours}
             />
 
             <MetricsSummaryStrip results={arbitrageResults} />

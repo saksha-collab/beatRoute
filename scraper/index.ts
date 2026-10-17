@@ -33,46 +33,7 @@ async function main() {
     }
   }
 
-  // 2. Also import existing events from events.json to ensure full backwards compatibility
-  let existingEvents: ConcertEvent[] = [];
-  if (fs.existsSync(EVENTS_FILE_PATH)) {
-    try {
-      const rawEvents = fs.readFileSync(EVENTS_FILE_PATH, 'utf-8');
-      existingEvents = JSON.parse(rawEvents);
-      console.log(`[Storage] Loaded ${existingEvents.length} existing events from events.json.`);
-
-      for (const ev of existingEvents) {
-        if (!catalogMap.has(ev.id)) {
-          catalogMap.set(ev.id, {
-            id: ev.id,
-            type: 'concert',
-            source: ev.source,
-            title: ev.artist,
-            description: ev.tourName,
-            category: ev.genres?.[0] || 'Concert',
-            posterUrl: ev.artistImageUrl,
-            cityCode: ev.cityCode,
-            cityName: ev.cityName,
-            venue: ev.venue,
-            coordinates: ev.coordinates,
-            date: ev.date,
-            time: ev.time,
-            startingPriceINR: ev.startingPriceINR,
-            bookingUrl: ev.bookingUrl,
-            rawDetails: {
-              ticketTiers: ev.ticketTiers,
-              ticketStatus: ev.ticketStatus,
-              highlights: ev.highlights,
-            },
-          });
-        }
-      }
-    } catch (e: any) {
-      console.warn('[Storage] Could not read events.json:', e.message);
-    }
-  }
-
-  // 3. Scrape District (by Zomato) for Top Hubs
+  // 2. Scrape District (by Zomato) for Top Hubs
   console.log('\n--- 🎟️ Scraping District by Zomato (Movies & Events) ---');
   for (const city of DISTRICT_CITIES.slice(0, 3)) { // Top 3 hubs for batch cycle
     try {
@@ -87,7 +48,7 @@ async function main() {
     }
   }
 
-  // 4. Scrape BookMyShow (Events & Movies) for Top Hubs
+  // 3. Scrape BookMyShow (Events & Movies) for Top Hubs
   console.log('\n--- 🎫 Scraping BookMyShow (Movies & Events) ---');
   for (const city of TOP_BMS_CITIES.slice(0, 3)) {
     try {
@@ -102,41 +63,37 @@ async function main() {
     }
   }
 
-  // 5. Save updated catalog.json
-  const finalCatalog = Array.from(catalogMap.values()).sort((a, b) => {
-    return (a.date || '').localeCompare(b.date || '');
-  });
+  // 4. Filter & Prune: Strictly upcoming events (date >= today) and active movies
+  const today = new Date().toISOString().slice(0, 10);
+  const finalCatalog = Array.from(catalogMap.values())
+    .filter((item) => {
+      if (item.type === 'movie') return true;
+      if (!item.date) return true;
+      return item.date >= today;
+    })
+    .sort((a, b) => (a.date || '').localeCompare(b.date || ''));
 
   fs.writeFileSync(CATALOG_FILE_PATH, JSON.stringify(finalCatalog, null, 2), 'utf-8');
-  console.log(`\n💾 Saved ${finalCatalog.length} total catalog items to ${CATALOG_FILE_PATH}`);
+  console.log(`\n💾 Saved ${finalCatalog.length} active live catalog items (pruned expired shows) to ${CATALOG_FILE_PATH}`);
 
-  // 6. Keep events.json synchronized for active UI compatibility
+  // 5. Keep events.json synchronized with active live concerts/events only
   const eventsForFeed: ConcertEvent[] = [];
-  const seenEventIds = new Set<string>();
-
-  // Add all existing curated and live events
-  for (const ev of existingEvents) {
-    eventsForFeed.push(ev);
-    seenEventIds.add(ev.id);
-  }
-
-  // Add any newly discovered events from District
   for (const item of finalCatalog) {
-    if (item.type !== 'movie' && !seenEventIds.has(item.id)) {
+    if (item.type !== 'movie') {
       eventsForFeed.push({
         id: item.id,
         artist: item.title,
         tourName: item.description || item.title,
         artistImageUrl: item.posterUrl,
-        date: item.date || new Date().toISOString().slice(0, 10),
+        date: item.date || today,
         time: item.time || '19:00 IST',
         cityCode: item.cityCode,
         cityName: item.cityName,
         venue: item.venue || `${item.cityName} Venue`,
         coordinates: item.coordinates || { lat: 19.076, lng: 72.8777 },
-        genres: [item.category, 'District Live'],
+        genres: [item.category, item.source === 'district' ? 'District Live' : 'BookMyShow Live'],
         startingPriceINR: item.startingPriceINR || 499,
-        ticketTiers: [
+        ticketTiers: item.rawDetails?.ticketTiers || [
           {
             tierId: 'tier-ga',
             name: 'General Entry',
@@ -147,15 +104,14 @@ async function main() {
         ticketStatus: 'available',
         bookingUrl: item.bookingUrl,
         source: item.source as any,
-        highlights: ['Live event discovered from District by Zomato'],
+        highlights: [`Live event discovered from ${item.source === 'district' ? 'District by Zomato' : 'BookMyShow'}`],
       });
-      seenEventIds.add(item.id);
     }
   }
 
   eventsForFeed.sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
   fs.writeFileSync(EVENTS_FILE_PATH, JSON.stringify(eventsForFeed, null, 2), 'utf-8');
-  console.log(`💾 Synchronized ${eventsForFeed.length} live events to ${EVENTS_FILE_PATH}`);
+  console.log(`💾 Synchronized ${eventsForFeed.length} active live events to ${EVENTS_FILE_PATH}`);
 
   // 7. Dual-Sync: Seed Upstash Redis cache for each scraped city
   console.log('\n--- ⚡ Dual-Sync: Seeding Redis Cache ---');
