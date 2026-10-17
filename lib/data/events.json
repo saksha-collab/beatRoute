@@ -1,79 +1,8 @@
 [
   {
-    "id": "bms-et00519189",
-    "artist": "Naacho Navratri ",
-    "tourName": "Naacho Navratri ",
-    "artistImageUrl": "https://assets-in.bmscdn.com/nmcms/events/banner/desktop/media-desktop-naacho-navaratri-0-2026-9-25-t-14-19-21.jpg",
-    "date": "2026-10-17",
-    "time": "18:00 IST",
-    "cityCode": "HYD",
-    "cityName": "Hyderabad",
-    "venue": "Kalyana Lakshmi Gardens: Hyderabad",
-    "coordinates": {
-      "lat": 17.3789,
-      "lng": 78.5676
-    },
-    "genres": [
-      "Live Music",
-      "BookMyShow Live"
-    ],
-    "startingPriceINR": 199,
-    "ticketTiers": [
-      {
-        "tierId": "tier-1",
-        "name": "KIDS PASS",
-        "priceINR": 199,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-2",
-        "name": "GROUP OF 6",
-        "priceINR": 1899,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-3",
-        "name": "GROUP OF 4",
-        "priceINR": 1299,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-4",
-        "name": "EARLY BIRD COUPLE",
-        "priceINR": 649,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-5",
-        "name": "VIP COUPLE PASS",
-        "priceINR": 899,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-6",
-        "name": "EARLY BIRD SINGLE ENTRY",
-        "priceINR": 349,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-7",
-        "name": "VIP SINGLE",
-        "priceINR": 499,
-        "availability": "available"
-      }
-    ],
-    "ticketStatus": "available",
-    "bookingUrl": "https://in.bookmyshow.com/events/naacho-navaratri/ET00519189",
-    "source": "bookmyshow",
-    "highlights": [
-      "Live performance discovered from BookMyShow",
-      "Venue: Kalyana Lakshmi Gardens: Hyderabad"
-    ]
-  },
-  {
     "id": "bms-et00146560",
     "artist": "INDIAN OCEAN LIVE AT PHOENIX MUMBAI",
-    "tourName": "INDIAN OCEAN LIVE AT PHOENIX MUMBAI",
+    "tourName": "Live performance discovered from BookMyShow • Venue: Dublin Square, Phoenix Marketcity: Mumbai",
     "artistImageUrl": "https://assets-in.bmscdn.com/nmcms/events/banner/desktop/media-desktop-indian-ocean-live-at-phoenix-mumbai-0-2026-5-12-t-17-16-43.jpg",
     "date": "2026-10-17",
     "time": "19:00 IST",
@@ -92,26 +21,26 @@
     "ticketTiers": [
       {
         "tierId": "tier-1",
-        "name": "PHASE 1 FAN PIT",
-        "priceINR": 2499,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-2",
         "name": "EB FAN PIT",
         "priceINR": 1999,
         "availability": "available"
       },
       {
+        "tierId": "tier-2",
+        "name": "PHASE 1 FAN PIT",
+        "priceINR": 2499,
+        "availability": "available"
+      },
+      {
         "tierId": "tier-3",
-        "name": "PHASE 1 VIP STANDING",
-        "priceINR": 1999,
+        "name": "EB GENERAL ACCESS -",
+        "priceINR": 999,
         "availability": "available"
       },
       {
         "tierId": "tier-4",
-        "name": "EB GENERAL ACCESS -",
-        "priceINR": 999,
+        "name": "PHASE 1 VIP STANDING",
+        "priceINR": 1999,
         "availability": "available"
       },
       {
@@ -137,132 +66,13 @@
     "bookingUrl": "https://in.bookmyshow.com/events/indian-ocean-live-at-phoenix-mumbai/ET00146560",
     "source": "bookmyshow",
     "highlights": [
-      "Live performance discovered from BookMyShow",
-      "Venue: Dublin Square, Phoenix Marketcity: Mumbai"
-    ]
-  },
-  {
-    "id": "bms-et00514450",
-    "artist": "Max Urbn Unmute Delhi x Spotify RAP 91",
-    "tourName": "Max Urbn Unmute Delhi x Spotify RAP 91",
-    "artistImageUrl": "https://assets-in.bmscdn.com/nmcms/events/banner/desktop/media-desktop-max-urbn-unmute-delhi-x-spotify-rap-91-0-2026-8-27-t-18-42-4.jpg",
-    "date": "2026-10-17",
-    "time": "17:00 IST",
-    "cityCode": "DEL",
-    "cityName": "Delhi NCR",
-    "venue": "Vegas Mall: New Delhi",
-    "coordinates": {
-      "lat": 28.6008,
-      "lng": 77.0297
-    },
-    "genres": [
-      "Live Music",
-      "BookMyShow Live"
-    ],
-    "startingPriceINR": 899,
-    "ticketTiers": [
-      {
-        "tierId": "tier-1",
-        "name": "GA PHASE 2",
-        "priceINR": 899,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-2",
-        "name": "GA COUPLE ENTRY",
-        "priceINR": 1099,
-        "availability": "available"
-      }
-    ],
-    "ticketStatus": "available",
-    "bookingUrl": "https://in.bookmyshow.com/events/max-urbn-unmute-delhi-x-spotify-rap-91/ET00514450",
-    "source": "bookmyshow",
-    "highlights": [
-      "Live performance discovered from BookMyShow",
-      "Venue: Vegas Mall: New Delhi"
-    ]
-  },
-  {
-    "id": "bms-et00517749",
-    "artist": "Raftaar Live Concert - Delhi",
-    "tourName": "Raftaar Live Concert - Delhi",
-    "artistImageUrl": "https://assets-in.bmscdn.com/nmcms/events/banner/desktop/media-desktop-raftaar-live-concert-delhi-0-2026-9-17-t-19-8-55.jpg",
-    "date": "2026-10-17",
-    "time": "19:00 IST",
-    "cityCode": "DEL",
-    "cityName": "Delhi NCR",
-    "venue": "Major Dhyanchand National Stadium: Delhi",
-    "coordinates": {
-      "lat": 28.6127,
-      "lng": 77.2373
-    },
-    "genres": [
-      "Live Music",
-      "BookMyShow Live"
-    ],
-    "startingPriceINR": 999,
-    "ticketTiers": [
-      {
-        "tierId": "tier-1",
-        "name": "VIP SEATING FOR 2",
-        "priceINR": 9999,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-2",
-        "name": "SILVER GROUP OF 5",
-        "priceINR": 2999,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-3",
-        "name": "EARLY BIRD GOLD",
-        "priceINR": 1999,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-4",
-        "name": "EARLY BIRD GOLD COUPLE",
-        "priceINR": 3499,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-5",
-        "name": "EARLY BIRD SILVER COUPLE",
-        "priceINR": 1749,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-6",
-        "name": "EARLY BIRD SILVER",
-        "priceINR": 999,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-7",
-        "name": "PLATINUM LOUNGE 5 PAX",
-        "priceINR": 49999,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-8",
-        "name": "GOLD GROUP OF 5",
-        "priceINR": 5999,
-        "availability": "available"
-      }
-    ],
-    "ticketStatus": "available",
-    "bookingUrl": "https://in.bookmyshow.com/events/raftaar-live-concert-delhi/ET00517749",
-    "source": "bookmyshow",
-    "highlights": [
-      "Live performance discovered from BookMyShow",
-      "Venue: Major Dhyanchand National Stadium: Delhi"
+      "Live event discovered from BookMyShow"
     ]
   },
   {
     "id": "bms-et00518198",
     "artist": "Backstage Siblings - Bhakti Dance Floor",
-    "tourName": "Backstage Siblings - Bhakti Dance Floor",
+    "tourName": "Live performance discovered from BookMyShow • Venue: Biswa Bangla Mela Prangan: Kolkata",
     "artistImageUrl": "https://assets-in.bmscdn.com/nmcms/events/banner/desktop/media-desktop-backstage-siblings-bhakti-dance-floor-0-2026-9-20-t-14-12-26.jpg",
     "date": "2026-10-18",
     "time": "18:00 IST",
@@ -305,26 +115,26 @@
       },
       {
         "tierId": "tier-5",
-        "name": "GROUP OF 4 - FANPIT",
-        "priceINR": 7499,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-6",
         "name": "PHASE ONE FANPIT",
         "priceINR": 1799,
         "availability": "available"
       },
       {
+        "tierId": "tier-6",
+        "name": "GROUP OF 4 - FANPIT",
+        "priceINR": 7499,
+        "availability": "available"
+      },
+      {
         "tierId": "tier-7",
-        "name": "VVIP SEATING",
-        "priceINR": 6999,
+        "name": "EARLY BIRD FANPIT",
+        "priceINR": 1399,
         "availability": "available"
       },
       {
         "tierId": "tier-8",
-        "name": "EARLY BIRD FANPIT",
-        "priceINR": 1399,
+        "name": "VVIP SEATING",
+        "priceINR": 6999,
         "availability": "available"
       }
     ],
@@ -332,14 +142,191 @@
     "bookingUrl": "https://in.bookmyshow.com/events/backstage-siblings-bhakti-dance-floor/ET00518198",
     "source": "bookmyshow",
     "highlights": [
-      "Live performance discovered from BookMyShow",
-      "Venue: Biswa Bangla Mela Prangan: Kolkata"
+      "Live event discovered from BookMyShow"
+    ]
+  },
+  {
+    "id": "district-ev-dandiya-2026-oct17-2026",
+    "artist": "Dandiya 2026",
+    "tourName": "Marquee Fiesta Presents Dandiya Night 2026Gurugram's Biggest Dandiya Celebration Is Here!Get ready for two unforgettable evenings of music, dance, culture, and festive excitement as&nbsp;Marquee Fiesta presents Dandiya Night 2026 at Urban Akhara, Gurugram!Experience the magic of traditional Dandiya and Garba combined with electrifying DJ performances, energetic live dhol, captivating dance performances, and an atmosphere filled with celebration.Bring your friends, gather your family, dress in your festive best, and get ready to dance the night away!Event Highlights:Live DJ Performances:&nbsp;Dance to an exciting mix of Bollywood hits, Garba favorites, and high-energy festive beats.Live Dhol:&nbsp;Experience the powerful rhythms of traditional dhol performances.Dance Troupe:&nbsp;Enjoy vibrant live dance performances throughout the celebration.Professional Anchor:&nbsp;Interactive hosting, audience engagement, and entertaining activities.Dandiya &amp; Garba:&nbsp;Celebrate traditional dance in a lively, welcoming atmosphere.Fun Competitions:&nbsp;Exciting opportunities to participate in Best Dressed, Best Dancer, and Best Couple contests.Food &amp; Beverages:&nbsp;Explore a selection of food and refreshments available for purchase.Festive Photo Moments:&nbsp;Capture memories with friends and family in a vibrant celebration setting.Why You Shouldn't Miss It:Two nights. Incredible music. Endless festive energy.Whether you're a Garba enthusiast, a Dandiya lover, or simply looking for a memorable festive experience with your favorite people, Dandiya Night 2026 brings together entertainment, culture, and celebration.The music is calling. The dance floor is waiting.Join Marquee Fiesta for two spectacular nights of Dandiya and Garba!",
+    "artistImageUrl": "https://cdn.district.in/assets/events/publisher/event_cover_image_horizontal/01M4P39DG7SPWG765WZP4NMJK6.jpg",
+    "date": "2026-10-18",
+    "time": "19:00 IST",
+    "cityCode": "DEL",
+    "cityName": "Delhi NCR",
+    "venue": "Urban Akhara",
+    "coordinates": {
+      "lat": 28.4150333,
+      "lng": 77.1181936
+    },
+    "genres": [
+      "Live Event",
+      "District Live"
+    ],
+    "startingPriceINR": 799,
+    "ticketTiers": [
+      {
+        "tierId": "tier-ga",
+        "name": "General Entry",
+        "priceINR": 799,
+        "availability": "available"
+      }
+    ],
+    "ticketStatus": "available",
+    "bookingUrl": "https://www.district.in/events/dandiya-2026-oct17-2026-buy-tickets",
+    "source": "district",
+    "highlights": [
+      "Live event discovered from District by Zomato"
+    ]
+  },
+  {
+    "id": "district-ev--rangilo-ras-dandiya-night--oct16-2026",
+    "artist": "Rangilo Ras — Dandiya Night",
+    "tourName": "The Event Circuit presents an unforgettable celebration of music, dance, food &amp; festive vibes!Get ready to dress up in your most vibrant traditional outfits and step into a night filled with Dandiya, Bollywood beats, delicious food, games, connections and endless fun!WHAT AWAITS YOU?🪩 Dandiya Disco + DJ — Dance to energetic Dandiya, Bollywood &amp; party beats all night long.Non-Stop Dandiya &amp; Garba — Bring your best moves and join the celebration.🍽️ Unlimited Buffet — Enjoy a delicious spread of unlimited food throughout the event.Unlimited Beverages — Keep the energy going throughout the night.Dandiya Matchmaking — Find your perfect Dandiya partner and make the night interesting.📸 Themed Photo Booths — Capture your best festive looks and unforgettable moments.Engagement Activities &amp; Games — Fun interactive games and challenges for everyone.🏆 Exciting Prizes &amp; Giveaways — Participate, compete and stand a chance to win exciting prizes.Best Dressed Competition — Come dressed to impress and let your festive look shine.Couple &amp; Group Challenges — Bring your squad and battle it out on the dance floor.Audience Games &amp; Spot Prizes — You never know when your name might be called!Festive Decor &amp; Instagram-Worthy Corners — Perfect backdrops for your Navratri pictures.🤝 Meet, Mingle &amp; Make New Connections — A celebration designed to bring people together.COME FOR THE DANDIYA.STAY FOR THE MUSIC.LEAVE WITH MEMORIES.By The Event Circuit",
+    "artistImageUrl": "https://cdn.district.in/assets/events/publisher/event_cover_image_horizontal/01M46E86YHV0457AMCHNS3ZD0C.png",
+    "date": "2026-10-18",
+    "time": "19:00 IST",
+    "cityCode": "DEL",
+    "cityName": "Delhi NCR",
+    "venue": "Greppo Cafe",
+    "coordinates": {
+      "lat": 28.4029458243,
+      "lng": 77.0941841975
+    },
+    "genres": [
+      "Live Event",
+      "District Live"
+    ],
+    "startingPriceINR": 699,
+    "ticketTiers": [
+      {
+        "tierId": "tier-ga",
+        "name": "General Entry",
+        "priceINR": 699,
+        "availability": "available"
+      }
+    ],
+    "ticketStatus": "available",
+    "bookingUrl": "https://www.district.in/events/-rangilo-ras-dandiya-night--oct16-2026-buy-tickets",
+    "source": "district",
+    "highlights": [
+      "Live event discovered from District by Zomato"
+    ]
+  },
+  {
+    "id": "bms-et00519189",
+    "artist": "Naacho Navratri ",
+    "tourName": "Live performance discovered from BookMyShow • Venue: Kalyana Lakshmi Gardens: Hyderabad",
+    "artistImageUrl": "https://assets-in.bmscdn.com/nmcms/events/banner/desktop/media-desktop-naacho-navaratri-0-2026-9-25-t-14-19-21.jpg",
+    "date": "2026-10-18",
+    "time": "18:00 IST",
+    "cityCode": "HYD",
+    "cityName": "Hyderabad",
+    "venue": "Kalyana Lakshmi Gardens: Hyderabad",
+    "coordinates": {
+      "lat": 17.3789,
+      "lng": 78.5676
+    },
+    "genres": [
+      "Live Music",
+      "BookMyShow Live"
+    ],
+    "startingPriceINR": 199,
+    "ticketTiers": [
+      {
+        "tierId": "tier-1",
+        "name": "GROUP OF 4",
+        "priceINR": 1299,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-2",
+        "name": "KIDS PASS",
+        "priceINR": 199,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-3",
+        "name": "EARLY BIRD COUPLE",
+        "priceINR": 649,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-4",
+        "name": "VIP COUPLE ENTRY",
+        "priceINR": 899,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-5",
+        "name": "VIP SINGLE",
+        "priceINR": 499,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-6",
+        "name": "EARLY BIRD SINGLE ENTRY",
+        "priceINR": 349,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-7",
+        "name": "GROUP OF 6",
+        "priceINR": 1899,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-8",
+        "name": "KID ENTRY",
+        "priceINR": 199,
+        "availability": "available"
+      }
+    ],
+    "ticketStatus": "available",
+    "bookingUrl": "https://in.bookmyshow.com/events/naacho-navaratri/ET00519189",
+    "source": "bookmyshow",
+    "highlights": [
+      "Live event discovered from BookMyShow"
+    ]
+  },
+  {
+    "id": "bms-et00521816",
+    "artist": "VINTAGE RAMZAT",
+    "tourName": "Live performance discovered from BookMyShow • Venue: S K Farm: Ahmedabad",
+    "artistImageUrl": "https://assets-in.bmscdn.com/nmcms/events/banner/desktop/media-desktop-vintage-ramzat-0-2026-10-10-t-16-37-3.jpg",
+    "date": "2026-10-18",
+    "time": "20:00 IST",
+    "cityCode": "AMD",
+    "cityName": "Ahmedabad",
+    "venue": "S K Farm: Ahmedabad",
+    "coordinates": {
+      "lat": 23.0345,
+      "lng": 72.4984
+    },
+    "genres": [
+      "Live Music",
+      "BookMyShow Live"
+    ],
+    "startingPriceINR": 499,
+    "ticketTiers": [
+      {
+        "tierId": "tier-1",
+        "name": "TICKET FOR ONE",
+        "priceINR": 499,
+        "availability": "available"
+      }
+    ],
+    "ticketStatus": "available",
+    "bookingUrl": "https://in.bookmyshow.com/events/vintage-ramzat/ET00521816",
+    "source": "bookmyshow",
+    "highlights": [
+      "Live event discovered from BookMyShow"
     ]
   },
   {
     "id": "bms-et00510410",
     "artist": "The Usha Uthup Experience",
-    "tourName": "The Usha Uthup Experience",
+    "tourName": "Live performance discovered from BookMyShow • Venue: Shanmukhananda Hall: Mumbai",
     "artistImageUrl": "https://assets-in.bmscdn.com/nmcms/events/banner/desktop/media-desktop-the-usha-uthup-experience-0-2026-9-16-t-14-39-5.jpg",
     "date": "2026-10-23",
     "time": "19:00 IST",
@@ -403,15 +390,54 @@
     "bookingUrl": "https://in.bookmyshow.com/events/the-usha-uthup-experience/ET00510410",
     "source": "bookmyshow",
     "highlights": [
-      "Live performance discovered from BookMyShow",
-      "Venue: Shanmukhananda Hall: Mumbai"
+      "Live event discovered from BookMyShow"
+    ]
+  },
+  {
+    "id": "bms-et00515765",
+    "artist": "Nykaaland India's Biggest Beauty Festival In Delhi",
+    "tourName": "Live performance discovered from BookMyShow • Venue: NSIC Exhibition Ground, Okhla",
+    "artistImageUrl": "https://assets-in.bmscdn.com/nmcms/events/banner/desktop/media-desktop-nykaaland-india-s-biggest-beauty-festival-in-delhi-0-2026-10-7-t-12-22-0.jpg",
+    "date": "2026-10-23",
+    "time": "12:00 IST",
+    "cityCode": "DEL",
+    "cityName": "Delhi NCR",
+    "venue": "NSIC Exhibition Ground, Okhla",
+    "coordinates": {
+      "lat": 28.548874,
+      "lng": 77.265367
+    },
+    "genres": [
+      "Live Music",
+      "BookMyShow Live"
+    ],
+    "startingPriceINR": 3499,
+    "ticketTiers": [
+      {
+        "tierId": "tier-1",
+        "name": "BEAUTY ENTHUSIAST PASS",
+        "priceINR": 9999,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-2",
+        "name": "FESTIVAL 3-DAY PASS",
+        "priceINR": 3499,
+        "availability": "available"
+      }
+    ],
+    "ticketStatus": "available",
+    "bookingUrl": "https://in.bookmyshow.com/events/nykaaland-india-s-biggest-beauty-festival/ET00515765",
+    "source": "bookmyshow",
+    "highlights": [
+      "Live event discovered from BookMyShow"
     ]
   },
   {
     "id": "bms-et00512735",
     "artist": "RAGHU DIXIT LIVE IN CONCERT ",
-    "tourName": "RAGHU DIXIT LIVE IN CONCERT ",
-    "artistImageUrl": "https://assets-in.bmscdn.com/nmcms/events/banner/desktop/media-desktop-raghu-dixit-live-in-concert-0-2026-8-16-t-13-7-28.jpg",
+    "tourName": "Live performance discovered from BookMyShow • Venue: Orion Mall, Rajajinagar: Bengaluru",
+    "artistImageUrl": "https://assets-in.bmscdn.com/nmcms/events/banner/desktop/media-desktop-raghu-dixit-live-in-concert-0-2026-10-17-t-22-52-44.jpg",
     "date": "2026-10-24",
     "time": "18:30 IST",
     "cityCode": "BLR",
@@ -429,136 +455,76 @@
     "ticketTiers": [
       {
         "tierId": "tier-1",
-        "name": "EARLY BIRD",
-        "priceINR": 699,
-        "availability": "available"
+        "name": "PHASE 4",
+        "priceINR": 1699,
+        "availability": "sold_out"
       },
       {
         "tierId": "tier-2",
-        "name": "PHASE 3",
-        "priceINR": 1499,
-        "availability": "available"
+        "name": "10 PEOPLE GROUP",
+        "priceINR": 10000,
+        "availability": "sold_out"
       },
       {
         "tierId": "tier-3",
-        "name": "PHASE 2",
-        "priceINR": 1399,
-        "availability": "available"
+        "name": "COUPLE TICKET",
+        "priceINR": 1899,
+        "availability": "sold_out"
       },
       {
         "tierId": "tier-4",
-        "name": "10 PEOPLE GROUP",
-        "priceINR": 10000,
-        "availability": "available"
+        "name": "PHASE 1",
+        "priceINR": 999,
+        "availability": "sold_out"
       },
       {
         "tierId": "tier-5",
-        "name": "COUPLE TICKET",
-        "priceINR": 1899,
-        "availability": "available"
+        "name": "FIVE PEOPLE ENTRY",
+        "priceINR": 6000,
+        "availability": "sold_out"
       },
       {
         "tierId": "tier-6",
-        "name": "FIVE PEOPLE ENTRY",
-        "priceINR": 6000,
-        "availability": "available"
+        "name": "EARLY BIRD COUPLE",
+        "priceINR": 1200,
+        "availability": "sold_out"
       },
       {
         "tierId": "tier-7",
-        "name": "PHASE 1",
-        "priceINR": 999,
-        "availability": "available"
+        "name": "PHASE 3 COUPLE",
+        "priceINR": 2899,
+        "availability": "sold_out"
       },
       {
         "tierId": "tier-8",
-        "name": "PHASE 4",
-        "priceINR": 1699,
-        "availability": "available"
+        "name": "PHASE 2 COUPLE",
+        "priceINR": 2699,
+        "availability": "sold_out"
       },
       {
         "tierId": "tier-9",
-        "name": "PHASE 2 COUPLE",
-        "priceINR": 2699,
-        "availability": "available"
+        "name": "EARLY BIRD",
+        "priceINR": 699,
+        "availability": "sold_out"
       },
       {
         "tierId": "tier-10",
-        "name": "EARLY BIRD COUPLE",
-        "priceINR": 1200,
-        "availability": "available"
+        "name": "PHASE 3",
+        "priceINR": 1499,
+        "availability": "sold_out"
       },
       {
         "tierId": "tier-11",
-        "name": "PHASE 3 COUPLE",
-        "priceINR": 2899,
-        "availability": "available"
+        "name": "PHASE 2",
+        "priceINR": 1399,
+        "availability": "sold_out"
       }
     ],
     "ticketStatus": "available",
     "bookingUrl": "https://in.bookmyshow.com/events/raghu-dixit-live-in-concert/ET00512735",
     "source": "bookmyshow",
     "highlights": [
-      "Live performance discovered from BookMyShow",
-      "Venue: Orion Mall, Rajajinagar: Bengaluru"
-    ]
-  },
-  {
-    "id": "bms-et00506264",
-    "artist": "Keinemusik presents Adam Port - Kolkata",
-    "tourName": "Keinemusik presents Adam Port - Kolkata",
-    "artistImageUrl": "https://assets-in.bmscdn.com/nmcms/events/banner/desktop/media-desktop-keinemusik-presents-adam-port-kolkata-0-2026-7-30-t-17-29-57.jpg",
-    "date": "2026-11-14",
-    "time": "18:00 IST",
-    "cityCode": "CCU",
-    "cityName": "Kolkata",
-    "venue": "Biswa Bangla Mela Prangan: Kolkata",
-    "coordinates": {
-      "lat": 22.544423,
-      "lng": 88.396526
-    },
-    "genres": [
-      "Live Music",
-      "BookMyShow Live"
-    ],
-    "startingPriceINR": 2500,
-    "ticketTiers": [
-      {
-        "tierId": "tier-1",
-        "name": "Premium - Phase 1",
-        "priceINR": 10000,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-2",
-        "name": "General - Phase 1",
-        "priceINR": 3000,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-3",
-        "name": "Premium - Early Bird",
-        "priceINR": 8000,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-4",
-        "name": "Tuborg Lounge",
-        "priceINR": 13000,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-5",
-        "name": "General - Early Bird",
-        "priceINR": 2500,
-        "availability": "available"
-      }
-    ],
-    "ticketStatus": "available",
-    "bookingUrl": "https://in.bookmyshow.com/events/keinemusik-presents-adam-port-kolkata/ET00506264",
-    "source": "bookmyshow",
-    "highlights": [
-      "Live performance discovered from BookMyShow",
-      "Venue: Biswa Bangla Mela Prangan: Kolkata"
+      "Live event discovered from BookMyShow"
     ]
   },
   {
@@ -583,14 +549,14 @@
     "ticketTiers": [
       {
         "tierId": "tier-1",
-        "name": "Final Phase Fanpit Entry",
-        "priceINR": 2499,
+        "name": "P2 Regular Entry",
+        "priceINR": 1399,
         "availability": "available"
       },
       {
         "tierId": "tier-2",
-        "name": "P2 Regular Entry",
-        "priceINR": 1399,
+        "name": "Final Phase Fanpit Entry",
+        "priceINR": 2499,
         "availability": "available"
       }
     ],
@@ -598,14 +564,13 @@
     "bookingUrl": "https://in.bookmyshow.com/events/the-band-agam-live-in-bengaluru/ET00521948",
     "source": "bookmyshow",
     "highlights": [
-      "Live performance discovered from BookMyShow",
-      "Venue: DND - The Venue: Bengaluru"
+      "Live event discovered from BookMyShow"
     ]
   },
   {
     "id": "bms-et00480995",
     "artist": "ANYMA presents AEDEN - Mumbai",
-    "tourName": "ANYMA presents AEDEN - Mumbai",
+    "tourName": "Live performance discovered from BookMyShow • Venue: Mahalaxmi Race Course: Mumbai",
     "artistImageUrl": "https://assets-in.bmscdn.com/nmcms/events/banner/desktop/media-desktop-anyma-presents-aeden-mumbai-0-2026-9-30-t-13-6-23.jpg",
     "date": "2026-11-21",
     "time": "16:00 IST",
@@ -624,50 +589,50 @@
     "ticketTiers": [
       {
         "tierId": "tier-1",
-        "name": "Backstage - Phase 1",
-        "priceINR": 17500,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-2",
-        "name": "Tuborg Lounge",
-        "priceINR": 25000,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-3",
-        "name": "GA Front - Phase 1",
-        "priceINR": 6500,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-4",
-        "name": "Lounge Phase 3",
-        "priceINR": 32000,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-5",
         "name": "GA Front - Phase 2",
         "priceINR": 8000,
         "availability": "available"
       },
       {
-        "tierId": "tier-6",
+        "tierId": "tier-2",
         "name": "GA Back - Phase 1",
         "priceINR": 4250,
         "availability": "available"
       },
       {
-        "tierId": "tier-7",
+        "tierId": "tier-3",
         "name": "GA Back - Phase 2",
         "priceINR": 5000,
         "availability": "available"
       },
       {
-        "tierId": "tier-8",
+        "tierId": "tier-4",
+        "name": "Tuborg Lounge",
+        "priceINR": 25000,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-5",
+        "name": "Backstage - Phase 1",
+        "priceINR": 17500,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-6",
         "name": "VVIP Standing Table",
         "priceINR": 590000,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-7",
+        "name": "Lounge Phase 3",
+        "priceINR": 32000,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-8",
+        "name": "GA Front - Phase 1",
+        "priceINR": 6500,
         "availability": "available"
       }
     ],
@@ -675,70 +640,22 @@
     "bookingUrl": "https://in.bookmyshow.com/events/anyma-presents-aeden-mumbai/ET00480995",
     "source": "bookmyshow",
     "highlights": [
-      "Live performance discovered from BookMyShow",
-      "Venue: Mahalaxmi Race Course: Mumbai"
-    ]
-  },
-  {
-    "id": "bms-et00518878",
-    "artist": "Bismil Ki Mehfil - Kolkata",
-    "tourName": "Bismil Ki Mehfil - Kolkata",
-    "artistImageUrl": "https://assets-in.bmscdn.com/nmcms/events/banner/desktop/media-desktop-bismil-ki-mehfil-kolkata-0-2026-9-24-t-8-32-33.jpg",
-    "date": "2026-12-05",
-    "time": "19:30 IST",
-    "cityCode": "CCU",
-    "cityName": "Kolkata",
-    "venue": "Venue To Be Announced: Kolkata",
-    "coordinates": {
-      "lat": 22.5726,
-      "lng": 88.3639
-    },
-    "genres": [
-      "Live Music",
-      "BookMyShow Live"
-    ],
-    "startingPriceINR": 1500,
-    "ticketTiers": [
-      {
-        "tierId": "tier-1",
-        "name": "PREMIUM ACCESS EARLY BIRD",
-        "priceINR": 1500,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-2",
-        "name": "MEET AND GREET EARLY BIRD",
-        "priceINR": 10000,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-3",
-        "name": "LOUNGE EARLY BIRD",
-        "priceINR": 7500,
-        "availability": "available"
-      }
-    ],
-    "ticketStatus": "available",
-    "bookingUrl": "https://in.bookmyshow.com/events/bismil-ki-mehfil-kolkata/ET00518878",
-    "source": "bookmyshow",
-    "highlights": [
-      "Live performance discovered from BookMyShow",
-      "Venue: Venue To Be Announced: Kolkata"
+      "Live event discovered from BookMyShow"
     ]
   },
   {
     "id": "bms-et00498558",
     "artist": "Sunburn Festival 2026",
-    "tourName": "Sunburn Festival 2026",
+    "tourName": "Live performance discovered from BookMyShow • Venue: Mahalaxmi Race Course: Mumbai",
     "artistImageUrl": "https://assets-in.bmscdn.com/nmcms/events/banner/desktop/media-desktop-sunburn-festival-2026-0-2026-10-12-t-18-12-22.jpg",
     "date": "2026-12-18",
-    "time": "14:04 IST",
-    "cityCode": "BOM",
-    "cityName": "Mumbai",
+    "time": "14:01 IST",
+    "cityCode": "PNQ",
+    "cityName": "Pune",
     "venue": "Mahalaxmi Race Course: Mumbai",
     "coordinates": {
-      "lat": 18.9842,
-      "lng": 72.8201
+      "lat": 18.984212,
+      "lng": 72.820076
     },
     "genres": [
       "Live Music",
@@ -748,32 +665,26 @@
     "ticketTiers": [
       {
         "tierId": "tier-1",
-        "name": "VIP Any One Day",
-        "priceINR": 6000,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-2",
-        "name": "Fanpit Any One Day P1",
-        "priceINR": 8000,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-3",
-        "name": "GA Any One Day",
+        "name": "GA Fest EB - Pay 50%",
         "priceINR": 3500,
         "availability": "available"
       },
       {
-        "tierId": "tier-4",
-        "name": "Core Lounge - Any One Day",
-        "priceINR": 25000,
+        "tierId": "tier-2",
+        "name": "Fanpit Fest EB Pay 50%",
+        "priceINR": 7000,
         "availability": "available"
       },
       {
-        "tierId": "tier-5",
-        "name": "Fanpit Any One Day",
-        "priceINR": 7000,
+        "tierId": "tier-3",
+        "name": "VIP Fest EB - Pay 50%",
+        "priceINR": 6000,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-4",
+        "name": "Core Lounge Fest 50%",
+        "priceINR": 20000,
         "availability": "available"
       }
     ],
@@ -781,14 +692,13 @@
     "bookingUrl": "https://in.bookmyshow.com/events/sunburn-festival-2026/ET00498558",
     "source": "bookmyshow",
     "highlights": [
-      "Live performance discovered from BookMyShow",
-      "Venue: Mahalaxmi Race Course: Mumbai"
+      "Live event discovered from BookMyShow"
     ]
   },
   {
     "id": "bms-et00498933",
     "artist": "Sunburn Arena Ft. The Chainsmokers",
-    "tourName": "Sunburn Arena Ft. The Chainsmokers",
+    "tourName": "Live performance discovered from BookMyShow • Venue: NICE Grounds: Bengaluru",
     "artistImageUrl": "https://assets-in.bmscdn.com/nmcms/events/banner/desktop/media-desktop-sunburn-arena-ft-the-chainsmokers-0-2026-8-4-t-11-35-53.jpg",
     "date": "2026-12-20",
     "time": "16:00 IST",
@@ -807,134 +717,134 @@
     "ticketTiers": [
       {
         "tierId": "tier-1",
-        "name": "Early Bird VIP",
-        "priceINR": 2500,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-2",
-        "name": "VIP Phase 3",
-        "priceINR": 4000,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-3",
-        "name": "GA Phase 5",
-        "priceINR": 4000,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-4",
-        "name": "Fanpit Phase 1",
-        "priceINR": 6000,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-5",
-        "name": "GA Phase 4",
-        "priceINR": 3500,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-6",
-        "name": "Early Bird GA",
-        "priceINR": 1500,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-7",
-        "name": "Fanpit Phase 2",
-        "priceINR": 8000,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-8",
-        "name": "VIP Phase 7",
-        "priceINR": 7000,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-9",
         "name": "VIP Phase 1",
         "priceINR": 3000,
         "availability": "available"
       },
       {
-        "tierId": "tier-10",
+        "tierId": "tier-2",
         "name": "VIP Phase 5",
         "priceINR": 5000,
         "availability": "available"
       },
       {
-        "tierId": "tier-11",
+        "tierId": "tier-3",
         "name": "Fanpit Combo",
         "priceINR": 12000,
         "availability": "available"
       },
       {
-        "tierId": "tier-12",
-        "name": "GA Combo",
-        "priceINR": 5000,
+        "tierId": "tier-4",
+        "name": "Early Bird GA",
+        "priceINR": 1500,
         "availability": "available"
       },
       {
-        "tierId": "tier-13",
-        "name": "VIP Phase 2",
-        "priceINR": 3500,
+        "tierId": "tier-5",
+        "name": "Fanpit Phase 2",
+        "priceINR": 8000,
         "availability": "available"
       },
       {
-        "tierId": "tier-14",
-        "name": "VIP Phase 6",
-        "priceINR": 6000,
+        "tierId": "tier-6",
+        "name": "VIP Phase 7",
+        "priceINR": 7000,
         "availability": "available"
       },
       {
-        "tierId": "tier-15",
+        "tierId": "tier-7",
         "name": "GA Phase 1",
         "priceINR": 2000,
         "availability": "available"
       },
       {
-        "tierId": "tier-16",
+        "tierId": "tier-8",
         "name": "VIP Phase 4",
         "priceINR": 4500,
         "availability": "available"
       },
       {
-        "tierId": "tier-17",
+        "tierId": "tier-9",
         "name": "VIP Combo",
         "priceINR": 7000,
         "availability": "available"
       },
       {
-        "tierId": "tier-18",
-        "name": "Fanpit Phase 3",
-        "priceINR": 10000,
+        "tierId": "tier-10",
+        "name": "GA Combo",
+        "priceINR": 5000,
         "availability": "available"
       },
       {
-        "tierId": "tier-19",
+        "tierId": "tier-11",
+        "name": "VIP Phase 2",
+        "priceINR": 3500,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-12",
+        "name": "VIP Phase 6",
+        "priceINR": 6000,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-13",
         "name": "Early Bird Fanpit",
         "priceINR": 4000,
         "availability": "available"
       },
       {
-        "tierId": "tier-20",
+        "tierId": "tier-14",
         "name": "GA Phase 3",
         "priceINR": 3000,
         "availability": "available"
       },
       {
-        "tierId": "tier-21",
+        "tierId": "tier-15",
         "name": "Tuborg Lounge",
         "priceINR": 12999,
         "availability": "available"
       },
       {
-        "tierId": "tier-22",
+        "tierId": "tier-16",
         "name": "GA Phase 2",
         "priceINR": 2500,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-17",
+        "name": "Fanpit Phase 3",
+        "priceINR": 10000,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-18",
+        "name": "GA Phase 5",
+        "priceINR": 4000,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-19",
+        "name": "Fanpit Phase 1",
+        "priceINR": 6000,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-20",
+        "name": "GA Phase 4",
+        "priceINR": 3500,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-21",
+        "name": "Early Bird VIP",
+        "priceINR": 2500,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-22",
+        "name": "VIP Phase 3",
+        "priceINR": 4000,
         "availability": "available"
       }
     ],
@@ -942,8 +852,7 @@
     "bookingUrl": "https://in.bookmyshow.com/events/sunburn-arena-ft-the-chainsmokers/ET00498933",
     "source": "bookmyshow",
     "highlights": [
-      "Live performance discovered from BookMyShow",
-      "Venue: NICE Grounds: Bengaluru"
+      "Live event discovered from BookMyShow"
     ]
   },
   {
@@ -952,7 +861,7 @@
     "tourName": "Lollapalooza India 2027",
     "artistImageUrl": "https://assets-in.bmscdn.com/nmcms/events/banner/desktop/media-desktop-lollapalooza-india-2027-0-2026-9-30-t-15-56-56.jpg",
     "date": "2027-01-23",
-    "time": "14:00 IST",
+    "time": "14:01 IST",
     "cityCode": "DEL",
     "cityName": "Delhi NCR",
     "venue": "Mahalaxmi Race Course: Mumbai",
@@ -964,36 +873,12 @@
       "Live Music",
       "BookMyShow Live"
     ],
-    "startingPriceINR": 8999,
+    "startingPriceINR": 4499,
     "ticketTiers": [
       {
         "tierId": "tier-1",
-        "name": "JW Platinum Weekend P3",
-        "priceINR": 59999,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-2",
-        "name": "GA Weekend P3",
-        "priceINR": 8999,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-3",
-        "name": "RuPay Comfort Weekend P5",
-        "priceINR": 17999,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-4",
-        "name": "JW Platinum Wknd U25",
-        "priceINR": 31999,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-5",
-        "name": "Lolla VIP Weekend P6",
-        "priceINR": 29999,
+        "name": "GA Weekend P3 - Pay 50%",
+        "priceINR": 4499,
         "availability": "available"
       }
     ],
@@ -1001,8 +886,7 @@
     "bookingUrl": "https://in.bookmyshow.com/events/lollapalooza-india-2026/ET00458267",
     "source": "bookmyshow",
     "highlights": [
-      "Live performance discovered from BookMyShow",
-      "Venue: Mahalaxmi Race Course: Mumbai"
+      "Live event discovered from BookMyShow"
     ]
   }
 ]
