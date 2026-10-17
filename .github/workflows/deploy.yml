@@ -47,7 +47,7 @@ jobs:
     name: Deploy Vercel Preview
     runs-on: ubuntu-latest
     needs: validate
-    if: github.event_name == 'pull_request' && env.VERCEL_ORG_ID != ''
+    if: github.event_name == 'pull_request'
     env:
       VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
     steps:
@@ -92,7 +92,7 @@ jobs:
     name: Deploy Vercel Production
     runs-on: ubuntu-latest
     needs: validate
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main' && env.VERCEL_ORG_ID != ''
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     env:
       VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
     steps:
