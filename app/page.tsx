@@ -12,6 +12,7 @@ import {
   getCatalogSourceCounts,
 } from "@/lib/data/all-concerts";
 import { CatalogSourceFilter } from "@/components/feed/catalog-source-toggle";
+import { useCityCatalog } from "@/hooks/use-city-catalog";
 import {
   CityCode,
   RailClass,
@@ -84,6 +85,14 @@ function BeatRouteDashboard() {
     code?: string;
   } | null>(null);
 
+  // Hook into 1-Hour TTL SWR live catalog
+  const {
+    items: liveCatalogItems,
+    isValidating: isCatalogValidating,
+    ageMinutes: catalogAgeMinutes,
+    refresh: refreshCityCatalog,
+  } = useCityCatalog(selectedCity === "ALL" ? "BOM" : selectedCity);
+
   // 3. Travel Arbitrage URL Params (Phase 3 integrated engine)
   const [origin, setOrigin] = useQueryState("origin", parseAsString.withDefault("BOM"));
   const [tourId, setTourId] = useQueryState("tour", parseAsString.withDefault("coldplay"));
@@ -131,7 +140,46 @@ function BeatRouteDashboard() {
       return liveConcerts;
     }
 
-    let results = ALL_INDIAN_CONCERTS;
+    const eventMap = new Map<string, ConcertEvent>();
+    ALL_INDIAN_CONCERTS.forEach((c) => eventMap.set(c.id, c));
+
+    // Augment with fresh live catalog events from SWR
+    if (liveCatalogItems && liveCatalogItems.length > 0) {
+      for (const item of liveCatalogItems) {
+        if (item.type !== "movie" && !eventMap.has(item.id)) {
+          eventMap.set(item.id, {
+            id: item.id,
+            artist: item.title,
+            tourName: item.description || item.title,
+            artistImageUrl: item.posterUrl,
+            date: item.date || new Date().toISOString().slice(0, 10),
+            time: item.time || "19:00 IST",
+            cityCode: item.cityCode,
+            cityName: item.cityName,
+            venue: item.venue || `${item.cityName} Venue`,
+            coordinates: item.coordinates || { lat: 19.076, lng: 72.8777 },
+            genres: [item.category, item.source === "district" ? "District Live" : "BookMyShow Live"],
+            startingPriceINR: item.startingPriceINR || 499,
+            ticketTiers: item.rawDetails?.ticketTiers || [
+              {
+                tierId: "tier-ga",
+                name: "General Entry",
+                priceINR: item.startingPriceINR || 499,
+                availability: "available",
+              },
+            ],
+            ticketStatus: "available",
+            bookingUrl: item.bookingUrl,
+            source: item.source as any,
+            highlights: [
+              `Live event discovered from ${item.source === "district" ? "District by Zomato" : "BookMyShow"}`,
+            ],
+          });
+        }
+      }
+    }
+
+    let results = Array.from(eventMap.values());
 
     // Apply Catalog Source Filter (Curated Mega-Tours vs BMS Live vs All)
     results = filterConcertsBySource(results, catalogSource);
@@ -156,7 +204,7 @@ function BeatRouteDashboard() {
     }
 
     return results;
-  }, [liveConcerts, selectedCity, searchQuery, catalogSource]);
+  }, [liveConcerts, selectedCity, searchQuery, catalogSource, liveCatalogItems]);
 
   // Handle Live Artist Search via Bandsintown V3.1
   const handleLiveArtistSearch = React.useCallback(
@@ -324,6 +372,9 @@ function BeatRouteDashboard() {
                 catalogSource={catalogSource}
                 onCatalogSourceChange={setCatalogSource}
                 sourceCounts={sourceCounts}
+                isValidating={isCatalogValidating}
+                ageMinutes={catalogAgeMinutes}
+                onRefreshLive={refreshCityCatalog}
               />
             )}
           </div>

@@ -1,88 +1,175 @@
 import { NextRequest, NextResponse } from 'next/server';
-import fs from 'fs';
-import path from 'path';
 import { CatalogItem } from '@/lib/types';
+import {
+  getCachedCityCatalog,
+  setCachedCityCatalog,
+  acquireRevalidationLock,
+  releaseRevalidationLock,
+  extendCacheTTL,
+} from '@/lib/cache';
+import { resolveCityCode, getCityName } from '@/lib/location';
 import { TOP_BMS_CITIES, scrapeBMSCatalog } from '@/scraper/platforms/bms';
 import { DISTRICT_CITIES, scrapeDistrictCatalog } from '@/scraper/platforms/district';
 
 export const dynamic = 'force-dynamic';
 
-const CATALOG_PATH = path.join(process.cwd(), 'lib/data/catalog.json');
+/**
+ * Execute live scraping for BMS and District for a given city code.
+ */
+async function scrapeCityFresh(cityCode: string): Promise<CatalogItem[]> {
+  const bmsCity =
+    TOP_BMS_CITIES.find((c) => c.cityCode.toUpperCase() === cityCode.toUpperCase()) ||
+    TOP_BMS_CITIES[0];
+  const districtCity =
+    DISTRICT_CITIES.find((c) => c.cityCode.toUpperCase() === cityCode.toUpperCase()) ||
+    DISTRICT_CITIES[0];
 
-function readCatalog(): CatalogItem[] {
-  try {
-    if (fs.existsSync(CATALOG_PATH)) {
-      const raw = fs.readFileSync(CATALOG_PATH, 'utf-8');
-      return JSON.parse(raw);
-    }
-  } catch (err) {
-    console.error('Failed to read catalog.json:', err);
-  }
-  return [];
-}
+  console.log(`[ScrapeEngine] Triggering live scrape for ${cityCode} (${getCityName(cityCode)})...`);
 
-function writeCatalog(items: CatalogItem[]): void {
-  try {
-    fs.writeFileSync(CATALOG_PATH, JSON.stringify(items, null, 2), 'utf-8');
-  } catch (err) {
-    console.error('Failed to write catalog.json:', err);
-  }
+  const [bmsResult, districtResult] = await Promise.allSettled([
+    scrapeBMSCatalog(bmsCity, 3),
+    scrapeDistrictCatalog(districtCity, 3),
+  ]);
+
+  const items: CatalogItem[] = [];
+  if (bmsResult.status === 'fulfilled') items.push(...bmsResult.value);
+  if (districtResult.status === 'fulfilled') items.push(...districtResult.value);
+
+  return items;
 }
 
 export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url);
-  const cityParam = (searchParams.get('city') || 'BOM').toUpperCase();
+
+  // 1. Resolve Location: Query param > Vercel Edge IP header > Default BOM
+  const rawCity = searchParams.get('city') || request.headers.get('x-vercel-ip-city');
+  const cityCode = resolveCityCode(rawCity);
   const typeParam = searchParams.get('type'); // 'all' | 'movie' | 'event' | 'concert'
   const forceRefresh = searchParams.get('refresh') === 'true';
 
-  let catalog = readCatalog();
+  // 2. Check 1-Hour TTL Cache
+  const cacheResult = await getCachedCityCatalog(cityCode);
 
-  // Filter existing items for requested city
-  let cityItems = catalog.filter((item) => item.cityCode.toUpperCase() === cityParam);
+  // SCENARIO A: Fresh Cache Hit (< 1 Hour Old)
+  if (cacheResult.exists && !cacheResult.isStale && !forceRefresh) {
+    let filtered = cacheResult.items;
+    if (typeParam && typeParam !== 'all') {
+      filtered = filtered.filter((i) => i.type === typeParam);
+    }
 
-  // If no items exist for this city or forceRefresh requested, live-scrape on demand
-  if (cityItems.length === 0 || forceRefresh) {
-    console.log(`[API /api/catalog] Live loading fresh data for city: ${cityParam}`);
+    return NextResponse.json({
+      success: true,
+      city: cityCode,
+      cityName: getCityName(cityCode),
+      cacheStatus: 'HIT_FRESH',
+      isStale: false,
+      ageSeconds: cacheResult.ageSeconds,
+      ttlRemainingSeconds: Math.max(0, 3600 - cacheResult.ageSeconds),
+      count: filtered.length,
+      data: filtered,
+      timestamp: new Date().toISOString(),
+    });
+  }
 
-    const bmsCity = TOP_BMS_CITIES.find((c) => c.cityCode.toUpperCase() === cityParam) || TOP_BMS_CITIES[0];
-    const districtCity = DISTRICT_CITIES.find((c) => c.cityCode.toUpperCase() === cityParam) || DISTRICT_CITIES[0];
-
-    try {
-      const [freshBms, freshDistrict] = await Promise.allSettled([
-        scrapeBMSCatalog(bmsCity, 3),
-        scrapeDistrictCatalog(districtCity, 3),
-      ]);
-
-      const newItems: CatalogItem[] = [];
-      if (freshBms.status === 'fulfilled') newItems.push(...freshBms.value);
-      if (freshDistrict.status === 'fulfilled') newItems.push(...freshDistrict.value);
-
-      if (newItems.length > 0) {
-        // Merge into catalogMap
-        const map = new Map<string, CatalogItem>();
-        catalog.forEach((item) => map.set(item.id, item));
-        newItems.forEach((item) => map.set(item.id, item));
-
-        catalog = Array.from(map.values());
-        writeCatalog(catalog);
-
-        cityItems = catalog.filter((item) => item.cityCode.toUpperCase() === cityParam);
+  // SCENARIO B: Stale Cache Hit (> 1 Hour Old) -> SWR Background Revalidation
+  if (cacheResult.exists && cacheResult.isStale && !forceRefresh) {
+    // Attempt to acquire Mutex lock for background revalidation
+    acquireRevalidationLock(cityCode, 60).then(async (acquired) => {
+      if (acquired) {
+        try {
+          console.log(`[SWR] Acquired lock for ${cityCode}. Revalidating in background...`);
+          const freshItems = await scrapeCityFresh(cityCode);
+          if (freshItems.length > 0) {
+            await setCachedCityCatalog(cityCode, freshItems, 3600);
+            console.log(`[SWR] Successfully updated ${cityCode} cache with ${freshItems.length} fresh items.`);
+          }
+        } catch (err: any) {
+          console.warn(`[SWR] Background scrape failed for ${cityCode}:`, err.message);
+          await extendCacheTTL(cityCode, 900); // Extend by 15 mins on error
+        } finally {
+          await releaseRevalidationLock(cityCode);
+        }
+      } else {
+        console.log(`[SWR] Revalidation lock already held for ${cityCode}. Skipping duplicate scrape.`);
       }
-    } catch (err: any) {
-      console.warn(`[API /api/catalog] Live scrape warning for ${cityParam}:`, err.message);
+    });
+
+    let filtered = cacheResult.items;
+    if (typeParam && typeParam !== 'all') {
+      filtered = filtered.filter((i) => i.type === typeParam);
+    }
+
+    // Return existing data immediately to client with SWR flag
+    return NextResponse.json({
+      success: true,
+      city: cityCode,
+      cityName: getCityName(cityCode),
+      cacheStatus: 'HIT_STALE',
+      isStale: true,
+      ageSeconds: cacheResult.ageSeconds,
+      revalidating: true,
+      count: filtered.length,
+      data: filtered,
+      timestamp: new Date().toISOString(),
+    });
+  }
+
+  // SCENARIO C: Cold City (Never cached before) OR Force Refresh
+  console.log(`[Cache] Cold request for ${cityCode}. Awaiting initial scrape...`);
+  const lockAcquired = await acquireRevalidationLock(cityCode, 60);
+
+  try {
+    const freshItems = await scrapeCityFresh(cityCode);
+    if (freshItems.length > 0) {
+      await setCachedCityCatalog(cityCode, freshItems, 3600);
+    }
+
+    let filtered = freshItems;
+    if (typeParam && typeParam !== 'all') {
+      filtered = filtered.filter((i) => i.type === typeParam);
+    }
+
+    return NextResponse.json({
+      success: true,
+      city: cityCode,
+      cityName: getCityName(cityCode),
+      cacheStatus: forceRefresh ? 'REFRESHED' : 'MISS_COLD',
+      isStale: false,
+      ageSeconds: 0,
+      ttlRemainingSeconds: 3600,
+      count: filtered.length,
+      data: filtered,
+      timestamp: new Date().toISOString(),
+    });
+  } catch (err: any) {
+    console.error(`[Scraper] Initial scrape failed for ${cityCode}:`, err.message);
+
+    // Fall back to any stale data if available
+    if (cacheResult.items.length > 0) {
+      await extendCacheTTL(cityCode, 900);
+      return NextResponse.json({
+        success: true,
+        city: cityCode,
+        cityName: getCityName(cityCode),
+        cacheStatus: 'FALLBACK_STALE',
+        isStale: true,
+        count: cacheResult.items.length,
+        data: cacheResult.items,
+        timestamp: new Date().toISOString(),
+      });
+    }
+
+    return NextResponse.json(
+      {
+        success: false,
+        city: cityCode,
+        error: `Could not fetch events for ${getCityName(cityCode)}: ${err.message}`,
+      },
+      { status: 502 }
+    );
+  } finally {
+    if (lockAcquired) {
+      await releaseRevalidationLock(cityCode);
     }
   }
-
-  // Filter by type if requested
-  if (typeParam && typeParam !== 'all') {
-    cityItems = cityItems.filter((item) => item.type === typeParam);
-  }
-
-  return NextResponse.json({
-    success: true,
-    city: cityParam,
-    count: cityItems.length,
-    data: cityItems,
-    timestamp: new Date().toISOString(),
-  });
 }

@@ -6,7 +6,7 @@ import { ConcertFeedCard } from "./concert-feed-card";
 import { CityFilterChips, CityOption } from "./city-filter-chips";
 import { EmptyState } from "@/components/ui/empty-state";
 import { Button } from "@/components/ui/button";
-import { Search, X, Sparkles, Filter, Music } from "lucide-react";
+import { Search, X, Sparkles, Filter, Music, RefreshCw, Clock } from "lucide-react";
 
 import { CatalogSourceToggle, CatalogSourceFilter } from "./catalog-source-toggle";
 
@@ -26,6 +26,9 @@ interface ConcertTimelineFeedProps {
     curated: number;
     bookmyshow: number;
   };
+  isValidating?: boolean;
+  ageMinutes?: number;
+  onRefreshLive?: () => void;
 }
 
 const FEATURED_ARTIST_SUGGESTIONS = [
@@ -50,6 +53,9 @@ export function ConcertTimelineFeed({
   catalogSource,
   onCatalogSourceChange,
   sourceCounts,
+  isValidating,
+  ageMinutes,
+  onRefreshLive,
 }: ConcertTimelineFeedProps) {
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter" && searchQuery.trim()) {
@@ -160,8 +166,8 @@ export function ConcertTimelineFeed({
       </div>
 
       {/* Active Filter Bar Summary */}
-      <div className="flex items-center justify-between px-1 text-xs">
-        <div className="flex items-center gap-2 text-text-secondary">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 px-1 text-xs">
+        <div className="flex items-center gap-2 text-text-secondary flex-wrap">
           <span className="font-semibold text-text-primary font-mono text-sm">
             {concerts.length}
           </span>
@@ -171,12 +177,30 @@ export function ConcertTimelineFeed({
           {selectedCity && selectedCity !== "ALL" && (
             <span className="text-cyan-400 font-semibold">in {selectedCity}</span>
           )}
+
+          {/* SWR Freshness Badge */}
+          {isValidating ? (
+            <span className="flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-300 text-[11px] font-medium">
+              <RefreshCw className="h-3 w-3 animate-spin text-cyan-400" />
+              Live checking BMS & District...
+            </span>
+          ) : ageMinutes !== undefined ? (
+            <button
+              onClick={onRefreshLive}
+              title="Click to check for new live shows"
+              className="flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-surface-elevated border border-border-subtle text-text-muted hover:text-cyan-300 hover:border-cyan-500/30 transition-all text-[11px]"
+            >
+              <Clock className="h-2.5 w-2.5 text-text-muted" />
+              <span>{ageMinutes === 0 ? "Live right now" : `Updated ${ageMinutes}m ago`}</span>
+              <RefreshCw className="h-2.5 w-2.5 ml-0.5 opacity-60 hover:opacity-100" />
+            </button>
+          ) : null}
         </div>
 
         {isFiltered && (
           <button
             onClick={handleClearFilters}
-            className="flex items-center gap-1 text-xs text-text-muted hover:text-cyan-400 transition-colors"
+            className="flex items-center gap-1 text-xs text-text-muted hover:text-cyan-400 transition-colors self-start sm:self-auto"
           >
             <Filter className="h-3 w-3" />
             <span>Clear Filters</span>
