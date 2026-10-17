@@ -2,16 +2,9 @@
 
 import * as React from "react";
 import { useQueryState, parseAsString, parseAsStringLiteral } from "nuqs";
-import { FEATURED_TOURS, CITIES } from "@/lib/mock-data";
-import {
-  ALL_INDIAN_CONCERTS,
-  getCityFilterOptions,
-  filterConcertsByCity,
-  searchConcerts,
-  filterConcertsBySource,
-  getCatalogSourceCounts,
-} from "@/lib/data/all-concerts";
-import { CatalogSourceFilter } from "@/components/feed/catalog-source-toggle";
+import initialCatalog from "@/lib/data/catalog.json";
+import { FEATURED_TOURS } from "@/lib/mock-data";
+import { ALL_INDIAN_CONCERTS } from "@/lib/data/all-concerts";
 import { useCityCatalog } from "@/hooks/use-city-catalog";
 import {
   CityCode,
@@ -21,71 +14,53 @@ import {
   TransitMode,
   ArbitrageResult,
   ConcertEvent,
+  CatalogItem,
 } from "@/lib/types";
 import { calculateArbitrageMatrix } from "@/lib/arbitrage";
 import { HeaderNav } from "@/components/navigation/header-nav";
+import { CitySelectorModal } from "@/components/navigation/city-selector-modal";
+import { CategoryTabs, AggregatorCategory } from "@/components/discovery/category-tabs";
+import { HybridAggregatorFeed } from "@/components/discovery/hybrid-aggregator-feed";
 import { FilterBar } from "@/components/search/filter-bar";
 import { MetricsSummaryStrip } from "@/components/search/metrics-summary-strip";
 import { ArbitrageMatrix } from "@/components/matrix/arbitrage-matrix";
 import { ConcertMapWrapper } from "@/components/map/concert-map-wrapper";
 import { ExpensePlannerDrawer } from "@/components/planner/expense-planner-drawer";
-import { ConcertTimelineFeed } from "@/components/feed/concert-timeline-feed";
-import { ErrorState } from "@/components/ui/error-state";
 import { Skeleton } from "@/components/ui/skeleton";
-import { Radio, Compass, Sparkles, Calendar, MapPin } from "lucide-react";
-
-function tourStopToConcertEvent(stop: TourStop): ConcertEvent {
-  return {
-    id: stop.id,
-    artist: stop.artistName,
-    tourName: stop.tourName,
-    artistImageUrl:
-      "https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=800&q=80",
-    date: stop.date,
-    time: "18:00 IST",
-    cityCode: stop.cityCode,
-    cityName: stop.cityName,
-    venue: stop.venue,
-    coordinates: stop.coordinates,
-    genres: ["Live Tour", "Concert"],
-    startingPriceINR: stop.startingPriceINR,
-    ticketTiers: stop.ticketTiers,
-    ticketStatus: "available",
-    bookingUrl: stop.externalTicketUrl || "https://in.bookmyshow.com",
-    source: "live_api",
-    highlights: ["Live Bandsintown V3.1 verified tour date"],
-  };
-}
 
 function BeatRouteDashboard() {
-  // 1. Primary View Mode: 'radar' (Phase 1 Concert Radar) vs 'arbitrage' (Travel Arbitrage Engine)
-  const [activeTab, setActiveTab] = useQueryState(
-    "tab",
-    parseAsStringLiteral(["radar", "arbitrage"] as const).withDefault("radar")
+  // 1. Primary Aggregator Category Tab (Concerts vs Movies vs Events vs Travel Arbitrage)
+  const [activeCategory, setActiveCategory] = useQueryState(
+    "cat",
+    parseAsStringLiteral(["concerts", "movies", "events", "arbitrage"] as const).withDefault("concerts")
   );
 
-  // 2. Concert Radar State (Phase 1 & Phase 2 Discovery)
-  const [catalogSource, setCatalogSource] = useQueryState(
-    "source",
-    parseAsStringLiteral(["all", "curated", "bookmyshow"] as const).withDefault("curated")
-  );
-  const [selectedCity, setSelectedCity] = useQueryState(
-    "city",
-    parseAsString.withDefault("ALL")
-  );
-  const [searchQuery, setSearchQuery] = useQueryState(
-    "q",
-    parseAsString.withDefault("")
-  );
-  const [isSearchingLive, setIsSearchingLive] = React.useState(false);
-  const [liveConcerts, setLiveConcerts] = React.useState<ConcertEvent[] | null>(null);
-  const [radarError, setRadarError] = React.useState<{
-    title: string;
-    message: string;
-    code?: string;
-  } | null>(null);
+  // Backward compatibility with ?tab=arbitrage
+  const [legacyTab] = useQueryState("tab", parseAsString);
+  React.useEffect(() => {
+    if (legacyTab === "arbitrage") {
+      setActiveCategory("arbitrage");
+    }
+  }, [legacyTab, setActiveCategory]);
 
-  // Hook into 1-Hour TTL SWR live catalog
+  // 2. City Selection & Onboarding Modal
+  const [selectedCity, setSelectedCity] = useQueryState("city", parseAsString.withDefault("ALL"));
+  const [isCityModalOpen, setIsCityModalOpen] = React.useState(false);
+  const [isFirstVisit, setIsFirstVisit] = React.useState(false);
+
+  React.useEffect(() => {
+    if (typeof window !== "undefined") {
+      const savedCity = localStorage.getItem("beatroute_city");
+      if (!savedCity) {
+        setIsFirstVisit(true);
+        setIsCityModalOpen(true);
+      } else if (selectedCity === "ALL" && savedCity !== "ALL") {
+        setSelectedCity(savedCity);
+      }
+    }
+  }, [selectedCity, setSelectedCity]);
+
+  // 3. 1-Hour TTL SWR live catalog hook
   const {
     items: liveCatalogItems,
     isValidating: isCatalogValidating,
@@ -93,7 +68,61 @@ function BeatRouteDashboard() {
     refresh: refreshCityCatalog,
   } = useCityCatalog(selectedCity === "ALL" ? "BOM" : selectedCity);
 
-  // 3. Travel Arbitrage URL Params (Phase 3 integrated engine)
+  // 4. Master Catalog compiling (curated tours + local catalog.json + live SWR updates)
+  const masterCatalog = React.useMemo(() => {
+    const map = new Map<string, CatalogItem>();
+
+    // A. Baseline catalog.json items
+    (initialCatalog as CatalogItem[]).forEach((item) => map.set(item.id, item));
+
+    // B. Curated mega-tours
+    ALL_INDIAN_CONCERTS.forEach((c) => {
+      if (!map.has(c.id)) {
+        map.set(c.id, {
+          id: c.id,
+          type: "concert",
+          source: c.source as any,
+          title: c.artist,
+          description: c.tourName,
+          category: c.genres?.[0] || "Concert",
+          posterUrl: c.artistImageUrl,
+          cityCode: c.cityCode,
+          cityName: c.cityName,
+          venue: c.venue,
+          coordinates: c.coordinates,
+          date: c.date,
+          time: c.time,
+          startingPriceINR: c.startingPriceINR,
+          bookingUrl: c.bookingUrl,
+          rawDetails: {
+            ticketTiers: c.ticketTiers,
+            ticketStatus: c.ticketStatus,
+            highlights: c.highlights,
+          },
+        });
+      }
+    });
+
+    // C. Live SWR updates from BMS & District
+    (liveCatalogItems || []).forEach((item) => map.set(item.id, item));
+
+    return Array.from(map.values());
+  }, [liveCatalogItems]);
+
+  const concertItems = React.useMemo(
+    () => masterCatalog.filter((i) => i.type === "concert"),
+    [masterCatalog]
+  );
+  const movieItems = React.useMemo(
+    () => masterCatalog.filter((i) => i.type === "movie"),
+    [masterCatalog]
+  );
+  const eventItems = React.useMemo(
+    () => masterCatalog.filter((i) => i.type === "event"),
+    [masterCatalog]
+  );
+
+  // 5. Travel Arbitrage Engine State
   const [origin, setOrigin] = useQueryState("origin", parseAsString.withDefault("BOM"));
   const [tourId, setTourId] = useQueryState("tour", parseAsString.withDefault("coldplay"));
   const [transitMode, setTransitMode] = useQueryState(
@@ -121,150 +150,10 @@ function BeatRouteDashboard() {
     parseAsStringLiteral(["curated", "live"] as const).withDefault("curated")
   );
 
-  // 4. Planner Drawer State
+  // Planner Drawer State
   const [plannerStop, setPlannerStop] = React.useState<TourStop | null>(null);
   const [isPlannerOpen, setIsPlannerOpen] = React.useState(false);
 
-  // Source counts & City options for filter chips
-  const sourceCounts = React.useMemo(() => getCatalogSourceCounts(), []);
-  const cityOptions = React.useMemo(() => getCityFilterOptions(), []);
-
-  // Filter and search concerts for the Radar feed
-  const displayedConcerts: ConcertEvent[] = React.useMemo(() => {
-    if (liveConcerts) {
-      if (selectedCity && selectedCity !== "ALL") {
-        return liveConcerts.filter(
-          (c) => c.cityCode.toUpperCase() === selectedCity.toUpperCase()
-        );
-      }
-      return liveConcerts;
-    }
-
-    const eventMap = new Map<string, ConcertEvent>();
-    ALL_INDIAN_CONCERTS.forEach((c) => eventMap.set(c.id, c));
-
-    // Augment with fresh live catalog events from SWR
-    if (liveCatalogItems && liveCatalogItems.length > 0) {
-      for (const item of liveCatalogItems) {
-        if (item.type !== "movie" && !eventMap.has(item.id)) {
-          eventMap.set(item.id, {
-            id: item.id,
-            artist: item.title,
-            tourName: item.description || item.title,
-            artistImageUrl: item.posterUrl,
-            date: item.date || new Date().toISOString().slice(0, 10),
-            time: item.time || "19:00 IST",
-            cityCode: item.cityCode,
-            cityName: item.cityName,
-            venue: item.venue || `${item.cityName} Venue`,
-            coordinates: item.coordinates || { lat: 19.076, lng: 72.8777 },
-            genres: [item.category, item.source === "district" ? "District Live" : "BookMyShow Live"],
-            startingPriceINR: item.startingPriceINR || 499,
-            ticketTiers: item.rawDetails?.ticketTiers || [
-              {
-                tierId: "tier-ga",
-                name: "General Entry",
-                priceINR: item.startingPriceINR || 499,
-                availability: "available",
-              },
-            ],
-            ticketStatus: "available",
-            bookingUrl: item.bookingUrl,
-            source: item.source as any,
-            highlights: [
-              `Live event discovered from ${item.source === "district" ? "District by Zomato" : "BookMyShow"}`,
-            ],
-          });
-        }
-      }
-    }
-
-    let results = Array.from(eventMap.values());
-
-    // Apply Catalog Source Filter (Curated Mega-Tours vs BMS Live vs All)
-    results = filterConcertsBySource(results, catalogSource);
-
-    if (selectedCity && selectedCity !== "ALL") {
-      results = results.filter(
-        (c) => c.cityCode.toUpperCase() === selectedCity.toUpperCase()
-      );
-    }
-
-    if (searchQuery.trim()) {
-      const q = searchQuery.toLowerCase().trim();
-      results = results.filter((c) => {
-        return (
-          c.artist.toLowerCase().includes(q) ||
-          c.tourName.toLowerCase().includes(q) ||
-          c.cityName.toLowerCase().includes(q) ||
-          c.venue.toLowerCase().includes(q) ||
-          c.genres.some((g) => g.toLowerCase().includes(q))
-        );
-      });
-    }
-
-    return results;
-  }, [liveConcerts, selectedCity, searchQuery, catalogSource, liveCatalogItems]);
-
-  // Handle Live Artist Search via Bandsintown V3.1
-  const handleLiveArtistSearch = React.useCallback(
-    async (artistName: string) => {
-      const cleanArtist = artistName.trim();
-      if (!cleanArtist) return;
-
-      setIsSearchingLive(true);
-      setRadarError(null);
-
-      try {
-        const res = await fetch(`/api/concerts?artist=${encodeURIComponent(cleanArtist)}`);
-        const data = await res.json();
-
-        if (!res.ok || !data.success) {
-          setLiveConcerts(null);
-          setRadarError({
-            title: `No Indian Tour Dates for "${cleanArtist}"`,
-            message:
-              data.error ||
-              `We couldn't find confirmed live concerts in India for "${cleanArtist}". Explore our featured Indian stadium tours below!`,
-            code: data.code || "NO_CONCERTS",
-          });
-        } else {
-          const stops: TourStop[] = data.data || [];
-          if (stops.length === 0) {
-            setLiveConcerts(null);
-            setRadarError({
-              title: `No Indian Tour Dates for "${cleanArtist}"`,
-              message: `No upcoming concert stops in India found for "${cleanArtist}". Try another artist.`,
-              code: "NO_CONCERTS",
-            });
-          } else {
-            const mapped = stops.map((s) => tourStopToConcertEvent(s));
-            setLiveConcerts(mapped);
-          }
-        }
-      } catch (err: unknown) {
-        const msg = err instanceof Error ? err.message : "Network error";
-        setRadarError({
-          title: "API Connection Notice",
-          message: `Failed to query live concert pipeline: ${msg}`,
-          code: "NETWORK_ERROR",
-        });
-        setLiveConcerts(null);
-      } finally {
-        setIsSearchingLive(false);
-      }
-    },
-    []
-  );
-
-  const handleResetRadar = () => {
-    setLiveConcerts(null);
-    setRadarError(null);
-    setSearchQuery("");
-    setSelectedCity("ALL");
-  };
-
-  // Arbitrage Engine Calculations
   const selectedCuratedTour =
     FEATURED_TOURS.find((t) => t.id === tourId) || FEATURED_TOURS[0];
   const arbitrageStops = selectedCuratedTour.stops;
@@ -289,99 +178,114 @@ function BeatRouteDashboard() {
     setIsPlannerOpen(true);
   };
 
+  const handleOpenArbitrageFromPreview = (item: CatalogItem) => {
+    const matchTour = FEATURED_TOURS.find(
+      (t) =>
+        t.artist.toLowerCase() === item.title.toLowerCase() ||
+        item.title.toLowerCase().includes(t.artist.toLowerCase())
+    );
+    if (matchTour) {
+      setTourId(matchTour.id);
+    }
+    if (selectedCity && selectedCity !== "ALL") {
+      setOrigin(selectedCity);
+    }
+    setActiveCategory("arbitrage");
+  };
+
+  const handleCitySelect = (code: string) => {
+    setSelectedCity(code);
+    if (code !== "ALL") {
+      setOrigin(code);
+    }
+  };
+
   return (
-    <div className="min-h-screen flex flex-col bg-background text-text-primary selection:bg-cyan-500/20 selection:text-cyan-300">
-      {/* Header Navigation */}
+    <div className="min-h-screen flex flex-col bg-background text-text-primary selection:bg-accent-dune/20 selection:text-accent-dune font-sans">
+      
+      {/* Top Header Navigation */}
       <HeaderNav
         view={arbitrageView}
         onViewChange={setArbitrageView}
-        tourMode={tourMode}
-        onTourModeChange={setTourMode}
+        selectedCity={selectedCity}
+        onOpenCityModal={() => {
+          setIsFirstVisit(false);
+          setIsCityModalOpen(true);
+        }}
+        isValidating={isCatalogValidating}
+        ageMinutes={catalogAgeMinutes}
+        onRefreshLive={refreshCityCatalog}
       />
 
-      {/* Main Content Area */}
+      {/* First-Time Visitor & Location Switcher Modal */}
+      <CitySelectorModal
+        isOpen={isCityModalOpen}
+        onClose={() => setIsCityModalOpen(false)}
+        selectedCity={selectedCity}
+        onSelectCity={handleCitySelect}
+        isFirstVisit={isFirstVisit}
+      />
+
+      {/* Main Container */}
       <main className="flex-1 mx-auto w-full max-w-7xl px-4 py-6 sm:px-6 lg:px-8 space-y-6">
-        {/* Navigation Tabs: Concert Radar vs Travel Arbitrage */}
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-2 border-b border-border-subtle">
+        
+        {/* Title & Skyscanner-Style Category Tabs */}
+        <div className="space-y-4 pb-2 border-b border-border-subtle">
           <div>
             <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-text-primary">
-              {activeTab === "radar"
-                ? "All-India Live Concert & Tour Radar"
-                : "Concert Travel Arbitrage Engine"}
+              All-India Entertainment & Travel Arbitrage
             </h1>
-            <p className="text-xs sm:text-sm text-text-secondary mt-1">
-              {activeTab === "radar"
-                ? "Verified stadium dates, stadium coordinates, ticket tiers, and direct box office booking across India."
-                : "Compare round-trip flights, Indian Railways, hotels, and ticket prices across cities to find net travel savings."}
+            <p className="text-xs sm:text-sm text-text-muted mt-1">
+              Real-time ticket prices, cinema screenings, and travel savings across BookMyShow and District by Zomato.
             </p>
           </div>
 
-          {/* Mode Switcher Pill */}
-          <div className="flex items-center rounded-xl bg-surface-elevated p-1.5 border border-border-strong self-start sm:self-center shadow-lg">
-            <button
-              onClick={() => setActiveTab("radar")}
-              className={`flex items-center gap-2 px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all ${
-                activeTab === "radar"
-                  ? "bg-gradient-to-r from-cyan-500 to-indigo-600 text-white shadow-glowCyan"
-                  : "text-text-secondary hover:text-text-primary hover:bg-surface"
-              }`}
-            >
-              <Radio className="h-3.5 w-3.5" />
-              <span>Concert Radar</span>
-              <span className="ml-1 px-1.5 py-0.2 rounded-full bg-cyan-400/20 text-cyan-200 text-[10px] font-mono">
-                {ALL_INDIAN_CONCERTS.length}
-              </span>
-            </button>
-
-            <button
-              onClick={() => setActiveTab("arbitrage")}
-              className={`flex items-center gap-2 px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all ${
-                activeTab === "arbitrage"
-                  ? "bg-gradient-to-r from-purple-600 to-indigo-600 text-white shadow-sm"
-                  : "text-text-secondary hover:text-text-primary hover:bg-surface"
-              }`}
-            >
-              <Compass className="h-3.5 w-3.5" />
-              <span>Travel Arbitrage</span>
-            </button>
-          </div>
+          <CategoryTabs
+            activeCategory={activeCategory}
+            onSelectCategory={setActiveCategory}
+            counts={{
+              concerts: concertItems.length,
+              movies: movieItems.length,
+              events: eventItems.length,
+            }}
+          />
         </div>
 
-        {/* TAB 1: ALL-INDIA CONCERT RADAR (Phase 1 Approved Scope) */}
-        {activeTab === "radar" && (
-          <div className="space-y-6">
-            {/* Live Search Notice or Error State */}
-            {radarError ? (
-              <ErrorState
-                title={radarError.title}
-                message={radarError.message}
-                code={radarError.code}
-                onRetry={() => handleLiveArtistSearch(searchQuery)}
-                onExploreFeatured={handleResetRadar}
-              />
-            ) : (
-              <ConcertTimelineFeed
-                concerts={displayedConcerts}
-                cityOptions={cityOptions}
-                selectedCity={selectedCity}
-                onSelectCity={setSelectedCity}
-                searchQuery={searchQuery}
-                onSearchChange={setSearchQuery}
-                onLiveSearchSubmit={handleLiveArtistSearch}
-                isSearchingLive={isSearchingLive}
-                catalogSource={catalogSource}
-                onCatalogSourceChange={setCatalogSource}
-                sourceCounts={sourceCounts}
-                isValidating={isCatalogValidating}
-                ageMinutes={catalogAgeMinutes}
-                onRefreshLive={refreshCityCatalog}
-              />
-            )}
-          </div>
+        {/* TAB 1: CONCERTS & GIGS (Hybrid List + Preview) */}
+        {activeCategory === "concerts" && (
+          <HybridAggregatorFeed
+            items={concertItems}
+            userOriginCity={selectedCity === "ALL" ? "BOM" : selectedCity}
+            category="concerts"
+            onOpenArbitragePlanner={handleOpenArbitrageFromPreview}
+            selectedCity={selectedCity}
+          />
         )}
 
-        {/* TAB 2: TRAVEL ARBITRAGE ENGINE (Preserved & Integrated) */}
-        {activeTab === "arbitrage" && (
+        {/* TAB 2: CINEMA & MOVIES (Hybrid List + Preview) */}
+        {activeCategory === "movies" && (
+          <HybridAggregatorFeed
+            items={movieItems}
+            userOriginCity={selectedCity === "ALL" ? "BOM" : selectedCity}
+            category="movies"
+            onOpenArbitragePlanner={handleOpenArbitrageFromPreview}
+            selectedCity={selectedCity}
+          />
+        )}
+
+        {/* TAB 3: COMEDY & LIVE EVENTS (Hybrid List + Preview) */}
+        {activeCategory === "events" && (
+          <HybridAggregatorFeed
+            items={eventItems}
+            userOriginCity={selectedCity === "ALL" ? "BOM" : selectedCity}
+            category="events"
+            onOpenArbitragePlanner={handleOpenArbitrageFromPreview}
+            selectedCity={selectedCity}
+          />
+        )}
+
+        {/* TAB 4: TRAVEL ARBITRAGE ENGINE */}
+        {activeCategory === "arbitrage" && (
           <div className="space-y-6">
             <FilterBar
               origin={origin}
@@ -431,22 +335,16 @@ function BeatRouteDashboard() {
         defaultOriginCityCode={origin}
       />
 
-      {/* Footer */}
-      <footer className="w-full border-t border-border-subtle bg-surface/40 py-6 mt-12 text-center text-xs text-text-muted">
+      {/* Subtle Minimalist Footer */}
+      <footer className="w-full border-t border-border-subtle bg-surface/60 py-6 mt-12 text-center text-xs text-text-muted">
         <div className="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p>© 2026 BeatRoute — High-Polish Concert Travel Arbitrage Engine.</p>
-          <div className="flex items-center gap-4">
-            <span className="hover:text-text-primary transition-colors">
-              Next.js 16.3.6 (Turbopack)
-            </span>
+          <p>© 2026 BeatRoute — Entertainment & Travel Arbitrage Aggregator.</p>
+          <div className="flex items-center gap-4 text-[11px]">
+            <span>BookMyShow & District Aggregated</span>
             <span>•</span>
-            <span className="hover:text-text-primary transition-colors">
-              CartoDB Dark Matter
-            </span>
+            <span>Indian Railways & Flight Arbitrage</span>
             <span>•</span>
-            <span className="hover:text-text-primary transition-colors">
-              0 CLS Architecture
-            </span>
+            <span>1-Hour SWR Cache</span>
           </div>
         </div>
       </footer>
@@ -457,13 +355,13 @@ function BeatRouteDashboard() {
 function DashboardSkeleton() {
   return (
     <div className="min-h-screen bg-background text-text-primary">
-      <div className="w-full h-16 border-b border-border-subtle bg-surface/80" />
+      <div className="w-full h-16 border-b border-border-subtle bg-surface" />
       <main className="mx-auto w-full max-w-7xl px-4 py-6 sm:px-6 lg:px-8 space-y-6">
-        <Skeleton className="h-14 w-3/4 rounded-xl" />
-        <Skeleton className="h-44 w-full rounded-2xl" />
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <Skeleton className="h-48 w-full rounded-xl" />
-          <Skeleton className="h-48 w-full rounded-xl" />
+        <Skeleton className="h-10 w-64 rounded-xl" />
+        <Skeleton className="h-12 w-full rounded-2xl" />
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
+          <Skeleton className="lg:col-span-7 h-96 rounded-2xl" />
+          <Skeleton className="lg:col-span-5 h-96 rounded-2xl" />
         </div>
       </main>
     </div>

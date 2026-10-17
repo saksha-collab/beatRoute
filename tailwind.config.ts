@@ -27,6 +27,8 @@ const config: Config = {
           muted: "var(--text-muted)",
         },
         accent: {
+          dune: "var(--accent-dune)",
+          "dune-hover": "var(--accent-dune-hover)",
           cyan: "var(--accent-cyan)",
           purple: "var(--accent-purple)",
           neon: "var(--accent-neon-pink)",
