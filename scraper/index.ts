@@ -33,11 +33,11 @@ async function main() {
     }
   }
 
-  // 2. Scrape District (by Zomato) for Top Hubs
+  // 2. Scrape District (by Zomato) for Top 7 Hubs
   console.log('\n--- 🎟️ Scraping District by Zomato (Movies & Events) ---');
-  for (const city of DISTRICT_CITIES.slice(0, 3)) { // Top 3 hubs for batch cycle
+  for (const city of DISTRICT_CITIES) { // Top 7 major hubs
     try {
-      const districtItems = await scrapeDistrictCatalog(city, 3);
+      const districtItems = await scrapeDistrictCatalog(city, 2);
       districtItems.forEach((item) => {
         const isNew = !catalogMap.has(item.id);
         catalogMap.set(item.id, item);
@@ -48,9 +48,9 @@ async function main() {
     }
   }
 
-  // 3. Scrape BookMyShow (Events & Movies) for Top Hubs
+  // 3. Scrape BookMyShow (Events & Movies) for Top 7 Hubs
   console.log('\n--- 🎫 Scraping BookMyShow (Movies & Events) ---');
-  for (const city of TOP_BMS_CITIES.slice(0, 3)) {
+  for (const city of TOP_BMS_CITIES) { // Top 7 major hubs
     try {
       const bmsItems = await scrapeBMSCatalog(city, 2);
       bmsItems.forEach((item) => {
