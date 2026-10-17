@@ -5,6 +5,7 @@ import dotenv from 'dotenv';
 import { TOP_BMS_CITIES, scrapeBMSCatalog, scrapeEventDetails, discoverEventsForCity } from './platforms/bms';
 import { DISTRICT_CITIES, scrapeDistrictCatalog } from './platforms/district';
 import { CatalogItem, ConcertEvent } from '../lib/types';
+import { setCachedCityCatalog } from '../lib/cache';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -155,6 +156,26 @@ async function main() {
   eventsForFeed.sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
   fs.writeFileSync(EVENTS_FILE_PATH, JSON.stringify(eventsForFeed, null, 2), 'utf-8');
   console.log(`💾 Synchronized ${eventsForFeed.length} live events to ${EVENTS_FILE_PATH}`);
+
+  // 7. Dual-Sync: Seed Upstash Redis cache for each scraped city
+  console.log('\n--- ⚡ Dual-Sync: Seeding Redis Cache ---');
+  const cityItemsMap = new Map<string, CatalogItem[]>();
+  for (const item of finalCatalog) {
+    if (item.cityCode) {
+      const code = item.cityCode.toUpperCase();
+      if (!cityItemsMap.has(code)) cityItemsMap.set(code, []);
+      cityItemsMap.get(code)!.push(item);
+    }
+  }
+
+  for (const [code, items] of cityItemsMap.entries()) {
+    try {
+      await setCachedCityCatalog(code, items, 3600);
+      console.log(`[Cache Sync] Seeded ${items.length} items into cache for city ${code}.`);
+    } catch (err: any) {
+      console.warn(`[Cache Sync] Could not seed cache for ${code}:`, err.message);
+    }
+  }
 
   console.log('====================================================');
   console.log('🎉 Unified Scraping cycle completed successfully!');
