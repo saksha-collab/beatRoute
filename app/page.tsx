@@ -205,6 +205,7 @@ function BeatRouteDashboard() {
         isValidating={isCatalogValidating}
         ageMinutes={catalogAgeMinutes}
         onRefreshLive={refreshCityCatalog}
+        showViewToggle={activeCategory === "arbitrage"}
       />
 
       {/* First-Time Visitor & Location Switcher Modal */}
@@ -217,16 +218,16 @@ function BeatRouteDashboard() {
       />
 
       {/* Main Container */}
-      <main className="flex-1 mx-auto w-full max-w-7xl px-4 py-6 sm:px-6 lg:px-8 space-y-6">
+      <main className="flex-1 mx-auto w-full max-w-7xl px-4 py-5 sm:px-6 lg:px-8 space-y-5">
         
-        {/* Title & Skyscanner-Style Category Tabs */}
-        <div className="space-y-4 pb-2 border-b border-border-subtle">
-          <div>
-            <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-text-primary">
-              All-India Entertainment & Travel Arbitrage
+        {/* Skyscanner-Style Category Tabs & Minimalist Header */}
+        <div className="space-y-3 pb-2 border-b border-border-subtle">
+          <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1">
+            <h1 className="text-xl sm:text-2xl font-black tracking-tight text-text-primary">
+              Live Discovery
             </h1>
-            <p className="text-xs sm:text-sm text-text-muted mt-1">
-              Real-time ticket prices, cinema screenings, and travel savings across BookMyShow and District by Zomato.
+            <p className="text-xs text-text-muted">
+              Live box office prices & travel arbitrage across BookMyShow and District.
             </p>
           </div>
 
