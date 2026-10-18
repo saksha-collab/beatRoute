@@ -1,75 +1,5 @@
 [
   {
-    "id": "bms-et00146560",
-    "artist": "INDIAN OCEAN LIVE AT PHOENIX MUMBAI",
-    "tourName": "Live performance discovered from BookMyShow • Venue: Dublin Square, Phoenix Marketcity: Mumbai",
-    "artistImageUrl": "https://assets-in.bmscdn.com/nmcms/events/banner/desktop/media-desktop-indian-ocean-live-at-phoenix-mumbai-0-2026-5-12-t-17-16-43.jpg",
-    "date": "2026-10-17",
-    "time": "19:00 IST",
-    "cityCode": "BOM",
-    "cityName": "Mumbai",
-    "venue": "Dublin Square, Phoenix Marketcity: Mumbai",
-    "coordinates": {
-      "lat": 19.0863,
-      "lng": 72.8888
-    },
-    "genres": [
-      "Live Music",
-      "BookMyShow Live"
-    ],
-    "startingPriceINR": 799,
-    "ticketTiers": [
-      {
-        "tierId": "tier-1",
-        "name": "EB FAN PIT",
-        "priceINR": 1999,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-2",
-        "name": "PHASE 1 FAN PIT",
-        "priceINR": 2499,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-3",
-        "name": "EB GENERAL ACCESS -",
-        "priceINR": 999,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-4",
-        "name": "PHASE 1 VIP STANDING",
-        "priceINR": 1999,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-5",
-        "name": "KIDS PASS (5 TO 14 YEARS)",
-        "priceINR": 799,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-6",
-        "name": "PHASE 1 GA",
-        "priceINR": 1299,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-7",
-        "name": "EB VIP STANDING",
-        "priceINR": 1499,
-        "availability": "available"
-      }
-    ],
-    "ticketStatus": "available",
-    "bookingUrl": "https://in.bookmyshow.com/events/indian-ocean-live-at-phoenix-mumbai/ET00146560",
-    "source": "bookmyshow",
-    "highlights": [
-      "Live event discovered from BookMyShow"
-    ]
-  },
-  {
     "id": "bms-et00518198",
     "artist": "Backstage Siblings - Bhakti Dance Floor",
     "tourName": "Live performance discovered from BookMyShow • Venue: Biswa Bangla Mela Prangan: Kolkata",
@@ -91,50 +21,50 @@
     "ticketTiers": [
       {
         "tierId": "tier-1",
-        "name": "PHASE TWO FANPIT",
-        "priceINR": 2199,
+        "name": "VVIP SEATING",
+        "priceINR": 6999,
         "availability": "available"
       },
       {
         "tierId": "tier-2",
-        "name": "EARLY BIRD VIP",
-        "priceINR": 999,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-3",
-        "name": "PHASE ONE VIP",
-        "priceINR": 1299,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-4",
-        "name": "GROUP OF 4 - VIP",
-        "priceINR": 4499,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-5",
-        "name": "PHASE ONE FANPIT",
-        "priceINR": 1799,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-6",
-        "name": "GROUP OF 4 - FANPIT",
-        "priceINR": 7499,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-7",
         "name": "EARLY BIRD FANPIT",
         "priceINR": 1399,
         "availability": "available"
       },
       {
+        "tierId": "tier-3",
+        "name": "EARLY BIRD VIP",
+        "priceINR": 999,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-4",
+        "name": "PHASE TWO FANPIT",
+        "priceINR": 2199,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-5",
+        "name": "GROUP OF 4 - VIP",
+        "priceINR": 4499,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-6",
+        "name": "PHASE ONE VIP",
+        "priceINR": 1299,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-7",
+        "name": "GROUP OF 4 - FANPIT",
+        "priceINR": 7499,
+        "availability": "available"
+      },
+      {
         "tierId": "tier-8",
-        "name": "VVIP SEATING",
-        "priceINR": 6999,
+        "name": "PHASE ONE FANPIT",
+        "priceINR": 1799,
         "availability": "available"
       }
     ],
@@ -235,49 +165,49 @@
     "ticketTiers": [
       {
         "tierId": "tier-1",
-        "name": "GROUP OF 4",
-        "priceINR": 1299,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-2",
-        "name": "KIDS PASS",
-        "priceINR": 199,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-3",
-        "name": "EARLY BIRD COUPLE",
-        "priceINR": 649,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-4",
         "name": "VIP COUPLE ENTRY",
         "priceINR": 899,
         "availability": "available"
       },
       {
-        "tierId": "tier-5",
+        "tierId": "tier-2",
+        "name": "EARLY BIRD COUPLE",
+        "priceINR": 649,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-3",
         "name": "VIP SINGLE",
         "priceINR": 499,
         "availability": "available"
       },
       {
-        "tierId": "tier-6",
+        "tierId": "tier-4",
         "name": "EARLY BIRD SINGLE ENTRY",
         "priceINR": 349,
         "availability": "available"
       },
       {
-        "tierId": "tier-7",
+        "tierId": "tier-5",
         "name": "GROUP OF 6",
         "priceINR": 1899,
         "availability": "available"
       },
       {
-        "tierId": "tier-8",
+        "tierId": "tier-6",
         "name": "KID ENTRY",
+        "priceINR": 199,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-7",
+        "name": "GROUP OF 4",
+        "priceINR": 1299,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-8",
+        "name": "KIDS PASS",
         "priceINR": 199,
         "availability": "available"
       }
@@ -345,44 +275,44 @@
     "ticketTiers": [
       {
         "tierId": "tier-1",
-        "name": "Diamond",
-        "priceINR": 5000,
+        "name": "2nd Floor Balcony",
+        "priceINR": 999,
         "availability": "available"
       },
       {
         "tierId": "tier-2",
-        "name": "1st Floor Balcony",
-        "priceINR": 1499,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-3",
-        "name": "Elite",
-        "priceINR": 8000,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-4",
-        "name": "Standard",
-        "priceINR": 2000,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-5",
-        "name": "Premium",
-        "priceINR": 2500,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-6",
         "name": "Platinum",
         "priceINR": 3500,
         "availability": "available"
       },
       {
+        "tierId": "tier-3",
+        "name": "1st Floor Balcony",
+        "priceINR": 1499,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-4",
+        "name": "Diamond",
+        "priceINR": 5000,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-5",
+        "name": "Standard",
+        "priceINR": 2000,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-6",
+        "name": "Elite",
+        "priceINR": 8000,
+        "availability": "available"
+      },
+      {
         "tierId": "tier-7",
-        "name": "2nd Floor Balcony",
-        "priceINR": 999,
+        "name": "Premium",
+        "priceINR": 2500,
         "availability": "available"
       }
     ],
@@ -399,7 +329,7 @@
     "tourName": "Live performance discovered from BookMyShow • Venue: NSIC Exhibition Ground, Okhla",
     "artistImageUrl": "https://assets-in.bmscdn.com/nmcms/events/banner/desktop/media-desktop-nykaaland-india-s-biggest-beauty-festival-in-delhi-0-2026-10-7-t-12-22-0.jpg",
     "date": "2026-10-23",
-    "time": "12:00 IST",
+    "time": "12:02 IST",
     "cityCode": "DEL",
     "cityName": "Delhi NCR",
     "venue": "NSIC Exhibition Ground, Okhla",
@@ -411,18 +341,18 @@
       "Live Music",
       "BookMyShow Live"
     ],
-    "startingPriceINR": 3499,
+    "startingPriceINR": 1299,
     "ticketTiers": [
       {
         "tierId": "tier-1",
-        "name": "BEAUTY ENTHUSIAST PASS",
-        "priceINR": 9999,
+        "name": "BEAUTY BESTIES - FRIDAY",
+        "priceINR": 2199,
         "availability": "available"
       },
       {
         "tierId": "tier-2",
-        "name": "FESTIVAL 3-DAY PASS",
-        "priceINR": 3499,
+        "name": "GA - FRIDAY",
+        "priceINR": 1299,
         "availability": "available"
       }
     ],
@@ -455,68 +385,68 @@
     "ticketTiers": [
       {
         "tierId": "tier-1",
-        "name": "PHASE 4",
-        "priceINR": 1699,
-        "availability": "sold_out"
-      },
-      {
-        "tierId": "tier-2",
-        "name": "10 PEOPLE GROUP",
-        "priceINR": 10000,
-        "availability": "sold_out"
-      },
-      {
-        "tierId": "tier-3",
-        "name": "COUPLE TICKET",
-        "priceINR": 1899,
-        "availability": "sold_out"
-      },
-      {
-        "tierId": "tier-4",
-        "name": "PHASE 1",
-        "priceINR": 999,
-        "availability": "sold_out"
-      },
-      {
-        "tierId": "tier-5",
-        "name": "FIVE PEOPLE ENTRY",
-        "priceINR": 6000,
-        "availability": "sold_out"
-      },
-      {
-        "tierId": "tier-6",
-        "name": "EARLY BIRD COUPLE",
-        "priceINR": 1200,
-        "availability": "sold_out"
-      },
-      {
-        "tierId": "tier-7",
-        "name": "PHASE 3 COUPLE",
-        "priceINR": 2899,
-        "availability": "sold_out"
-      },
-      {
-        "tierId": "tier-8",
         "name": "PHASE 2 COUPLE",
         "priceINR": 2699,
         "availability": "sold_out"
       },
       {
-        "tierId": "tier-9",
+        "tierId": "tier-2",
+        "name": "EARLY BIRD COUPLE",
+        "priceINR": 1200,
+        "availability": "sold_out"
+      },
+      {
+        "tierId": "tier-3",
+        "name": "PHASE 3 COUPLE",
+        "priceINR": 2899,
+        "availability": "sold_out"
+      },
+      {
+        "tierId": "tier-4",
+        "name": "PHASE 2",
+        "priceINR": 1399,
+        "availability": "sold_out"
+      },
+      {
+        "tierId": "tier-5",
         "name": "EARLY BIRD",
         "priceINR": 699,
         "availability": "sold_out"
       },
       {
-        "tierId": "tier-10",
+        "tierId": "tier-6",
         "name": "PHASE 3",
         "priceINR": 1499,
         "availability": "sold_out"
       },
       {
+        "tierId": "tier-7",
+        "name": "COUPLE TICKET",
+        "priceINR": 1899,
+        "availability": "sold_out"
+      },
+      {
+        "tierId": "tier-8",
+        "name": "PHASE 4",
+        "priceINR": 1699,
+        "availability": "sold_out"
+      },
+      {
+        "tierId": "tier-9",
+        "name": "10 PEOPLE GROUP",
+        "priceINR": 10000,
+        "availability": "sold_out"
+      },
+      {
+        "tierId": "tier-10",
+        "name": "PHASE 1",
+        "priceINR": 999,
+        "availability": "sold_out"
+      },
+      {
         "tierId": "tier-11",
-        "name": "PHASE 2",
-        "priceINR": 1399,
+        "name": "FIVE PEOPLE ENTRY",
+        "priceINR": 6000,
         "availability": "sold_out"
       }
     ],
@@ -589,50 +519,50 @@
     "ticketTiers": [
       {
         "tierId": "tier-1",
-        "name": "GA Front - Phase 2",
-        "priceINR": 8000,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-2",
-        "name": "GA Back - Phase 1",
-        "priceINR": 4250,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-3",
-        "name": "GA Back - Phase 2",
-        "priceINR": 5000,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-4",
-        "name": "Tuborg Lounge",
-        "priceINR": 25000,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-5",
-        "name": "Backstage - Phase 1",
-        "priceINR": 17500,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-6",
-        "name": "VVIP Standing Table",
-        "priceINR": 590000,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-7",
         "name": "Lounge Phase 3",
         "priceINR": 32000,
         "availability": "available"
       },
       {
-        "tierId": "tier-8",
+        "tierId": "tier-2",
         "name": "GA Front - Phase 1",
         "priceINR": 6500,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-3",
+        "name": "GA Front - Phase 2",
+        "priceINR": 8000,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-4",
+        "name": "GA Back - Phase 1",
+        "priceINR": 4250,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-5",
+        "name": "GA Back - Phase 2",
+        "priceINR": 5000,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-6",
+        "name": "Tuborg Lounge",
+        "priceINR": 25000,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-7",
+        "name": "VVIP Standing Table",
+        "priceINR": 590000,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-8",
+        "name": "Backstage - Phase 1",
+        "priceINR": 17500,
         "availability": "available"
       }
     ],
@@ -649,42 +579,66 @@
     "tourName": "Live performance discovered from BookMyShow • Venue: Mahalaxmi Race Course: Mumbai",
     "artistImageUrl": "https://assets-in.bmscdn.com/nmcms/events/banner/desktop/media-desktop-sunburn-festival-2026-0-2026-10-12-t-18-12-22.jpg",
     "date": "2026-12-18",
-    "time": "14:01 IST",
+    "time": "14:00 IST",
     "cityCode": "PNQ",
     "cityName": "Pune",
     "venue": "Mahalaxmi Race Course: Mumbai",
     "coordinates": {
-      "lat": 18.984212,
-      "lng": 72.820076
+      "lat": 18.9842,
+      "lng": 72.8201
     },
     "genres": [
       "Live Music",
       "BookMyShow Live"
     ],
-    "startingPriceINR": 3500,
+    "startingPriceINR": 7000,
     "ticketTiers": [
       {
         "tierId": "tier-1",
-        "name": "GA Fest EB - Pay 50%",
-        "priceINR": 3500,
+        "name": "VIP Fest - Early Bird",
+        "priceINR": 12000,
         "availability": "available"
       },
       {
         "tierId": "tier-2",
-        "name": "Fanpit Fest EB Pay 50%",
-        "priceINR": 7000,
+        "name": "VVIP - Gold Table",
+        "priceINR": 708000,
         "availability": "available"
       },
       {
         "tierId": "tier-3",
-        "name": "VIP Fest EB - Pay 50%",
-        "priceINR": 6000,
+        "name": "The Core Lounge - Fest",
+        "priceINR": 40000,
         "availability": "available"
       },
       {
         "tierId": "tier-4",
-        "name": "Core Lounge Fest 50%",
-        "priceINR": 20000,
+        "name": "VVIP - Platinum Table",
+        "priceINR": 1062000,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-5",
+        "name": "GA Fest - Early Bird",
+        "priceINR": 7000,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-6",
+        "name": "Tuborg Lounge Festival",
+        "priceINR": 30000,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-7",
+        "name": "VVIP - Silver Table",
+        "priceINR": 295000,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-8",
+        "name": "Fanpit Fest - Early Bird",
+        "priceINR": 14000,
         "availability": "available"
       }
     ],
@@ -717,134 +671,134 @@
     "ticketTiers": [
       {
         "tierId": "tier-1",
-        "name": "VIP Phase 1",
-        "priceINR": 3000,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-2",
-        "name": "VIP Phase 5",
-        "priceINR": 5000,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-3",
-        "name": "Fanpit Combo",
-        "priceINR": 12000,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-4",
-        "name": "Early Bird GA",
-        "priceINR": 1500,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-5",
-        "name": "Fanpit Phase 2",
-        "priceINR": 8000,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-6",
-        "name": "VIP Phase 7",
-        "priceINR": 7000,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-7",
-        "name": "GA Phase 1",
-        "priceINR": 2000,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-8",
-        "name": "VIP Phase 4",
-        "priceINR": 4500,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-9",
-        "name": "VIP Combo",
-        "priceINR": 7000,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-10",
-        "name": "GA Combo",
-        "priceINR": 5000,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-11",
-        "name": "VIP Phase 2",
-        "priceINR": 3500,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-12",
-        "name": "VIP Phase 6",
-        "priceINR": 6000,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-13",
         "name": "Early Bird Fanpit",
         "priceINR": 4000,
         "availability": "available"
       },
       {
-        "tierId": "tier-14",
+        "tierId": "tier-2",
         "name": "GA Phase 3",
         "priceINR": 3000,
         "availability": "available"
       },
       {
-        "tierId": "tier-15",
+        "tierId": "tier-3",
         "name": "Tuborg Lounge",
         "priceINR": 12999,
         "availability": "available"
       },
       {
-        "tierId": "tier-16",
+        "tierId": "tier-4",
         "name": "GA Phase 2",
         "priceINR": 2500,
         "availability": "available"
       },
       {
-        "tierId": "tier-17",
+        "tierId": "tier-5",
         "name": "Fanpit Phase 3",
         "priceINR": 10000,
         "availability": "available"
       },
       {
-        "tierId": "tier-18",
-        "name": "GA Phase 5",
-        "priceINR": 4000,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-19",
-        "name": "Fanpit Phase 1",
-        "priceINR": 6000,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-20",
-        "name": "GA Phase 4",
-        "priceINR": 3500,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-21",
+        "tierId": "tier-6",
         "name": "Early Bird VIP",
         "priceINR": 2500,
         "availability": "available"
       },
       {
-        "tierId": "tier-22",
+        "tierId": "tier-7",
         "name": "VIP Phase 3",
         "priceINR": 4000,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-8",
+        "name": "GA Phase 5",
+        "priceINR": 4000,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-9",
+        "name": "Fanpit Phase 1",
+        "priceINR": 6000,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-10",
+        "name": "GA Phase 4",
+        "priceINR": 3500,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-11",
+        "name": "VIP Phase 7",
+        "priceINR": 7000,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-12",
+        "name": "VIP Phase 1",
+        "priceINR": 3000,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-13",
+        "name": "VIP Phase 5",
+        "priceINR": 5000,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-14",
+        "name": "Fanpit Combo",
+        "priceINR": 12000,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-15",
+        "name": "Early Bird GA",
+        "priceINR": 1500,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-16",
+        "name": "Fanpit Phase 2",
+        "priceINR": 8000,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-17",
+        "name": "GA Phase 1",
+        "priceINR": 2000,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-18",
+        "name": "VIP Phase 4",
+        "priceINR": 4500,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-19",
+        "name": "VIP Combo",
+        "priceINR": 7000,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-20",
+        "name": "GA Combo",
+        "priceINR": 5000,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-21",
+        "name": "VIP Phase 2",
+        "priceINR": 3500,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-22",
+        "name": "VIP Phase 6",
+        "priceINR": 6000,
         "availability": "available"
       }
     ],
