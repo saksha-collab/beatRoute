@@ -197,10 +197,16 @@ export async function scrapeDistrictCatalog(city: DistrictCityConfig, limit = 10
           e$('meta[property="og:image"]').attr('content') ||
           '';
 
-        const description =
-          eventSchema?.description ||
-          e$('meta[property="og:description"]').attr('content') ||
-          'Live event on District by Zomato';
+        const cleanDesc = (eventSchema?.description || e$('meta[property="og:description"]').attr('content') || 'Live event on District by Zomato')
+          .replace(/&nbsp;/g, ' ')
+          .replace(/&amp;/g, '&')
+          .replace(/&quot;/g, '"')
+          .replace(/&#39;/g, "'")
+          .replace(/&lt;/g, '<')
+          .replace(/&gt;/g, '>')
+          .replace(/<[^>]*>/g, ' ')
+          .replace(/\s+/g, ' ')
+          .trim();
 
         // Validation gate
         if (!isValidDistrictItem(title, posterUrl)) {
@@ -220,13 +226,18 @@ export async function scrapeDistrictCatalog(city: DistrictCityConfig, limit = 10
         const slugMatch = url.match(/\/events\/([a-zA-Z0-9_-]+)/);
         const slug = slugMatch ? slugMatch[1].replace(/-buy-tickets.*/, '') : `event-${Date.now()}`;
 
+        // Classify music/festivals/concerts as 'concert' so they show on Concerts tab
+        const keywords = (eventSchema?.keywords || '').toLowerCase();
+        const titleLower = title.toLowerCase();
+        const isMusic = /music|concert|festival|dandiya|band|dj|singer|acoustic|gig|sufi|rock/i.test(`${titleLower} ${keywords}`);
+
         items.push({
           id: `district-ev-${slug}`,
-          type: 'event',
+          type: isMusic ? 'concert' : 'event',
           source: 'district',
           title,
-          description,
-          category: 'Live Event',
+          description: cleanDesc,
+          category: isMusic ? 'Concert' : 'Live Event',
           posterUrl,
           cityCode: eventCity.cityCode,
           cityName: eventCity.cityName,

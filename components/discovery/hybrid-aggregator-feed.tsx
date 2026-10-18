@@ -39,8 +39,11 @@ export function HybridAggregatorFeed({
 
     // Strict upcoming date filter (prune past shows)
     const today = new Date().toISOString().slice(0, 10);
+    const thirtyDaysAgo = new Date(Date.now() - 30 * 24 * 60 * 60 * 1000).toISOString().slice(0, 10);
     list = list.filter((item) => {
-      if (item.type === "movie") return true;
+      if (item.type === "movie") {
+        return !item.date || item.date >= thirtyDaysAgo;
+      }
       if (!item.date) return true;
       return item.date >= today;
     });

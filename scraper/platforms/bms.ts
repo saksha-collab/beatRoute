@@ -1,6 +1,7 @@
 import * as cheerio from 'cheerio';
 import { CatalogItem, ConcertEvent, TicketTier, TicketStatus, TicketTierAvailability } from '../../lib/types';
 import { fetchHtmlWithFallback } from '../client';
+import { SUPPORTED_INDIAN_CITIES } from '../../lib/location';
 
 export interface BMSCityConfig {
   slug: string;
@@ -151,6 +152,21 @@ export async function scrapeEventDetails(
         ? 'sold_out'
         : 'available';
 
+    const fullVenueText = `${venueName} ${eventSchema.location?.address || ''}`.toLowerCase();
+    let resolvedCity = city;
+    for (const c of SUPPORTED_INDIAN_CITIES) {
+      if (c.aliases.some((alias) => fullVenueText.includes(alias))) {
+        resolvedCity = {
+          slug: c.name.toLowerCase().replace(/\s+/g, '-'),
+          cityCode: c.code,
+          cityName: c.name,
+          defaultLat: c.defaultLat,
+          defaultLng: c.defaultLng,
+        };
+        break;
+      }
+    }
+
     return {
       id: `bms-${eventMeta.code.toLowerCase()}`,
       artist: name,
@@ -158,10 +174,10 @@ export async function scrapeEventDetails(
       artistImageUrl: imageUrl,
       date,
       time,
-      cityCode: city.cityCode,
-      cityName: city.cityName,
+      cityCode: resolvedCity.cityCode,
+      cityName: resolvedCity.cityName,
       venue: venueName,
-      coordinates: { lat, lng },
+      coordinates: { lat: resolvedCity.defaultLat, lng: resolvedCity.defaultLng },
       genres: ['Live Music', 'BookMyShow Live'],
       startingPriceINR: startingPrice,
       ticketTiers,

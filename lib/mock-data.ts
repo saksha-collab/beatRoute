@@ -62,7 +62,7 @@ export const FEATURED_TOURS: Tour[] = [
   {
     id: "coldplay",
     artist: "Coldplay",
-    tourName: "Music of the Spheres World Tour",
+    tourName: "Music of the Spheres World Tour India",
     stops: [
       {
         id: "coldplay-bom",
@@ -73,7 +73,7 @@ export const FEATURED_TOURS: Tour[] = [
         cityName: "Mumbai",
         venue: "DY Patil Sports Stadium",
         coordinates: { lat: 19.0330, lng: 73.0297 },
-        date: "2025-01-18",
+        date: "2027-01-16",
         source: "curated_catalog",
         startingPriceINR: 9500,
         ticketTiers: [
@@ -91,7 +91,7 @@ export const FEATURED_TOURS: Tour[] = [
         cityName: "Delhi NCR",
         venue: "Jawaharlal Nehru Stadium",
         coordinates: { lat: 28.5828, lng: 77.2344 },
-        date: "2025-01-25",
+        date: "2027-01-23",
         source: "curated_catalog",
         startingPriceINR: 8500,
         ticketTiers: [
@@ -109,7 +109,7 @@ export const FEATURED_TOURS: Tour[] = [
         cityName: "Bengaluru",
         venue: "NICE Exhibition Grounds",
         coordinates: { lat: 13.0538, lng: 77.4697 },
-        date: "2025-02-02",
+        date: "2027-02-06",
         source: "curated_catalog",
         startingPriceINR: 7000,
         ticketTiers: [
@@ -127,7 +127,7 @@ export const FEATURED_TOURS: Tour[] = [
         cityName: "Indore",
         venue: "Holkar Cricket Stadium",
         coordinates: { lat: 22.7244, lng: 75.8752 },
-        date: "2025-02-09",
+        date: "2027-02-13",
         source: "curated_catalog",
         startingPriceINR: 4200,
         ticketTiers: [
@@ -145,7 +145,7 @@ export const FEATURED_TOURS: Tour[] = [
         cityName: "Chandigarh",
         venue: "Sector 34 Exhibition Grounds",
         coordinates: { lat: 30.7225, lng: 76.7681 },
-        date: "2025-02-16",
+        date: "2027-02-20",
         source: "curated_catalog",
         startingPriceINR: 4500,
         ticketTiers: [
@@ -159,7 +159,7 @@ export const FEATURED_TOURS: Tour[] = [
   {
     id: "diljit-dosanjh",
     artist: "Diljit Dosanjh",
-    tourName: "Dil-Luminati Tour India 2024–25",
+    tourName: "Dil-Luminati Tour India 2026–27",
     stops: [
       {
         id: "diljit-del",
@@ -170,7 +170,7 @@ export const FEATURED_TOURS: Tour[] = [
         cityName: "Delhi NCR",
         venue: "JLN Stadium Arena",
         coordinates: { lat: 28.5828, lng: 77.2344 },
-        date: "2024-10-26",
+        date: "2026-11-07",
         source: "curated_catalog",
         startingPriceINR: 11000,
         ticketTiers: [
@@ -188,7 +188,7 @@ export const FEATURED_TOURS: Tour[] = [
         cityName: "Chandigarh",
         venue: "Sector 34 Grounds",
         coordinates: { lat: 30.7225, lng: 76.7681 },
-        date: "2024-12-14",
+        date: "2026-11-14",
         source: "curated_catalog",
         startingPriceINR: 8500,
         ticketTiers: [
@@ -206,7 +206,7 @@ export const FEATURED_TOURS: Tour[] = [
         cityName: "Indore",
         venue: "Holkar Stadium Grounds",
         coordinates: { lat: 22.7244, lng: 75.8752 },
-        date: "2024-12-08",
+        date: "2026-11-21",
         source: "curated_catalog",
         startingPriceINR: 3800,
         ticketTiers: [
@@ -224,7 +224,7 @@ export const FEATURED_TOURS: Tour[] = [
         cityName: "Bengaluru",
         venue: "NICE Grounds Bangalore",
         coordinates: { lat: 13.0538, lng: 77.4697 },
-        date: "2024-12-06",
+        date: "2026-11-28",
         source: "curated_catalog",
         startingPriceINR: 6500,
         ticketTiers: [
@@ -242,7 +242,7 @@ export const FEATURED_TOURS: Tour[] = [
         cityName: "Mumbai",
         venue: "Mahalaxmi Racecourse",
         coordinates: { lat: 18.9826, lng: 72.8228 },
-        date: "2024-12-19",
+        date: "2026-12-05",
         source: "curated_catalog",
         startingPriceINR: 9800,
         ticketTiers: [
@@ -256,7 +256,7 @@ export const FEATURED_TOURS: Tour[] = [
   {
     id: "karan-aujla",
     artist: "Karan Aujla",
-    tourName: "It Was All A Dream Tour India",
+    tourName: "It Was All A Dream Tour India 2026–27",
     stops: [
       {
         id: "aujla-del",
@@ -267,7 +267,7 @@ export const FEATURED_TOURS: Tour[] = [
         cityName: "Delhi NCR",
         venue: "Airia Mall Arena / JLN",
         coordinates: { lat: 28.5828, lng: 77.2344 },
-        date: "2024-12-15",
+        date: "2026-12-05",
         source: "curated_catalog",
         startingPriceINR: 6000,
         ticketTiers: [
@@ -285,7 +285,7 @@ export const FEATURED_TOURS: Tour[] = [
         cityName: "Chandigarh",
         venue: "CGC Landran Grounds",
         coordinates: { lat: 30.7225, lng: 76.7681 },
-        date: "2024-12-07",
+        date: "2026-12-12",
         source: "curated_catalog",
         startingPriceINR: 4800,
         ticketTiers: [
@@ -303,7 +303,7 @@ export const FEATURED_TOURS: Tour[] = [
         cityName: "Indore",
         venue: "Labh Ganga Ground",
         coordinates: { lat: 22.7244, lng: 75.8752 },
-        date: "2024-12-20",
+        date: "2026-12-19",
         source: "curated_catalog",
         startingPriceINR: 2500,
         ticketTiers: [
@@ -321,7 +321,7 @@ export const FEATURED_TOURS: Tour[] = [
         cityName: "Bengaluru",
         venue: "Manpho Convention Grounds",
         coordinates: { lat: 13.0538, lng: 77.4697 },
-        date: "2024-12-13",
+        date: "2026-12-26",
         source: "curated_catalog",
         startingPriceINR: 4000,
         ticketTiers: [
@@ -339,7 +339,7 @@ export const FEATURED_TOURS: Tour[] = [
         cityName: "Mumbai",
         venue: "Dome SVP Stadium NSCI",
         coordinates: { lat: 18.9899, lng: 72.8164 },
-        date: "2024-12-21",
+        date: "2027-01-02",
         source: "curated_catalog",
         startingPriceINR: 7500,
         ticketTiers: [

@@ -1,33 +1,5 @@
 [
   {
-    "id": "bms-mv-et00507738",
-    "type": "movie",
-    "source": "bookmyshow",
-    "title": "Hanuman Ansh",
-    "description": "Born in a small village in present-day Uttar Pradesh, young Lakshminarayan is drawn to spirituality as he seeks answers to life, death, and human suffering. Leaving home, he journeys across North India, encountering saints, devotees, and ordinary people whose lives are touched by his presence. As mysterious events unfold, his journey leads to a defining encounter that gives rise to the name Neem Karoli Baba. This film chronicles the transformation of an inquisitive young seeker into a revered saint whose spiritual influence would inspire countless people around the world.",
-    "category": "Cinema",
-    "languages": [
-      [
-        "Hindi",
-        "Telugu"
-      ]
-    ],
-    "posterUrl": "https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-750,h-550/et00507738-pvpezmcset-landscape.jpg",
-    "cityCode": "DEL",
-    "cityName": "Delhi NCR",
-    "venue": "Delhi NCR Cinemas",
-    "coordinates": {
-      "lat": 28.6139,
-      "lng": 77.209
-    },
-    "date": "2026-08-07",
-    "startingPriceINR": 250,
-    "bookingUrl": "https://in.bookmyshow.com/movies/hanuman-ansh/ET00507738",
-    "rawDetails": {
-      "duration": "PT2H30M"
-    }
-  },
-  {
     "id": "bms-mv-et00477911",
     "type": "movie",
     "source": "bookmyshow",
@@ -293,11 +265,11 @@
   },
   {
     "id": "district-ev-dandiya-2026-oct17-2026",
-    "type": "event",
+    "type": "concert",
     "source": "district",
     "title": "Dandiya 2026",
     "description": "Marquee Fiesta Presents Dandiya Night 2026Gurugram's Biggest Dandiya Celebration Is Here!Get ready for two unforgettable evenings of music, dance, culture, and festive excitement as&nbsp;Marquee Fiesta presents Dandiya Night 2026 at Urban Akhara, Gurugram!Experience the magic of traditional Dandiya and Garba combined with electrifying DJ performances, energetic live dhol, captivating dance performances, and an atmosphere filled with celebration.Bring your friends, gather your family, dress in your festive best, and get ready to dance the night away!Event Highlights:Live DJ Performances:&nbsp;Dance to an exciting mix of Bollywood hits, Garba favorites, and high-energy festive beats.Live Dhol:&nbsp;Experience the powerful rhythms of traditional dhol performances.Dance Troupe:&nbsp;Enjoy vibrant live dance performances throughout the celebration.Professional Anchor:&nbsp;Interactive hosting, audience engagement, and entertaining activities.Dandiya &amp; Garba:&nbsp;Celebrate traditional dance in a lively, welcoming atmosphere.Fun Competitions:&nbsp;Exciting opportunities to participate in Best Dressed, Best Dancer, and Best Couple contests.Food &amp; Beverages:&nbsp;Explore a selection of food and refreshments available for purchase.Festive Photo Moments:&nbsp;Capture memories with friends and family in a vibrant celebration setting.Why You Shouldn't Miss It:Two nights. Incredible music. Endless festive energy.Whether you're a Garba enthusiast, a Dandiya lover, or simply looking for a memorable festive experience with your favorite people, Dandiya Night 2026 brings together entertainment, culture, and celebration.The music is calling. The dance floor is waiting.Join Marquee Fiesta for two spectacular nights of Dandiya and Garba!",
-    "category": "Live Event",
+    "category": "Concert",
     "posterUrl": "https://cdn.district.in/assets/events/publisher/event_cover_image_horizontal/01M4P39DG7SPWG765WZP4NMJK6.jpg",
     "cityCode": "DEL",
     "cityName": "Delhi NCR",
@@ -315,11 +287,11 @@
   },
   {
     "id": "district-ev--rangilo-ras-dandiya-night--oct16-2026",
-    "type": "event",
+    "type": "concert",
     "source": "district",
     "title": "Rangilo Ras — Dandiya Night",
     "description": "The Event Circuit presents an unforgettable celebration of music, dance, food &amp; festive vibes!Get ready to dress up in your most vibrant traditional outfits and step into a night filled with Dandiya, Bollywood beats, delicious food, games, connections and endless fun!WHAT AWAITS YOU?🪩 Dandiya Disco + DJ — Dance to energetic Dandiya, Bollywood &amp; party beats all night long.Non-Stop Dandiya &amp; Garba — Bring your best moves and join the celebration.🍽️ Unlimited Buffet — Enjoy a delicious spread of unlimited food throughout the event.Unlimited Beverages — Keep the energy going throughout the night.Dandiya Matchmaking — Find your perfect Dandiya partner and make the night interesting.📸 Themed Photo Booths — Capture your best festive looks and unforgettable moments.Engagement Activities &amp; Games — Fun interactive games and challenges for everyone.🏆 Exciting Prizes &amp; Giveaways — Participate, compete and stand a chance to win exciting prizes.Best Dressed Competition — Come dressed to impress and let your festive look shine.Couple &amp; Group Challenges — Bring your squad and battle it out on the dance floor.Audience Games &amp; Spot Prizes — You never know when your name might be called!Festive Decor &amp; Instagram-Worthy Corners — Perfect backdrops for your Navratri pictures.🤝 Meet, Mingle &amp; Make New Connections — A celebration designed to bring people together.COME FOR THE DANDIYA.STAY FOR THE MUSIC.LEAVE WITH MEMORIES.By The Event Circuit",
-    "category": "Live Event",
+    "category": "Concert",
     "posterUrl": "https://cdn.district.in/assets/events/publisher/event_cover_image_horizontal/01M46E86YHV0457AMCHNS3ZD0C.png",
     "cityCode": "DEL",
     "cityName": "Delhi NCR",

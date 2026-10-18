@@ -82,8 +82,8 @@ export async function fetchLiveConcerts(artistQuery: string): Promise<ConcertApi
   }
 
   const encodedArtist = encodeURIComponent(cleanArtist);
-  // Live V3.1 event feed endpoint (zero key, verified live events with real GPS coordinates)
-  const endpoint = `https://rest.bandsintown.com/V3.1/artists/${encodedArtist}/events?app_id=js_localhost&date=all`;
+  // Live V3.1 event feed endpoint (strictly upcoming verified live events)
+  const endpoint = `https://rest.bandsintown.com/V3.1/artists/${encodedArtist}/events?app_id=js_localhost&date=upcoming`;
 
   try {
     const controller = new AbortController();
@@ -127,8 +127,13 @@ export async function fetchLiveConcerts(artistQuery: string): Promise<ConcertApi
       };
     }
 
-    // Filter for events in India
+    const todayStr = new Date().toISOString().slice(0, 10);
+
+    // Filter for upcoming events in India (strictly date >= today)
     const indiaEvents = (data as RawBandsintownV3Event[]).filter((ev) => {
+      const evDate = ev.datetime ? ev.datetime.split("T")[0] : "";
+      if (evDate && evDate < todayStr) return false;
+
       const country = (ev.venue?.country || "").toLowerCase();
       const city = (ev.venue?.city || "").toLowerCase();
       return (
@@ -154,13 +159,13 @@ export async function fetchLiveConcerts(artistQuery: string): Promise<ConcertApi
       return {
         success: false,
         code: "NO_CONCERTS",
-        error: `No live tour stops found in India for "${cleanArtist}". Check out our Featured Tours or try searching Ed Sheeran, Alan Walker, Bryan Adams, Cigarettes After Sex, or Coldplay.`,
+        error: `No upcoming tour stops found in India for "${cleanArtist}". Check out our active tours or try searching Coldplay, Travis Scott, or Diljit Dosanjh.`,
         source: "live_api",
       };
     }
 
-    // Sort by date (descending/chronological)
-    indiaEvents.sort((a, b) => new Date(b.datetime).getTime() - new Date(a.datetime).getTime());
+    // Sort by date (ascending: earliest upcoming first)
+    indiaEvents.sort((a, b) => new Date(a.datetime).getTime() - new Date(b.datetime).getTime());
 
     // Deduplicate venues on close dates (within same city) or take latest 8 stops
     const stops: TourStop[] = indiaEvents.slice(0, 10).map((ev, index) => {

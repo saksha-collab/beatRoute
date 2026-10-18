@@ -74,16 +74,22 @@ function BeatRouteDashboard() {
   const masterCatalog = React.useMemo(() => {
     const map = new Map<string, CatalogItem>();
 
+    const thirtyDaysAgo = new Date(Date.now() - 30 * 24 * 60 * 60 * 1000).toISOString().slice(0, 10);
+
     // A. Baseline catalog.json items (strictly active / upcoming)
     (initialCatalog as CatalogItem[]).forEach((item) => {
-      if (item.type === "movie" || !item.date || item.date >= today) {
+      if (item.type === "movie") {
+        if (!item.date || item.date >= thirtyDaysAgo) map.set(item.id, item);
+      } else if (!item.date || item.date >= today) {
         map.set(item.id, item);
       }
     });
 
     // B. Live SWR updates from BMS & District (strictly active / upcoming)
     (liveCatalogItems || []).forEach((item) => {
-      if (item.type === "movie" || !item.date || item.date >= today) {
+      if (item.type === "movie") {
+        if (!item.date || item.date >= thirtyDaysAgo) map.set(item.id, item);
+      } else if (!item.date || item.date >= today) {
         map.set(item.id, item);
       }
     });

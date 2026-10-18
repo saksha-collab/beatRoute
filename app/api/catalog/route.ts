@@ -40,8 +40,12 @@ async function scrapeCityFresh(cityCode: string): Promise<CatalogItem[]> {
 
 function filterActiveItems(items: CatalogItem[], typeParam?: string | null): CatalogItem[] {
   const today = new Date().toISOString().slice(0, 10);
+  const thirtyDaysAgo = new Date(Date.now() - 30 * 24 * 60 * 60 * 1000).toISOString().slice(0, 10);
   let list = items.filter((item) => {
-    if (item.type === 'movie') return true;
+    if (item.type === 'movie') {
+      if (item.date && item.date < thirtyDaysAgo) return false;
+      return true;
+    }
     if (!item.date) return true;
     return item.date >= today;
   });
