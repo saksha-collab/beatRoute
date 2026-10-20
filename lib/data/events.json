@@ -1,107 +1,5 @@
 [
   {
-    "id": "bms-et00521816",
-    "artist": "VINTAGE RAMZAT",
-    "tourName": "Live performance discovered from BookMyShow • Venue: S K Farm: Ahmedabad",
-    "artistImageUrl": "https://assets-in.bmscdn.com/nmcms/events/banner/desktop/media-desktop-vintage-ramzat-0-2026-10-10-t-16-37-3.jpg",
-    "date": "2026-10-19",
-    "time": "20:00 IST",
-    "cityCode": "AMD",
-    "cityName": "Ahmedabad",
-    "venue": "S K Farm: Ahmedabad",
-    "coordinates": {
-      "lat": 23.0225,
-      "lng": 72.5714
-    },
-    "genres": [
-      "Live Music",
-      "BookMyShow Live"
-    ],
-    "startingPriceINR": 499,
-    "ticketTiers": [
-      {
-        "tierId": "tier-1",
-        "name": "TICKET FOR ONE",
-        "priceINR": 499,
-        "availability": "available"
-      }
-    ],
-    "ticketStatus": "available",
-    "bookingUrl": "https://in.bookmyshow.com/events/vintage-ramzat/ET00521816",
-    "source": "bookmyshow",
-    "highlights": [
-      "Live event discovered from BookMyShow"
-    ]
-  },
-  {
-    "id": "district-ev-dandiya-night-at-don-jon-byob-oct16-2026",
-    "artist": "Dandiya Night at Don Jon BYOB",
-    "tourName": "Step into the vibrant world of Garba and Dandiya for a festive evening filled with music, dance, and cultural charm. Celebrate the spirit of tradition as energetic beats set the rhythm for an unforgettable night of twirls, grooves, and joyful moments. Dress in your ethnic best, bring your friends along, grab your Dandiya sticks, and get ready to immerse yourself in the infectious energy of Garba. Experience the perfect blend of traditional celebrations and lively nightlife as you dance the night away!",
-    "artistImageUrl": "https://cdn.district.in/assets/events/publisher/event_cover_image_horizontal/01M51ZW5H9RNFTHVEM8CYS8S3Q.jpg",
-    "date": "2026-10-19",
-    "time": "19:00 IST",
-    "cityCode": "DEL",
-    "cityName": "Delhi NCR",
-    "venue": "DONJON",
-    "coordinates": {
-      "lat": 28.4174218,
-      "lng": 77.1005138
-    },
-    "genres": [
-      "Concert",
-      "District Live"
-    ],
-    "startingPriceINR": 599,
-    "ticketTiers": [
-      {
-        "tierId": "tier-ga",
-        "name": "General Entry",
-        "priceINR": 599,
-        "availability": "available"
-      }
-    ],
-    "ticketStatus": "available",
-    "bookingUrl": "https://www.district.in/events/dandiya-night-at-don-jon-byob-oct16-2026-buy-tickets",
-    "source": "district",
-    "highlights": [
-      "Live event discovered from District by Zomato"
-    ]
-  },
-  {
-    "id": "district-ev-urbana-dandiya-nights-oct17-2026",
-    "artist": "Urbana Dandiya Nights",
-    "tourName": "DANDIYA MADNESS AT M3M URBANAGet ready for a GRAND DANDIYA NIGHT filled with Music, Dance and Non-Stop Entertainment.20+ Artists Live in ActionHigh-Energy Dandiya & Garba MusicAn Electrifying Celebration for EveryoneFREE BASEMENT PARKING AVAILABLE AT THE VENUEDANDIYA STICKS WILL BE AVAILABLECome with your friends & family and experience one of the Biggest Dandiya Celebrations at M3M Urbana.Get ready to dance the night away!",
-    "artistImageUrl": "https://cdn.district.in/assets/events/publisher/event_cover_image_horizontal/01M49JDF8JDNZHHME8J0XFBBYM.jpg",
-    "date": "2026-10-19",
-    "time": "19:00 IST",
-    "cityCode": "DEL",
-    "cityName": "Delhi NCR",
-    "venue": "M3M URBANA",
-    "coordinates": {
-      "lat": 28.3906338,
-      "lng": 77.06689039999999
-    },
-    "genres": [
-      "Concert",
-      "District Live"
-    ],
-    "startingPriceINR": 699,
-    "ticketTiers": [
-      {
-        "tierId": "tier-ga",
-        "name": "General Entry",
-        "priceINR": 699,
-        "availability": "available"
-      }
-    ],
-    "ticketStatus": "available",
-    "bookingUrl": "https://www.district.in/events/urbana-dandiya-nights-oct17-2026-buy-tickets",
-    "source": "district",
-    "highlights": [
-      "Live event discovered from District by Zomato"
-    ]
-  },
-  {
     "id": "district-ev-dandiya-night-oct11-2026",
     "artist": "Dandiya Night",
     "tourName": "Get ready for an electrifying celebration of Dandiya, music and cocktails as Martini’s brings the festive spirit of Navratri to Gurugram.Put on your festive best and bring your people along for nights filled with energetic music, vibrant celebrations and a whole lot of dancing.What to expect:• Live Dandiya • High-energy music• Festive ambience• Cocktails & food• A vibrant Navratri celebration• We provide the dandiya sticks Dress festive. Bring your people. Let’s dance!",
@@ -136,6 +34,108 @@
     ]
   },
   {
+    "id": "district-ev-gen-why-a-millenial-spiral-by-swati-sachdeva-dec31-2025",
+    "artist": "FAMOUS COMICS ONLY @HIDEOUT",
+    "tourName": "Craving a good laugh? Hideout Comedy Club, Saket is where the night comes alive with jokes, chaos, and pure comedy gold! From razor-sharp stand-up to spontaneous crowd work, our late-night lineup has something for everyone who loves to laugh till it hurts.Step into a space buzzing with energy, killer comics from across the country, and a crowd that knows how to have fun. It’s your go-to spot to ditch the stress, grab your crew, and let loose with back-to-back laughter.When you think “comedy near me”, it’s us.When you think “Delhi comedy shows”, still us.When you think “best comedy nights of 2025” — come on, you already knowLineup is subject to artist availablity and many change without prior notice, photos used are for illustration purpose only and each lineups will have different comics on daily basis.",
+    "artistImageUrl": "https://cdn.district.in/assets/events/publisher/event_cover_image_horizontal/01KTA7XNN6ED6FXCM4FEF5W5EX.png",
+    "date": "2026-10-20",
+    "time": "19:00 IST",
+    "cityCode": "DEL",
+    "cityName": "Delhi NCR",
+    "venue": "Hideout Comedy Club",
+    "coordinates": {
+      "lat": 28.5228,
+      "lng": 77.20703089999999
+    },
+    "genres": [
+      "Live Event",
+      "District Live"
+    ],
+    "startingPriceINR": 249,
+    "ticketTiers": [
+      {
+        "tierId": "tier-ga",
+        "name": "General Entry",
+        "priceINR": 249,
+        "availability": "available"
+      }
+    ],
+    "ticketStatus": "available",
+    "bookingUrl": "https://www.district.in/events/gen-why-a-millenial-spiral-by-swati-sachdeva-dec31-2025-buy-tickets",
+    "source": "district",
+    "highlights": [
+      "Live event discovered from District by Zomato"
+    ]
+  },
+  {
+    "id": "district-ev-the-lineup-apr21-2026",
+    "artist": "Adult Jokes Only",
+    "tourName": "Our adult-only comedy show promises an unforgettable experience, where laughter knows no boundaries and every punchline is delivered with finesse.",
+    "artistImageUrl": "https://cdn.district.in/assets/events/publisher/event_cover_image_horizontal/01M2A81Y6B536GCRCBSYKRHC9W.jpg",
+    "date": "2026-10-20",
+    "time": "19:00 IST",
+    "cityCode": "DEL",
+    "cityName": "Delhi NCR",
+    "venue": "TOT Studio",
+    "coordinates": {
+      "lat": 28.560628,
+      "lng": 77.246222
+    },
+    "genres": [
+      "Live Event",
+      "District Live"
+    ],
+    "startingPriceINR": 249,
+    "ticketTiers": [
+      {
+        "tierId": "tier-ga",
+        "name": "General Entry",
+        "priceINR": 249,
+        "availability": "available"
+      }
+    ],
+    "ticketStatus": "available",
+    "bookingUrl": "https://www.district.in/events/the-lineup-apr21-2026-buy-tickets",
+    "source": "district",
+    "highlights": [
+      "Live event discovered from District by Zomato"
+    ]
+  },
+  {
+    "id": "district-ev-comedy-in-hauz-khas-a-multi-comic-lineup-show-oct31-2025",
+    "artist": "Comedy In Hauz Khas : A Multi Comic Lineup Show",
+    "tourName": "Join us in the heart of Hauz Khas for a night filled with laughter, featuring a stellar handpicked lineup of the very best in comedy. This multi-comic show brings together a blend of seasoned and upcoming comedians, all showcasing their craft.",
+    "artistImageUrl": "https://cdn.district.in/events/cd-media/image/upload/v1761813928/yvnotfh1nascedrtkcnf.png",
+    "date": "2026-10-21",
+    "time": "19:00 IST",
+    "cityCode": "DEL",
+    "cityName": "Delhi NCR",
+    "venue": "LIGHT ROOM",
+    "coordinates": {
+      "lat": 28.5551367,
+      "lng": 77.1928693
+    },
+    "genres": [
+      "Live Event",
+      "District Live"
+    ],
+    "startingPriceINR": 299,
+    "ticketTiers": [
+      {
+        "tierId": "tier-ga",
+        "name": "General Entry",
+        "priceINR": 299,
+        "availability": "available"
+      }
+    ],
+    "ticketStatus": "available",
+    "bookingUrl": "https://www.district.in/events/comedy-in-hauz-khas-a-multi-comic-lineup-show-oct31-2025-buy-tickets",
+    "source": "district",
+    "highlights": [
+      "Live event discovered from District by Zomato"
+    ]
+  },
+  {
     "id": "bms-et00510410",
     "artist": "The Usha Uthup Experience",
     "tourName": "Live performance discovered from BookMyShow • Venue: Shanmukhananda Hall: Mumbai",
@@ -157,44 +157,44 @@
     "ticketTiers": [
       {
         "tierId": "tier-1",
-        "name": "Premium",
-        "priceINR": 2500,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-2",
         "name": "2nd Floor Balcony",
         "priceINR": 999,
         "availability": "available"
       },
       {
-        "tierId": "tier-3",
+        "tierId": "tier-2",
         "name": "Platinum",
         "priceINR": 3500,
         "availability": "available"
       },
       {
-        "tierId": "tier-4",
+        "tierId": "tier-3",
         "name": "1st Floor Balcony",
         "priceINR": 1499,
         "availability": "available"
       },
       {
-        "tierId": "tier-5",
+        "tierId": "tier-4",
         "name": "Diamond",
         "priceINR": 5000,
         "availability": "available"
       },
       {
-        "tierId": "tier-6",
+        "tierId": "tier-5",
         "name": "Standard",
         "priceINR": 2000,
         "availability": "available"
       },
       {
-        "tierId": "tier-7",
+        "tierId": "tier-6",
         "name": "Elite",
         "priceINR": 8000,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-7",
+        "name": "Premium",
+        "priceINR": 2500,
         "availability": "available"
       }
     ],
@@ -340,6 +340,128 @@
     ]
   },
   {
+    "id": "bms-et00522566",
+    "artist": "Lake Shore Weekends ",
+    "tourName": "Live performance discovered from BookMyShow • Venue: Shott - Lakeshore Mall, Kukatpally: Hyderabad",
+    "artistImageUrl": "https://assets-in.bmscdn.com/nmcms/events/banner/desktop/media-desktop-lakeshore-weekends-0-2026-10-15-t-15-7-50.jpg",
+    "date": "2026-10-24",
+    "time": "19:00 IST",
+    "cityCode": "HYD",
+    "cityName": "Hyderabad",
+    "venue": "Shott - Lakeshore Mall, Kukatpally: Hyderabad",
+    "coordinates": {
+      "lat": 17.385,
+      "lng": 78.4867
+    },
+    "genres": [
+      "Live Music",
+      "BookMyShow Live"
+    ],
+    "startingPriceINR": 199,
+    "ticketTiers": [
+      {
+        "tierId": "tier-1",
+        "name": "GROUP OF 2",
+        "priceINR": 499,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-2",
+        "name": "SINGLE ENTRY",
+        "priceINR": 299,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-3",
+        "name": "KIDS AND STUDENT PASS",
+        "priceINR": 199,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-4",
+        "name": "GROUP OF 5",
+        "priceINR": 999,
+        "availability": "available"
+      }
+    ],
+    "ticketStatus": "available",
+    "bookingUrl": "https://in.bookmyshow.com/events/lakeshore-weekends/ET00522566",
+    "source": "bookmyshow",
+    "highlights": [
+      "Live event discovered from BookMyShow"
+    ]
+  },
+  {
+    "id": "bms-et00519230",
+    "artist": "Mahesh Kale Diwali Vishesh - Vashi Navi Mumbai",
+    "tourName": "Live performance discovered from BookMyShow • Venue: I. E. S, Navi Mumbai High School: Vashi",
+    "artistImageUrl": "https://assets-in.bmscdn.com/nmcms/events/banner/desktop/media-desktop-mahesh-kale-diwali-vishesh-vashi-navi-mumbai-0-2026-9-27-t-20-1-30.jpg",
+    "date": "2026-11-07",
+    "time": "06:45 IST",
+    "cityCode": "BOM",
+    "cityName": "Mumbai",
+    "venue": "I. E. S, Navi Mumbai High School: Vashi",
+    "coordinates": {
+      "lat": 19.076,
+      "lng": 72.8777
+    },
+    "genres": [
+      "Live Music",
+      "BookMyShow Live"
+    ],
+    "startingPriceINR": 399,
+    "ticketTiers": [
+      {
+        "tierId": "tier-1",
+        "name": "SILVER PHASE 2",
+        "priceINR": 799,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-2",
+        "name": "VIP PHASE 1",
+        "priceINR": 3499,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-3",
+        "name": "SILVER PHASE 1",
+        "priceINR": 399,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-4",
+        "name": "DIAMOND PHASE 1",
+        "priceINR": 2499,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-5",
+        "name": "GOLD PHASE 1",
+        "priceINR": 1499,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-6",
+        "name": "SILVER FINAL PHASE",
+        "priceINR": 1249,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-7",
+        "name": "VVIP SOFA - FOR 3 PERSON",
+        "priceINR": 14999,
+        "availability": "available"
+      }
+    ],
+    "ticketStatus": "available",
+    "bookingUrl": "https://in.bookmyshow.com/events/mahesh-kale-diwali-vishesh-vashi-navi-mumbai/ET00519230",
+    "source": "bookmyshow",
+    "highlights": [
+      "Live event discovered from BookMyShow"
+    ]
+  },
+  {
     "id": "bms-et00516066",
     "artist": "Diwali Pahat",
     "tourName": "Live performance discovered from BookMyShow • Venue: Tilak Smarak Mandir: Pune",
@@ -361,14 +483,14 @@
     "ticketTiers": [
       {
         "tierId": "tier-1",
-        "name": "Row A to S",
-        "priceINR": 600,
+        "name": "Row T to Z",
+        "priceINR": 500,
         "availability": "available"
       },
       {
         "tierId": "tier-2",
-        "name": "Row T to Z",
-        "priceINR": 500,
+        "name": "Row A to S",
+        "priceINR": 600,
         "availability": "available"
       }
     ],
@@ -401,32 +523,32 @@
     "ticketTiers": [
       {
         "tierId": "tier-1",
+        "name": "Premium - Phase 1",
+        "priceINR": 10000,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-2",
         "name": "General - Phase 1",
         "priceINR": 3000,
         "availability": "available"
       },
       {
-        "tierId": "tier-2",
+        "tierId": "tier-3",
         "name": "Premium - Early Bird",
         "priceINR": 8000,
         "availability": "available"
       },
       {
-        "tierId": "tier-3",
+        "tierId": "tier-4",
         "name": "Tuborg Lounge",
         "priceINR": 13000,
         "availability": "available"
       },
       {
-        "tierId": "tier-4",
+        "tierId": "tier-5",
         "name": "General - Early Bird",
         "priceINR": 2500,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-5",
-        "name": "Premium - Phase 1",
-        "priceINR": 10000,
         "availability": "available"
       }
     ],
@@ -575,31 +697,71 @@
     "ticketTiers": [
       {
         "tierId": "tier-1",
+        "name": "VIP STANDING PHASE 1",
+        "priceINR": 2499,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-2",
         "name": "GA STANDING PHASE 1",
         "priceINR": 1499,
         "availability": "available"
       },
       {
-        "tierId": "tier-2",
+        "tierId": "tier-3",
         "name": "GULABI CHAIR PHASE 1",
         "priceINR": 6999,
         "availability": "available"
       },
       {
-        "tierId": "tier-3",
+        "tierId": "tier-4",
         "name": "FAN PIT STANDING",
         "priceINR": 3999,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-4",
-        "name": "VIP STANDING PHASE 1",
-        "priceINR": 2499,
         "availability": "available"
       }
     ],
     "ticketStatus": "available",
     "bookingUrl": "https://in.bookmyshow.com/events/jasmine-sandlas-live-in-concert/ET00517820",
+    "source": "bookmyshow",
+    "highlights": [
+      "Live event discovered from BookMyShow"
+    ]
+  },
+  {
+    "id": "bms-et00516022",
+    "artist": "HARDIK DAVE",
+    "tourName": "Live performance discovered from BookMyShow • Venue: Natarani Amphitheatre: Ahmedabad",
+    "artistImageUrl": "https://assets-in.bmscdn.com/nmcms/events/banner/desktop/media-desktop-hardik-dave-0-2026-9-7-t-12-23-23.jpg",
+    "date": "2026-11-29",
+    "time": "20:30 IST",
+    "cityCode": "AMD",
+    "cityName": "Ahmedabad",
+    "venue": "Natarani Amphitheatre: Ahmedabad",
+    "coordinates": {
+      "lat": 23.0225,
+      "lng": 72.5714
+    },
+    "genres": [
+      "Live Music",
+      "BookMyShow Live"
+    ],
+    "startingPriceINR": 1500,
+    "ticketTiers": [
+      {
+        "tierId": "tier-1",
+        "name": "PHASE 1 + DINNER",
+        "priceINR": 2000,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-2",
+        "name": "PHASE 1",
+        "priceINR": 1500,
+        "availability": "available"
+      }
+    ],
+    "ticketStatus": "available",
+    "bookingUrl": "https://in.bookmyshow.com/events/hardik-dave/ET00516022",
     "source": "bookmyshow",
     "highlights": [
       "Live event discovered from BookMyShow"
@@ -627,26 +789,26 @@
     "ticketTiers": [
       {
         "tierId": "tier-1",
-        "name": "EB GA SINGLE ENTRY",
-        "priceINR": 799,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-2",
         "name": "EB FAN PIT COUPLE ENTRY",
         "priceINR": 1799,
         "availability": "available"
       },
       {
-        "tierId": "tier-3",
+        "tierId": "tier-2",
         "name": "EB FAN PIT SINGLE ENTRY",
         "priceINR": 999,
         "availability": "available"
       },
       {
-        "tierId": "tier-4",
+        "tierId": "tier-3",
         "name": "EB GA COUPLE ENTRY",
         "priceINR": 1399,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-4",
+        "name": "EB GA SINGLE ENTRY",
+        "priceINR": 799,
         "availability": "available"
       }
     ],
@@ -755,134 +917,134 @@
     "ticketTiers": [
       {
         "tierId": "tier-1",
-        "name": "Early Bird Fanpit",
-        "priceINR": 4000,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-2",
-        "name": "GA Phase 3",
-        "priceINR": 3000,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-3",
-        "name": "Tuborg Lounge",
-        "priceINR": 12999,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-4",
-        "name": "GA Phase 2",
-        "priceINR": 2500,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-5",
-        "name": "Fanpit Phase 3",
-        "priceINR": 10000,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-6",
-        "name": "Early Bird VIP",
-        "priceINR": 2500,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-7",
-        "name": "VIP Phase 3",
-        "priceINR": 4000,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-8",
-        "name": "GA Phase 5",
-        "priceINR": 4000,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-9",
-        "name": "Fanpit Phase 1",
-        "priceINR": 6000,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-10",
-        "name": "GA Phase 4",
-        "priceINR": 3500,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-11",
-        "name": "VIP Phase 7",
-        "priceINR": 7000,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-12",
-        "name": "VIP Phase 1",
-        "priceINR": 3000,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-13",
-        "name": "VIP Phase 5",
-        "priceINR": 5000,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-14",
-        "name": "Fanpit Combo",
-        "priceINR": 12000,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-15",
-        "name": "Early Bird GA",
-        "priceINR": 1500,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-16",
-        "name": "Fanpit Phase 2",
-        "priceINR": 8000,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-17",
-        "name": "GA Phase 1",
-        "priceINR": 2000,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-18",
-        "name": "VIP Phase 4",
-        "priceINR": 4500,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-19",
-        "name": "VIP Combo",
-        "priceINR": 7000,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-20",
-        "name": "GA Combo",
-        "priceINR": 5000,
-        "availability": "available"
-      },
-      {
-        "tierId": "tier-21",
         "name": "VIP Phase 2",
         "priceINR": 3500,
         "availability": "available"
       },
       {
-        "tierId": "tier-22",
+        "tierId": "tier-2",
         "name": "VIP Phase 6",
         "priceINR": 6000,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-3",
+        "name": "GA Phase 1",
+        "priceINR": 2000,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-4",
+        "name": "VIP Phase 4",
+        "priceINR": 4500,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-5",
+        "name": "VIP Combo",
+        "priceINR": 7000,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-6",
+        "name": "GA Combo",
+        "priceINR": 5000,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-7",
+        "name": "Early Bird Fanpit",
+        "priceINR": 4000,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-8",
+        "name": "GA Phase 3",
+        "priceINR": 3000,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-9",
+        "name": "Tuborg Lounge",
+        "priceINR": 12999,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-10",
+        "name": "GA Phase 2",
+        "priceINR": 2500,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-11",
+        "name": "Fanpit Phase 3",
+        "priceINR": 10000,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-12",
+        "name": "Early Bird VIP",
+        "priceINR": 2500,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-13",
+        "name": "VIP Phase 3",
+        "priceINR": 4000,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-14",
+        "name": "GA Phase 5",
+        "priceINR": 4000,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-15",
+        "name": "Fanpit Phase 1",
+        "priceINR": 6000,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-16",
+        "name": "GA Phase 4",
+        "priceINR": 3500,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-17",
+        "name": "Early Bird GA",
+        "priceINR": 1500,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-18",
+        "name": "Fanpit Phase 2",
+        "priceINR": 8000,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-19",
+        "name": "VIP Phase 7",
+        "priceINR": 7000,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-20",
+        "name": "VIP Phase 1",
+        "priceINR": 3000,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-21",
+        "name": "VIP Phase 5",
+        "priceINR": 5000,
+        "availability": "available"
+      },
+      {
+        "tierId": "tier-22",
+        "name": "Fanpit Combo",
+        "priceINR": 12000,
         "availability": "available"
       }
     ],
@@ -925,6 +1087,40 @@
     "source": "bookmyshow",
     "highlights": [
       "Live event discovered from BookMyShow"
+    ]
+  },
+  {
+    "id": "district-ev-samay-raina-live-delhi-yashobhoomi-6a9bfcb5d4d3d3abd96591c9-2026",
+    "artist": "Samay Raina Live | Delhi | Yashobhoomi",
+    "tourName": "Samay Raina is back on the road. New cities, new jokes, same questionable decisions. Catch Samay Raina Live for an evening of stand-up, stories and the kind of chaos you probably shouldn't miss.",
+    "artistImageUrl": "https://cdn.district.in/assets/events/publisher/event_cover_image_horizontal/01M39Q2F629QB64FPCH07QEMN6.jpg",
+    "date": "2027-02-06",
+    "time": "19:00 IST",
+    "cityCode": "DEL",
+    "cityName": "Delhi NCR",
+    "venue": "Yashobhoomi",
+    "coordinates": {
+      "lat": 28.555192,
+      "lng": 77.048187
+    },
+    "genres": [
+      "Live Event",
+      "District Live"
+    ],
+    "startingPriceINR": 499,
+    "ticketTiers": [
+      {
+        "tierId": "tier-ga",
+        "name": "General Entry",
+        "priceINR": 499,
+        "availability": "available"
+      }
+    ],
+    "ticketStatus": "available",
+    "bookingUrl": "https://www.district.in/events/samay-raina-live-delhi-yashobhoomi-6a9bfcb5d4d3d3abd96591c9-2026-buy-tickets",
+    "source": "district",
+    "highlights": [
+      "Live event discovered from District by Zomato"
     ]
   }
 ]
