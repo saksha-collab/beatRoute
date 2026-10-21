@@ -4,7 +4,7 @@ import * as React from "react";
 import { Search, X, ArrowUpDown } from "lucide-react";
 
 export type PlatformFilter = "all" | "bookmyshow" | "district";
-export type SortOption = "cheapest" | "date" | "savings";
+export type SortOption = "cheapest" | "date" | "platforms";
 
 interface AggregatorSearchBarProps {
   searchQuery: string;
@@ -24,7 +24,7 @@ export function AggregatorSearchBar({
   onPlatformFilterChange,
   sortBy,
   onSortByChange,
-  placeholder = "Search by artist, movie, or venue...",
+  placeholder = "Search by artist, movie, comedy club, or venue...",
 }: AggregatorSearchBarProps) {
   return (
     <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 p-2 rounded-2xl bg-surface border border-border-subtle shadow-xs">
@@ -53,7 +53,7 @@ export function AggregatorSearchBar({
         )}
       </div>
 
-      {/* Subtle Source Pill Selector */}
+      {/* Platform Source Pill Selector */}
       <div className="flex items-center gap-1 bg-surface-elevated/40 p-1 rounded-xl border border-border-subtle/50 shrink-0">
         <button
           onClick={() => onPlatformFilterChange("all")}
@@ -63,7 +63,7 @@ export function AggregatorSearchBar({
               : "text-text-muted hover:text-text-secondary"
           }`}
         >
-          All
+          All Platforms
         </button>
         <button
           onClick={() => onPlatformFilterChange("bookmyshow")}
@@ -87,16 +87,16 @@ export function AggregatorSearchBar({
         </button>
       </div>
 
-      {/* Quiet Sort Selector */}
+      {/* Sort Selector */}
       <div className="relative shrink-0">
         <select
           value={sortBy}
           onChange={(e) => onSortByChange(e.target.value as SortOption)}
           className="w-full sm:w-auto pl-3 pr-8 py-2 rounded-xl bg-surface-elevated/60 hover:bg-surface-elevated text-text-primary text-xs font-semibold border border-transparent hover:border-border-subtle focus:border-border-strong focus:outline-none transition-all appearance-none cursor-pointer"
         >
-          <option value="cheapest">Price: Lowest</option>
+          <option value="cheapest">Price: Lowest Active</option>
           <option value="date">Date: Earliest</option>
-          <option value="savings">Best Arbitrage</option>
+          <option value="platforms">Multi-Platform First</option>
         </select>
         <div className="absolute right-2.5 top-1/2 -translate-y-1/2 pointer-events-none text-text-muted">
           <ArrowUpDown className="h-3 w-3" />

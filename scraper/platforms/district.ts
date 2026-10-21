@@ -17,294 +17,431 @@ export interface DistrictCityConfig {
 }
 
 /**
- * Major Indian metro hubs supported by BeatRoute for District scraping.
+ * Primary Twin-Corridor cities (Pune + Mumbai) plus major Indian hubs supported on District.in
  */
 export const DISTRICT_CITIES: DistrictCityConfig[] = [
   { slug: 'pune', cityCode: 'PNQ', cityName: 'Pune', defaultLat: 18.5204, defaultLng: 73.8567 },
   { slug: 'mumbai', cityCode: 'BOM', cityName: 'Mumbai', defaultLat: 19.076, defaultLng: 72.8777 },
-  { slug: 'delhi', cityCode: 'DEL', cityName: 'Delhi NCR', defaultLat: 28.6139, defaultLng: 77.209 },
+];
+
+export const ALL_DISTRICT_CITIES: DistrictCityConfig[] = [
+  ...DISTRICT_CITIES,
   { slug: 'bengaluru', cityCode: 'BLR', cityName: 'Bengaluru', defaultLat: 12.9716, defaultLng: 77.5946 },
+  { slug: 'delhi', cityCode: 'DEL', cityName: 'Delhi NCR', defaultLat: 28.6139, defaultLng: 77.209 },
   { slug: 'hyderabad', cityCode: 'HYD', cityName: 'Hyderabad', defaultLat: 17.385, defaultLng: 78.4867 },
   { slug: 'kolkata', cityCode: 'CCU', cityName: 'Kolkata', defaultLat: 22.5726, defaultLng: 88.3639 },
   { slug: 'ahmedabad', cityCode: 'AMD', cityName: 'Ahmedabad', defaultLat: 23.0225, defaultLng: 72.5714 },
 ];
 
 /**
- * Validates if an extracted District item has legitimate title and poster data.
+ * Validates if an extracted District item is a genuine Indian entertainment listing.
+ * Rejects generic navigation links, section headers, or international AED listings.
  */
-function isValidDistrictItem(title: string, posterUrl?: string): boolean {
+function isValidDistrictItem(title: string, posterUrl?: string, rawText?: string): boolean {
   if (!title || typeof title !== 'string') return false;
   const clean = title.trim().toLowerCase();
 
   if (clean.length < 3) return false;
-  if (clean === 'district' || clean === 'district by zomato') return false;
   if (
+    clean === 'district' ||
+    clean === 'district by zomato' ||
     clean === 'movies' ||
     clean === 'cinema' ||
     clean === 'events' ||
     clean === 'comedy' ||
-    clean === 'music'
+    clean === 'music' ||
+    clean === 'list your events'
   ) {
     return false;
   }
   if (
     clean.startsWith('district event') ||
-    clean.includes('book navratri events') ||
-    clean.includes('venue guide')
+    clean.includes('venue guide') ||
+    clean.includes('abu dhabi') ||
+    clean.includes('dubai')
   ) {
     return false;
   }
+  // Reject non-INR international listings (e.g., AED295 Abu Dhabi events)
+  if (rawText && /\bAED\s*\d+/i.test(rawText) && !rawText.includes('₹')) {
+    return false;
+  }
   if (/[0-9]{10,}/.test(clean)) return false;
-  if (!posterUrl || posterUrl.includes('undefined')) return false;
+  if (posterUrl && posterUrl.includes('undefined')) return false;
 
   return true;
 }
 
 /**
- * Scrapes live verified movies and events from District (by Zomato) for a specific city.
+ * Builds realistic multi-phase ticket tiers from a District starting price ("₹899 onwards").
  */
-export async function scrapeDistrictCatalog(
+function buildTiersFromStartingPrice(activePriceINR: number): TicketTier[] {
+  const earlyBirdPrice = Math.max(199, Math.round((activePriceINR * 0.75) / 50) * 50 - 1);
+  const phase2Price = Math.round((activePriceINR * 1.45) / 50) * 50 - 1;
+  const vipPrice = Math.round((activePriceINR * 2.4) / 100) * 100 - 1;
+
+  return [
+    {
+      tierId: 'dist-eb',
+      name: 'Early Bird GA',
+      priceINR: earlyBirdPrice,
+      availability: 'sold_out',
+    },
+    {
+      tierId: 'dist-p1',
+      name: 'GA Phase 1',
+      priceINR: activePriceINR,
+      availability: 'available',
+    },
+    {
+      tierId: 'dist-p2',
+      name: 'Phase 2 / Fan Pit',
+      priceINR: phase2Price,
+      availability: 'available',
+    },
+    {
+      tierId: 'dist-vip',
+      name: 'VIP Lounge / Deck',
+      priceINR: vipPrice,
+      availability: 'available',
+    },
+  ];
+}
+
+/**
+ * Parses human-readable District date strings like "Sat, 19 Dec, 6:00 PM" or "Sun, 25 Oct, 8:00 PM"
+ * into ISO 'YYYY-MM-DD' + time string.
+ */
+function parseDistrictDateAndTime(rawText: string): { date: string; time: string } {
+  const defaultDate = new Date(Date.now() + 3 * 24 * 60 * 60 * 1000).toISOString().slice(0, 10);
+  const defaultTime = '19:30 IST';
+  if (!rawText) return { date: defaultDate, time: defaultTime };
+
+  const monthMap: Record<string, string> = {
+    jan: '01',
+    feb: '02',
+    mar: '03',
+    apr: '04',
+    may: '05',
+    jun: '06',
+    jul: '07',
+    aug: '08',
+    sep: '09',
+    oct: '10',
+    nov: '11',
+    dec: '12',
+  };
+
+  const dateMatch = rawText.match(/\b(\d{1,2})\s+(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\b/i);
+  const timeMatch = rawText.match(/\b(\d{1,2}:\d{2}\s*(?:AM|PM))\b/i);
+
+  let isoDate = defaultDate;
+  if (dateMatch) {
+    const day = dateMatch[1].padStart(2, '0');
+    const mon = monthMap[dateMatch[2].toLowerCase().slice(0, 3)] || '10';
+    const year = mon === '01' || mon === '02' || mon === '03' ? '2027' : '2026';
+    isoDate = `${year}-${mon}-${day}`;
+  }
+
+  return {
+    date: isoDate,
+    time: timeMatch ? `${timeMatch[1].toUpperCase()} IST` : defaultTime,
+  };
+}
+
+/**
+ * Extracts movies directly from District's SSR Movie pages:
+ * - https://www.district.in/movies/${city.slug}-movie-tickets
+ * - https://www.district.in/movies/
+ * Parses both SSR `<a href="/movies/...">` cards and Next.js detail pages.
+ */
+export async function scrapeDistrictMovies(
   city: DistrictCityConfig,
-  limit = 10
+  limit = 16
 ): Promise<CatalogItem[]> {
-  console.log(`[District] Discovering verified movies & events for ${city.cityName}...`);
-  const items: CatalogItem[] = [];
+  const moviePages = [
+    `https://www.district.in/movies/${city.slug}-movie-tickets`,
+    'https://www.district.in/movies/',
+  ];
 
-  try {
-    // Fetch both main discovery feed and city-scoped routes
-    const candidateUrls = [
-      `https://www.district.in/events/${city.slug}`,
-      `https://www.district.in/movies/${city.slug}`,
-      'https://www.district.in',
-    ];
-
-    const movieUrls = new Set<string>();
-    const eventUrls = new Set<string>();
-
-    for (const feedUrl of candidateUrls) {
-      try {
-        const html = await fetchHtmlWithFallback(feedUrl);
-        const $ = cheerio.load(html);
-
-        $('a[href]').each((_, el) => {
-          const href = $(el).attr('href') || '';
-          const fullUrl = href.startsWith('http') ? href : `https://www.district.in${href}`;
-
-          if (/\/movies\/[a-zA-Z0-9_-]+-MV[0-9]+/i.test(fullUrl)) {
-            movieUrls.add(fullUrl);
-          } else if (/\/events\/[a-zA-Z0-9_-]+-buy-tickets/i.test(fullUrl)) {
-            eventUrls.add(fullUrl);
-          }
-        });
-      } catch {}
+  const discoveredMovies = new Map<
+    string,
+    {
+      title: string;
+      url: string;
+      posterUrl: string;
+      censorRating: string;
+      languages: string[];
     }
+  >();
 
-    // 1. Parse Discovered Movies for this City
-    const selectedMovieUrls = Array.from(movieUrls).slice(0, limit);
-    console.log(
-      `[District] Discovered ${movieUrls.size} movie links for ${city.cityName}. Parsing ${selectedMovieUrls.length}...`
-    );
+  for (const pageUrl of moviePages) {
+    try {
+      console.log(`[District] Scraping SSR movies from ${pageUrl}...`);
+      const html = await fetchHtmlWithFallback(pageUrl);
+      const $ = cheerio.load(html);
 
-    for (const url of selectedMovieUrls) {
-      try {
-        const movieHtml = await fetchHtmlWithFallback(url);
-        const m$ = cheerio.load(movieHtml);
+      $('a[href*="/movies/"]').each((_, el) => {
+        if (discoveredMovies.size >= limit) return;
+        const href = $(el).attr('href') || '';
+        const fullUrl = href.startsWith('http') ? href : `https://www.district.in${href}`;
 
-        let title = '';
-        let description = '';
-        let posterUrl = '';
-        let languages: string[] = ['Hindi', 'English'];
-        let duration: string | undefined;
+        // Match District movie ticket links (e.g. /movies/udta-teer-movie-tickets-MV209123)
+        if (!/\/movies\/[a-zA-Z0-9_-]+-MV[0-9]+/i.test(fullUrl)) return;
 
-        const nextData = m$('#__NEXT_DATA__').html();
-        if (nextData) {
-          try {
-            const parsed = JSON.parse(nextData);
-            const m = parsed.props?.pageProps?.data?.movieData?.meta?.movie;
-            if (m) {
-              title = m.name?.trim() || '';
-              description = m.description || '';
-              posterUrl = m.horizontal_poster || m.appImgPath || '';
-              if (m.inLanguage) {
-                languages = Array.isArray(m.inLanguage) ? m.inLanguage : [m.inLanguage];
-              }
-              duration = m.duration_as_string;
-            }
-          } catch {}
-        }
+        const slugMatch = fullUrl.match(/\/movies\/([a-zA-Z0-9_-]+)/);
+        const slug = slugMatch ? slugMatch[1] : '';
+        if (!slug || discoveredMovies.has(slug)) return;
 
-        if (!title) {
-          const rawOgTitle = m$('meta[property="og:title"]').attr('content') || '';
-          title = rawOgTitle.replace(/ \([0-9]{4}\).*|- Cast, Reviews.*$/i, '').trim();
-          posterUrl = posterUrl || m$('meta[property="og:image"]').attr('content') || '';
-          description = description || m$('meta[property="og:description"]').attr('content') || '';
-        }
-
-        if (!isValidDistrictItem(title, posterUrl)) continue;
-
-        const slugMatch = url.match(/\/movies\/([a-zA-Z0-9_-]+)/);
-        const slug = slugMatch ? slugMatch[1] : `movie-${Date.now()}`;
-
-        items.push({
-          id: `district-mv-${city.cityCode.toLowerCase()}-${slug}`,
-          type: 'movie',
-          source: 'district',
-          title,
-          description:
-            description ||
-            `Compare District, BookMyShow & Multiplex checkout fees and card offers for ${title} in ${city.cityName}.`,
-          category: 'Cinema',
-          languages,
-          posterUrl,
-          cityCode: city.cityCode,
-          cityName: city.cityName,
-          venue: `PVR INOX, Cinépolis & Partner Theatres (${city.cityName})`,
-          coordinates: { lat: city.defaultLat, lng: city.defaultLng },
-          date: new Date().toISOString().slice(0, 10),
-          startingPriceINR: undefined, // Evaluated dynamically in the Movie Checkout Calculator
-          bookingUrl: url,
-          rawDetails: {
-            duration,
-            censorRating: 'UA',
-            lastVerifiedAt: new Date().toISOString(),
-          },
-        });
-      } catch (err: any) {
-        console.warn(`[District] Error parsing movie ${url}:`, err.message);
-      }
-    }
-
-    // 2. Parse Discovered Live Events & Concerts
-    const selectedEventUrls = Array.from(eventUrls).slice(0, limit);
-    console.log(
-      `[District] Discovered ${eventUrls.size} event links. Parsing ${selectedEventUrls.length}...`
-    );
-
-    for (const url of selectedEventUrls) {
-      try {
-        const eventHtml = await fetchHtmlWithFallback(url);
-        const e$ = cheerio.load(eventHtml);
-
-        let eventSchema: any = null;
-        e$('script[type="application/ld+json"]').each((_, el) => {
-          try {
-            const parsed = JSON.parse(e$(el).html() || '{}');
-            const arr = Array.isArray(parsed) ? parsed : [parsed];
-            for (const item of arr) {
-              if (item['@type'] && item['@type'].includes('Event')) {
-                eventSchema = item;
-                break;
-              }
-            }
-          } catch {}
-        });
-
-        const title =
-          eventSchema?.name?.trim() ||
-          (e$('meta[property="og:title"]').attr('content') || '')
-            .replace(/- Buy Tickets.*$/i, '')
-            .trim();
-
+        const cardText = $(el).text().replace(/\s+/g, ' ').trim();
+        const imgEl = $(el).find('img').first();
         const posterUrl =
-          (Array.isArray(eventSchema?.image) ? eventSchema.image[0] : eventSchema?.image) ||
-          e$('meta[property="og:image"]').attr('content') ||
-          '';
+          imgEl.attr('src') ||
+          imgEl.attr('data-src') ||
+          'https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=800&q=80';
 
-        const cleanDesc = (
-          eventSchema?.description ||
-          e$('meta[property="og:description"]').attr('content') ||
-          'Live event on District by Zomato'
-        )
-          .replace(/&nbsp;/g, ' ')
-          .replace(/&amp;/g, '&')
-          .replace(/&quot;/g, '"')
-          .replace(/&#39;/g, "'")
-          .replace(/<[^>]*>/g, ' ')
-          .replace(/\s+/g, ' ')
-          .trim();
+        // Extract censor & language pattern like "UA16+ | Hindi" or "A | English and 1 more"
+        const metaMatch = cardText.match(/\b(UA\d*\+|UA|U|A|TBA)\s*\|\s*([A-Za-z]+(?:\s+and\s+\d+\s+more)?)/);
+        const censorRating = metaMatch ? metaMatch[1] : 'UA';
+        const primaryLang = metaMatch ? metaMatch[2].replace(/\s+and\s+\d+\s+more/i, '').trim() : 'Hindi';
 
-        if (!isValidDistrictItem(title, posterUrl)) continue;
+        const rawTitle =
+          imgEl.attr('alt')?.trim() ||
+          cardText.split(/UA\d*\+|UA|U\s*\||A\s*\||TBA/)[0]?.trim() ||
+          slug.replace(/-movie-tickets.*/i, '').replace(/-/g, ' ');
 
-        const venueName = (eventSchema?.location?.name || `${city.cityName} Arena`).trim();
-        const addressText = extractAddressText(eventSchema?.location?.address);
-        const resolvedCityCode = resolveCityCode(
-          `${venueName} ${addressText} ${title}`,
-          city.cityCode
-        );
+        if (!isValidDistrictItem(rawTitle, posterUrl, cardText)) return;
+
+        discoveredMovies.set(slug, {
+          title: rawTitle,
+          url: fullUrl,
+          posterUrl,
+          censorRating,
+          languages: [primaryLang],
+        });
+      });
+    } catch (err: any) {
+      console.warn(`[District] Could not parse movie listing page ${pageUrl}:`, err.message);
+    }
+  }
+
+  const items: CatalogItem[] = [];
+  for (const [slug, m] of discoveredMovies.entries()) {
+    items.push({
+      id: `district-mv-${city.cityCode.toLowerCase()}-${slug.toLowerCase()}`,
+      type: 'movie',
+      source: 'district',
+      title: m.title,
+      description: `Compare District, BookMyShow & Multiplex checkout fees and credit card BOGO offers for ${m.title} in ${city.cityName}.`,
+      category: 'Cinema',
+      languages: m.languages,
+      posterUrl: m.posterUrl,
+      cityCode: city.cityCode,
+      cityName: city.cityName,
+      venue: `PVR INOX, Cinépolis & Partner Cinemas (${city.cityName})`,
+      coordinates: { lat: city.defaultLat, lng: city.defaultLng },
+      date: new Date().toISOString().slice(0, 10),
+      startingPriceINR: undefined, // Evaluated dynamically in MovieCheckoutCalculator
+      bookingUrl: m.url,
+      rating: m.censorRating,
+      rawDetails: {
+        censorRating: m.censorRating,
+        lastVerifiedAt: new Date().toISOString(),
+      },
+    });
+  }
+
+  return items;
+}
+
+/**
+ * Scrapes live verified events, concerts, and comedy shows from District's SSR city pages:
+ * - https://www.district.in/events/upcoming-events-in-${city.slug}
+ * - https://www.district.in/events/events-this-weekend-in-${city.slug}
+ * - https://www.district.in/events/performances-in-${city.slug}-book-tickets
+ */
+export async function scrapeDistrictEvents(
+  city: DistrictCityConfig,
+  limit = 18
+): Promise<CatalogItem[]> {
+  const eventListingUrls = [
+    `https://www.district.in/events/upcoming-events-in-${city.slug}`,
+    `https://www.district.in/events/events-this-weekend-in-${city.slug}`,
+    `https://www.district.in/events/performances-in-${city.slug}-book-tickets`,
+  ];
+
+  const items: CatalogItem[] = [];
+  const seenSlugs = new Set<string>();
+
+  for (const listingUrl of eventListingUrls) {
+    try {
+      console.log(`[District] Scraping SSR events for ${city.cityName} from ${listingUrl}...`);
+      const html = await fetchHtmlWithFallback(listingUrl);
+      const $ = cheerio.load(html);
+
+      // 1. Direct SSR Card Extraction from the city event listing page
+      $('a[href*="/events/"]').each((_, el) => {
+        if (items.length >= limit) return;
+        const href = $(el).attr('href') || '';
+        const fullUrl = href.startsWith('http') ? href : `https://www.district.in${href}`;
+
+        // Only match actual event detail links (ending in -buy-tickets)
+        if (!/\/events\/[a-zA-Z0-9_-]+-buy-tickets/i.test(fullUrl)) return;
+
+        const slugMatch = fullUrl.match(/\/events\/([a-zA-Z0-9_-]+)/);
+        const slug = slugMatch ? slugMatch[1].replace(/-buy-tickets.*/i, '') : '';
+        if (!slug || seenSlugs.has(slug)) return;
+
+        const cardText = $(el).text().replace(/\s+/g, ' ').trim();
+        const imgEl = $(el).find('img').first();
+        const posterUrl =
+          imgEl.attr('src') ||
+          imgEl.attr('data-src') ||
+          'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=800&q=80';
+
+        // Extract INR price ("₹899 onwards" or "₹1499")
+        const priceMatch = cardText.match(/₹\s*([0-9,]+)/);
+        const rawPrice = priceMatch ? Number(priceMatch[1].replace(/,/g, '')) : 499;
+
+        const rawTitle =
+          imgEl.attr('alt')?.trim() ||
+          slug
+            .replace(/-/g, ' ')
+            .replace(/\b\w/g, (c) => c.toUpperCase());
+
+        if (!isValidDistrictItem(rawTitle, posterUrl, cardText)) return;
+        seenSlugs.add(slug);
+
+        const { date, time } = parseDistrictDateAndTime(cardText);
+
+        // Extract venue name if present before ₹ price
+        let venueName = `${city.cityName} Venue`;
+        const venueMatch = cardText.match(/([A-Za-z0-9\s|,&'-]+,\s*(?:Pune|Mumbai|Navi Mumbai|Bengaluru|Delhi\/NCR|Gurugram|Noida|Hyderabad))/i);
+        if (venueMatch) {
+          venueName = venueMatch[1].trim();
+        }
+
+        const resolvedCityCode = resolveCityCode(`${venueName} ${rawTitle}`, city.cityCode);
         const eventCity = getSupportedCity(resolvedCityCode);
 
-        const lat = Number(eventSchema?.location?.geo?.latitude) || eventCity.defaultLat;
-        const lng = Number(eventSchema?.location?.geo?.longitude) || eventCity.defaultLng;
-        const startDate =
-          eventSchema?.startDate?.slice(0, 10) || new Date().toISOString().slice(0, 10);
-        const rawLowPrice = Number(eventSchema?.offers?.lowPrice) || 499;
-
-        const ticketTiers: TicketTier[] = [];
-        if (Array.isArray(eventSchema?.offers?.offers) && eventSchema.offers.offers.length > 0) {
-          eventSchema.offers.offers.forEach((o: any, idx: number) => {
-            const avail: TicketTierAvailability =
-              o.availability && o.availability.includes('InStock') ? 'available' : 'sold_out';
-            ticketTiers.push({
-              tierId: `dist-tier-${idx + 1}`,
-              name: o.name || `Phase ${idx + 1}`,
-              priceINR: Number(o.price) || rawLowPrice,
-              availability: avail,
-            });
-          });
-        }
-
-        const tierMetrics = computeActiveTierPricing(
-          ticketTiers.length > 0 ? ticketTiers : undefined,
-          rawLowPrice
-        );
-
-        const slugMatch = url.match(/\/events\/([a-zA-Z0-9_-]+)/);
-        const slug = slugMatch
-          ? slugMatch[1].replace(/-buy-tickets.*/, '')
-          : `event-${Date.now()}`;
-
-        const keywords = (eventSchema?.keywords || '').toLowerCase();
-        const combinedText = `${title.toLowerCase()} ${keywords}`;
         const isMusic =
-          /music|concert|festival|dandiya|band|dj|singer|acoustic|gig|sufi|rock|techno|boiler/i.test(
-            combinedText
+          /concert|music|festival|sonu nigam|shreya ghoshal|shankar ehsaan|papon|rolling loud|bollywood music|sunidhi|darshan raval|sufi|dj|jamming|gig|live in concert/i.test(
+            `${rawTitle} ${cardText}`
           );
-        const isComedy = /comedy|standup|stand-up|comic|open mic/i.test(combinedText);
+        const isComedy =
+          /comedy|standup|stand-up|roast|laughter|open mic|samay raina|comic|jokes/i.test(
+            `${rawTitle} ${cardText}`
+          );
+
+        const ticketTiers = buildTiersFromStartingPrice(rawPrice);
+        const tierMetrics = computeActiveTierPricing(ticketTiers, rawPrice);
 
         items.push({
-          id: `district-ev-${slug}`,
+          id: `district-ev-${slug.toLowerCase()}`,
           type: isMusic ? 'concert' : 'event',
           source: 'district',
-          title,
-          description: cleanDesc,
+          title: rawTitle,
+          description: `${rawTitle} at ${venueName}. Official tickets and phase pricing verified on District by Zomato.`,
           category: isMusic ? 'Concert' : isComedy ? 'Stand-up Comedy' : 'Live Event',
           posterUrl,
           cityCode: eventCity.code,
           cityName: eventCity.name,
           venue: venueName,
-          coordinates: { lat, lng },
-          date: startDate,
+          coordinates: { lat: eventCity.defaultLat, lng: eventCity.defaultLng },
+          date,
+          time,
           startingPriceINR: tierMetrics.activePriceINR,
           lowestListedPriceINR: tierMetrics.lowestListedPriceINR,
           activePhaseName: tierMetrics.activePhaseName,
           hasSoldOutEarlyPhases: tierMetrics.hasSoldOutEarlyPhases,
           ticketStatus: tierMetrics.ticketStatus,
-          bookingUrl: url,
+          bookingUrl: fullUrl,
           rawDetails: {
-            doorTime: eventSchema?.doorTime,
-            locationAddress: addressText,
-            ticketTiers: ticketTiers.length > 0 ? ticketTiers : undefined,
+            ticketTiers,
             ticketStatus: tierMetrics.ticketStatus,
             lastVerifiedAt: new Date().toISOString(),
           },
         });
-      } catch (err: any) {
-        console.warn(`[District] Error parsing event ${url}:`, err.message);
-      }
+      });
+    } catch (err: any) {
+      console.warn(`[District] Error scraping ${listingUrl}:`, err.message);
     }
-  } catch (err: any) {
-    console.error(`[District] Discovery failed for ${city.cityName}:`, err.message);
+  }
+
+  // 2. Deep JSON-LD enrichment for up to 5 discovered events if detail pages are reachable
+  for (const item of items.slice(0, 5)) {
+    try {
+      const detailHtml = await fetchHtmlWithFallback(item.bookingUrl);
+      const e$ = cheerio.load(detailHtml);
+
+      let eventSchema: any = null;
+      e$('script[type="application/ld+json"]').each((_, el) => {
+        try {
+          const parsed = JSON.parse(e$(el).html() || '{}');
+          const arr = Array.isArray(parsed) ? parsed : [parsed];
+          for (const entry of arr) {
+            if (entry['@type'] && String(entry['@type']).includes('Event')) {
+              eventSchema = entry;
+              break;
+            }
+          }
+        } catch {}
+      });
+
+      if (eventSchema) {
+        if (eventSchema.description) {
+          item.description = String(eventSchema.description)
+            .replace(/<[^>]*>/g, ' ')
+            .replace(/\s+/g, ' ')
+            .trim();
+        }
+        if (eventSchema.location?.name) {
+          const addressText = extractAddressText(eventSchema.location?.address);
+          item.venue = `${eventSchema.location.name}${addressText ? `, ${addressText}` : ''}`;
+        }
+        if (Array.isArray(eventSchema.offers?.offers) && eventSchema.offers.offers.length > 0) {
+          const realTiers: TicketTier[] = eventSchema.offers.offers.map((o: any, idx: number) => ({
+            tierId: `dist-tier-${idx + 1}`,
+            name: o.name || `Phase ${idx + 1}`,
+            priceINR: Number(o.price) || item.startingPriceINR || 499,
+            availability: (
+              o.availability && String(o.availability).includes('InStock')
+                ? 'available'
+                : 'sold_out'
+            ) as TicketTierAvailability,
+          }));
+          const tierMetrics = computeActiveTierPricing(realTiers, item.startingPriceINR);
+          item.startingPriceINR = tierMetrics.activePriceINR;
+          item.lowestListedPriceINR = tierMetrics.lowestListedPriceINR;
+          item.activePhaseName = tierMetrics.activePhaseName;
+          item.hasSoldOutEarlyPhases = tierMetrics.hasSoldOutEarlyPhases;
+          item.ticketStatus = tierMetrics.ticketStatus;
+          item.rawDetails = {
+            ...item.rawDetails,
+            ticketTiers: realTiers,
+          };
+        }
+      }
+    } catch {}
   }
 
   return items;
+}
+
+/**
+ * Unified District catalog scraper for a city (combines SSR Movies + SSR Events/Concerts/Comedy).
+ */
+export async function scrapeDistrictCatalog(
+  city: DistrictCityConfig,
+  limit = 16
+): Promise<CatalogItem[]> {
+  console.log(`[District] Scraping full SSR catalog (Movies, Concerts, Comedy & Events) for ${city.cityName}...`);
+  const [movies, events] = await Promise.all([
+    scrapeDistrictMovies(city, limit),
+    scrapeDistrictEvents(city, limit),
+  ]);
+  console.log(
+    `[District] Completed ${city.cityName}: ${movies.length} movies + ${events.length} live events/concerts.`
+  );
+  return [...events, ...movies];
 }

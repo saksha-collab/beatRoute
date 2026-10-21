@@ -1,8 +1,8 @@
 "use client";
 
 import * as React from "react";
-import { X, MapPin, Navigation, Sparkles } from "lucide-react";
-import { resolveCityCode, SUPPORTED_INDIAN_CITIES } from "@/lib/location";
+import { X, Navigation } from "lucide-react";
+import { SUPPORTED_INDIAN_CITIES } from "@/lib/location";
 
 interface CitySelectorModalProps {
   isOpen: boolean;
@@ -13,12 +13,12 @@ interface CitySelectorModalProps {
 }
 
 const CITY_METROS = [
-  { code: "BOM", name: "Mumbai", state: "Maharashtra", badge: "Hub" },
-  { code: "DEL", name: "Delhi NCR", state: "National Capital", badge: "Hub" },
+  { code: "PNQ", name: "Pune", state: "Maharashtra", badge: "Primary Hub" },
+  { code: "BOM", name: "Mumbai", state: "Maharashtra", badge: "Twin Hub" },
   { code: "BLR", name: "Bengaluru", state: "Karnataka", badge: "Tech & Live" },
+  { code: "DEL", name: "Delhi NCR", state: "National Capital", badge: "Metro" },
   { code: "HYD", name: "Hyderabad", state: "Telangana", badge: "Arena" },
   { code: "CCU", name: "Kolkata", state: "West Bengal", badge: "Culture" },
-  { code: "PNQ", name: "Pune", state: "Maharashtra", badge: "Music Hub" },
   { code: "AMD", name: "Ahmedabad", state: "Gujarat", badge: "Stadium" },
   { code: "ALL", name: "All India", state: "Pan-India Radar", badge: "National" },
 ];
@@ -55,7 +55,6 @@ export function CitySelectorModal({
       async (pos) => {
         try {
           const { latitude, longitude } = pos.coords;
-          // Simple nearest city distance finder among supported cities
           let closestCity = SUPPORTED_INDIAN_CITIES[0];
           let minDistance = Infinity;
 
@@ -68,7 +67,7 @@ export function CitySelectorModal({
           }
 
           handleSelect(closestCity.code);
-        } catch (e: any) {
+        } catch {
           setDetectError("Could not determine city from coordinates.");
         } finally {
           setIsDetecting(false);
@@ -85,7 +84,6 @@ export function CitySelectorModal({
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/40 backdrop-blur-sm animate-in fade-in duration-200">
       <div className="relative w-full max-w-lg rounded-2xl bg-surface border border-border-strong shadow-2xl p-6 sm:p-7 space-y-5 animate-in zoom-in-95 duration-200">
-        
         {/* Header */}
         <div className="flex items-start justify-between">
           <div className="space-y-1">
@@ -99,7 +97,7 @@ export function CitySelectorModal({
               Which city are you exploring?
             </h2>
             <p className="text-xs sm:text-sm text-text-muted">
-              Discover concerts, cinema screenings, and live events curated across BookMyShow & District.
+              Compare concerts, comedy gigs, and movie checkout fees across BookMyShow & District.
             </p>
           </div>
 
@@ -121,11 +119,17 @@ export function CitySelectorModal({
             disabled={isDetecting}
             className="w-full flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl border border-border-strong bg-surface-elevated hover:bg-surface-hover text-text-primary text-xs font-bold transition-all"
           >
-            <Navigation className={`h-3.5 w-3.5 text-accent-dune ${isDetecting ? "animate-spin" : ""}`} />
-            <span>{isDetecting ? "Detecting location..." : "Auto-detect my current city"}</span>
+            <Navigation
+              className={`h-3.5 w-3.5 text-accent-dune ${isDetecting ? "animate-spin" : ""}`}
+            />
+            <span>
+              {isDetecting ? "Detecting location..." : "Auto-detect my current city"}
+            </span>
           </button>
           {detectError && (
-            <p className="text-[11px] text-accent-danger mt-1.5 text-center">{detectError}</p>
+            <p className="text-[11px] text-accent-danger mt-1.5 text-center">
+              {detectError}
+            </p>
           )}
         </div>
 
@@ -167,14 +171,13 @@ export function CitySelectorModal({
           <span>You can switch cities anytime from the header pill.</span>
           {isFirstVisit && (
             <button
-              onClick={() => handleSelect("BOM")}
+              onClick={() => handleSelect("PNQ")}
               className="text-accent-dune font-bold hover:underline"
             >
-              Skip & Start with Mumbai
+              Start with Pune
             </button>
           )}
         </div>
-
       </div>
     </div>
   );

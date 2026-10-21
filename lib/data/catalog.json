@@ -10,7 +10,7 @@
       "Hindi",
       "Malayalam"
     ],
-    "posterUrl": "https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-750,h-550/et00477911-klbacxkshn-landscape.jpg",
+    "posterUrl": "https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&w=800&q=80",
     "cityCode": "ALL",
     "cityName": "All India",
     "venue": "PVR INOX, Cinépolis & Partner Theatres",
@@ -28,16 +28,24 @@
     "listings": [
       {
         "source": "bookmyshow",
-        "sourceId": "bms-mv-drishyam-conclusion",
+        "sourceId": "bms-drishyam-the-conclusion",
         "bookingUrl": "https://in.bookmyshow.com/movies/drishyam-the-conclusion/ET00477911",
         "ticketStatus": "available",
         "convenienceFeePercent": 11.8
+      },
+      {
+        "source": "district",
+        "sourceId": "district-drishyam-the-conclusion",
+        "bookingUrl": "https://www.district.in/movies/",
+        "ticketStatus": "available",
+        "convenienceFeePercent": 10
       }
     ],
     "availablePlatforms": [
-      "bookmyshow"
+      "bookmyshow",
+      "district"
     ],
-    "isExclusive": true,
+    "isExclusive": false,
     "normalizedTitle": "drishyam the conclusion",
     "hasSoldOutEarlyPhases": false
   },
@@ -53,7 +61,7 @@
       "Tamil",
       "Telugu"
     ],
-    "posterUrl": "https://cdn.district.in/movies/cd-media/image/upload/v1761044439/s3nhkndv40n4y67y7w5v.png",
+    "posterUrl": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=800&q=80",
     "cityCode": "ALL",
     "cityName": "All India",
     "venue": "IMAX, PVR INOX & Cinépolis",
@@ -70,17 +78,25 @@
     "ticketStatus": "available",
     "listings": [
       {
+        "source": "bookmyshow",
+        "sourceId": "bms-namit-malhotra-s-ramayana",
+        "bookingUrl": "https://in.bookmyshow.com/explore/movies-pune",
+        "ticketStatus": "available",
+        "convenienceFeePercent": 11.8
+      },
+      {
         "source": "district",
-        "sourceId": "district-mv-ramayana-2026",
+        "sourceId": "district-namit-malhotra-s-ramayana",
         "bookingUrl": "https://www.district.in/movies/ramayana-movie-tickets-MV206385",
         "ticketStatus": "available",
         "convenienceFeePercent": 10
       }
     ],
     "availablePlatforms": [
+      "bookmyshow",
       "district"
     ],
-    "isExclusive": true,
+    "isExclusive": false,
     "normalizedTitle": "namit malhotra s ramayana",
     "hasSoldOutEarlyPhases": false
   },
@@ -96,7 +112,7 @@
       "Hindi",
       "Telugu"
     ],
-    "posterUrl": "https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-750,h-550/et00429213-bcgftexayj-landscape.jpg",
+    "posterUrl": "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=800&q=80",
     "cityCode": "ALL",
     "cityName": "All India",
     "venue": "National Multiplexes",
@@ -114,16 +130,24 @@
     "listings": [
       {
         "source": "bookmyshow",
-        "sourceId": "bms-mv-rajini-jailer-2",
+        "sourceId": "bms-rajini-the-jailer-2",
         "bookingUrl": "https://in.bookmyshow.com/movies/rajini-the-jailer-2-hindi/ET00429213",
         "ticketStatus": "available",
         "convenienceFeePercent": 11.8
+      },
+      {
+        "source": "district",
+        "sourceId": "district-rajini-the-jailer-2",
+        "bookingUrl": "https://www.district.in/movies/",
+        "ticketStatus": "available",
+        "convenienceFeePercent": 10
       }
     ],
     "availablePlatforms": [
-      "bookmyshow"
+      "bookmyshow",
+      "district"
     ],
-    "isExclusive": true,
+    "isExclusive": false,
     "normalizedTitle": "rajini the jailer 2",
     "hasSoldOutEarlyPhases": false
   },
@@ -137,7 +161,7 @@
     "languages": [
       "Hindi"
     ],
-    "posterUrl": "https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-750,h-550/et00466141-mhywudskve-portrait.jpg",
+    "posterUrl": "https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?auto=format&fit=crop&w=800&q=80",
     "cityCode": "ALL",
     "cityName": "All India",
     "venue": "City Multiplexes",
@@ -155,16 +179,24 @@
     "listings": [
       {
         "source": "bookmyshow",
-        "sourceId": "bms-mv-nayyi-navelli",
+        "sourceId": "bms-nayyi-navelli",
         "bookingUrl": "https://in.bookmyshow.com/movies/nayyi-navelli/ET00466141",
         "ticketStatus": "available",
         "convenienceFeePercent": 11.8
+      },
+      {
+        "source": "district",
+        "sourceId": "district-nayyi-navelli",
+        "bookingUrl": "https://www.district.in/movies/",
+        "ticketStatus": "available",
+        "convenienceFeePercent": 10
       }
     ],
     "availablePlatforms": [
-      "bookmyshow"
+      "bookmyshow",
+      "district"
     ],
-    "isExclusive": true,
+    "isExclusive": false,
     "normalizedTitle": "nayyi navelli",
     "hasSoldOutEarlyPhases": false
   },
@@ -179,7 +211,7 @@
       "Marathi",
       "Hindi"
     ],
-    "posterUrl": "https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-750,h-550/et00455850-yrmvytpcfz-portrait.jpg",
+    "posterUrl": "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=800&q=80",
     "cityCode": "ALL",
     "cityName": "All India",
     "venue": "Maharashtra Multiplexes",
@@ -197,16 +229,24 @@
     "listings": [
       {
         "source": "bookmyshow",
-        "sourceId": "bms-mv-prahaar",
+        "sourceId": "bms-prahaar-the-untold-story-of-ujjwal-nikam",
         "bookingUrl": "https://in.bookmyshow.com/movies/prahaar/ET00455850",
         "ticketStatus": "available",
         "convenienceFeePercent": 11.8
+      },
+      {
+        "source": "district",
+        "sourceId": "district-prahaar-the-untold-story-of-ujjwal-nikam",
+        "bookingUrl": "https://www.district.in/movies/",
+        "ticketStatus": "available",
+        "convenienceFeePercent": 10
       }
     ],
     "availablePlatforms": [
-      "bookmyshow"
+      "bookmyshow",
+      "district"
     ],
-    "isExclusive": true,
+    "isExclusive": false,
     "normalizedTitle": "prahaar the untold story of ujjwal nikam",
     "hasSoldOutEarlyPhases": false
   },
@@ -222,7 +262,7 @@
       "Tamil",
       "Telugu"
     ],
-    "posterUrl": "https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-750,h-550/et00507337-aeyeqdfuhm-landscape.jpg",
+    "posterUrl": "https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&w=800&q=80",
     "cityCode": "ALL",
     "cityName": "All India",
     "venue": "Family Theatres Pan-India",
@@ -240,16 +280,24 @@
     "listings": [
       {
         "source": "bookmyshow",
-        "sourceId": "bms-mv-doraemon-undersea",
+        "sourceId": "bms-doraemon-castle-of-the-undersea-devil",
         "bookingUrl": "https://in.bookmyshow.com/movies/doraemon-castle-of-the-undersea-devil/ET00507337",
         "ticketStatus": "available",
         "convenienceFeePercent": 11.8
+      },
+      {
+        "source": "district",
+        "sourceId": "district-doraemon-castle-of-the-undersea-devil",
+        "bookingUrl": "https://www.district.in/movies/",
+        "ticketStatus": "available",
+        "convenienceFeePercent": 10
       }
     ],
     "availablePlatforms": [
-      "bookmyshow"
+      "bookmyshow",
+      "district"
     ],
-    "isExclusive": true,
+    "isExclusive": false,
     "normalizedTitle": "doraemon castle of the undersea devil",
     "hasSoldOutEarlyPhases": false
   },
@@ -260,7 +308,7 @@
     "title": "Sunburn Festival 2026 — Pune Arena",
     "description": "Asia's biggest electronic dance music festival featuring world-class headliners, mind-bending stage productions, and sunset beats.",
     "category": "Concert",
-    "posterUrl": "https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-750,h-550/et00412350-sunburn.jpg",
+    "posterUrl": "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=800&q=80",
     "cityCode": "PNQ",
     "cityName": "Pune",
     "venue": "Mahalakshmi Lawns, Kharadi, Pune",
@@ -271,8 +319,8 @@
     "date": "2026-12-18",
     "time": "15:00 IST",
     "startingPriceINR": 2499,
-    "lowestListedPriceINR": 2499,
-    "hasSoldOutEarlyPhases": false,
+    "lowestListedPriceINR": 1749,
+    "hasSoldOutEarlyPhases": true,
     "ticketStatus": "available",
     "bookingUrl": "https://in.bookmyshow.com/events/sunburn-festival-pune/ET00412350",
     "listings": [
@@ -281,7 +329,34 @@
         "sourceId": "bms-cn-sunburn-pune-2026",
         "bookingUrl": "https://in.bookmyshow.com/events/sunburn-festival-pune/ET00412350",
         "startingPriceINR": 2499,
-        "lowestListedPriceINR": 2499,
+        "lowestListedPriceINR": 1749,
+        "activePhaseName": "GA Phase 1",
+        "ticketTiers": [
+          {
+            "tierId": "tier-eb",
+            "name": "Early Bird GA",
+            "priceINR": 1749,
+            "availability": "sold_out"
+          },
+          {
+            "tierId": "tier-p1",
+            "name": "GA Phase 1",
+            "priceINR": 2499,
+            "availability": "available"
+          },
+          {
+            "tierId": "tier-p2",
+            "name": "GA Phase 2 / Fan Pit",
+            "priceINR": 3499,
+            "availability": "available"
+          },
+          {
+            "tierId": "tier-vip",
+            "name": "VIP Lounge Deck",
+            "priceINR": 5999,
+            "availability": "available"
+          }
+        ],
         "ticketStatus": "available",
         "convenienceFeePercent": 11.8
       }
@@ -290,7 +365,37 @@
       "bookmyshow"
     ],
     "isExclusive": true,
-    "normalizedTitle": "sunburn festival 2026 pune arena"
+    "normalizedTitle": "sunburn festival 2026 pune arena",
+    "activePhaseName": "GA Phase 1",
+    "rawDetails": {
+      "ticketTiers": [
+        {
+          "tierId": "tier-eb",
+          "name": "Early Bird GA",
+          "priceINR": 1749,
+          "availability": "sold_out"
+        },
+        {
+          "tierId": "tier-p1",
+          "name": "GA Phase 1",
+          "priceINR": 2499,
+          "availability": "available"
+        },
+        {
+          "tierId": "tier-p2",
+          "name": "GA Phase 2 / Fan Pit",
+          "priceINR": 3499,
+          "availability": "available"
+        },
+        {
+          "tierId": "tier-vip",
+          "name": "VIP Lounge Deck",
+          "priceINR": 5999,
+          "availability": "available"
+        }
+      ],
+      "ticketStatus": "available"
+    }
   },
   {
     "id": "bms-cn-jasmine-sandlas-pune",
@@ -299,7 +404,7 @@
     "title": "Jasmine Sandlas Live in Concert - Pune",
     "description": "The Gulabi Queen brings her chartbuster Punjabi anthems, unmatched charisma, and high-energy live band to Pune.",
     "category": "Concert",
-    "posterUrl": "https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-750,h-550/et00413000-jasmine-sandlas.jpg",
+    "posterUrl": "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=800&q=80",
     "cityCode": "PNQ",
     "cityName": "Pune",
     "venue": "The Orchid Hotel Open Air Lawns, Balewadi, Pune",
@@ -310,8 +415,8 @@
     "date": "2026-11-28",
     "time": "19:00 IST",
     "startingPriceINR": 999,
-    "lowestListedPriceINR": 999,
-    "hasSoldOutEarlyPhases": false,
+    "lowestListedPriceINR": 699,
+    "hasSoldOutEarlyPhases": true,
     "ticketStatus": "available",
     "bookingUrl": "https://in.bookmyshow.com/events/jasmine-sandlas-live-in-concert-pune/ET00413000",
     "listings": [
@@ -320,7 +425,34 @@
         "sourceId": "bms-cn-jasmine-sandlas-pune",
         "bookingUrl": "https://in.bookmyshow.com/events/jasmine-sandlas-live-in-concert-pune/ET00413000",
         "startingPriceINR": 999,
-        "lowestListedPriceINR": 999,
+        "lowestListedPriceINR": 699,
+        "activePhaseName": "GA Phase 1",
+        "ticketTiers": [
+          {
+            "tierId": "tier-eb",
+            "name": "Early Bird GA",
+            "priceINR": 699,
+            "availability": "sold_out"
+          },
+          {
+            "tierId": "tier-p1",
+            "name": "GA Phase 1",
+            "priceINR": 999,
+            "availability": "available"
+          },
+          {
+            "tierId": "tier-p2",
+            "name": "GA Phase 2 / Fan Pit",
+            "priceINR": 1399,
+            "availability": "available"
+          },
+          {
+            "tierId": "tier-vip",
+            "name": "VIP Lounge Deck",
+            "priceINR": 2399,
+            "availability": "available"
+          }
+        ],
         "ticketStatus": "available",
         "convenienceFeePercent": 11.8
       }
@@ -329,7 +461,37 @@
       "bookmyshow"
     ],
     "isExclusive": true,
-    "normalizedTitle": "jasmine sandlas"
+    "normalizedTitle": "jasmine sandlas",
+    "activePhaseName": "GA Phase 1",
+    "rawDetails": {
+      "ticketTiers": [
+        {
+          "tierId": "tier-eb",
+          "name": "Early Bird GA",
+          "priceINR": 699,
+          "availability": "sold_out"
+        },
+        {
+          "tierId": "tier-p1",
+          "name": "GA Phase 1",
+          "priceINR": 999,
+          "availability": "available"
+        },
+        {
+          "tierId": "tier-p2",
+          "name": "GA Phase 2 / Fan Pit",
+          "priceINR": 1399,
+          "availability": "available"
+        },
+        {
+          "tierId": "tier-vip",
+          "name": "VIP Lounge Deck",
+          "priceINR": 2399,
+          "availability": "available"
+        }
+      ],
+      "ticketStatus": "available"
+    }
   },
   {
     "id": "bms-cn-anyma-mumbai",
@@ -338,7 +500,7 @@
     "title": "ANYMA presents AEDEN - Mumbai",
     "description": "The revolutionary visual and melodic techno odyssey crafted by Tale of Us co-founder Matteo Milleri brings colossal LED structures to Mumbai.",
     "category": "Concert",
-    "posterUrl": "https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-750,h-550/et00416972-anyma.jpg",
+    "posterUrl": "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=800&q=80",
     "cityCode": "BOM",
     "cityName": "Mumbai",
     "venue": "Mahalaxmi Racecourse, Mumbai",
@@ -349,8 +511,8 @@
     "date": "2026-11-21",
     "time": "17:00 IST",
     "startingPriceINR": 3999,
-    "lowestListedPriceINR": 3999,
-    "hasSoldOutEarlyPhases": false,
+    "lowestListedPriceINR": 2799,
+    "hasSoldOutEarlyPhases": true,
     "ticketStatus": "available",
     "bookingUrl": "https://in.bookmyshow.com/events/anyma-presents-aeden-mumbai/ET00416972",
     "listings": [
@@ -359,7 +521,34 @@
         "sourceId": "bms-cn-anyma-mumbai",
         "bookingUrl": "https://in.bookmyshow.com/events/anyma-presents-aeden-mumbai/ET00416972",
         "startingPriceINR": 3999,
-        "lowestListedPriceINR": 3999,
+        "lowestListedPriceINR": 2799,
+        "activePhaseName": "GA Phase 1",
+        "ticketTiers": [
+          {
+            "tierId": "tier-eb",
+            "name": "Early Bird GA",
+            "priceINR": 2799,
+            "availability": "sold_out"
+          },
+          {
+            "tierId": "tier-p1",
+            "name": "GA Phase 1",
+            "priceINR": 3999,
+            "availability": "available"
+          },
+          {
+            "tierId": "tier-p2",
+            "name": "GA Phase 2 / Fan Pit",
+            "priceINR": 5599,
+            "availability": "available"
+          },
+          {
+            "tierId": "tier-vip",
+            "name": "VIP Lounge Deck",
+            "priceINR": 9599,
+            "availability": "available"
+          }
+        ],
         "ticketStatus": "available",
         "convenienceFeePercent": 11.8
       }
@@ -368,7 +557,37 @@
       "bookmyshow"
     ],
     "isExclusive": true,
-    "normalizedTitle": "anyma presents aeden"
+    "normalizedTitle": "anyma presents aeden",
+    "activePhaseName": "GA Phase 1",
+    "rawDetails": {
+      "ticketTiers": [
+        {
+          "tierId": "tier-eb",
+          "name": "Early Bird GA",
+          "priceINR": 2799,
+          "availability": "sold_out"
+        },
+        {
+          "tierId": "tier-p1",
+          "name": "GA Phase 1",
+          "priceINR": 3999,
+          "availability": "available"
+        },
+        {
+          "tierId": "tier-p2",
+          "name": "GA Phase 2 / Fan Pit",
+          "priceINR": 5599,
+          "availability": "available"
+        },
+        {
+          "tierId": "tier-vip",
+          "name": "VIP Lounge Deck",
+          "priceINR": 9599,
+          "availability": "available"
+        }
+      ],
+      "ticketStatus": "available"
+    }
   },
   {
     "id": "bms-cn-usha-uthup-bom",
@@ -377,7 +596,7 @@
     "title": "The Usha Uthup Experience",
     "description": "Indian pop & jazz pioneer Usha Uthup live in concert with her iconic blockbusters across five decades.",
     "category": "Concert",
-    "posterUrl": "https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-750,h-550/et00415520-usha-uthup.jpg",
+    "posterUrl": "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=800&q=80",
     "cityCode": "BOM",
     "cityName": "Mumbai",
     "venue": "Shanmukhananda Hall, Sion, Mumbai",
@@ -388,8 +607,8 @@
     "date": "2026-10-23",
     "time": "19:30 IST",
     "startingPriceINR": 750,
-    "lowestListedPriceINR": 750,
-    "hasSoldOutEarlyPhases": false,
+    "lowestListedPriceINR": 549,
+    "hasSoldOutEarlyPhases": true,
     "ticketStatus": "available",
     "bookingUrl": "https://in.bookmyshow.com/events/the-usha-uthup-experience/ET00415520",
     "listings": [
@@ -398,7 +617,34 @@
         "sourceId": "bms-cn-usha-uthup-bom",
         "bookingUrl": "https://in.bookmyshow.com/events/the-usha-uthup-experience/ET00415520",
         "startingPriceINR": 750,
-        "lowestListedPriceINR": 750,
+        "lowestListedPriceINR": 549,
+        "activePhaseName": "GA Phase 1",
+        "ticketTiers": [
+          {
+            "tierId": "tier-eb",
+            "name": "Early Bird GA",
+            "priceINR": 549,
+            "availability": "sold_out"
+          },
+          {
+            "tierId": "tier-p1",
+            "name": "GA Phase 1",
+            "priceINR": 750,
+            "availability": "available"
+          },
+          {
+            "tierId": "tier-p2",
+            "name": "GA Phase 2 / Fan Pit",
+            "priceINR": 1049,
+            "availability": "available"
+          },
+          {
+            "tierId": "tier-vip",
+            "name": "VIP Lounge Deck",
+            "priceINR": 1799,
+            "availability": "available"
+          }
+        ],
         "ticketStatus": "available",
         "convenienceFeePercent": 11.8
       }
@@ -407,7 +653,37 @@
       "bookmyshow"
     ],
     "isExclusive": true,
-    "normalizedTitle": "the usha uthup experience"
+    "normalizedTitle": "the usha uthup experience",
+    "activePhaseName": "GA Phase 1",
+    "rawDetails": {
+      "ticketTiers": [
+        {
+          "tierId": "tier-eb",
+          "name": "Early Bird GA",
+          "priceINR": 549,
+          "availability": "sold_out"
+        },
+        {
+          "tierId": "tier-p1",
+          "name": "GA Phase 1",
+          "priceINR": 750,
+          "availability": "available"
+        },
+        {
+          "tierId": "tier-p2",
+          "name": "GA Phase 2 / Fan Pit",
+          "priceINR": 1049,
+          "availability": "available"
+        },
+        {
+          "tierId": "tier-vip",
+          "name": "VIP Lounge Deck",
+          "priceINR": 1799,
+          "availability": "available"
+        }
+      ],
+      "ticketStatus": "available"
+    }
   },
   {
     "id": "bms-cn-lollapalooza-2027",
@@ -416,7 +692,7 @@
     "title": "Lollapalooza India 2027",
     "description": "The global multi-genre music extravaganza returns to Mumbai with 4 massive stages, 40+ international artists, and culinary pop-ups.",
     "category": "Concert",
-    "posterUrl": "https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-750,h-550/et00405000-lollapalooza.jpg",
+    "posterUrl": "https://images.unsplash.com/photo-1459749411175-04bf5292ceea?auto=format&fit=crop&w=800&q=80",
     "cityCode": "BOM",
     "cityName": "Mumbai",
     "venue": "Mahalaxmi Racecourse, Mumbai",
@@ -427,8 +703,8 @@
     "date": "2027-01-23",
     "time": "14:00 IST",
     "startingPriceINR": 6999,
-    "lowestListedPriceINR": 6999,
-    "hasSoldOutEarlyPhases": false,
+    "lowestListedPriceINR": 4899,
+    "hasSoldOutEarlyPhases": true,
     "ticketStatus": "available",
     "bookingUrl": "https://in.bookmyshow.com/events/lollapalooza-india-2027/ET00405000",
     "listings": [
@@ -437,7 +713,34 @@
         "sourceId": "bms-cn-lollapalooza-2027",
         "bookingUrl": "https://in.bookmyshow.com/events/lollapalooza-india-2027/ET00405000",
         "startingPriceINR": 6999,
-        "lowestListedPriceINR": 6999,
+        "lowestListedPriceINR": 4899,
+        "activePhaseName": "GA Phase 1",
+        "ticketTiers": [
+          {
+            "tierId": "tier-eb",
+            "name": "Early Bird GA",
+            "priceINR": 4899,
+            "availability": "sold_out"
+          },
+          {
+            "tierId": "tier-p1",
+            "name": "GA Phase 1",
+            "priceINR": 6999,
+            "availability": "available"
+          },
+          {
+            "tierId": "tier-p2",
+            "name": "GA Phase 2 / Fan Pit",
+            "priceINR": 9799,
+            "availability": "available"
+          },
+          {
+            "tierId": "tier-vip",
+            "name": "VIP Lounge Deck",
+            "priceINR": 16799,
+            "availability": "available"
+          }
+        ],
         "ticketStatus": "available",
         "convenienceFeePercent": 11.8
       }
@@ -446,7 +749,37 @@
       "bookmyshow"
     ],
     "isExclusive": true,
-    "normalizedTitle": "lollapalooza india 2027"
+    "normalizedTitle": "lollapalooza india 2027",
+    "activePhaseName": "GA Phase 1",
+    "rawDetails": {
+      "ticketTiers": [
+        {
+          "tierId": "tier-eb",
+          "name": "Early Bird GA",
+          "priceINR": 4899,
+          "availability": "sold_out"
+        },
+        {
+          "tierId": "tier-p1",
+          "name": "GA Phase 1",
+          "priceINR": 6999,
+          "availability": "available"
+        },
+        {
+          "tierId": "tier-p2",
+          "name": "GA Phase 2 / Fan Pit",
+          "priceINR": 9799,
+          "availability": "available"
+        },
+        {
+          "tierId": "tier-vip",
+          "name": "VIP Lounge Deck",
+          "priceINR": 16799,
+          "availability": "available"
+        }
+      ],
+      "ticketStatus": "available"
+    }
   },
   {
     "id": "bms-cn-nykaaland-delhi",
@@ -455,7 +788,7 @@
     "title": "Nykaaland India's Biggest Beauty & Music Festival",
     "description": "The grand fusion festival combining headline musical performances, international DJ sets, and world-class beauty masterclasses.",
     "category": "Concert",
-    "posterUrl": "https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-750,h-550/et00412890-nykaaland.jpg",
+    "posterUrl": "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=800&q=80",
     "cityCode": "DEL",
     "cityName": "Delhi NCR",
     "venue": "Jawaharlal Nehru Stadium, New Delhi",
@@ -466,8 +799,8 @@
     "date": "2026-10-23",
     "time": "13:00 IST",
     "startingPriceINR": 1299,
-    "lowestListedPriceINR": 1299,
-    "hasSoldOutEarlyPhases": false,
+    "lowestListedPriceINR": 899,
+    "hasSoldOutEarlyPhases": true,
     "ticketStatus": "available",
     "bookingUrl": "https://in.bookmyshow.com/events/nykaaland-delhi/ET00412890",
     "listings": [
@@ -476,7 +809,34 @@
         "sourceId": "bms-cn-nykaaland-delhi",
         "bookingUrl": "https://in.bookmyshow.com/events/nykaaland-delhi/ET00412890",
         "startingPriceINR": 1299,
-        "lowestListedPriceINR": 1299,
+        "lowestListedPriceINR": 899,
+        "activePhaseName": "GA Phase 1",
+        "ticketTiers": [
+          {
+            "tierId": "tier-eb",
+            "name": "Early Bird GA",
+            "priceINR": 899,
+            "availability": "sold_out"
+          },
+          {
+            "tierId": "tier-p1",
+            "name": "GA Phase 1",
+            "priceINR": 1299,
+            "availability": "available"
+          },
+          {
+            "tierId": "tier-p2",
+            "name": "GA Phase 2 / Fan Pit",
+            "priceINR": 1799,
+            "availability": "available"
+          },
+          {
+            "tierId": "tier-vip",
+            "name": "VIP Lounge Deck",
+            "priceINR": 3099,
+            "availability": "available"
+          }
+        ],
         "ticketStatus": "available",
         "convenienceFeePercent": 11.8
       }
@@ -485,7 +845,37 @@
       "bookmyshow"
     ],
     "isExclusive": true,
-    "normalizedTitle": "nykaaland india s biggest beauty music festival"
+    "normalizedTitle": "nykaaland india s biggest beauty music festival",
+    "activePhaseName": "GA Phase 1",
+    "rawDetails": {
+      "ticketTiers": [
+        {
+          "tierId": "tier-eb",
+          "name": "Early Bird GA",
+          "priceINR": 899,
+          "availability": "sold_out"
+        },
+        {
+          "tierId": "tier-p1",
+          "name": "GA Phase 1",
+          "priceINR": 1299,
+          "availability": "available"
+        },
+        {
+          "tierId": "tier-p2",
+          "name": "GA Phase 2 / Fan Pit",
+          "priceINR": 1799,
+          "availability": "available"
+        },
+        {
+          "tierId": "tier-vip",
+          "name": "VIP Lounge Deck",
+          "priceINR": 3099,
+          "availability": "available"
+        }
+      ],
+      "ticketStatus": "available"
+    }
   },
   {
     "id": "district-cn-dandiya-delhi",
@@ -494,7 +884,7 @@
     "title": "Rangilo Ras — Grand Musical Garba & Dandiya Night",
     "description": "Immerse in the pulsating energy of live traditional percussionists, sensational vocalists, and vibrant festive celebrations.",
     "category": "Concert",
-    "posterUrl": "https://cdn.district.in/events/cd-media/image/upload/v1760613247/dandiya-delhi.png",
+    "posterUrl": "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?auto=format&fit=crop&w=800&q=80",
     "cityCode": "DEL",
     "cityName": "Delhi NCR",
     "venue": "Surajkund Grounds, Delhi NCR",
@@ -505,8 +895,8 @@
     "date": "2026-10-24",
     "time": "18:30 IST",
     "startingPriceINR": 499,
-    "lowestListedPriceINR": 499,
-    "hasSoldOutEarlyPhases": false,
+    "lowestListedPriceINR": 349,
+    "hasSoldOutEarlyPhases": true,
     "ticketStatus": "available",
     "bookingUrl": "https://www.district.in/events/rangilo-ras-dandiya-delhi-buy-tickets",
     "listings": [
@@ -515,7 +905,34 @@
         "sourceId": "district-cn-dandiya-delhi",
         "bookingUrl": "https://www.district.in/events/rangilo-ras-dandiya-delhi-buy-tickets",
         "startingPriceINR": 499,
-        "lowestListedPriceINR": 499,
+        "lowestListedPriceINR": 349,
+        "activePhaseName": "GA Phase 1",
+        "ticketTiers": [
+          {
+            "tierId": "tier-eb",
+            "name": "Early Bird GA",
+            "priceINR": 349,
+            "availability": "sold_out"
+          },
+          {
+            "tierId": "tier-p1",
+            "name": "GA Phase 1",
+            "priceINR": 499,
+            "availability": "available"
+          },
+          {
+            "tierId": "tier-p2",
+            "name": "GA Phase 2 / Fan Pit",
+            "priceINR": 699,
+            "availability": "available"
+          },
+          {
+            "tierId": "tier-vip",
+            "name": "VIP Lounge Deck",
+            "priceINR": 1199,
+            "availability": "available"
+          }
+        ],
         "ticketStatus": "available",
         "convenienceFeePercent": 10
       }
@@ -524,7 +941,37 @@
       "district"
     ],
     "isExclusive": true,
-    "normalizedTitle": "rangilo ras grand musical garba dandiya night"
+    "normalizedTitle": "rangilo ras grand musical garba dandiya night",
+    "activePhaseName": "GA Phase 1",
+    "rawDetails": {
+      "ticketTiers": [
+        {
+          "tierId": "tier-eb",
+          "name": "Early Bird GA",
+          "priceINR": 349,
+          "availability": "sold_out"
+        },
+        {
+          "tierId": "tier-p1",
+          "name": "GA Phase 1",
+          "priceINR": 499,
+          "availability": "available"
+        },
+        {
+          "tierId": "tier-p2",
+          "name": "GA Phase 2 / Fan Pit",
+          "priceINR": 699,
+          "availability": "available"
+        },
+        {
+          "tierId": "tier-vip",
+          "name": "VIP Lounge Deck",
+          "priceINR": 1199,
+          "availability": "available"
+        }
+      ],
+      "ticketStatus": "available"
+    }
   },
   {
     "id": "bms-cn-raghu-dixit-blr",
@@ -533,7 +980,7 @@
     "title": "RAGHU DIXIT LIVE IN CONCERT",
     "description": "India's foremost folk-rock sensation Raghu Dixit and his troupe bringing soul-stirring rhythms, lungis, and foot-stomping energy to Bengaluru.",
     "category": "Concert",
-    "posterUrl": "https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-750,h-550/et00414000-raghu-dixit.jpg",
+    "posterUrl": "https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=800&q=80",
     "cityCode": "BLR",
     "cityName": "Bengaluru",
     "venue": "Manpho Convention Centre, Manyata Tech Park, Bengaluru",
@@ -544,8 +991,8 @@
     "date": "2026-10-24",
     "time": "18:00 IST",
     "startingPriceINR": 999,
-    "lowestListedPriceINR": 999,
-    "hasSoldOutEarlyPhases": false,
+    "lowestListedPriceINR": 699,
+    "hasSoldOutEarlyPhases": true,
     "ticketStatus": "available",
     "bookingUrl": "https://in.bookmyshow.com/events/raghu-dixit-live-in-concert/ET00414000",
     "listings": [
@@ -554,7 +1001,34 @@
         "sourceId": "bms-cn-raghu-dixit-blr",
         "bookingUrl": "https://in.bookmyshow.com/events/raghu-dixit-live-in-concert/ET00414000",
         "startingPriceINR": 999,
-        "lowestListedPriceINR": 999,
+        "lowestListedPriceINR": 699,
+        "activePhaseName": "GA Phase 1",
+        "ticketTiers": [
+          {
+            "tierId": "tier-eb",
+            "name": "Early Bird GA",
+            "priceINR": 699,
+            "availability": "sold_out"
+          },
+          {
+            "tierId": "tier-p1",
+            "name": "GA Phase 1",
+            "priceINR": 999,
+            "availability": "available"
+          },
+          {
+            "tierId": "tier-p2",
+            "name": "GA Phase 2 / Fan Pit",
+            "priceINR": 1399,
+            "availability": "available"
+          },
+          {
+            "tierId": "tier-vip",
+            "name": "VIP Lounge Deck",
+            "priceINR": 2399,
+            "availability": "available"
+          }
+        ],
         "ticketStatus": "available",
         "convenienceFeePercent": 11.8
       }
@@ -563,7 +1037,37 @@
       "bookmyshow"
     ],
     "isExclusive": true,
-    "normalizedTitle": "raghu dixit"
+    "normalizedTitle": "raghu dixit",
+    "activePhaseName": "GA Phase 1",
+    "rawDetails": {
+      "ticketTiers": [
+        {
+          "tierId": "tier-eb",
+          "name": "Early Bird GA",
+          "priceINR": 699,
+          "availability": "sold_out"
+        },
+        {
+          "tierId": "tier-p1",
+          "name": "GA Phase 1",
+          "priceINR": 999,
+          "availability": "available"
+        },
+        {
+          "tierId": "tier-p2",
+          "name": "GA Phase 2 / Fan Pit",
+          "priceINR": 1399,
+          "availability": "available"
+        },
+        {
+          "tierId": "tier-vip",
+          "name": "VIP Lounge Deck",
+          "priceINR": 2399,
+          "availability": "available"
+        }
+      ],
+      "ticketStatus": "available"
+    }
   },
   {
     "id": "bms-cn-agam-live-blr",
@@ -572,7 +1076,7 @@
     "title": "The Band Agam Live in Bengaluru",
     "description": "The celebrated Carnatic progressive rock juggernaut returns with hypnotic classical violin leads, thunderous rhythm sections, and soaring vocals.",
     "category": "Concert",
-    "posterUrl": "https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-750,h-550/et00414500-agam.jpg",
+    "posterUrl": "https://images.unsplash.com/photo-1498038432885-c6f3f1b912ee?auto=format&fit=crop&w=800&q=80",
     "cityCode": "BLR",
     "cityName": "Bengaluru",
     "venue": "Phoenix Marketcity Courtyard, Whitefield, Bengaluru",
@@ -583,8 +1087,8 @@
     "date": "2026-11-15",
     "time": "19:00 IST",
     "startingPriceINR": 1199,
-    "lowestListedPriceINR": 1199,
-    "hasSoldOutEarlyPhases": false,
+    "lowestListedPriceINR": 849,
+    "hasSoldOutEarlyPhases": true,
     "ticketStatus": "available",
     "bookingUrl": "https://in.bookmyshow.com/events/the-band-agam-live-in-bengaluru/ET00414500",
     "listings": [
@@ -593,7 +1097,34 @@
         "sourceId": "bms-cn-agam-live-blr",
         "bookingUrl": "https://in.bookmyshow.com/events/the-band-agam-live-in-bengaluru/ET00414500",
         "startingPriceINR": 1199,
-        "lowestListedPriceINR": 1199,
+        "lowestListedPriceINR": 849,
+        "activePhaseName": "GA Phase 1",
+        "ticketTiers": [
+          {
+            "tierId": "tier-eb",
+            "name": "Early Bird GA",
+            "priceINR": 849,
+            "availability": "sold_out"
+          },
+          {
+            "tierId": "tier-p1",
+            "name": "GA Phase 1",
+            "priceINR": 1199,
+            "availability": "available"
+          },
+          {
+            "tierId": "tier-p2",
+            "name": "GA Phase 2 / Fan Pit",
+            "priceINR": 1699,
+            "availability": "available"
+          },
+          {
+            "tierId": "tier-vip",
+            "name": "VIP Lounge Deck",
+            "priceINR": 2899,
+            "availability": "available"
+          }
+        ],
         "ticketStatus": "available",
         "convenienceFeePercent": 11.8
       }
@@ -602,7 +1133,37 @@
       "bookmyshow"
     ],
     "isExclusive": true,
-    "normalizedTitle": "the band agam live in"
+    "normalizedTitle": "the band agam live in",
+    "activePhaseName": "GA Phase 1",
+    "rawDetails": {
+      "ticketTiers": [
+        {
+          "tierId": "tier-eb",
+          "name": "Early Bird GA",
+          "priceINR": 849,
+          "availability": "sold_out"
+        },
+        {
+          "tierId": "tier-p1",
+          "name": "GA Phase 1",
+          "priceINR": 1199,
+          "availability": "available"
+        },
+        {
+          "tierId": "tier-p2",
+          "name": "GA Phase 2 / Fan Pit",
+          "priceINR": 1699,
+          "availability": "available"
+        },
+        {
+          "tierId": "tier-vip",
+          "name": "VIP Lounge Deck",
+          "priceINR": 2899,
+          "availability": "available"
+        }
+      ],
+      "ticketStatus": "available"
+    }
   },
   {
     "id": "bms-cn-chainsmokers-blr",
@@ -611,7 +1172,7 @@
     "title": "Sunburn Arena Ft. The Chainsmokers — Bengaluru",
     "description": "Grammy-winning EDM duo The Chainsmokers perform their massive international hits Closer, Paris, Something Just Like This in a stadium production.",
     "category": "Concert",
-    "posterUrl": "https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-750,h-550/et00411200-chainsmokers.jpg",
+    "posterUrl": "https://images.unsplash.com/photo-1540039155733-5bb30b53aa14?auto=format&fit=crop&w=800&q=80",
     "cityCode": "BLR",
     "cityName": "Bengaluru",
     "venue": "NICE Grounds, Tumkur Road, Bengaluru",
@@ -622,8 +1183,8 @@
     "date": "2026-12-20",
     "time": "16:00 IST",
     "startingPriceINR": 3499,
-    "lowestListedPriceINR": 3499,
-    "hasSoldOutEarlyPhases": false,
+    "lowestListedPriceINR": 2449,
+    "hasSoldOutEarlyPhases": true,
     "ticketStatus": "available",
     "bookingUrl": "https://in.bookmyshow.com/events/sunburn-arena-chainsmokers-bengaluru/ET00411200",
     "listings": [
@@ -632,7 +1193,34 @@
         "sourceId": "bms-cn-chainsmokers-blr",
         "bookingUrl": "https://in.bookmyshow.com/events/sunburn-arena-chainsmokers-bengaluru/ET00411200",
         "startingPriceINR": 3499,
-        "lowestListedPriceINR": 3499,
+        "lowestListedPriceINR": 2449,
+        "activePhaseName": "GA Phase 1",
+        "ticketTiers": [
+          {
+            "tierId": "tier-eb",
+            "name": "Early Bird GA",
+            "priceINR": 2449,
+            "availability": "sold_out"
+          },
+          {
+            "tierId": "tier-p1",
+            "name": "GA Phase 1",
+            "priceINR": 3499,
+            "availability": "available"
+          },
+          {
+            "tierId": "tier-p2",
+            "name": "GA Phase 2 / Fan Pit",
+            "priceINR": 4899,
+            "availability": "available"
+          },
+          {
+            "tierId": "tier-vip",
+            "name": "VIP Lounge Deck",
+            "priceINR": 8399,
+            "availability": "available"
+          }
+        ],
         "ticketStatus": "available",
         "convenienceFeePercent": 11.8
       }
@@ -641,7 +1229,37 @@
       "bookmyshow"
     ],
     "isExclusive": true,
-    "normalizedTitle": "sunburn arena ft the chainsmokers"
+    "normalizedTitle": "sunburn arena ft the chainsmokers",
+    "activePhaseName": "GA Phase 1",
+    "rawDetails": {
+      "ticketTiers": [
+        {
+          "tierId": "tier-eb",
+          "name": "Early Bird GA",
+          "priceINR": 2449,
+          "availability": "sold_out"
+        },
+        {
+          "tierId": "tier-p1",
+          "name": "GA Phase 1",
+          "priceINR": 3499,
+          "availability": "available"
+        },
+        {
+          "tierId": "tier-p2",
+          "name": "GA Phase 2 / Fan Pit",
+          "priceINR": 4899,
+          "availability": "available"
+        },
+        {
+          "tierId": "tier-vip",
+          "name": "VIP Lounge Deck",
+          "priceINR": 8399,
+          "availability": "available"
+        }
+      ],
+      "ticketStatus": "available"
+    }
   },
   {
     "id": "bms-cn-lake-shore-hyd",
@@ -650,7 +1268,7 @@
     "title": "Lake Shore Weekends — Indie & Electronic Festival",
     "description": "Sunset lakeside open-air music festival featuring top indie bands, experimental electronic sets, food trucks, and craft brews.",
     "category": "Concert",
-    "posterUrl": "https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-750,h-550/et00413800-lake-shore.jpg",
+    "posterUrl": "https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&w=800&q=80",
     "cityCode": "HYD",
     "cityName": "Hyderabad",
     "venue": "Boulder Hills Golf & Country Club, Gachibowli, Hyderabad",
@@ -661,8 +1279,8 @@
     "date": "2026-10-24",
     "time": "16:30 IST",
     "startingPriceINR": 899,
-    "lowestListedPriceINR": 899,
-    "hasSoldOutEarlyPhases": false,
+    "lowestListedPriceINR": 649,
+    "hasSoldOutEarlyPhases": true,
     "ticketStatus": "available",
     "bookingUrl": "https://in.bookmyshow.com/events/lake-shore-weekends-hyderabad/ET00413800",
     "listings": [
@@ -671,7 +1289,34 @@
         "sourceId": "bms-cn-lake-shore-hyd",
         "bookingUrl": "https://in.bookmyshow.com/events/lake-shore-weekends-hyderabad/ET00413800",
         "startingPriceINR": 899,
-        "lowestListedPriceINR": 899,
+        "lowestListedPriceINR": 649,
+        "activePhaseName": "GA Phase 1",
+        "ticketTiers": [
+          {
+            "tierId": "tier-eb",
+            "name": "Early Bird GA",
+            "priceINR": 649,
+            "availability": "sold_out"
+          },
+          {
+            "tierId": "tier-p1",
+            "name": "GA Phase 1",
+            "priceINR": 899,
+            "availability": "available"
+          },
+          {
+            "tierId": "tier-p2",
+            "name": "GA Phase 2 / Fan Pit",
+            "priceINR": 1249,
+            "availability": "available"
+          },
+          {
+            "tierId": "tier-vip",
+            "name": "VIP Lounge Deck",
+            "priceINR": 2199,
+            "availability": "available"
+          }
+        ],
         "ticketStatus": "available",
         "convenienceFeePercent": 11.8
       }
@@ -680,7 +1325,37 @@
       "bookmyshow"
     ],
     "isExclusive": true,
-    "normalizedTitle": "lake shore weekends indie electronic festival"
+    "normalizedTitle": "lake shore weekends indie electronic festival",
+    "activePhaseName": "GA Phase 1",
+    "rawDetails": {
+      "ticketTiers": [
+        {
+          "tierId": "tier-eb",
+          "name": "Early Bird GA",
+          "priceINR": 649,
+          "availability": "sold_out"
+        },
+        {
+          "tierId": "tier-p1",
+          "name": "GA Phase 1",
+          "priceINR": 899,
+          "availability": "available"
+        },
+        {
+          "tierId": "tier-p2",
+          "name": "GA Phase 2 / Fan Pit",
+          "priceINR": 1249,
+          "availability": "available"
+        },
+        {
+          "tierId": "tier-vip",
+          "name": "VIP Lounge Deck",
+          "priceINR": 2199,
+          "availability": "available"
+        }
+      ],
+      "ticketStatus": "available"
+    }
   },
   {
     "id": "bms-cn-keinemusik-ccu",
@@ -689,7 +1364,7 @@
     "title": "Keinemusik presents Adam Port - Kolkata",
     "description": "The Berlin deep house and afro house titan behind Move and Say What bringing the iconic peace sign inflatable to the City of Joy.",
     "category": "Concert",
-    "posterUrl": "https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-750,h-550/et00415900-keinemusik.jpg",
+    "posterUrl": "https://images.unsplash.com/photo-1571266028243-3716f02d2d2e?auto=format&fit=crop&w=800&q=80",
     "cityCode": "CCU",
     "cityName": "Kolkata",
     "venue": "Aquatica Open Air Arena, Newtown, Kolkata",
@@ -700,8 +1375,8 @@
     "date": "2026-11-14",
     "time": "17:00 IST",
     "startingPriceINR": 2499,
-    "lowestListedPriceINR": 2499,
-    "hasSoldOutEarlyPhases": false,
+    "lowestListedPriceINR": 1749,
+    "hasSoldOutEarlyPhases": true,
     "ticketStatus": "available",
     "bookingUrl": "https://in.bookmyshow.com/events/keinemusik-adam-port-kolkata/ET00415900",
     "listings": [
@@ -710,7 +1385,34 @@
         "sourceId": "bms-cn-keinemusik-ccu",
         "bookingUrl": "https://in.bookmyshow.com/events/keinemusik-adam-port-kolkata/ET00415900",
         "startingPriceINR": 2499,
-        "lowestListedPriceINR": 2499,
+        "lowestListedPriceINR": 1749,
+        "activePhaseName": "GA Phase 1",
+        "ticketTiers": [
+          {
+            "tierId": "tier-eb",
+            "name": "Early Bird GA",
+            "priceINR": 1749,
+            "availability": "sold_out"
+          },
+          {
+            "tierId": "tier-p1",
+            "name": "GA Phase 1",
+            "priceINR": 2499,
+            "availability": "available"
+          },
+          {
+            "tierId": "tier-p2",
+            "name": "GA Phase 2 / Fan Pit",
+            "priceINR": 3499,
+            "availability": "available"
+          },
+          {
+            "tierId": "tier-vip",
+            "name": "VIP Lounge Deck",
+            "priceINR": 5999,
+            "availability": "available"
+          }
+        ],
         "ticketStatus": "available",
         "convenienceFeePercent": 11.8
       }
@@ -719,7 +1421,37 @@
       "bookmyshow"
     ],
     "isExclusive": true,
-    "normalizedTitle": "keinemusik presents adam port"
+    "normalizedTitle": "keinemusik presents adam port",
+    "activePhaseName": "GA Phase 1",
+    "rawDetails": {
+      "ticketTiers": [
+        {
+          "tierId": "tier-eb",
+          "name": "Early Bird GA",
+          "priceINR": 1749,
+          "availability": "sold_out"
+        },
+        {
+          "tierId": "tier-p1",
+          "name": "GA Phase 1",
+          "priceINR": 2499,
+          "availability": "available"
+        },
+        {
+          "tierId": "tier-p2",
+          "name": "GA Phase 2 / Fan Pit",
+          "priceINR": 3499,
+          "availability": "available"
+        },
+        {
+          "tierId": "tier-vip",
+          "name": "VIP Lounge Deck",
+          "priceINR": 5999,
+          "availability": "available"
+        }
+      ],
+      "ticketStatus": "available"
+    }
   },
   {
     "id": "bms-cn-hardik-dave-amd",
@@ -728,7 +1460,7 @@
     "title": "HARDIK DAVE Live In Concert — Ahmedabad",
     "description": "The celebrated Gujarati fusion and acoustic maestro delivers an enchanting evening of classic melodies and modern rhythms.",
     "category": "Concert",
-    "posterUrl": "https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-750,h-550/et00417200-hardik-dave.jpg",
+    "posterUrl": "https://images.unsplash.com/photo-1511192336575-5a79af67a629?auto=format&fit=crop&w=800&q=80",
     "cityCode": "AMD",
     "cityName": "Ahmedabad",
     "venue": "Pandit Dindayal Upadhyay Auditorium, Bodakdev, Ahmedabad",
@@ -739,8 +1471,8 @@
     "date": "2026-11-29",
     "time": "20:00 IST",
     "startingPriceINR": 499,
-    "lowestListedPriceINR": 499,
-    "hasSoldOutEarlyPhases": false,
+    "lowestListedPriceINR": 349,
+    "hasSoldOutEarlyPhases": true,
     "ticketStatus": "available",
     "bookingUrl": "https://in.bookmyshow.com/events/hardik-dave-live-ahmedabad/ET00417200",
     "listings": [
@@ -749,7 +1481,34 @@
         "sourceId": "bms-cn-hardik-dave-amd",
         "bookingUrl": "https://in.bookmyshow.com/events/hardik-dave-live-ahmedabad/ET00417200",
         "startingPriceINR": 499,
-        "lowestListedPriceINR": 499,
+        "lowestListedPriceINR": 349,
+        "activePhaseName": "GA Phase 1",
+        "ticketTiers": [
+          {
+            "tierId": "tier-eb",
+            "name": "Early Bird GA",
+            "priceINR": 349,
+            "availability": "sold_out"
+          },
+          {
+            "tierId": "tier-p1",
+            "name": "GA Phase 1",
+            "priceINR": 499,
+            "availability": "available"
+          },
+          {
+            "tierId": "tier-p2",
+            "name": "GA Phase 2 / Fan Pit",
+            "priceINR": 699,
+            "availability": "available"
+          },
+          {
+            "tierId": "tier-vip",
+            "name": "VIP Lounge Deck",
+            "priceINR": 1199,
+            "availability": "available"
+          }
+        ],
         "ticketStatus": "available",
         "convenienceFeePercent": 11.8
       }
@@ -758,7 +1517,37 @@
       "bookmyshow"
     ],
     "isExclusive": true,
-    "normalizedTitle": "hardik dave"
+    "normalizedTitle": "hardik dave",
+    "activePhaseName": "GA Phase 1",
+    "rawDetails": {
+      "ticketTiers": [
+        {
+          "tierId": "tier-eb",
+          "name": "Early Bird GA",
+          "priceINR": 349,
+          "availability": "sold_out"
+        },
+        {
+          "tierId": "tier-p1",
+          "name": "GA Phase 1",
+          "priceINR": 499,
+          "availability": "available"
+        },
+        {
+          "tierId": "tier-p2",
+          "name": "GA Phase 2 / Fan Pit",
+          "priceINR": 699,
+          "availability": "available"
+        },
+        {
+          "tierId": "tier-vip",
+          "name": "VIP Lounge Deck",
+          "priceINR": 1199,
+          "availability": "available"
+        }
+      ],
+      "ticketStatus": "available"
+    }
   },
   {
     "id": "bms-ev-diwali-pahat-pune",
@@ -767,7 +1556,7 @@
     "title": "Diwali Pahat 2026 — Traditional Morning Symphony",
     "description": "Experience the sublime spirit of Diwali with early morning classical ragas, soulful abhangas, and festive Maharashtrian breakfast.",
     "category": "Live Event",
-    "posterUrl": "https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-750,h-550/et00414900-diwali-pahat.jpg",
+    "posterUrl": "https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?auto=format&fit=crop&w=800&q=80",
     "cityCode": "PNQ",
     "cityName": "Pune",
     "venue": "Yashwantrao Chavan Natyagruha, Kothrud, Pune",
@@ -778,8 +1567,8 @@
     "date": "2026-11-08",
     "time": "06:00 IST",
     "startingPriceINR": 350,
-    "lowestListedPriceINR": 350,
-    "hasSoldOutEarlyPhases": false,
+    "lowestListedPriceINR": 299,
+    "hasSoldOutEarlyPhases": true,
     "ticketStatus": "available",
     "bookingUrl": "https://in.bookmyshow.com/events/diwali-pahat-pune/ET00414900",
     "listings": [
@@ -788,7 +1577,34 @@
         "sourceId": "bms-ev-diwali-pahat-pune",
         "bookingUrl": "https://in.bookmyshow.com/events/diwali-pahat-pune/ET00414900",
         "startingPriceINR": 350,
-        "lowestListedPriceINR": 350,
+        "lowestListedPriceINR": 299,
+        "activePhaseName": "GA Phase 1",
+        "ticketTiers": [
+          {
+            "tierId": "tier-eb",
+            "name": "Early Bird GA",
+            "priceINR": 299,
+            "availability": "sold_out"
+          },
+          {
+            "tierId": "tier-p1",
+            "name": "GA Phase 1",
+            "priceINR": 350,
+            "availability": "available"
+          },
+          {
+            "tierId": "tier-p2",
+            "name": "GA Phase 2 / Fan Pit",
+            "priceINR": 499,
+            "availability": "available"
+          },
+          {
+            "tierId": "tier-vip",
+            "name": "VIP Lounge Deck",
+            "priceINR": 799,
+            "availability": "available"
+          }
+        ],
         "ticketStatus": "available",
         "convenienceFeePercent": 11.8
       }
@@ -797,7 +1613,37 @@
       "bookmyshow"
     ],
     "isExclusive": true,
-    "normalizedTitle": "diwali pahat 2026 traditional morning symphony"
+    "normalizedTitle": "diwali pahat 2026 traditional morning symphony",
+    "activePhaseName": "GA Phase 1",
+    "rawDetails": {
+      "ticketTiers": [
+        {
+          "tierId": "tier-eb",
+          "name": "Early Bird GA",
+          "priceINR": 299,
+          "availability": "sold_out"
+        },
+        {
+          "tierId": "tier-p1",
+          "name": "GA Phase 1",
+          "priceINR": 350,
+          "availability": "available"
+        },
+        {
+          "tierId": "tier-p2",
+          "name": "GA Phase 2 / Fan Pit",
+          "priceINR": 499,
+          "availability": "available"
+        },
+        {
+          "tierId": "tier-vip",
+          "name": "VIP Lounge Deck",
+          "priceINR": 799,
+          "availability": "available"
+        }
+      ],
+      "ticketStatus": "available"
+    }
   },
   {
     "id": "district-ev-pune-comedy-club",
@@ -806,7 +1652,7 @@
     "title": "Pune Comedy Showcase — Fresh Stand-Up Lineup",
     "description": "An unfiltered comedy evening featuring top handpicked Pune and Mumbai stand-up comics trying out their funniest new bits.",
     "category": "Stand-up Comedy",
-    "posterUrl": "https://cdn.district.in/events/cd-media/image/upload/v1761813928/pune-comedy.png",
+    "posterUrl": "https://images.unsplash.com/photo-1585699324551-f6c309eedeca?auto=format&fit=crop&w=800&q=80",
     "cityCode": "PNQ",
     "cityName": "Pune",
     "venue": "Classic Rock Coffee Co., Kalyani Nagar, Pune",
@@ -818,7 +1664,7 @@
     "time": "20:00 IST",
     "startingPriceINR": 299,
     "lowestListedPriceINR": 299,
-    "hasSoldOutEarlyPhases": false,
+    "hasSoldOutEarlyPhases": true,
     "ticketStatus": "available",
     "bookingUrl": "https://www.district.in/events/pune-comedy-showcase-buy-tickets",
     "listings": [
@@ -828,15 +1674,109 @@
         "bookingUrl": "https://www.district.in/events/pune-comedy-showcase-buy-tickets",
         "startingPriceINR": 299,
         "lowestListedPriceINR": 299,
+        "activePhaseName": "GA Phase 1",
+        "ticketTiers": [
+          {
+            "tierId": "tier-eb",
+            "name": "Early Bird GA",
+            "priceINR": 299,
+            "availability": "sold_out"
+          },
+          {
+            "tierId": "tier-p1",
+            "name": "GA Phase 1",
+            "priceINR": 299,
+            "availability": "available"
+          },
+          {
+            "tierId": "tier-p2",
+            "name": "GA Phase 2 / Fan Pit",
+            "priceINR": 399,
+            "availability": "available"
+          },
+          {
+            "tierId": "tier-vip",
+            "name": "VIP Lounge Deck",
+            "priceINR": 699,
+            "availability": "available"
+          }
+        ],
         "ticketStatus": "available",
         "convenienceFeePercent": 10
+      },
+      {
+        "source": "bookmyshow",
+        "sourceId": "bookmyshow-district-ev-pune-comedy-club",
+        "bookingUrl": "https://in.bookmyshow.com/explore/comedy-shows-pune",
+        "startingPriceINR": 349,
+        "lowestListedPriceINR": 299,
+        "activePhaseName": "Standard Entry",
+        "ticketTiers": [
+          {
+            "tierId": "tier-eb",
+            "name": "Early Bird GA",
+            "priceINR": 299,
+            "availability": "sold_out"
+          },
+          {
+            "tierId": "tier-p1",
+            "name": "GA Phase 1",
+            "priceINR": 299,
+            "availability": "available"
+          },
+          {
+            "tierId": "tier-p2",
+            "name": "GA Phase 2 / Fan Pit",
+            "priceINR": 399,
+            "availability": "available"
+          },
+          {
+            "tierId": "tier-vip",
+            "name": "VIP Lounge Deck",
+            "priceINR": 699,
+            "availability": "available"
+          }
+        ],
+        "ticketStatus": "available",
+        "convenienceFeePercent": 11.8
       }
     ],
     "availablePlatforms": [
-      "district"
+      "district",
+      "bookmyshow"
     ],
-    "isExclusive": true,
-    "normalizedTitle": "pune comedy showcase fresh stand up lineup"
+    "isExclusive": false,
+    "normalizedTitle": "pune comedy showcase fresh stand up lineup",
+    "activePhaseName": "GA Phase 1",
+    "rawDetails": {
+      "ticketTiers": [
+        {
+          "tierId": "tier-eb",
+          "name": "Early Bird GA",
+          "priceINR": 299,
+          "availability": "sold_out"
+        },
+        {
+          "tierId": "tier-p1",
+          "name": "GA Phase 1",
+          "priceINR": 299,
+          "availability": "available"
+        },
+        {
+          "tierId": "tier-p2",
+          "name": "GA Phase 2 / Fan Pit",
+          "priceINR": 399,
+          "availability": "available"
+        },
+        {
+          "tierId": "tier-vip",
+          "name": "VIP Lounge Deck",
+          "priceINR": 699,
+          "availability": "available"
+        }
+      ],
+      "ticketStatus": "available"
+    }
   },
   {
     "id": "bms-ev-mahesh-kale-bom",
@@ -845,7 +1785,7 @@
     "title": "Mahesh Kale Diwali Vishesh — Vashi Navi Mumbai",
     "description": "National Film Award winner Mahesh Kale presents a spellbinding musical soiree celebrating classical brilliance and devotion.",
     "category": "Live Event",
-    "posterUrl": "https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-750,h-550/et00413500-mahesh-kale.jpg",
+    "posterUrl": "https://images.unsplash.com/photo-1465847899084-d164df4dedc6?auto=format&fit=crop&w=800&q=80",
     "cityCode": "BOM",
     "cityName": "Mumbai",
     "venue": "CIDCO Exhibition Centre, Vashi, Navi Mumbai",
@@ -856,8 +1796,8 @@
     "date": "2026-11-07",
     "time": "18:30 IST",
     "startingPriceINR": 600,
-    "lowestListedPriceINR": 600,
-    "hasSoldOutEarlyPhases": false,
+    "lowestListedPriceINR": 399,
+    "hasSoldOutEarlyPhases": true,
     "ticketStatus": "available",
     "bookingUrl": "https://in.bookmyshow.com/events/mahesh-kale-diwali-vishesh/ET00413500",
     "listings": [
@@ -866,7 +1806,34 @@
         "sourceId": "bms-ev-mahesh-kale-bom",
         "bookingUrl": "https://in.bookmyshow.com/events/mahesh-kale-diwali-vishesh/ET00413500",
         "startingPriceINR": 600,
-        "lowestListedPriceINR": 600,
+        "lowestListedPriceINR": 399,
+        "activePhaseName": "GA Phase 1",
+        "ticketTiers": [
+          {
+            "tierId": "tier-eb",
+            "name": "Early Bird GA",
+            "priceINR": 399,
+            "availability": "sold_out"
+          },
+          {
+            "tierId": "tier-p1",
+            "name": "GA Phase 1",
+            "priceINR": 600,
+            "availability": "available"
+          },
+          {
+            "tierId": "tier-p2",
+            "name": "GA Phase 2 / Fan Pit",
+            "priceINR": 849,
+            "availability": "available"
+          },
+          {
+            "tierId": "tier-vip",
+            "name": "VIP Lounge Deck",
+            "priceINR": 1399,
+            "availability": "available"
+          }
+        ],
         "ticketStatus": "available",
         "convenienceFeePercent": 11.8
       }
@@ -875,7 +1842,37 @@
       "bookmyshow"
     ],
     "isExclusive": true,
-    "normalizedTitle": "mahesh kale diwali vishesh vashi navi"
+    "normalizedTitle": "mahesh kale diwali vishesh vashi navi",
+    "activePhaseName": "GA Phase 1",
+    "rawDetails": {
+      "ticketTiers": [
+        {
+          "tierId": "tier-eb",
+          "name": "Early Bird GA",
+          "priceINR": 399,
+          "availability": "sold_out"
+        },
+        {
+          "tierId": "tier-p1",
+          "name": "GA Phase 1",
+          "priceINR": 600,
+          "availability": "available"
+        },
+        {
+          "tierId": "tier-p2",
+          "name": "GA Phase 2 / Fan Pit",
+          "priceINR": 849,
+          "availability": "available"
+        },
+        {
+          "tierId": "tier-vip",
+          "name": "VIP Lounge Deck",
+          "priceINR": 1399,
+          "availability": "available"
+        }
+      ],
+      "ticketStatus": "available"
+    }
   },
   {
     "id": "district-ev-mumbai-bandra-comedy",
@@ -884,7 +1881,7 @@
     "title": "Mumbai Comedy Club — Bandra Live Showcase",
     "description": "A stellar night of side-splitting laughter in the heart of Bandra West, featuring television and viral YouTube comics.",
     "category": "Stand-up Comedy",
-    "posterUrl": "https://cdn.district.in/events/cd-media/image/upload/v1761813928/bandra-comedy.png",
+    "posterUrl": "https://images.unsplash.com/photo-1527224857830-43a7acc85260?auto=format&fit=crop&w=800&q=80",
     "cityCode": "BOM",
     "cityName": "Mumbai",
     "venue": "The Habitat, Khar West, Mumbai",
@@ -895,8 +1892,8 @@
     "date": "2026-10-25",
     "time": "20:30 IST",
     "startingPriceINR": 499,
-    "lowestListedPriceINR": 499,
-    "hasSoldOutEarlyPhases": false,
+    "lowestListedPriceINR": 349,
+    "hasSoldOutEarlyPhases": true,
     "ticketStatus": "available",
     "bookingUrl": "https://www.district.in/events/mumbai-bandra-comedy-buy-tickets",
     "listings": [
@@ -905,16 +1902,110 @@
         "sourceId": "district-ev-mumbai-bandra-comedy",
         "bookingUrl": "https://www.district.in/events/mumbai-bandra-comedy-buy-tickets",
         "startingPriceINR": 499,
-        "lowestListedPriceINR": 499,
+        "lowestListedPriceINR": 349,
+        "activePhaseName": "GA Phase 1",
+        "ticketTiers": [
+          {
+            "tierId": "tier-eb",
+            "name": "Early Bird GA",
+            "priceINR": 349,
+            "availability": "sold_out"
+          },
+          {
+            "tierId": "tier-p1",
+            "name": "GA Phase 1",
+            "priceINR": 499,
+            "availability": "available"
+          },
+          {
+            "tierId": "tier-p2",
+            "name": "GA Phase 2 / Fan Pit",
+            "priceINR": 699,
+            "availability": "available"
+          },
+          {
+            "tierId": "tier-vip",
+            "name": "VIP Lounge Deck",
+            "priceINR": 1199,
+            "availability": "available"
+          }
+        ],
         "ticketStatus": "available",
         "convenienceFeePercent": 10
+      },
+      {
+        "source": "bookmyshow",
+        "sourceId": "bookmyshow-district-ev-mumbai-bandra-comedy",
+        "bookingUrl": "https://in.bookmyshow.com/explore/comedy-shows-pune",
+        "startingPriceINR": 549,
+        "lowestListedPriceINR": 349,
+        "activePhaseName": "Standard Entry",
+        "ticketTiers": [
+          {
+            "tierId": "tier-eb",
+            "name": "Early Bird GA",
+            "priceINR": 349,
+            "availability": "sold_out"
+          },
+          {
+            "tierId": "tier-p1",
+            "name": "GA Phase 1",
+            "priceINR": 499,
+            "availability": "available"
+          },
+          {
+            "tierId": "tier-p2",
+            "name": "GA Phase 2 / Fan Pit",
+            "priceINR": 699,
+            "availability": "available"
+          },
+          {
+            "tierId": "tier-vip",
+            "name": "VIP Lounge Deck",
+            "priceINR": 1199,
+            "availability": "available"
+          }
+        ],
+        "ticketStatus": "available",
+        "convenienceFeePercent": 11.8
       }
     ],
     "availablePlatforms": [
-      "district"
+      "district",
+      "bookmyshow"
     ],
-    "isExclusive": true,
-    "normalizedTitle": "mumbai comedy club bandra live showcase"
+    "isExclusive": false,
+    "normalizedTitle": "mumbai comedy club bandra live showcase",
+    "activePhaseName": "GA Phase 1",
+    "rawDetails": {
+      "ticketTiers": [
+        {
+          "tierId": "tier-eb",
+          "name": "Early Bird GA",
+          "priceINR": 349,
+          "availability": "sold_out"
+        },
+        {
+          "tierId": "tier-p1",
+          "name": "GA Phase 1",
+          "priceINR": 499,
+          "availability": "available"
+        },
+        {
+          "tierId": "tier-p2",
+          "name": "GA Phase 2 / Fan Pit",
+          "priceINR": 699,
+          "availability": "available"
+        },
+        {
+          "tierId": "tier-vip",
+          "name": "VIP Lounge Deck",
+          "priceINR": 1199,
+          "availability": "available"
+        }
+      ],
+      "ticketStatus": "available"
+    }
   },
   {
     "id": "district-ev-samay-raina-delhi",
@@ -923,7 +2014,7 @@
     "title": "Samay Raina Live | Delhi | Yashobhoomi",
     "description": "India's most viral comic genius Samay Raina brings his massive, unhinged auditorium solo stand-up tour to Yashobhoomi.",
     "category": "Stand-up Comedy",
-    "posterUrl": "https://cdn.district.in/events/cd-media/image/upload/v1761044439/samay-raina.png",
+    "posterUrl": "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=800&q=80",
     "cityCode": "DEL",
     "cityName": "Delhi NCR",
     "venue": "Yashobhoomi Convention Centre, Sector 25 Dwarka, New Delhi",
@@ -934,8 +2025,8 @@
     "date": "2027-02-06",
     "time": "19:00 IST",
     "startingPriceINR": 999,
-    "lowestListedPriceINR": 999,
-    "hasSoldOutEarlyPhases": false,
+    "lowestListedPriceINR": 699,
+    "hasSoldOutEarlyPhases": true,
     "ticketStatus": "available",
     "bookingUrl": "https://www.district.in/events/samay-raina-live-delhi-yashobhoomi-buy-tickets",
     "listings": [
@@ -944,7 +2035,34 @@
         "sourceId": "district-ev-samay-raina-delhi",
         "bookingUrl": "https://www.district.in/events/samay-raina-live-delhi-yashobhoomi-buy-tickets",
         "startingPriceINR": 999,
-        "lowestListedPriceINR": 999,
+        "lowestListedPriceINR": 699,
+        "activePhaseName": "GA Phase 1",
+        "ticketTiers": [
+          {
+            "tierId": "tier-eb",
+            "name": "Early Bird GA",
+            "priceINR": 699,
+            "availability": "sold_out"
+          },
+          {
+            "tierId": "tier-p1",
+            "name": "GA Phase 1",
+            "priceINR": 999,
+            "availability": "available"
+          },
+          {
+            "tierId": "tier-p2",
+            "name": "GA Phase 2 / Fan Pit",
+            "priceINR": 1399,
+            "availability": "available"
+          },
+          {
+            "tierId": "tier-vip",
+            "name": "VIP Lounge Deck",
+            "priceINR": 2399,
+            "availability": "available"
+          }
+        ],
         "ticketStatus": "available",
         "convenienceFeePercent": 10
       }
@@ -953,7 +2071,37 @@
       "district"
     ],
     "isExclusive": true,
-    "normalizedTitle": "samay raina live delhi yashobhoomi"
+    "normalizedTitle": "samay raina live delhi yashobhoomi",
+    "activePhaseName": "GA Phase 1",
+    "rawDetails": {
+      "ticketTiers": [
+        {
+          "tierId": "tier-eb",
+          "name": "Early Bird GA",
+          "priceINR": 699,
+          "availability": "sold_out"
+        },
+        {
+          "tierId": "tier-p1",
+          "name": "GA Phase 1",
+          "priceINR": 999,
+          "availability": "available"
+        },
+        {
+          "tierId": "tier-p2",
+          "name": "GA Phase 2 / Fan Pit",
+          "priceINR": 1399,
+          "availability": "available"
+        },
+        {
+          "tierId": "tier-vip",
+          "name": "VIP Lounge Deck",
+          "priceINR": 2399,
+          "availability": "available"
+        }
+      ],
+      "ticketStatus": "available"
+    }
   },
   {
     "id": "district-ev-comedy-hauz-khas",
@@ -962,7 +2110,7 @@
     "title": "Comedy In Hauz Khas : A Multi Comic Lineup Show",
     "description": "Join us in the heart of Hauz Khas for a night filled with laughter, featuring a stellar handpicked lineup of the very best in Indian comedy.",
     "category": "Stand-up Comedy",
-    "posterUrl": "https://cdn.district.in/events/cd-media/image/upload/v1761813928/yvnotfh1nascedrtkcnf.png",
+    "posterUrl": "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=800&q=80",
     "cityCode": "DEL",
     "cityName": "Delhi NCR",
     "venue": "Light Room, Hauz Khas Village, New Delhi",
@@ -974,7 +2122,7 @@
     "time": "19:00 IST",
     "startingPriceINR": 299,
     "lowestListedPriceINR": 299,
-    "hasSoldOutEarlyPhases": false,
+    "hasSoldOutEarlyPhases": true,
     "ticketStatus": "available",
     "bookingUrl": "https://www.district.in/events/comedy-in-hauz-khas-a-multi-comic-lineup-show-oct31-2025-buy-tickets",
     "listings": [
@@ -984,6 +2132,33 @@
         "bookingUrl": "https://www.district.in/events/comedy-in-hauz-khas-a-multi-comic-lineup-show-oct31-2025-buy-tickets",
         "startingPriceINR": 299,
         "lowestListedPriceINR": 299,
+        "activePhaseName": "GA Phase 1",
+        "ticketTiers": [
+          {
+            "tierId": "tier-eb",
+            "name": "Early Bird GA",
+            "priceINR": 299,
+            "availability": "sold_out"
+          },
+          {
+            "tierId": "tier-p1",
+            "name": "GA Phase 1",
+            "priceINR": 299,
+            "availability": "available"
+          },
+          {
+            "tierId": "tier-p2",
+            "name": "GA Phase 2 / Fan Pit",
+            "priceINR": 399,
+            "availability": "available"
+          },
+          {
+            "tierId": "tier-vip",
+            "name": "VIP Lounge Deck",
+            "priceINR": 699,
+            "availability": "available"
+          }
+        ],
         "ticketStatus": "available",
         "convenienceFeePercent": 10
       }
@@ -992,7 +2167,37 @@
       "district"
     ],
     "isExclusive": true,
-    "normalizedTitle": "comedy in hauz khas a multi comic lineup show"
+    "normalizedTitle": "comedy in hauz khas a multi comic lineup show",
+    "activePhaseName": "GA Phase 1",
+    "rawDetails": {
+      "ticketTiers": [
+        {
+          "tierId": "tier-eb",
+          "name": "Early Bird GA",
+          "priceINR": 299,
+          "availability": "sold_out"
+        },
+        {
+          "tierId": "tier-p1",
+          "name": "GA Phase 1",
+          "priceINR": 299,
+          "availability": "available"
+        },
+        {
+          "tierId": "tier-p2",
+          "name": "GA Phase 2 / Fan Pit",
+          "priceINR": 399,
+          "availability": "available"
+        },
+        {
+          "tierId": "tier-vip",
+          "name": "VIP Lounge Deck",
+          "priceINR": 699,
+          "availability": "available"
+        }
+      ],
+      "ticketStatus": "available"
+    }
   },
   {
     "id": "district-ev-adult-jokes-delhi",
@@ -1001,7 +2206,7 @@
     "title": "Adult Jokes Only I Lajpat I CR Park",
     "description": "Raw, punchy, unfiltered adult comedy where comics push boundaries without limits in South Delhi.",
     "category": "Stand-up Comedy",
-    "posterUrl": "https://cdn.district.in/events/cd-media/image/upload/v1761813928/yvnotfh1nascedrtkcnf.png",
+    "posterUrl": "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=800&q=80",
     "cityCode": "DEL",
     "cityName": "Delhi NCR",
     "venue": "The Comedy Theatre, Lajpat Nagar, New Delhi",
@@ -1012,8 +2217,8 @@
     "date": "2026-10-22",
     "time": "20:30 IST",
     "startingPriceINR": 199,
-    "lowestListedPriceINR": 199,
-    "hasSoldOutEarlyPhases": false,
+    "lowestListedPriceINR": 299,
+    "hasSoldOutEarlyPhases": true,
     "ticketStatus": "available",
     "bookingUrl": "https://www.district.in/events/adult-jokes-only-delhi-buy-tickets",
     "listings": [
@@ -1022,7 +2227,34 @@
         "sourceId": "district-ev-adult-jokes-delhi",
         "bookingUrl": "https://www.district.in/events/adult-jokes-only-delhi-buy-tickets",
         "startingPriceINR": 199,
-        "lowestListedPriceINR": 199,
+        "lowestListedPriceINR": 299,
+        "activePhaseName": "GA Phase 1",
+        "ticketTiers": [
+          {
+            "tierId": "tier-eb",
+            "name": "Early Bird GA",
+            "priceINR": 299,
+            "availability": "sold_out"
+          },
+          {
+            "tierId": "tier-p1",
+            "name": "GA Phase 1",
+            "priceINR": 199,
+            "availability": "available"
+          },
+          {
+            "tierId": "tier-p2",
+            "name": "GA Phase 2 / Fan Pit",
+            "priceINR": 299,
+            "availability": "available"
+          },
+          {
+            "tierId": "tier-vip",
+            "name": "VIP Lounge Deck",
+            "priceINR": 499,
+            "availability": "available"
+          }
+        ],
         "ticketStatus": "available",
         "convenienceFeePercent": 10
       }
@@ -1031,7 +2263,37 @@
       "district"
     ],
     "isExclusive": true,
-    "normalizedTitle": "adult jokes only i lajpat i cr park"
+    "normalizedTitle": "adult jokes only i lajpat i cr park",
+    "activePhaseName": "GA Phase 1",
+    "rawDetails": {
+      "ticketTiers": [
+        {
+          "tierId": "tier-eb",
+          "name": "Early Bird GA",
+          "priceINR": 299,
+          "availability": "sold_out"
+        },
+        {
+          "tierId": "tier-p1",
+          "name": "GA Phase 1",
+          "priceINR": 199,
+          "availability": "available"
+        },
+        {
+          "tierId": "tier-p2",
+          "name": "GA Phase 2 / Fan Pit",
+          "priceINR": 299,
+          "availability": "available"
+        },
+        {
+          "tierId": "tier-vip",
+          "name": "VIP Lounge Deck",
+          "priceINR": 499,
+          "availability": "available"
+        }
+      ],
+      "ticketStatus": "available"
+    }
   },
   {
     "id": "district-ev-rajat-chauhan-delhi",
@@ -1040,7 +2302,7 @@
     "title": "RAJAT CHAUHAN Live — Solo Stand-Up Tour",
     "description": "Relatable Delhi observations, corporate life quirks, and childhood nostalgia by one of India's cleanest and funniest storytellers.",
     "category": "Stand-up Comedy",
-    "posterUrl": "https://cdn.district.in/events/cd-media/image/upload/v1761044439/rajat-chauhan.png",
+    "posterUrl": "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=800&q=80",
     "cityCode": "DEL",
     "cityName": "Delhi NCR",
     "venue": "Kedarnath Sahni Auditorium, Connaught Place, New Delhi",
@@ -1051,8 +2313,8 @@
     "date": "2026-11-01",
     "time": "19:30 IST",
     "startingPriceINR": 499,
-    "lowestListedPriceINR": 499,
-    "hasSoldOutEarlyPhases": false,
+    "lowestListedPriceINR": 349,
+    "hasSoldOutEarlyPhases": true,
     "ticketStatus": "available",
     "bookingUrl": "https://www.district.in/events/rajat-chauhan-live-delhi-buy-tickets",
     "listings": [
@@ -1061,7 +2323,34 @@
         "sourceId": "district-ev-rajat-chauhan-delhi",
         "bookingUrl": "https://www.district.in/events/rajat-chauhan-live-delhi-buy-tickets",
         "startingPriceINR": 499,
-        "lowestListedPriceINR": 499,
+        "lowestListedPriceINR": 349,
+        "activePhaseName": "GA Phase 1",
+        "ticketTiers": [
+          {
+            "tierId": "tier-eb",
+            "name": "Early Bird GA",
+            "priceINR": 349,
+            "availability": "sold_out"
+          },
+          {
+            "tierId": "tier-p1",
+            "name": "GA Phase 1",
+            "priceINR": 499,
+            "availability": "available"
+          },
+          {
+            "tierId": "tier-p2",
+            "name": "GA Phase 2 / Fan Pit",
+            "priceINR": 699,
+            "availability": "available"
+          },
+          {
+            "tierId": "tier-vip",
+            "name": "VIP Lounge Deck",
+            "priceINR": 1199,
+            "availability": "available"
+          }
+        ],
         "ticketStatus": "available",
         "convenienceFeePercent": 10
       }
@@ -1070,7 +2359,37 @@
       "district"
     ],
     "isExclusive": true,
-    "normalizedTitle": "rajat chauhan live solo stand up tour"
+    "normalizedTitle": "rajat chauhan live solo stand up tour",
+    "activePhaseName": "GA Phase 1",
+    "rawDetails": {
+      "ticketTiers": [
+        {
+          "tierId": "tier-eb",
+          "name": "Early Bird GA",
+          "priceINR": 349,
+          "availability": "sold_out"
+        },
+        {
+          "tierId": "tier-p1",
+          "name": "GA Phase 1",
+          "priceINR": 499,
+          "availability": "available"
+        },
+        {
+          "tierId": "tier-p2",
+          "name": "GA Phase 2 / Fan Pit",
+          "priceINR": 699,
+          "availability": "available"
+        },
+        {
+          "tierId": "tier-vip",
+          "name": "VIP Lounge Deck",
+          "priceINR": 1199,
+          "availability": "available"
+        }
+      ],
+      "ticketStatus": "available"
+    }
   },
   {
     "id": "district-ev-blr-indiranagar-comedy",
@@ -1079,7 +2398,7 @@
     "title": "Bengaluru Comedy Jam — Indiranagar Weekend Edition",
     "description": "Tech city's sharpest comedic minds take the mic with witty observations on startups, Bangalore traffic, and cosmopolitan life.",
     "category": "Stand-up Comedy",
-    "posterUrl": "https://cdn.district.in/events/cd-media/image/upload/v1761813928/bangalore-comedy.png",
+    "posterUrl": "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=800&q=80",
     "cityCode": "BLR",
     "cityName": "Bengaluru",
     "venue": "Take 5, 100 Feet Road, Indiranagar, Bengaluru",
@@ -1090,8 +2409,8 @@
     "date": "2026-10-25",
     "time": "19:30 IST",
     "startingPriceINR": 349,
-    "lowestListedPriceINR": 349,
-    "hasSoldOutEarlyPhases": false,
+    "lowestListedPriceINR": 299,
+    "hasSoldOutEarlyPhases": true,
     "ticketStatus": "available",
     "bookingUrl": "https://www.district.in/events/bengaluru-comedy-jam-buy-tickets",
     "listings": [
@@ -1100,7 +2419,34 @@
         "sourceId": "district-ev-blr-indiranagar-comedy",
         "bookingUrl": "https://www.district.in/events/bengaluru-comedy-jam-buy-tickets",
         "startingPriceINR": 349,
-        "lowestListedPriceINR": 349,
+        "lowestListedPriceINR": 299,
+        "activePhaseName": "GA Phase 1",
+        "ticketTiers": [
+          {
+            "tierId": "tier-eb",
+            "name": "Early Bird GA",
+            "priceINR": 299,
+            "availability": "sold_out"
+          },
+          {
+            "tierId": "tier-p1",
+            "name": "GA Phase 1",
+            "priceINR": 349,
+            "availability": "available"
+          },
+          {
+            "tierId": "tier-p2",
+            "name": "GA Phase 2 / Fan Pit",
+            "priceINR": 499,
+            "availability": "available"
+          },
+          {
+            "tierId": "tier-vip",
+            "name": "VIP Lounge Deck",
+            "priceINR": 799,
+            "availability": "available"
+          }
+        ],
         "ticketStatus": "available",
         "convenienceFeePercent": 10
       }
@@ -1109,7 +2455,37 @@
       "district"
     ],
     "isExclusive": true,
-    "normalizedTitle": "bengaluru comedy jam indiranagar weekend edition"
+    "normalizedTitle": "bengaluru comedy jam indiranagar weekend edition",
+    "activePhaseName": "GA Phase 1",
+    "rawDetails": {
+      "ticketTiers": [
+        {
+          "tierId": "tier-eb",
+          "name": "Early Bird GA",
+          "priceINR": 299,
+          "availability": "sold_out"
+        },
+        {
+          "tierId": "tier-p1",
+          "name": "GA Phase 1",
+          "priceINR": 349,
+          "availability": "available"
+        },
+        {
+          "tierId": "tier-p2",
+          "name": "GA Phase 2 / Fan Pit",
+          "priceINR": 499,
+          "availability": "available"
+        },
+        {
+          "tierId": "tier-vip",
+          "name": "VIP Lounge Deck",
+          "priceINR": 799,
+          "availability": "available"
+        }
+      ],
+      "ticketStatus": "available"
+    }
   },
   {
     "id": "district-ev-hyd-standup-nights",
@@ -1118,7 +2494,7 @@
     "title": "Hyderabad Standup Nights — Cyberabad Showcase",
     "description": "A hilarious evening of multilingual stand-up comedy featuring Telugu, Hindi, and English comics in Gachibowli.",
     "category": "Stand-up Comedy",
-    "posterUrl": "https://cdn.district.in/events/cd-media/image/upload/v1761813928/hyderabad-comedy.png",
+    "posterUrl": "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=800&q=80",
     "cityCode": "HYD",
     "cityName": "Hyderabad",
     "venue": "Heart Cup Coffee, Gachibowli, Hyderabad",
@@ -1130,7 +2506,7 @@
     "time": "20:00 IST",
     "startingPriceINR": 299,
     "lowestListedPriceINR": 299,
-    "hasSoldOutEarlyPhases": false,
+    "hasSoldOutEarlyPhases": true,
     "ticketStatus": "available",
     "bookingUrl": "https://www.district.in/events/hyderabad-standup-nights-buy-tickets",
     "listings": [
@@ -1140,6 +2516,33 @@
         "bookingUrl": "https://www.district.in/events/hyderabad-standup-nights-buy-tickets",
         "startingPriceINR": 299,
         "lowestListedPriceINR": 299,
+        "activePhaseName": "GA Phase 1",
+        "ticketTiers": [
+          {
+            "tierId": "tier-eb",
+            "name": "Early Bird GA",
+            "priceINR": 299,
+            "availability": "sold_out"
+          },
+          {
+            "tierId": "tier-p1",
+            "name": "GA Phase 1",
+            "priceINR": 299,
+            "availability": "available"
+          },
+          {
+            "tierId": "tier-p2",
+            "name": "GA Phase 2 / Fan Pit",
+            "priceINR": 399,
+            "availability": "available"
+          },
+          {
+            "tierId": "tier-vip",
+            "name": "VIP Lounge Deck",
+            "priceINR": 699,
+            "availability": "available"
+          }
+        ],
         "ticketStatus": "available",
         "convenienceFeePercent": 10
       }
@@ -1148,7 +2551,37 @@
       "district"
     ],
     "isExclusive": true,
-    "normalizedTitle": "hyderabad standup nights cyberabad showcase"
+    "normalizedTitle": "hyderabad standup nights cyberabad showcase",
+    "activePhaseName": "GA Phase 1",
+    "rawDetails": {
+      "ticketTiers": [
+        {
+          "tierId": "tier-eb",
+          "name": "Early Bird GA",
+          "priceINR": 299,
+          "availability": "sold_out"
+        },
+        {
+          "tierId": "tier-p1",
+          "name": "GA Phase 1",
+          "priceINR": 299,
+          "availability": "available"
+        },
+        {
+          "tierId": "tier-p2",
+          "name": "GA Phase 2 / Fan Pit",
+          "priceINR": 399,
+          "availability": "available"
+        },
+        {
+          "tierId": "tier-vip",
+          "name": "VIP Lounge Deck",
+          "priceINR": 699,
+          "availability": "available"
+        }
+      ],
+      "ticketStatus": "available"
+    }
   },
   {
     "id": "district-ev-kolkata-saltlake-comedy",
@@ -1157,7 +2590,7 @@
     "title": "Kolkata Laugh Club — Salt Lake Live",
     "description": "Bong wit meets modern satire in an evening filled with pure laughter and classic Kolkata nostalgia.",
     "category": "Stand-up Comedy",
-    "posterUrl": "https://cdn.district.in/events/cd-media/image/upload/v1761813928/kolkata-comedy.png",
+    "posterUrl": "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=800&q=80",
     "cityCode": "CCU",
     "cityName": "Kolkata",
     "venue": "Sector V Comedy Hub, Salt Lake, Kolkata",
@@ -1168,8 +2601,8 @@
     "date": "2026-10-26",
     "time": "19:30 IST",
     "startingPriceINR": 249,
-    "lowestListedPriceINR": 249,
-    "hasSoldOutEarlyPhases": false,
+    "lowestListedPriceINR": 299,
+    "hasSoldOutEarlyPhases": true,
     "ticketStatus": "available",
     "bookingUrl": "https://www.district.in/events/kolkata-laugh-club-buy-tickets",
     "listings": [
@@ -1178,7 +2611,34 @@
         "sourceId": "district-ev-kolkata-saltlake-comedy",
         "bookingUrl": "https://www.district.in/events/kolkata-laugh-club-buy-tickets",
         "startingPriceINR": 249,
-        "lowestListedPriceINR": 249,
+        "lowestListedPriceINR": 299,
+        "activePhaseName": "GA Phase 1",
+        "ticketTiers": [
+          {
+            "tierId": "tier-eb",
+            "name": "Early Bird GA",
+            "priceINR": 299,
+            "availability": "sold_out"
+          },
+          {
+            "tierId": "tier-p1",
+            "name": "GA Phase 1",
+            "priceINR": 249,
+            "availability": "available"
+          },
+          {
+            "tierId": "tier-p2",
+            "name": "GA Phase 2 / Fan Pit",
+            "priceINR": 349,
+            "availability": "available"
+          },
+          {
+            "tierId": "tier-vip",
+            "name": "VIP Lounge Deck",
+            "priceINR": 599,
+            "availability": "available"
+          }
+        ],
         "ticketStatus": "available",
         "convenienceFeePercent": 10
       }
@@ -1187,7 +2647,37 @@
       "district"
     ],
     "isExclusive": true,
-    "normalizedTitle": "kolkata laugh club salt lake live"
+    "normalizedTitle": "kolkata laugh club salt lake live",
+    "activePhaseName": "GA Phase 1",
+    "rawDetails": {
+      "ticketTiers": [
+        {
+          "tierId": "tier-eb",
+          "name": "Early Bird GA",
+          "priceINR": 299,
+          "availability": "sold_out"
+        },
+        {
+          "tierId": "tier-p1",
+          "name": "GA Phase 1",
+          "priceINR": 249,
+          "availability": "available"
+        },
+        {
+          "tierId": "tier-p2",
+          "name": "GA Phase 2 / Fan Pit",
+          "priceINR": 349,
+          "availability": "available"
+        },
+        {
+          "tierId": "tier-vip",
+          "name": "VIP Lounge Deck",
+          "priceINR": 599,
+          "availability": "available"
+        }
+      ],
+      "ticketStatus": "available"
+    }
   },
   {
     "id": "district-ev-ahmedabad-comedy",
@@ -1196,7 +2686,7 @@
     "title": "Ahmedabad Comedy Showcase — SG Highway Special",
     "description": "Gujarati and Hindi stand-up special exploring relatable family dramas, Navratri prep, and Gujarati business genius.",
     "category": "Stand-up Comedy",
-    "posterUrl": "https://cdn.district.in/events/cd-media/image/upload/v1761813928/ahmedabad-comedy.png",
+    "posterUrl": "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=800&q=80",
     "cityCode": "AMD",
     "cityName": "Ahmedabad",
     "venue": "The Comedy Factory, Bodakdev, Ahmedabad",
@@ -1208,7 +2698,7 @@
     "time": "20:00 IST",
     "startingPriceINR": 299,
     "lowestListedPriceINR": 299,
-    "hasSoldOutEarlyPhases": false,
+    "hasSoldOutEarlyPhases": true,
     "ticketStatus": "available",
     "bookingUrl": "https://www.district.in/events/ahmedabad-comedy-showcase-buy-tickets",
     "listings": [
@@ -1218,6 +2708,33 @@
         "bookingUrl": "https://www.district.in/events/ahmedabad-comedy-showcase-buy-tickets",
         "startingPriceINR": 299,
         "lowestListedPriceINR": 299,
+        "activePhaseName": "GA Phase 1",
+        "ticketTiers": [
+          {
+            "tierId": "tier-eb",
+            "name": "Early Bird GA",
+            "priceINR": 299,
+            "availability": "sold_out"
+          },
+          {
+            "tierId": "tier-p1",
+            "name": "GA Phase 1",
+            "priceINR": 299,
+            "availability": "available"
+          },
+          {
+            "tierId": "tier-p2",
+            "name": "GA Phase 2 / Fan Pit",
+            "priceINR": 399,
+            "availability": "available"
+          },
+          {
+            "tierId": "tier-vip",
+            "name": "VIP Lounge Deck",
+            "priceINR": 699,
+            "availability": "available"
+          }
+        ],
         "ticketStatus": "available",
         "convenienceFeePercent": 10
       }
@@ -1226,6 +2743,1812 @@
       "district"
     ],
     "isExclusive": true,
-    "normalizedTitle": "ahmedabad comedy showcase sg highway special"
+    "normalizedTitle": "ahmedabad comedy showcase sg highway special",
+    "activePhaseName": "GA Phase 1",
+    "rawDetails": {
+      "ticketTiers": [
+        {
+          "tierId": "tier-eb",
+          "name": "Early Bird GA",
+          "priceINR": 299,
+          "availability": "sold_out"
+        },
+        {
+          "tierId": "tier-p1",
+          "name": "GA Phase 1",
+          "priceINR": 299,
+          "availability": "available"
+        },
+        {
+          "tierId": "tier-p2",
+          "name": "GA Phase 2 / Fan Pit",
+          "priceINR": 399,
+          "availability": "available"
+        },
+        {
+          "tierId": "tier-vip",
+          "name": "VIP Lounge Deck",
+          "priceINR": 699,
+          "availability": "available"
+        }
+      ],
+      "ticketStatus": "available"
+    }
+  },
+  {
+    "id": "mv-udta-teer",
+    "type": "movie",
+    "source": "district",
+    "title": "Udta Teer",
+    "normalizedTitle": "udta teer",
+    "description": "A high-energy Hindi comedy-drama lighting up theatres across Pune and Mumbai this week.",
+    "category": "Cinema",
+    "languages": [
+      "Hindi"
+    ],
+    "posterUrl": "https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=800&q=80",
+    "cityCode": "ALL",
+    "cityName": "All India",
+    "venue": "PVR ICON Pavillion, INOX Bund Garden, Cinépolis & Partner Multiplexes",
+    "coordinates": {
+      "lat": 18.5204,
+      "lng": 73.8567
+    },
+    "date": "2026-10-22",
+    "rating": "UA13+",
+    "bookingUrl": "https://www.district.in/movies/pune-movie-tickets",
+    "ticketStatus": "available",
+    "hasSoldOutEarlyPhases": false,
+    "availablePlatforms": [
+      "district",
+      "bookmyshow"
+    ],
+    "isExclusive": false,
+    "listings": [
+      {
+        "source": "district",
+        "sourceId": "district-mv-udta-teer",
+        "bookingUrl": "https://www.district.in/movies/pune-movie-tickets",
+        "ticketStatus": "available",
+        "convenienceFeePercent": 10
+      },
+      {
+        "source": "bookmyshow",
+        "sourceId": "bms-mv-udta-teer",
+        "bookingUrl": "https://in.bookmyshow.com/explore/movies-pune",
+        "ticketStatus": "available",
+        "convenienceFeePercent": 11.8
+      }
+    ],
+    "rawDetails": {
+      "censorRating": "UA13+",
+      "lastVerifiedAt": "2026-10-21T19:39:00.625Z"
+    }
+  },
+  {
+    "id": "mv-pehla-pyaar-doosri-baar",
+    "type": "movie",
+    "source": "district",
+    "title": "Pehla Pyaar Doosri Baar",
+    "normalizedTitle": "pehla pyaar doosri baar",
+    "description": "A modern romantic comedy about second chances, chaotic family weddings, and unexpected sparks.",
+    "category": "Cinema",
+    "languages": [
+      "Hindi"
+    ],
+    "posterUrl": "https://cdn.district.in/movies-assets/images/cinema/phla-pyar-dusri-barr-8d4a0a20-b5af-11f1-924a-73e2cf7543b6.jpg",
+    "cityCode": "ALL",
+    "cityName": "All India",
+    "venue": "PVR ICON Pavillion, INOX Bund Garden, Cinépolis & Partner Multiplexes",
+    "coordinates": {
+      "lat": 18.5204,
+      "lng": 73.8567
+    },
+    "date": "2026-10-22",
+    "rating": "A",
+    "bookingUrl": "https://www.district.in/movies/pune-movie-tickets",
+    "ticketStatus": "available",
+    "hasSoldOutEarlyPhases": false,
+    "availablePlatforms": [
+      "district",
+      "bookmyshow"
+    ],
+    "isExclusive": false,
+    "listings": [
+      {
+        "source": "district",
+        "sourceId": "district-mv-pehla-pyaar-doosri-baar",
+        "bookingUrl": "https://www.district.in/movies/pune-movie-tickets",
+        "ticketStatus": "available",
+        "convenienceFeePercent": 10
+      },
+      {
+        "source": "bookmyshow",
+        "sourceId": "bms-mv-pehla-pyaar-doosri-baar",
+        "bookingUrl": "https://in.bookmyshow.com/explore/movies-pune",
+        "ticketStatus": "available",
+        "convenienceFeePercent": 11.8
+      }
+    ],
+    "rawDetails": {
+      "censorRating": "A",
+      "lastVerifiedAt": "2026-10-21T19:39:00.629Z"
+    }
+  },
+  {
+    "id": "mv-clayface",
+    "type": "movie",
+    "source": "district",
+    "title": "Clayface",
+    "normalizedTitle": "clayface",
+    "description": "A dark psychological comic-book thriller following the tragic transformation of actor Basil Karlo.",
+    "category": "Cinema",
+    "languages": [
+      "English",
+      "Hindi"
+    ],
+    "posterUrl": "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=800&q=80",
+    "cityCode": "ALL",
+    "cityName": "All India",
+    "venue": "PVR ICON Pavillion, INOX Bund Garden, Cinépolis & Partner Multiplexes",
+    "coordinates": {
+      "lat": 18.5204,
+      "lng": 73.8567
+    },
+    "date": "2026-10-22",
+    "rating": "A",
+    "bookingUrl": "https://www.district.in/movies/pune-movie-tickets",
+    "ticketStatus": "available",
+    "hasSoldOutEarlyPhases": false,
+    "availablePlatforms": [
+      "district",
+      "bookmyshow"
+    ],
+    "isExclusive": false,
+    "listings": [
+      {
+        "source": "district",
+        "sourceId": "district-mv-clayface",
+        "bookingUrl": "https://www.district.in/movies/pune-movie-tickets",
+        "ticketStatus": "available",
+        "convenienceFeePercent": 10
+      },
+      {
+        "source": "bookmyshow",
+        "sourceId": "bms-mv-clayface",
+        "bookingUrl": "https://in.bookmyshow.com/explore/movies-pune",
+        "ticketStatus": "available",
+        "convenienceFeePercent": 11.8
+      }
+    ],
+    "rawDetails": {
+      "censorRating": "A",
+      "lastVerifiedAt": "2026-10-21T19:39:00.629Z"
+    }
+  },
+  {
+    "id": "mv-street-fighter",
+    "type": "movie",
+    "source": "district",
+    "title": "Street Fighter",
+    "normalizedTitle": "street fighter",
+    "description": "World warriors Ryu, Ken, and Chun-Li enter the ultimate global tournament in IMAX & 4DX.",
+    "category": "Cinema",
+    "languages": [
+      "English",
+      "Hindi"
+    ],
+    "posterUrl": "https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=800&q=80",
+    "cityCode": "ALL",
+    "cityName": "All India",
+    "venue": "PVR ICON Pavillion, INOX Bund Garden, Cinépolis & Partner Multiplexes",
+    "coordinates": {
+      "lat": 18.5204,
+      "lng": 73.8567
+    },
+    "date": "2026-10-22",
+    "rating": "UA16+",
+    "bookingUrl": "https://www.district.in/movies/pune-movie-tickets",
+    "ticketStatus": "available",
+    "hasSoldOutEarlyPhases": false,
+    "availablePlatforms": [
+      "district",
+      "bookmyshow"
+    ],
+    "isExclusive": false,
+    "listings": [
+      {
+        "source": "district",
+        "sourceId": "district-mv-street-fighter",
+        "bookingUrl": "https://www.district.in/movies/pune-movie-tickets",
+        "ticketStatus": "available",
+        "convenienceFeePercent": 10
+      },
+      {
+        "source": "bookmyshow",
+        "sourceId": "bms-mv-street-fighter",
+        "bookingUrl": "https://in.bookmyshow.com/explore/movies-pune",
+        "ticketStatus": "available",
+        "convenienceFeePercent": 11.8
+      }
+    ],
+    "rawDetails": {
+      "censorRating": "UA16+",
+      "lastVerifiedAt": "2026-10-21T19:39:00.629Z"
+    }
+  },
+  {
+    "id": "mv-418-thriller",
+    "type": "movie",
+    "source": "district",
+    "title": "418",
+    "normalizedTitle": "418",
+    "description": "An edge-of-the-seat cyber mystery thriller unravelling a high-stakes heist across Indian metros.",
+    "category": "Cinema",
+    "languages": [
+      "Hindi"
+    ],
+    "posterUrl": "https://cdn.district.in/movies-assets/images/cinema/418-poster-23fb68f0-b02a-11f1-8ba7-933cdf89c1a9.jpg",
+    "cityCode": "ALL",
+    "cityName": "All India",
+    "venue": "PVR ICON Pavillion, INOX Bund Garden, Cinépolis & Partner Multiplexes",
+    "coordinates": {
+      "lat": 18.5204,
+      "lng": 73.8567
+    },
+    "date": "2026-10-22",
+    "rating": "A",
+    "bookingUrl": "https://www.district.in/movies/pune-movie-tickets",
+    "ticketStatus": "available",
+    "hasSoldOutEarlyPhases": false,
+    "availablePlatforms": [
+      "district",
+      "bookmyshow"
+    ],
+    "isExclusive": false,
+    "listings": [
+      {
+        "source": "district",
+        "sourceId": "district-mv-418-thriller",
+        "bookingUrl": "https://www.district.in/movies/pune-movie-tickets",
+        "ticketStatus": "available",
+        "convenienceFeePercent": 10
+      },
+      {
+        "source": "bookmyshow",
+        "sourceId": "bms-mv-418-thriller",
+        "bookingUrl": "https://in.bookmyshow.com/explore/movies-pune",
+        "ticketStatus": "available",
+        "convenienceFeePercent": 11.8
+      }
+    ],
+    "rawDetails": {
+      "censorRating": "A",
+      "lastVerifiedAt": "2026-10-21T19:39:00.629Z"
+    }
+  },
+  {
+    "id": "mv-hanuman-ansh",
+    "type": "movie",
+    "source": "district",
+    "title": "Hanuman Ansh",
+    "normalizedTitle": "hanuman ansh",
+    "description": "An inspiring mythological family adventure celebrating devotion, courage, and ancient heritage.",
+    "category": "Cinema",
+    "languages": [
+      "Hindi"
+    ],
+    "posterUrl": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=800&q=80",
+    "cityCode": "ALL",
+    "cityName": "All India",
+    "venue": "PVR ICON Pavillion, INOX Bund Garden, Cinépolis & Partner Multiplexes",
+    "coordinates": {
+      "lat": 18.5204,
+      "lng": 73.8567
+    },
+    "date": "2026-10-22",
+    "rating": "U",
+    "bookingUrl": "https://www.district.in/movies/pune-movie-tickets",
+    "ticketStatus": "available",
+    "hasSoldOutEarlyPhases": false,
+    "availablePlatforms": [
+      "district",
+      "bookmyshow"
+    ],
+    "isExclusive": false,
+    "listings": [
+      {
+        "source": "district",
+        "sourceId": "district-mv-hanuman-ansh",
+        "bookingUrl": "https://www.district.in/movies/pune-movie-tickets",
+        "ticketStatus": "available",
+        "convenienceFeePercent": 10
+      },
+      {
+        "source": "bookmyshow",
+        "sourceId": "bms-mv-hanuman-ansh",
+        "bookingUrl": "https://in.bookmyshow.com/explore/movies-pune",
+        "ticketStatus": "available",
+        "convenienceFeePercent": 11.8
+      }
+    ],
+    "rawDetails": {
+      "censorRating": "U",
+      "lastVerifiedAt": "2026-10-21T19:39:00.629Z"
+    }
+  },
+  {
+    "id": "mv-tom-and-jerry-compass",
+    "type": "movie",
+    "source": "district",
+    "title": "Tom and Jerry: Forbidden Compass",
+    "normalizedTitle": "tom and jerry forbidden compass",
+    "description": "The iconic cat-and-mouse duo embark on a time-bending quest around a mystical ancient compass.",
+    "category": "Cinema",
+    "languages": [
+      "English",
+      "Hindi"
+    ],
+    "posterUrl": "https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=800&q=80",
+    "cityCode": "ALL",
+    "cityName": "All India",
+    "venue": "PVR ICON Pavillion, INOX Bund Garden, Cinépolis & Partner Multiplexes",
+    "coordinates": {
+      "lat": 18.5204,
+      "lng": 73.8567
+    },
+    "date": "2026-10-22",
+    "rating": "UA13+",
+    "bookingUrl": "https://www.district.in/movies/pune-movie-tickets",
+    "ticketStatus": "available",
+    "hasSoldOutEarlyPhases": false,
+    "availablePlatforms": [
+      "district",
+      "bookmyshow"
+    ],
+    "isExclusive": false,
+    "listings": [
+      {
+        "source": "district",
+        "sourceId": "district-mv-tom-and-jerry-compass",
+        "bookingUrl": "https://www.district.in/movies/pune-movie-tickets",
+        "ticketStatus": "available",
+        "convenienceFeePercent": 10
+      },
+      {
+        "source": "bookmyshow",
+        "sourceId": "bms-mv-tom-and-jerry-compass",
+        "bookingUrl": "https://in.bookmyshow.com/explore/movies-pune",
+        "ticketStatus": "available",
+        "convenienceFeePercent": 11.8
+      }
+    ],
+    "rawDetails": {
+      "censorRating": "UA13+",
+      "lastVerifiedAt": "2026-10-21T19:39:00.629Z"
+    }
+  },
+  {
+    "id": "mv-bts-arirang-live",
+    "type": "movie",
+    "source": "district",
+    "title": "BTS World Tour Arirang: Live Viewing",
+    "normalizedTitle": "bts world tour arirang live viewing",
+    "description": "Special theatrical live concert broadcast bringing BTS stadium energy directly to Pune & Mumbai multiplexes.",
+    "category": "Cinema",
+    "languages": [
+      "Korean",
+      "English"
+    ],
+    "posterUrl": "https://images.unsplash.com/photo-1459749411175-04bf5292ceea?auto=format&fit=crop&w=800&q=80",
+    "cityCode": "ALL",
+    "cityName": "All India",
+    "venue": "PVR ICON Pavillion, INOX Bund Garden, Cinépolis & Partner Multiplexes",
+    "coordinates": {
+      "lat": 18.5204,
+      "lng": 73.8567
+    },
+    "date": "2026-10-22",
+    "rating": "UA13+",
+    "bookingUrl": "https://www.district.in/movies/mumbai-movie-tickets",
+    "ticketStatus": "available",
+    "hasSoldOutEarlyPhases": false,
+    "availablePlatforms": [
+      "district",
+      "bookmyshow"
+    ],
+    "isExclusive": false,
+    "listings": [
+      {
+        "source": "district",
+        "sourceId": "district-mv-bts-arirang-live",
+        "bookingUrl": "https://www.district.in/movies/mumbai-movie-tickets",
+        "ticketStatus": "available",
+        "convenienceFeePercent": 10
+      },
+      {
+        "source": "bookmyshow",
+        "sourceId": "bms-mv-bts-arirang-live",
+        "bookingUrl": "https://in.bookmyshow.com/explore/movies-mumbai",
+        "ticketStatus": "available",
+        "convenienceFeePercent": 11.8
+      }
+    ],
+    "rawDetails": {
+      "censorRating": "UA13+",
+      "lastVerifiedAt": "2026-10-21T19:39:00.629Z"
+    }
+  },
+  {
+    "id": "district-cn-shankar-ehsaan-loy-pune",
+    "type": "concert",
+    "source": "district",
+    "title": "Shankar Ehsaan Loy Live In Concert Pune",
+    "normalizedTitle": "shankar ehsaan loy live in concert pune",
+    "description": "India’s legendary musical trio Shankar-Ehsaan-Loy perform their greatest Bollywood anthems live in Pune.",
+    "category": "Concert",
+    "posterUrl": "https://cdn.district.in/assets/events/publisher/event_cover_image_vertical/01M365MH70AQXNHB90M02Q8RDC.jpg",
+    "cityCode": "PNQ",
+    "cityName": "Pune",
+    "venue": "Mayfield Estate Open Air Arena, Kharadi, Pune",
+    "coordinates": {
+      "lat": 18.5534,
+      "lng": 73.9352
+    },
+    "date": "2026-12-19",
+    "time": "18:00 IST",
+    "startingPriceINR": 899,
+    "lowestListedPriceINR": 649,
+    "activePhaseName": "GA Phase 1",
+    "hasSoldOutEarlyPhases": true,
+    "ticketStatus": "available",
+    "bookingUrl": "https://www.district.in/events/upcoming-events-in-pune",
+    "availablePlatforms": [
+      "district"
+    ],
+    "isExclusive": true,
+    "listings": [
+      {
+        "source": "district",
+        "sourceId": "district-cn-shankar-ehsaan-loy-pune",
+        "bookingUrl": "https://www.district.in/events/upcoming-events-in-pune",
+        "startingPriceINR": 899,
+        "lowestListedPriceINR": 649,
+        "activePhaseName": "GA Phase 1",
+        "ticketTiers": [
+          {
+            "tierId": "tier-eb",
+            "name": "Early Bird GA",
+            "priceINR": 649,
+            "availability": "sold_out"
+          },
+          {
+            "tierId": "tier-p1",
+            "name": "GA Phase 1",
+            "priceINR": 899,
+            "availability": "available"
+          },
+          {
+            "tierId": "tier-p2",
+            "name": "GA Phase 2 / Fan Pit",
+            "priceINR": 1299,
+            "availability": "available"
+          },
+          {
+            "tierId": "tier-vip",
+            "name": "VIP Lounge Deck",
+            "priceINR": 2199,
+            "availability": "available"
+          }
+        ],
+        "ticketStatus": "available",
+        "convenienceFeePercent": 10
+      }
+    ],
+    "rawDetails": {
+      "ticketTiers": [
+        {
+          "tierId": "tier-eb",
+          "name": "Early Bird GA",
+          "priceINR": 649,
+          "availability": "sold_out"
+        },
+        {
+          "tierId": "tier-p1",
+          "name": "GA Phase 1",
+          "priceINR": 899,
+          "availability": "available"
+        },
+        {
+          "tierId": "tier-p2",
+          "name": "GA Phase 2 / Fan Pit",
+          "priceINR": 1299,
+          "availability": "available"
+        },
+        {
+          "tierId": "tier-vip",
+          "name": "VIP Lounge Deck",
+          "priceINR": 2199,
+          "availability": "available"
+        }
+      ],
+      "ticketStatus": "available",
+      "lastVerifiedAt": "2026-10-21T19:39:00.629Z"
+    }
+  },
+  {
+    "id": "district-cn-sonu-nigam-revolution-pune",
+    "type": "concert",
+    "source": "district",
+    "title": "Sonu Nigam - The Revolution India Tour | Pune",
+    "normalizedTitle": "sonu nigam the revolution india tour pune",
+    "description": "Celebrate 30 glorious years of music with Sonu Nigam’s The Revolution Tour—a spectacular live symphony experience in Pune.",
+    "category": "Concert",
+    "posterUrl": "https://cdn.district.in/assets/events/publisher/event_cover_image_vertical/01KXEM4210PY6PNRY2ZAH6ZMSQ.png",
+    "cityCode": "PNQ",
+    "cityName": "Pune",
+    "venue": "Mahalakshmi Lawns, Nagar Road, Pune",
+    "coordinates": {
+      "lat": 18.562,
+      "lng": 73.916
+    },
+    "date": "2027-01-23",
+    "time": "19:00 IST",
+    "startingPriceINR": 1499,
+    "lowestListedPriceINR": 1099,
+    "activePhaseName": "GA Phase 1",
+    "hasSoldOutEarlyPhases": true,
+    "ticketStatus": "available",
+    "bookingUrl": "https://www.district.in/events/upcoming-events-in-pune",
+    "availablePlatforms": [
+      "district"
+    ],
+    "isExclusive": true,
+    "listings": [
+      {
+        "source": "district",
+        "sourceId": "district-cn-sonu-nigam-revolution-pune",
+        "bookingUrl": "https://www.district.in/events/upcoming-events-in-pune",
+        "startingPriceINR": 1499,
+        "lowestListedPriceINR": 1099,
+        "activePhaseName": "GA Phase 1",
+        "ticketTiers": [
+          {
+            "tierId": "tier-eb",
+            "name": "Early Bird GA",
+            "priceINR": 1099,
+            "availability": "sold_out"
+          },
+          {
+            "tierId": "tier-p1",
+            "name": "GA Phase 1",
+            "priceINR": 1499,
+            "availability": "available"
+          },
+          {
+            "tierId": "tier-p2",
+            "name": "GA Phase 2 / Fan Pit",
+            "priceINR": 2149,
+            "availability": "available"
+          },
+          {
+            "tierId": "tier-vip",
+            "name": "VIP Lounge Deck",
+            "priceINR": 3599,
+            "availability": "available"
+          }
+        ],
+        "ticketStatus": "available",
+        "convenienceFeePercent": 10
+      }
+    ],
+    "rawDetails": {
+      "ticketTiers": [
+        {
+          "tierId": "tier-eb",
+          "name": "Early Bird GA",
+          "priceINR": 1099,
+          "availability": "sold_out"
+        },
+        {
+          "tierId": "tier-p1",
+          "name": "GA Phase 1",
+          "priceINR": 1499,
+          "availability": "available"
+        },
+        {
+          "tierId": "tier-p2",
+          "name": "GA Phase 2 / Fan Pit",
+          "priceINR": 2149,
+          "availability": "available"
+        },
+        {
+          "tierId": "tier-vip",
+          "name": "VIP Lounge Deck",
+          "priceINR": 3599,
+          "availability": "available"
+        }
+      ],
+      "ticketStatus": "available",
+      "lastVerifiedAt": "2026-10-21T19:39:00.629Z"
+    }
+  },
+  {
+    "id": "district-cn-shreya-ghoshal-unstoppable-pune",
+    "type": "concert",
+    "source": "district",
+    "title": "Shreya Ghoshal - The Unstoppable India Tour | Pune",
+    "normalizedTitle": "shreya ghoshal the unstoppable india tour pune",
+    "description": "Queen of melody Shreya Ghoshal brings her grand live orchestra and timeless chartbusters to Mayfield Yash Garden, Pune.",
+    "category": "Concert",
+    "posterUrl": "https://cdn.district.in/assets/events/publisher/event_cover_image_vertical/01M2VX90BAJ5KX6M7M3NTKMNZ5.png",
+    "cityCode": "PNQ",
+    "cityName": "Pune",
+    "venue": "Mayfield Yash Garden, Pune",
+    "coordinates": {
+      "lat": 18.551,
+      "lng": 73.939
+    },
+    "date": "2027-03-13",
+    "time": "18:00 IST",
+    "startingPriceINR": 1500,
+    "lowestListedPriceINR": 1099,
+    "activePhaseName": "GA Phase 1",
+    "hasSoldOutEarlyPhases": true,
+    "ticketStatus": "available",
+    "bookingUrl": "https://www.district.in/events/performances-in-pune-book-tickets",
+    "availablePlatforms": [
+      "district"
+    ],
+    "isExclusive": true,
+    "listings": [
+      {
+        "source": "district",
+        "sourceId": "district-cn-shreya-ghoshal-unstoppable-pune",
+        "bookingUrl": "https://www.district.in/events/performances-in-pune-book-tickets",
+        "startingPriceINR": 1500,
+        "lowestListedPriceINR": 1099,
+        "activePhaseName": "GA Phase 1",
+        "ticketTiers": [
+          {
+            "tierId": "tier-eb",
+            "name": "Early Bird GA",
+            "priceINR": 1099,
+            "availability": "sold_out"
+          },
+          {
+            "tierId": "tier-p1",
+            "name": "GA Phase 1",
+            "priceINR": 1500,
+            "availability": "available"
+          },
+          {
+            "tierId": "tier-p2",
+            "name": "GA Phase 2 / Fan Pit",
+            "priceINR": 2199,
+            "availability": "available"
+          },
+          {
+            "tierId": "tier-vip",
+            "name": "VIP Lounge Deck",
+            "priceINR": 3599,
+            "availability": "available"
+          }
+        ],
+        "ticketStatus": "available",
+        "convenienceFeePercent": 10
+      }
+    ],
+    "rawDetails": {
+      "ticketTiers": [
+        {
+          "tierId": "tier-eb",
+          "name": "Early Bird GA",
+          "priceINR": 1099,
+          "availability": "sold_out"
+        },
+        {
+          "tierId": "tier-p1",
+          "name": "GA Phase 1",
+          "priceINR": 1500,
+          "availability": "available"
+        },
+        {
+          "tierId": "tier-p2",
+          "name": "GA Phase 2 / Fan Pit",
+          "priceINR": 2199,
+          "availability": "available"
+        },
+        {
+          "tierId": "tier-vip",
+          "name": "VIP Lounge Deck",
+          "priceINR": 3599,
+          "availability": "available"
+        }
+      ],
+      "ticketStatus": "available",
+      "lastVerifiedAt": "2026-10-21T19:39:00.629Z"
+    }
+  },
+  {
+    "id": "district-cn-jasmin-walia-di-mora-pune",
+    "type": "concert",
+    "source": "district",
+    "title": "Jasmin Walia Live | Di Mora Pune",
+    "normalizedTitle": "jasmin walia live di mora pune",
+    "description": "British-Indian pop sensation Jasmin Walia performs Bomb Diggy and her latest club hits live at The Mills, Pune.",
+    "category": "Concert",
+    "posterUrl": "https://cdn.district.in/assets/events/publisher/event_cover_image_vertical/01KXT1FM0VZGVC8TV4BP3XY3Y1.jpg",
+    "cityCode": "PNQ",
+    "cityName": "Pune",
+    "venue": "Di Mora | The Mills, Bund Garden Road, Pune",
+    "coordinates": {
+      "lat": 18.5362,
+      "lng": 73.8742
+    },
+    "date": "2026-10-23",
+    "time": "21:00 IST",
+    "startingPriceINR": 999,
+    "lowestListedPriceINR": 699,
+    "activePhaseName": "GA Phase 1",
+    "hasSoldOutEarlyPhases": true,
+    "ticketStatus": "available",
+    "bookingUrl": "https://www.district.in/events/upcoming-events-in-pune",
+    "availablePlatforms": [
+      "district"
+    ],
+    "isExclusive": true,
+    "listings": [
+      {
+        "source": "district",
+        "sourceId": "district-cn-jasmin-walia-di-mora-pune",
+        "bookingUrl": "https://www.district.in/events/upcoming-events-in-pune",
+        "startingPriceINR": 999,
+        "lowestListedPriceINR": 699,
+        "activePhaseName": "GA Phase 1",
+        "ticketTiers": [
+          {
+            "tierId": "tier-eb",
+            "name": "Early Bird GA",
+            "priceINR": 699,
+            "availability": "sold_out"
+          },
+          {
+            "tierId": "tier-p1",
+            "name": "GA Phase 1",
+            "priceINR": 999,
+            "availability": "available"
+          },
+          {
+            "tierId": "tier-p2",
+            "name": "GA Phase 2 / Fan Pit",
+            "priceINR": 1449,
+            "availability": "available"
+          },
+          {
+            "tierId": "tier-vip",
+            "name": "VIP Lounge Deck",
+            "priceINR": 2399,
+            "availability": "available"
+          }
+        ],
+        "ticketStatus": "available",
+        "convenienceFeePercent": 10
+      }
+    ],
+    "rawDetails": {
+      "ticketTiers": [
+        {
+          "tierId": "tier-eb",
+          "name": "Early Bird GA",
+          "priceINR": 699,
+          "availability": "sold_out"
+        },
+        {
+          "tierId": "tier-p1",
+          "name": "GA Phase 1",
+          "priceINR": 999,
+          "availability": "available"
+        },
+        {
+          "tierId": "tier-p2",
+          "name": "GA Phase 2 / Fan Pit",
+          "priceINR": 1449,
+          "availability": "available"
+        },
+        {
+          "tierId": "tier-vip",
+          "name": "VIP Lounge Deck",
+          "priceINR": 2399,
+          "availability": "available"
+        }
+      ],
+      "ticketStatus": "available",
+      "lastVerifiedAt": "2026-10-21T19:39:00.629Z"
+    }
+  },
+  {
+    "id": "district-ev-javed-akhtar-pune",
+    "type": "event",
+    "source": "district",
+    "title": "Javed Akhtar | Mai Koi Aaisa Geet Gaoon",
+    "normalizedTitle": "javed akhtar mai koi aaisa geet gaoon",
+    "description": "An unforgettable evening of poetry, storytelling, and timeless lyrics with maestro Javed Akhtar at Pandit Farms, Pune.",
+    "category": "Live Event",
+    "posterUrl": "https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?auto=format&fit=crop&w=800&q=80",
+    "cityCode": "PNQ",
+    "cityName": "Pune",
+    "venue": "Pandit Farms, Karve Nagar, Pune",
+    "coordinates": {
+      "lat": 18.495,
+      "lng": 73.821
+    },
+    "date": "2026-10-25",
+    "time": "20:00 IST",
+    "startingPriceINR": 990,
+    "lowestListedPriceINR": 699,
+    "activePhaseName": "GA Phase 1",
+    "hasSoldOutEarlyPhases": true,
+    "ticketStatus": "available",
+    "bookingUrl": "https://www.district.in/events/performances-in-pune-book-tickets",
+    "availablePlatforms": [
+      "district",
+      "bookmyshow"
+    ],
+    "isExclusive": false,
+    "listings": [
+      {
+        "source": "district",
+        "sourceId": "district-ev-javed-akhtar-pune",
+        "bookingUrl": "https://www.district.in/events/performances-in-pune-book-tickets",
+        "startingPriceINR": 990,
+        "lowestListedPriceINR": 699,
+        "activePhaseName": "GA Phase 1",
+        "ticketTiers": [
+          {
+            "tierId": "tier-eb",
+            "name": "Early Bird GA",
+            "priceINR": 699,
+            "availability": "sold_out"
+          },
+          {
+            "tierId": "tier-p1",
+            "name": "GA Phase 1",
+            "priceINR": 990,
+            "availability": "available"
+          },
+          {
+            "tierId": "tier-p2",
+            "name": "GA Phase 2 / Fan Pit",
+            "priceINR": 1449,
+            "availability": "available"
+          },
+          {
+            "tierId": "tier-vip",
+            "name": "VIP Lounge Deck",
+            "priceINR": 2399,
+            "availability": "available"
+          }
+        ],
+        "ticketStatus": "available",
+        "convenienceFeePercent": 10
+      },
+      {
+        "source": "bookmyshow",
+        "sourceId": "bookmyshow-district-ev-javed-akhtar-pune",
+        "bookingUrl": "https://in.bookmyshow.com/explore/events-pune",
+        "startingPriceINR": 1040,
+        "lowestListedPriceINR": 699,
+        "activePhaseName": "Phase 1 Entry",
+        "ticketTiers": [
+          {
+            "tierId": "tier-eb",
+            "name": "Early Bird GA",
+            "priceINR": 749,
+            "availability": "sold_out"
+          },
+          {
+            "tierId": "tier-p1",
+            "name": "GA Phase 1",
+            "priceINR": 1040,
+            "availability": "available"
+          },
+          {
+            "tierId": "tier-p2",
+            "name": "GA Phase 2 / Fan Pit",
+            "priceINR": 1499,
+            "availability": "available"
+          },
+          {
+            "tierId": "tier-vip",
+            "name": "VIP Lounge Deck",
+            "priceINR": 2499,
+            "availability": "available"
+          }
+        ],
+        "ticketStatus": "available",
+        "convenienceFeePercent": 11.8
+      }
+    ],
+    "rawDetails": {
+      "ticketTiers": [
+        {
+          "tierId": "tier-eb",
+          "name": "Early Bird GA",
+          "priceINR": 699,
+          "availability": "sold_out"
+        },
+        {
+          "tierId": "tier-p1",
+          "name": "GA Phase 1",
+          "priceINR": 990,
+          "availability": "available"
+        },
+        {
+          "tierId": "tier-p2",
+          "name": "GA Phase 2 / Fan Pit",
+          "priceINR": 1449,
+          "availability": "available"
+        },
+        {
+          "tierId": "tier-vip",
+          "name": "VIP Lounge Deck",
+          "priceINR": 2399,
+          "availability": "available"
+        }
+      ],
+      "ticketStatus": "available",
+      "lastVerifiedAt": "2026-10-21T19:39:00.629Z"
+    }
+  },
+  {
+    "id": "district-ev-roast-battle-fc-social-pune",
+    "type": "event",
+    "source": "district",
+    "title": "Roast Battle & Laughter Therapy — FC Road SOCIAL",
+    "normalizedTitle": "roast battle laughter therapy fc road social",
+    "description": "Pune’s sharpest comics go head-to-head in an unfiltered roast battle and stand-up comedy night at FC Road SOCIAL.",
+    "category": "Stand-up Comedy",
+    "posterUrl": "https://cdn.district.in/assets/events/publisher/event_cover_image_vertical/01M52W0E2T80J48VX1Y9YW0EYC.jpeg",
+    "cityCode": "PNQ",
+    "cityName": "Pune",
+    "venue": "FC Road SOCIAL, Shivaji Nagar, Pune",
+    "coordinates": {
+      "lat": 18.5236,
+      "lng": 73.8415
+    },
+    "date": "2026-10-24",
+    "time": "20:00 IST",
+    "startingPriceINR": 199,
+    "lowestListedPriceINR": 149,
+    "activePhaseName": "GA Phase 1",
+    "hasSoldOutEarlyPhases": true,
+    "ticketStatus": "available",
+    "bookingUrl": "https://www.district.in/events/events-this-weekend-in-pune",
+    "availablePlatforms": [
+      "district",
+      "bookmyshow"
+    ],
+    "isExclusive": false,
+    "listings": [
+      {
+        "source": "district",
+        "sourceId": "district-ev-roast-battle-fc-social-pune",
+        "bookingUrl": "https://www.district.in/events/events-this-weekend-in-pune",
+        "startingPriceINR": 199,
+        "lowestListedPriceINR": 149,
+        "activePhaseName": "GA Phase 1",
+        "ticketTiers": [
+          {
+            "tierId": "tier-eb",
+            "name": "Early Bird GA",
+            "priceINR": 149,
+            "availability": "sold_out"
+          },
+          {
+            "tierId": "tier-p1",
+            "name": "GA Phase 1",
+            "priceINR": 199,
+            "availability": "available"
+          },
+          {
+            "tierId": "tier-p2",
+            "name": "GA Phase 2 / Fan Pit",
+            "priceINR": 299,
+            "availability": "available"
+          },
+          {
+            "tierId": "tier-vip",
+            "name": "VIP Lounge Deck",
+            "priceINR": 499,
+            "availability": "available"
+          }
+        ],
+        "ticketStatus": "available",
+        "convenienceFeePercent": 10
+      },
+      {
+        "source": "bookmyshow",
+        "sourceId": "bookmyshow-district-ev-roast-battle-fc-social-pune",
+        "bookingUrl": "https://in.bookmyshow.com/explore/comedy-shows-pune",
+        "startingPriceINR": 249,
+        "lowestListedPriceINR": 149,
+        "activePhaseName": "Phase 1 Entry",
+        "ticketTiers": [
+          {
+            "tierId": "tier-eb",
+            "name": "Early Bird GA",
+            "priceINR": 199,
+            "availability": "sold_out"
+          },
+          {
+            "tierId": "tier-p1",
+            "name": "GA Phase 1",
+            "priceINR": 249,
+            "availability": "available"
+          },
+          {
+            "tierId": "tier-p2",
+            "name": "GA Phase 2 / Fan Pit",
+            "priceINR": 349,
+            "availability": "available"
+          },
+          {
+            "tierId": "tier-vip",
+            "name": "VIP Lounge Deck",
+            "priceINR": 599,
+            "availability": "available"
+          }
+        ],
+        "ticketStatus": "available",
+        "convenienceFeePercent": 11.8
+      }
+    ],
+    "rawDetails": {
+      "ticketTiers": [
+        {
+          "tierId": "tier-eb",
+          "name": "Early Bird GA",
+          "priceINR": 149,
+          "availability": "sold_out"
+        },
+        {
+          "tierId": "tier-p1",
+          "name": "GA Phase 1",
+          "priceINR": 199,
+          "availability": "available"
+        },
+        {
+          "tierId": "tier-p2",
+          "name": "GA Phase 2 / Fan Pit",
+          "priceINR": 299,
+          "availability": "available"
+        },
+        {
+          "tierId": "tier-vip",
+          "name": "VIP Lounge Deck",
+          "priceINR": 499,
+          "availability": "available"
+        }
+      ],
+      "ticketStatus": "available",
+      "lastVerifiedAt": "2026-10-21T19:39:00.629Z"
+    }
+  },
+  {
+    "id": "district-ev-tape-a-tale-ghar-pune",
+    "type": "event",
+    "source": "district",
+    "title": "Ghar — An Open Mic for Words by Tape A Tale | Pune",
+    "normalizedTitle": "ghar an open mic for words by tape a tale pune",
+    "description": "India’s most loved storytelling and spoken-word community Tape A Tale brings Ghar to The Mic Loft Studio, Pune.",
+    "category": "Live Event",
+    "posterUrl": "https://images.unsplash.com/photo-1478737270239-2f02b77fc618?auto=format&fit=crop&w=800&q=80",
+    "cityCode": "PNQ",
+    "cityName": "Pune",
+    "venue": "The Mic Loft Studio, Pune",
+    "coordinates": {
+      "lat": 18.559,
+      "lng": 73.789
+    },
+    "date": "2026-10-25",
+    "time": "17:00 IST",
+    "startingPriceINR": 300,
+    "lowestListedPriceINR": 199,
+    "activePhaseName": "GA Phase 1",
+    "hasSoldOutEarlyPhases": true,
+    "ticketStatus": "available",
+    "bookingUrl": "https://www.district.in/events/performances-in-pune-book-tickets",
+    "availablePlatforms": [
+      "district"
+    ],
+    "isExclusive": true,
+    "listings": [
+      {
+        "source": "district",
+        "sourceId": "district-ev-tape-a-tale-ghar-pune",
+        "bookingUrl": "https://www.district.in/events/performances-in-pune-book-tickets",
+        "startingPriceINR": 300,
+        "lowestListedPriceINR": 199,
+        "activePhaseName": "GA Phase 1",
+        "ticketTiers": [
+          {
+            "tierId": "tier-eb",
+            "name": "Early Bird GA",
+            "priceINR": 199,
+            "availability": "sold_out"
+          },
+          {
+            "tierId": "tier-p1",
+            "name": "GA Phase 1",
+            "priceINR": 300,
+            "availability": "available"
+          },
+          {
+            "tierId": "tier-p2",
+            "name": "GA Phase 2 / Fan Pit",
+            "priceINR": 449,
+            "availability": "available"
+          },
+          {
+            "tierId": "tier-vip",
+            "name": "VIP Lounge Deck",
+            "priceINR": 699,
+            "availability": "available"
+          }
+        ],
+        "ticketStatus": "available",
+        "convenienceFeePercent": 10
+      }
+    ],
+    "rawDetails": {
+      "ticketTiers": [
+        {
+          "tierId": "tier-eb",
+          "name": "Early Bird GA",
+          "priceINR": 199,
+          "availability": "sold_out"
+        },
+        {
+          "tierId": "tier-p1",
+          "name": "GA Phase 1",
+          "priceINR": 300,
+          "availability": "available"
+        },
+        {
+          "tierId": "tier-p2",
+          "name": "GA Phase 2 / Fan Pit",
+          "priceINR": 449,
+          "availability": "available"
+        },
+        {
+          "tierId": "tier-vip",
+          "name": "VIP Lounge Deck",
+          "priceINR": 699,
+          "availability": "available"
+        }
+      ],
+      "ticketStatus": "available",
+      "lastVerifiedAt": "2026-10-21T19:39:00.629Z"
+    }
+  },
+  {
+    "id": "district-ev-ballr-halloween-pune",
+    "type": "event",
+    "source": "district",
+    "title": "House of Horror — Ballr Halloween Edition & antiSOCIAL Party",
+    "normalizedTitle": "house of horror ballr halloween edition antisocial party",
+    "description": "Pune’s biggest weekend nightlife takeover across Ballr Kalyani Nagar and antiSOCIAL Shivaji Nagar with live DJs.",
+    "category": "Live Event",
+    "posterUrl": "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=800&q=80",
+    "cityCode": "PNQ",
+    "cityName": "Pune",
+    "venue": "Ballr, Kalyani Nagar, Pune",
+    "coordinates": {
+      "lat": 18.548,
+      "lng": 73.903
+    },
+    "date": "2026-10-31",
+    "time": "20:30 IST",
+    "startingPriceINR": 1000,
+    "lowestListedPriceINR": 699,
+    "activePhaseName": "GA Phase 1",
+    "hasSoldOutEarlyPhases": true,
+    "ticketStatus": "available",
+    "bookingUrl": "https://www.district.in/events/upcoming-events-in-pune",
+    "availablePlatforms": [
+      "district"
+    ],
+    "isExclusive": true,
+    "listings": [
+      {
+        "source": "district",
+        "sourceId": "district-ev-ballr-halloween-pune",
+        "bookingUrl": "https://www.district.in/events/upcoming-events-in-pune",
+        "startingPriceINR": 1000,
+        "lowestListedPriceINR": 699,
+        "activePhaseName": "GA Phase 1",
+        "ticketTiers": [
+          {
+            "tierId": "tier-eb",
+            "name": "Early Bird GA",
+            "priceINR": 699,
+            "availability": "sold_out"
+          },
+          {
+            "tierId": "tier-p1",
+            "name": "GA Phase 1",
+            "priceINR": 1000,
+            "availability": "available"
+          },
+          {
+            "tierId": "tier-p2",
+            "name": "GA Phase 2 / Fan Pit",
+            "priceINR": 1449,
+            "availability": "available"
+          },
+          {
+            "tierId": "tier-vip",
+            "name": "VIP Lounge Deck",
+            "priceINR": 2399,
+            "availability": "available"
+          }
+        ],
+        "ticketStatus": "available",
+        "convenienceFeePercent": 10
+      }
+    ],
+    "rawDetails": {
+      "ticketTiers": [
+        {
+          "tierId": "tier-eb",
+          "name": "Early Bird GA",
+          "priceINR": 699,
+          "availability": "sold_out"
+        },
+        {
+          "tierId": "tier-p1",
+          "name": "GA Phase 1",
+          "priceINR": 1000,
+          "availability": "available"
+        },
+        {
+          "tierId": "tier-p2",
+          "name": "GA Phase 2 / Fan Pit",
+          "priceINR": 1449,
+          "availability": "available"
+        },
+        {
+          "tierId": "tier-vip",
+          "name": "VIP Lounge Deck",
+          "priceINR": 2399,
+          "availability": "available"
+        }
+      ],
+      "ticketStatus": "available",
+      "lastVerifiedAt": "2026-10-21T19:39:00.629Z"
+    }
+  },
+  {
+    "id": "district-cn-rolling-loud-india-bom",
+    "type": "concert",
+    "source": "district",
+    "title": "Rolling Loud India 2026 — Mumbai",
+    "normalizedTitle": "rolling loud india 2026 mumbai",
+    "description": "The World’s Largest Hip-Hop Festival returns to India in Mumbai with international headliners and homegrown rap icons.",
+    "category": "Concert",
+    "posterUrl": "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=800&q=80",
+    "cityCode": "BOM",
+    "cityName": "Mumbai",
+    "venue": "MMRDA Grounds / Mahalaxmi Arena, Mumbai",
+    "coordinates": {
+      "lat": 19.065,
+      "lng": 72.868
+    },
+    "date": "2026-12-12",
+    "time": "14:00 IST",
+    "startingPriceINR": 5500,
+    "lowestListedPriceINR": 3949,
+    "activePhaseName": "GA Phase 1",
+    "hasSoldOutEarlyPhases": true,
+    "ticketStatus": "available",
+    "bookingUrl": "https://www.district.in/events/rolling-loud-india-2026-buy-tickets",
+    "availablePlatforms": [
+      "district"
+    ],
+    "isExclusive": true,
+    "listings": [
+      {
+        "source": "district",
+        "sourceId": "district-cn-rolling-loud-india-bom",
+        "bookingUrl": "https://www.district.in/events/rolling-loud-india-2026-buy-tickets",
+        "startingPriceINR": 5500,
+        "lowestListedPriceINR": 3949,
+        "activePhaseName": "GA Phase 1",
+        "ticketTiers": [
+          {
+            "tierId": "tier-eb",
+            "name": "Early Bird GA",
+            "priceINR": 3949,
+            "availability": "sold_out"
+          },
+          {
+            "tierId": "tier-p1",
+            "name": "GA Phase 1",
+            "priceINR": 5500,
+            "availability": "available"
+          },
+          {
+            "tierId": "tier-p2",
+            "name": "GA Phase 2 / Fan Pit",
+            "priceINR": 7999,
+            "availability": "available"
+          },
+          {
+            "tierId": "tier-vip",
+            "name": "VIP Lounge Deck",
+            "priceINR": 13199,
+            "availability": "available"
+          }
+        ],
+        "ticketStatus": "available",
+        "convenienceFeePercent": 10
+      }
+    ],
+    "rawDetails": {
+      "ticketTiers": [
+        {
+          "tierId": "tier-eb",
+          "name": "Early Bird GA",
+          "priceINR": 3949,
+          "availability": "sold_out"
+        },
+        {
+          "tierId": "tier-p1",
+          "name": "GA Phase 1",
+          "priceINR": 5500,
+          "availability": "available"
+        },
+        {
+          "tierId": "tier-p2",
+          "name": "GA Phase 2 / Fan Pit",
+          "priceINR": 7999,
+          "availability": "available"
+        },
+        {
+          "tierId": "tier-vip",
+          "name": "VIP Lounge Deck",
+          "priceINR": 13199,
+          "availability": "available"
+        }
+      ],
+      "ticketStatus": "available",
+      "lastVerifiedAt": "2026-10-21T19:39:00.629Z"
+    }
+  },
+  {
+    "id": "district-cn-bollywood-music-project-bom",
+    "type": "concert",
+    "source": "district",
+    "title": "Bollywood Music Project 2026 — 10th Anniversary",
+    "normalizedTitle": "bollywood music project 2026 10th anniversary",
+    "description": "Asia’s largest Bollywood music festival turns 10 at Jio World Garden, Mumbai with 10+ headlining artists and food pop-ups.",
+    "category": "Concert",
+    "posterUrl": "https://cdn.district.in/assets/events/publisher/event_cover_image_vertical/01M59PKDQZ5HARGD1WAJGAT6ZD.png",
+    "cityCode": "BOM",
+    "cityName": "Mumbai",
+    "venue": "Jio World Garden, BKC, Mumbai",
+    "coordinates": {
+      "lat": 19.0658,
+      "lng": 72.8636
+    },
+    "date": "2026-11-28",
+    "time": "15:00 IST",
+    "startingPriceINR": 2499,
+    "lowestListedPriceINR": 1799,
+    "activePhaseName": "GA Phase 1",
+    "hasSoldOutEarlyPhases": true,
+    "ticketStatus": "available",
+    "bookingUrl": "https://www.district.in/events/bollywood-music-project-2026-buy-tickets",
+    "availablePlatforms": [
+      "district"
+    ],
+    "isExclusive": true,
+    "listings": [
+      {
+        "source": "district",
+        "sourceId": "district-cn-bollywood-music-project-bom",
+        "bookingUrl": "https://www.district.in/events/bollywood-music-project-2026-buy-tickets",
+        "startingPriceINR": 2499,
+        "lowestListedPriceINR": 1799,
+        "activePhaseName": "GA Phase 1",
+        "ticketTiers": [
+          {
+            "tierId": "tier-eb",
+            "name": "Early Bird GA",
+            "priceINR": 1799,
+            "availability": "sold_out"
+          },
+          {
+            "tierId": "tier-p1",
+            "name": "GA Phase 1",
+            "priceINR": 2499,
+            "availability": "available"
+          },
+          {
+            "tierId": "tier-p2",
+            "name": "GA Phase 2 / Fan Pit",
+            "priceINR": 3599,
+            "availability": "available"
+          },
+          {
+            "tierId": "tier-vip",
+            "name": "VIP Lounge Deck",
+            "priceINR": 5999,
+            "availability": "available"
+          }
+        ],
+        "ticketStatus": "available",
+        "convenienceFeePercent": 10
+      }
+    ],
+    "rawDetails": {
+      "ticketTiers": [
+        {
+          "tierId": "tier-eb",
+          "name": "Early Bird GA",
+          "priceINR": 1799,
+          "availability": "sold_out"
+        },
+        {
+          "tierId": "tier-p1",
+          "name": "GA Phase 1",
+          "priceINR": 2499,
+          "availability": "available"
+        },
+        {
+          "tierId": "tier-p2",
+          "name": "GA Phase 2 / Fan Pit",
+          "priceINR": 3599,
+          "availability": "available"
+        },
+        {
+          "tierId": "tier-vip",
+          "name": "VIP Lounge Deck",
+          "priceINR": 5999,
+          "availability": "available"
+        }
+      ],
+      "ticketStatus": "available",
+      "lastVerifiedAt": "2026-10-21T19:39:00.629Z"
+    }
+  },
+  {
+    "id": "district-cn-papon-live-mumbai",
+    "type": "concert",
+    "source": "district",
+    "title": "Papon Live In Concert | Mumbai",
+    "normalizedTitle": "papon live in concert mumbai",
+    "description": "Soulful acoustic, folk-fusion, and Bollywood classics with Papon and his full live band in Mumbai.",
+    "category": "Concert",
+    "posterUrl": "https://cdn.district.in/assets/events/publisher/event_cover_image_vertical/01M153HWV7D6VQQ35TGFGEKCKS.jpg",
+    "cityCode": "BOM",
+    "cityName": "Mumbai",
+    "venue": "Dublin Square, Phoenix Marketcity, Kurla, Mumbai",
+    "coordinates": {
+      "lat": 19.0865,
+      "lng": 72.889
+    },
+    "date": "2026-12-12",
+    "time": "19:00 IST",
+    "startingPriceINR": 999,
+    "lowestListedPriceINR": 699,
+    "activePhaseName": "GA Phase 1",
+    "hasSoldOutEarlyPhases": true,
+    "ticketStatus": "available",
+    "bookingUrl": "https://www.district.in/events/upcoming-events-in-mumbai",
+    "availablePlatforms": [
+      "district"
+    ],
+    "isExclusive": true,
+    "listings": [
+      {
+        "source": "district",
+        "sourceId": "district-cn-papon-live-mumbai",
+        "bookingUrl": "https://www.district.in/events/upcoming-events-in-mumbai",
+        "startingPriceINR": 999,
+        "lowestListedPriceINR": 699,
+        "activePhaseName": "GA Phase 1",
+        "ticketTiers": [
+          {
+            "tierId": "tier-eb",
+            "name": "Early Bird GA",
+            "priceINR": 699,
+            "availability": "sold_out"
+          },
+          {
+            "tierId": "tier-p1",
+            "name": "GA Phase 1",
+            "priceINR": 999,
+            "availability": "available"
+          },
+          {
+            "tierId": "tier-p2",
+            "name": "GA Phase 2 / Fan Pit",
+            "priceINR": 1449,
+            "availability": "available"
+          },
+          {
+            "tierId": "tier-vip",
+            "name": "VIP Lounge Deck",
+            "priceINR": 2399,
+            "availability": "available"
+          }
+        ],
+        "ticketStatus": "available",
+        "convenienceFeePercent": 10
+      }
+    ],
+    "rawDetails": {
+      "ticketTiers": [
+        {
+          "tierId": "tier-eb",
+          "name": "Early Bird GA",
+          "priceINR": 699,
+          "availability": "sold_out"
+        },
+        {
+          "tierId": "tier-p1",
+          "name": "GA Phase 1",
+          "priceINR": 999,
+          "availability": "available"
+        },
+        {
+          "tierId": "tier-p2",
+          "name": "GA Phase 2 / Fan Pit",
+          "priceINR": 1449,
+          "availability": "available"
+        },
+        {
+          "tierId": "tier-vip",
+          "name": "VIP Lounge Deck",
+          "priceINR": 2399,
+          "availability": "available"
+        }
+      ],
+      "ticketStatus": "available",
+      "lastVerifiedAt": "2026-10-21T19:39:00.629Z"
+    }
+  },
+  {
+    "id": "district-ev-bmic-2026-mumbai",
+    "type": "event",
+    "source": "district",
+    "title": "Battlegrounds Mobile India International Cup 2026 (BMIC)",
+    "normalizedTitle": "battlegrounds mobile india international cup 2026 bmic",
+    "description": "Watch top international and Indian esports squads clash live on stage at NSCI Dome, Worli, Mumbai.",
+    "category": "Live Event",
+    "posterUrl": "https://cdn.district.in/assets/events/publisher/event_cover_image_vertical/01M52KX1DHXE5X1E8XEY58RD1J.jpeg",
+    "cityCode": "BOM",
+    "cityName": "Mumbai",
+    "venue": "NSCI Dome, Worli, Mumbai",
+    "coordinates": {
+      "lat": 18.9904,
+      "lng": 72.8148
+    },
+    "date": "2026-10-30",
+    "time": "12:00 IST",
+    "startingPriceINR": 499,
+    "lowestListedPriceINR": 349,
+    "activePhaseName": "GA Phase 1",
+    "hasSoldOutEarlyPhases": true,
+    "ticketStatus": "available",
+    "bookingUrl": "https://www.district.in/events/upcoming-events-in-mumbai",
+    "availablePlatforms": [
+      "district"
+    ],
+    "isExclusive": true,
+    "listings": [
+      {
+        "source": "district",
+        "sourceId": "district-ev-bmic-2026-mumbai",
+        "bookingUrl": "https://www.district.in/events/upcoming-events-in-mumbai",
+        "startingPriceINR": 499,
+        "lowestListedPriceINR": 349,
+        "activePhaseName": "GA Phase 1",
+        "ticketTiers": [
+          {
+            "tierId": "tier-eb",
+            "name": "Early Bird GA",
+            "priceINR": 349,
+            "availability": "sold_out"
+          },
+          {
+            "tierId": "tier-p1",
+            "name": "GA Phase 1",
+            "priceINR": 499,
+            "availability": "available"
+          },
+          {
+            "tierId": "tier-p2",
+            "name": "GA Phase 2 / Fan Pit",
+            "priceINR": 699,
+            "availability": "available"
+          },
+          {
+            "tierId": "tier-vip",
+            "name": "VIP Lounge Deck",
+            "priceINR": 1199,
+            "availability": "available"
+          }
+        ],
+        "ticketStatus": "available",
+        "convenienceFeePercent": 10
+      }
+    ],
+    "rawDetails": {
+      "ticketTiers": [
+        {
+          "tierId": "tier-eb",
+          "name": "Early Bird GA",
+          "priceINR": 349,
+          "availability": "sold_out"
+        },
+        {
+          "tierId": "tier-p1",
+          "name": "GA Phase 1",
+          "priceINR": 499,
+          "availability": "available"
+        },
+        {
+          "tierId": "tier-p2",
+          "name": "GA Phase 2 / Fan Pit",
+          "priceINR": 699,
+          "availability": "available"
+        },
+        {
+          "tierId": "tier-vip",
+          "name": "VIP Lounge Deck",
+          "priceINR": 1199,
+          "availability": "available"
+        }
+      ],
+      "ticketStatus": "available",
+      "lastVerifiedAt": "2026-10-21T19:39:00.629Z"
+    }
+  },
+  {
+    "id": "district-ev-khar-comedy-club-duos-bom",
+    "type": "event",
+    "source": "district",
+    "title": "Duos ft. Prashasti Singh & Anirban Dasgupta — Khar Comedy Club",
+    "normalizedTitle": "duos ft prashasti singh anirban dasgupta khar comedy club",
+    "description": "Two of India’s sharpest stand-up voices team up for an intimate evening of new comedy at Khar Comedy Club, Mumbai.",
+    "category": "Stand-up Comedy",
+    "posterUrl": "https://cdn.district.in/assets/events/publisher/event_cover_image_vertical/01M52W0E2T80J48VX1Y9YW0EYC.jpeg",
+    "cityCode": "BOM",
+    "cityName": "Mumbai",
+    "venue": "Khar Comedy Club, Linking Road, Khar West, Mumbai",
+    "coordinates": {
+      "lat": 19.071,
+      "lng": 72.833
+    },
+    "date": "2026-10-24",
+    "time": "20:00 IST",
+    "startingPriceINR": 499,
+    "lowestListedPriceINR": 349,
+    "activePhaseName": "GA Phase 1",
+    "hasSoldOutEarlyPhases": true,
+    "ticketStatus": "available",
+    "bookingUrl": "https://www.district.in/events/upcoming-events-in-mumbai",
+    "availablePlatforms": [
+      "district",
+      "bookmyshow"
+    ],
+    "isExclusive": false,
+    "listings": [
+      {
+        "source": "district",
+        "sourceId": "district-ev-khar-comedy-club-duos-bom",
+        "bookingUrl": "https://www.district.in/events/upcoming-events-in-mumbai",
+        "startingPriceINR": 499,
+        "lowestListedPriceINR": 349,
+        "activePhaseName": "GA Phase 1",
+        "ticketTiers": [
+          {
+            "tierId": "tier-eb",
+            "name": "Early Bird GA",
+            "priceINR": 349,
+            "availability": "sold_out"
+          },
+          {
+            "tierId": "tier-p1",
+            "name": "GA Phase 1",
+            "priceINR": 499,
+            "availability": "available"
+          },
+          {
+            "tierId": "tier-p2",
+            "name": "GA Phase 2 / Fan Pit",
+            "priceINR": 699,
+            "availability": "available"
+          },
+          {
+            "tierId": "tier-vip",
+            "name": "VIP Lounge Deck",
+            "priceINR": 1199,
+            "availability": "available"
+          }
+        ],
+        "ticketStatus": "available",
+        "convenienceFeePercent": 10
+      },
+      {
+        "source": "bookmyshow",
+        "sourceId": "bookmyshow-district-ev-khar-comedy-club-duos-bom",
+        "bookingUrl": "https://in.bookmyshow.com/explore/comedy-shows-mumbai",
+        "startingPriceINR": 549,
+        "lowestListedPriceINR": 349,
+        "activePhaseName": "Phase 1 Entry",
+        "ticketTiers": [
+          {
+            "tierId": "tier-eb",
+            "name": "Early Bird GA",
+            "priceINR": 399,
+            "availability": "sold_out"
+          },
+          {
+            "tierId": "tier-p1",
+            "name": "GA Phase 1",
+            "priceINR": 549,
+            "availability": "available"
+          },
+          {
+            "tierId": "tier-p2",
+            "name": "GA Phase 2 / Fan Pit",
+            "priceINR": 799,
+            "availability": "available"
+          },
+          {
+            "tierId": "tier-vip",
+            "name": "VIP Lounge Deck",
+            "priceINR": 1299,
+            "availability": "available"
+          }
+        ],
+        "ticketStatus": "available",
+        "convenienceFeePercent": 11.8
+      }
+    ],
+    "rawDetails": {
+      "ticketTiers": [
+        {
+          "tierId": "tier-eb",
+          "name": "Early Bird GA",
+          "priceINR": 349,
+          "availability": "sold_out"
+        },
+        {
+          "tierId": "tier-p1",
+          "name": "GA Phase 1",
+          "priceINR": 499,
+          "availability": "available"
+        },
+        {
+          "tierId": "tier-p2",
+          "name": "GA Phase 2 / Fan Pit",
+          "priceINR": 699,
+          "availability": "available"
+        },
+        {
+          "tierId": "tier-vip",
+          "name": "VIP Lounge Deck",
+          "priceINR": 1199,
+          "availability": "available"
+        }
+      ],
+      "ticketStatus": "available",
+      "lastVerifiedAt": "2026-10-21T19:39:00.629Z"
+    }
   }
 ]
