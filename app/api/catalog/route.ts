@@ -26,6 +26,7 @@ function filterAndDeduplicate(
   let list = deduplicated.filter((item) => {
     const matchesCity =
       normalizedCity === 'ALL' ||
+      (item.type === 'movie' && (!item.cityCode || item.cityCode.toUpperCase() === 'ALL')) ||
       (item.cityCode && item.cityCode.toUpperCase() === normalizedCity);
     if (!matchesCity) return false;
 
@@ -50,27 +51,25 @@ function filterAndDeduplicate(
 export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url);
 
-  const rawCity = searchParams.get('city') || request.headers.get('x-vercel-ip-city') || 'PNQ';
-  const cityCode = rawCity.toUpperCase() === 'ALL' ? 'ALL' : resolveCityCode(rawCity, 'PNQ');
+  const rawCity = searchParams.get('city') || request.headers.get('x-vercel-ip-city') || 'ALL';
+  const cityCode = rawCity.toUpperCase() === 'ALL' ? 'ALL' : resolveCityCode(rawCity, 'ALL');
   const typeParam = searchParams.get('type');
 
   // 1. Check Redis / In-Memory Cache first
-  if (cityCode !== 'ALL') {
-    const cacheResult = await getCachedCityCatalog(cityCode);
-    if (cacheResult.exists && cacheResult.items.length > 0) {
-      const filtered = filterAndDeduplicate(cacheResult.items, cityCode, typeParam);
-      return NextResponse.json({
-        success: true,
-        city: cityCode,
-        cityName: getCityName(cityCode),
-        cacheStatus: cacheResult.isStale ? 'HIT_STALE' : 'HIT_FRESH',
-        isStale: cacheResult.isStale,
-        ageSeconds: cacheResult.ageSeconds,
-        count: filtered.length,
-        data: filtered,
-        timestamp: new Date().toISOString(),
-      });
-    }
+  const cacheResult = await getCachedCityCatalog(cityCode);
+  if (cacheResult.exists && cacheResult.items.length > 0) {
+    const filtered = filterAndDeduplicate(cacheResult.items, cityCode, typeParam);
+    return NextResponse.json({
+      success: true,
+      city: cityCode,
+      cityName: cityCode === 'ALL' ? 'All India' : getCityName(cityCode),
+      cacheStatus: cacheResult.isStale ? 'HIT_STALE' : 'HIT_FRESH',
+      isStale: cacheResult.isStale,
+      ageSeconds: cacheResult.ageSeconds,
+      count: filtered.length,
+      data: filtered,
+      timestamp: new Date().toISOString(),
+    });
   }
 
   // 2. Fallback: Read directly from local verified catalog.json snapshot
@@ -80,7 +79,7 @@ export async function GET(request: NextRequest) {
       const allItems: CatalogItem[] = JSON.parse(raw);
       const filtered = filterAndDeduplicate(allItems, cityCode, typeParam);
 
-      if (cityCode !== 'ALL' && filtered.length > 0) {
+      if (filtered.length > 0) {
         await setCachedCityCatalog(cityCode, filtered, 12 * 3600);
       }
 

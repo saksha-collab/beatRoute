@@ -21,10 +21,10 @@ const CATALOG_FILE_PATH = path.join(__dirname, '../lib/data/catalog.json');
  * and recalculates active available tier prices).
  */
 export function sanitizeCatalogItem(item: CatalogItem): CatalogItem {
-  // 1. Re-verify city from venue + title so Mumbai shows never sit under PNQ/HYD
+  // 1. Re-verify city from venue + title so Mumbai shows never sit under other cities
   const detectedCode = resolveCityCode(
     `${item.venue || ''} ${item.title || ''}`,
-    item.cityCode || 'PNQ'
+    item.cityCode || 'ALL'
   );
   const cityMeta = getSupportedCity(detectedCode);
 
@@ -144,8 +144,15 @@ async function main() {
     `💾 Saved ${finalCatalog.length} deduplicated, verified catalog items to ${CATALOG_FILE_PATH}`
   );
 
-  // 5. Seed Upstash Redis cache per city (12-hour TTL for scheduled scrape-and-store)
+  // 5. Seed Upstash Redis cache for ALL India and per city (12-hour TTL for scheduled scrape-and-store)
   console.log('--- ⚡ Seeding City Catalog Cache (12h TTL) ---');
+  try {
+    await setCachedCityCatalog('ALL', finalCatalog, 12 * 3600);
+    console.log(`[Cache Sync] Seeded ${finalCatalog.length} items for pan-India (ALL).`);
+  } catch (err: any) {
+    console.warn('[Cache Sync] Could not seed cache for ALL:', err.message);
+  }
+
   const cityItemsMap = new Map<string, CatalogItem[]>();
   for (const item of finalCatalog) {
     if (item.cityCode) {

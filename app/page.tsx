@@ -26,21 +26,25 @@ function BeatRouteDashboard() {
     }
   }, [activeCategory, setActiveCategory]);
 
-  // 2. City Selection — Defaults to Pune (PNQ) as primary Twin-Corridor hub alongside Mumbai (BOM)
-  const [selectedCity, setSelectedCity] = useQueryState("city", parseAsString.withDefault("PNQ"));
+  // 2. City Selection — Defaults to "ALL" (All India) for full entertainment radar
+  const [selectedCity, setSelectedCity] = useQueryState("city", parseAsString.withDefault("ALL"));
   const [isCityModalOpen, setIsCityModalOpen] = React.useState(false);
   const [isFirstVisit, setIsFirstVisit] = React.useState(false);
 
   React.useEffect(() => {
     if (typeof window !== "undefined") {
       const savedCity = localStorage.getItem("beatroute_city");
-      if (!savedCity) {
-        localStorage.setItem("beatroute_city", "PNQ");
-      } else if (selectedCity === "ALL" && savedCity !== "ALL") {
+      const urlParams = new URLSearchParams(window.location.search);
+      const urlCity = urlParams.get("city");
+      if (urlCity) {
+        localStorage.setItem("beatroute_city", urlCity);
+      } else if (savedCity) {
         setSelectedCity(savedCity);
+      } else {
+        localStorage.setItem("beatroute_city", "ALL");
       }
     }
-  }, [selectedCity, setSelectedCity]);
+  }, [setSelectedCity]);
 
   // 3. Cached Catalog Hook (Reads from Redis / catalog.json snapshot)
   const {
@@ -48,7 +52,7 @@ function BeatRouteDashboard() {
     isValidating: isCatalogValidating,
     ageMinutes: catalogAgeMinutes,
     refresh: refreshCityCatalog,
-  } = useCityCatalog(selectedCity === "ALL" ? "PNQ" : selectedCity);
+  } = useCityCatalog(selectedCity);
 
   // 4. Master Catalog Compilation + Cross-Platform Deduplication
   const today = React.useMemo(() => new Date().toISOString().slice(0, 10), []);

@@ -54,7 +54,8 @@ export async function getCachedCityCatalog(cityCode: string): Promise<CityCatalo
   // 1. Try Upstash Redis if available
   if (redis) {
     try {
-      const entry = (await redis.get(cacheKey)) as CacheEntry<CatalogItem[]> | null;
+      const raw = await redis.get(cacheKey);
+      const entry = (typeof raw === 'string' ? JSON.parse(raw) : raw) as CacheEntry<CatalogItem[]> | null;
       if (entry && Array.isArray(entry.data)) {
         const ageSeconds = Math.round((now - entry.savedAt) / 1000);
         const isStale = now >= entry.expiresAt;
@@ -62,7 +63,7 @@ export async function getCachedCityCatalog(cityCode: string): Promise<CityCatalo
           items: entry.data,
           exists: true,
           isStale,
-          ageSeconds,
+          ageSeconds: Math.max(0, ageSeconds),
         };
       }
     } catch (err: any) {
@@ -88,9 +89,11 @@ export async function getCachedCityCatalog(cityCode: string): Promise<CityCatalo
     if (fs.existsSync(LOCAL_CATALOG_FILE)) {
       const raw = fs.readFileSync(LOCAL_CATALOG_FILE, 'utf-8');
       const allItems: CatalogItem[] = JSON.parse(raw);
-      const filtered = allItems.filter(
-        (i) => i.cityCode && i.cityCode.toUpperCase() === normalizedCity
-      );
+      const filtered = allItems.filter((i) => {
+        if (normalizedCity === 'ALL') return true;
+        if (i.type === 'movie' && (!i.cityCode || i.cityCode.toUpperCase() === 'ALL')) return true;
+        return i.cityCode && i.cityCode.toUpperCase() === normalizedCity;
+      });
 
       if (filtered.length > 0) {
         // Cache in memory with initial timestamp

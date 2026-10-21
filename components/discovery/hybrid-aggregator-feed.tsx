@@ -55,9 +55,13 @@ export function HybridAggregatorFeed({
 
     // City filter (if not ALL)
     if (selectedCity && selectedCity !== "ALL") {
-      list = list.filter(
-        (i) => i.cityCode && i.cityCode.toUpperCase() === selectedCity.toUpperCase()
-      );
+      list = list.filter((i) => {
+        // Movies without a specific city or tagged ALL are nationwide releases, visible across all metros
+        if (i.type === "movie" && (!i.cityCode || i.cityCode.toUpperCase() === "ALL")) {
+          return true;
+        }
+        return i.cityCode && i.cityCode.toUpperCase() === selectedCity.toUpperCase();
+      });
     }
 
     // Search query
