@@ -221,55 +221,6 @@
     }
   },
   {
-    "id": "district-mv-drishyam-the-conclusion-movie-tickets-MV207254",
-    "type": "movie",
-    "source": "district",
-    "title": "Drishyam: The Conclusion",
-    "description": "The final chapter of the acclaimed thriller trilogy. Years after outsmarting the police, Vijay Salgaonkar’s past resurfaces when new evidence threatens to expose his secret. As the investigation reopens, he must outwit the system once again to save his family.\n\nAccessibility through Audio Description (AD) & Closed Captions (CC) is available for this movie on the 'CineDubs' app.",
-    "category": "Cinema",
-    "languages": [
-      "Hindi",
-      "English"
-    ],
-    "posterUrl": "https://cdn.district.in/movies-assets/images/cinema/_Horizontal_Poster2%20(25)-c3cb6ee0-ab87-11f1-b4d5-1f38fbd6e264.jpg",
-    "cityCode": "AMD",
-    "cityName": "Ahmedabad",
-    "venue": "Ahmedabad Theatres",
-    "coordinates": {
-      "lat": 23.0225,
-      "lng": 72.5714
-    },
-    "date": "2026-10-20",
-    "startingPriceINR": 199,
-    "bookingUrl": "https://www.district.in/movies/drishyam-the-conclusion-movie-tickets-MV207254",
-    "rawDetails": {
-      "duration": "2 hr 30 min",
-      "censorRating": "UA"
-    }
-  },
-  {
-    "id": "district-ev-dandiya-night-oct11-2026",
-    "type": "concert",
-    "source": "district",
-    "title": "Dandiya Night",
-    "description": "Get ready for an electrifying celebration of Dandiya, music and cocktails as Martini’s brings the festive spirit of Navratri to Gurugram.Put on your festive best and bring your people along for nights filled with energetic music, vibrant celebrations and a whole lot of dancing.What to expect:• Live Dandiya • High-energy music• Festive ambience• Cocktails & food• A vibrant Navratri celebration• We provide the dandiya sticks Dress festive. Bring your people. Let’s dance!",
-    "category": "Concert",
-    "posterUrl": "https://cdn.district.in/assets/events/publisher/event_cover_image_horizontal/01M483FNDNCAXAPNH0M54CWNKF.png",
-    "cityCode": "DEL",
-    "cityName": "Delhi NCR",
-    "venue": "Martini's",
-    "coordinates": {
-      "lat": 28.3905819,
-      "lng": 77.0668797
-    },
-    "date": "2026-10-20",
-    "startingPriceINR": 199,
-    "bookingUrl": "https://www.district.in/events/dandiya-night-oct11-2026-buy-tickets",
-    "rawDetails": {
-      "locationAddress": "2nd Floor, M3M Urbana, Sector 67, Gurgaon"
-    }
-  },
-  {
     "id": "district-mv-rajini-the-jailer-2-movie-tickets-MV235763",
     "type": "movie",
     "source": "district",
@@ -297,47 +248,30 @@
     }
   },
   {
-    "id": "district-ev-gen-why-a-millenial-spiral-by-swati-sachdeva-dec31-2025",
-    "type": "event",
+    "id": "district-mv-drishyam-the-conclusion-movie-tickets-MV207254",
+    "type": "movie",
     "source": "district",
-    "title": "FAMOUS COMICS ONLY @HIDEOUT",
-    "description": "Craving a good laugh? Hideout Comedy Club, Saket is where the night comes alive with jokes, chaos, and pure comedy gold! From razor-sharp stand-up to spontaneous crowd work, our late-night lineup has something for everyone who loves to laugh till it hurts.Step into a space buzzing with energy, killer comics from across the country, and a crowd that knows how to have fun. It’s your go-to spot to ditch the stress, grab your crew, and let loose with back-to-back laughter.When you think “comedy near me”, it’s us.When you think “Delhi comedy shows”, still us.When you think “best comedy nights of 2025” — come on, you already knowLineup is subject to artist availablity and many change without prior notice, photos used are for illustration purpose only and each lineups will have different comics on daily basis.",
-    "category": "Live Event",
-    "posterUrl": "https://cdn.district.in/assets/events/publisher/event_cover_image_horizontal/01KTA7XNN6ED6FXCM4FEF5W5EX.png",
-    "cityCode": "DEL",
-    "cityName": "Delhi NCR",
-    "venue": "Hideout Comedy Club",
+    "title": "Drishyam: The Conclusion",
+    "description": "The final chapter of the acclaimed thriller trilogy. Years after outsmarting the police, Vijay Salgaonkar’s past resurfaces when new evidence threatens to expose his secret. As the investigation reopens, he must outwit the system once again to save his family.\n\nAccessibility through Audio Description (AD) & Closed Captions (CC) is available for this movie on the 'CineDubs' app.",
+    "category": "Cinema",
+    "languages": [
+      "Hindi",
+      "English"
+    ],
+    "posterUrl": "https://cdn.district.in/movies-assets/images/cinema/_Horizontal_Poster2%20(25)-c3cb6ee0-ab87-11f1-b4d5-1f38fbd6e264.jpg",
+    "cityCode": "AMD",
+    "cityName": "Ahmedabad",
+    "venue": "Ahmedabad Theatres",
     "coordinates": {
-      "lat": 28.5228,
-      "lng": 77.20703089999999
+      "lat": 23.0225,
+      "lng": 72.5714
     },
-    "date": "2026-10-20",
-    "startingPriceINR": 249,
-    "bookingUrl": "https://www.district.in/events/gen-why-a-millenial-spiral-by-swati-sachdeva-dec31-2025-buy-tickets",
+    "date": "2026-10-21",
+    "startingPriceINR": 199,
+    "bookingUrl": "https://www.district.in/movies/drishyam-the-conclusion-movie-tickets-MV207254",
     "rawDetails": {
-      "locationAddress": "1, PVR Anupam Saket, near Subway, opposite Croma, Saket, New Delhi, Delhi 110017, India"
-    }
-  },
-  {
-    "id": "district-ev-the-lineup-apr21-2026",
-    "type": "event",
-    "source": "district",
-    "title": "Adult Jokes Only",
-    "description": "Our adult-only comedy show promises an unforgettable experience, where laughter knows no boundaries and every punchline is delivered with finesse.",
-    "category": "Live Event",
-    "posterUrl": "https://cdn.district.in/assets/events/publisher/event_cover_image_horizontal/01M2A81Y6B536GCRCBSYKRHC9W.jpg",
-    "cityCode": "DEL",
-    "cityName": "Delhi NCR",
-    "venue": "TOT Studio",
-    "coordinates": {
-      "lat": 28.560628,
-      "lng": 77.246222
-    },
-    "date": "2026-10-20",
-    "startingPriceINR": 249,
-    "bookingUrl": "https://www.district.in/events/the-lineup-apr21-2026-buy-tickets",
-    "rawDetails": {
-      "locationAddress": "C-110, C- Block, Dayanand Colony, Lajpat Nagar 4, New Delhi, Delhi 110024, India"
+      "duration": "2 hr 30 min",
+      "censorRating": "UA"
     }
   },
   {
@@ -361,6 +295,101 @@
     "rawDetails": {
       "doorTime": "01:05 PM",
       "locationAddress": "12a second floor, Hauz Khas Tank, Deer Park, Hauz Khas, New Delhi, Delhi 110016, India"
+    }
+  },
+  {
+    "id": "district-mv-ramayana-movie-tickets-MV176276",
+    "type": "movie",
+    "source": "district",
+    "title": "Ramayana",
+    "description": "Namit Malhotra's Ramayana is an epic saga that chronicles the timeless clash between Rama and Ravana. Set against a grand mythological canvas, the story unfolds as a powerful tale of dharma prevailing over adharma, culminating in the ultimate triumph of good over evil.",
+    "category": "Cinema",
+    "languages": [
+      "Hindi",
+      "English"
+    ],
+    "posterUrl": "https://cdn.district.in/movies-assets/images/cinema/ramyana-hori-8f2129a0-c64e-11f1-a7c0-d533ddb95481.jpg",
+    "cityCode": "AMD",
+    "cityName": "Ahmedabad",
+    "venue": "Ahmedabad Theatres",
+    "coordinates": {
+      "lat": 23.0225,
+      "lng": 72.5714
+    },
+    "date": "2026-10-21",
+    "startingPriceINR": 199,
+    "bookingUrl": "https://www.district.in/movies/ramayana-movie-tickets-MV176276",
+    "rawDetails": {
+      "duration": "3 hr 15 min",
+      "censorRating": "UA"
+    }
+  },
+  {
+    "id": "district-ev-gen-why-a-millenial-spiral-by-swati-sachdeva-dec31-2025",
+    "type": "event",
+    "source": "district",
+    "title": "FAMOUS COMICS ONLY @HIDEOUT",
+    "description": "Craving a good laugh? Hideout Comedy Club, Saket is where the night comes alive with jokes, chaos, and pure comedy gold! From razor-sharp stand-up to spontaneous crowd work, our late-night lineup has something for everyone who loves to laugh till it hurts.Step into a space buzzing with energy, killer comics from across the country, and a crowd that knows how to have fun. It’s your go-to spot to ditch the stress, grab your crew, and let loose with back-to-back laughter.When you think “comedy near me”, it’s us.When you think “Delhi comedy shows”, still us.When you think “best comedy nights of 2025” — come on, you already knowLineup is subject to artist availablity and many change without prior notice, photos used are for illustration purpose only and each lineups will have different comics on daily basis.",
+    "category": "Live Event",
+    "posterUrl": "https://cdn.district.in/assets/events/publisher/event_cover_image_horizontal/01KTA7XNN6ED6FXCM4FEF5W5EX.png",
+    "cityCode": "DEL",
+    "cityName": "Delhi NCR",
+    "venue": "Hideout Comedy Club",
+    "coordinates": {
+      "lat": 28.5228,
+      "lng": 77.20703089999999
+    },
+    "date": "2026-10-22",
+    "startingPriceINR": 399,
+    "bookingUrl": "https://www.district.in/events/gen-why-a-millenial-spiral-by-swati-sachdeva-dec31-2025-buy-tickets",
+    "rawDetails": {
+      "locationAddress": "1, PVR Anupam Saket, near Subway, opposite Croma, Saket, New Delhi, Delhi 110017, India"
+    }
+  },
+  {
+    "id": "district-ev-sexy-jokes-night-oct17-2026",
+    "type": "event",
+    "source": "district",
+    "title": "Sexy Jokes Night @Hideout",
+    "description": "Sexy Jokes Night is a surprise-lineup comedy show where you never quite know who’s going to walk on stage next. Expect bold jokes, unfiltered stories, and some familiar faces from the comedy circuit—because yes, you might just spot your favourites in the lineup.Come for the mystery, stay for the laughs. You’re in for a night that’s anything but predictable.Please note: The comedians featured in the poster are for representational purposes only and may not be part of the actual lineup.",
+    "category": "Live Event",
+    "posterUrl": "https://cdn.district.in/assets/events/publisher/event_cover_image_horizontal/01M52W08B9XEV700FDHKRXN3HN.jpeg",
+    "cityCode": "DEL",
+    "cityName": "Delhi NCR",
+    "venue": "Hideout Studio",
+    "coordinates": {
+      "lat": 28.52293079999999,
+      "lng": 77.20704549999999
+    },
+    "date": "2026-10-22",
+    "startingPriceINR": 399,
+    "bookingUrl": "https://www.district.in/events/sexy-jokes-night-oct17-2026-buy-tickets",
+    "rawDetails": {
+      "doorTime": "02:20 PM",
+      "locationAddress": "Shop No.1/Basement, PVR Anupam Saket, Saket Rd, Saket, New Delhi, Delhi 110017, India"
+    }
+  },
+  {
+    "id": "district-ev-the-lineup-sep21-2026",
+    "type": "event",
+    "source": "district",
+    "title": "Comedy All Stars  I Lajpat | GK I Defence Colony I South Delhi",
+    "description": "TOT Studio brings its flagship,Delhi Comedy Express: A Stand-up comedy show, where regulars from the comedy circuit come together and perform new material so you can be spectators and witness how comedy gold is made. The show will be an hour and a half long.",
+    "category": "Live Event",
+    "posterUrl": "https://cdn.district.in/assets/events/publisher/event_cover_image_horizontal/01M3E5YWM4WMP59TE0ERXDVNSZ.jpg",
+    "cityCode": "DEL",
+    "cityName": "Delhi NCR",
+    "venue": "TOT Studio",
+    "coordinates": {
+      "lat": 28.560628,
+      "lng": 77.246222
+    },
+    "date": "2026-10-22",
+    "startingPriceINR": 249,
+    "bookingUrl": "https://www.district.in/events/the-lineup-sep21-2026-buy-tickets",
+    "rawDetails": {
+      "doorTime": "02:20 PM",
+      "locationAddress": "C-110, C- Block, Dayanand Colony, Lajpat Nagar 4, New Delhi, Delhi 110024, India"
     }
   },
   {

@@ -1,107 +1,5 @@
 [
   {
-    "id": "district-ev-dandiya-night-oct11-2026",
-    "artist": "Dandiya Night",
-    "tourName": "Get ready for an electrifying celebration of Dandiya, music and cocktails as Martini’s brings the festive spirit of Navratri to Gurugram.Put on your festive best and bring your people along for nights filled with energetic music, vibrant celebrations and a whole lot of dancing.What to expect:• Live Dandiya • High-energy music• Festive ambience• Cocktails & food• A vibrant Navratri celebration• We provide the dandiya sticks Dress festive. Bring your people. Let’s dance!",
-    "artistImageUrl": "https://cdn.district.in/assets/events/publisher/event_cover_image_horizontal/01M483FNDNCAXAPNH0M54CWNKF.png",
-    "date": "2026-10-20",
-    "time": "19:00 IST",
-    "cityCode": "DEL",
-    "cityName": "Delhi NCR",
-    "venue": "Martini's",
-    "coordinates": {
-      "lat": 28.3905819,
-      "lng": 77.0668797
-    },
-    "genres": [
-      "Concert",
-      "District Live"
-    ],
-    "startingPriceINR": 199,
-    "ticketTiers": [
-      {
-        "tierId": "tier-ga",
-        "name": "General Entry",
-        "priceINR": 199,
-        "availability": "available"
-      }
-    ],
-    "ticketStatus": "available",
-    "bookingUrl": "https://www.district.in/events/dandiya-night-oct11-2026-buy-tickets",
-    "source": "district",
-    "highlights": [
-      "Live event discovered from District by Zomato"
-    ]
-  },
-  {
-    "id": "district-ev-gen-why-a-millenial-spiral-by-swati-sachdeva-dec31-2025",
-    "artist": "FAMOUS COMICS ONLY @HIDEOUT",
-    "tourName": "Craving a good laugh? Hideout Comedy Club, Saket is where the night comes alive with jokes, chaos, and pure comedy gold! From razor-sharp stand-up to spontaneous crowd work, our late-night lineup has something for everyone who loves to laugh till it hurts.Step into a space buzzing with energy, killer comics from across the country, and a crowd that knows how to have fun. It’s your go-to spot to ditch the stress, grab your crew, and let loose with back-to-back laughter.When you think “comedy near me”, it’s us.When you think “Delhi comedy shows”, still us.When you think “best comedy nights of 2025” — come on, you already knowLineup is subject to artist availablity and many change without prior notice, photos used are for illustration purpose only and each lineups will have different comics on daily basis.",
-    "artistImageUrl": "https://cdn.district.in/assets/events/publisher/event_cover_image_horizontal/01KTA7XNN6ED6FXCM4FEF5W5EX.png",
-    "date": "2026-10-20",
-    "time": "19:00 IST",
-    "cityCode": "DEL",
-    "cityName": "Delhi NCR",
-    "venue": "Hideout Comedy Club",
-    "coordinates": {
-      "lat": 28.5228,
-      "lng": 77.20703089999999
-    },
-    "genres": [
-      "Live Event",
-      "District Live"
-    ],
-    "startingPriceINR": 249,
-    "ticketTiers": [
-      {
-        "tierId": "tier-ga",
-        "name": "General Entry",
-        "priceINR": 249,
-        "availability": "available"
-      }
-    ],
-    "ticketStatus": "available",
-    "bookingUrl": "https://www.district.in/events/gen-why-a-millenial-spiral-by-swati-sachdeva-dec31-2025-buy-tickets",
-    "source": "district",
-    "highlights": [
-      "Live event discovered from District by Zomato"
-    ]
-  },
-  {
-    "id": "district-ev-the-lineup-apr21-2026",
-    "artist": "Adult Jokes Only",
-    "tourName": "Our adult-only comedy show promises an unforgettable experience, where laughter knows no boundaries and every punchline is delivered with finesse.",
-    "artistImageUrl": "https://cdn.district.in/assets/events/publisher/event_cover_image_horizontal/01M2A81Y6B536GCRCBSYKRHC9W.jpg",
-    "date": "2026-10-20",
-    "time": "19:00 IST",
-    "cityCode": "DEL",
-    "cityName": "Delhi NCR",
-    "venue": "TOT Studio",
-    "coordinates": {
-      "lat": 28.560628,
-      "lng": 77.246222
-    },
-    "genres": [
-      "Live Event",
-      "District Live"
-    ],
-    "startingPriceINR": 249,
-    "ticketTiers": [
-      {
-        "tierId": "tier-ga",
-        "name": "General Entry",
-        "priceINR": 249,
-        "availability": "available"
-      }
-    ],
-    "ticketStatus": "available",
-    "bookingUrl": "https://www.district.in/events/the-lineup-apr21-2026-buy-tickets",
-    "source": "district",
-    "highlights": [
-      "Live event discovered from District by Zomato"
-    ]
-  },
-  {
     "id": "district-ev-comedy-in-hauz-khas-a-multi-comic-lineup-show-oct31-2025",
     "artist": "Comedy In Hauz Khas : A Multi Comic Lineup Show",
     "tourName": "Join us in the heart of Hauz Khas for a night filled with laughter, featuring a stellar handpicked lineup of the very best in comedy. This multi-comic show brings together a blend of seasoned and upcoming comedians, all showcasing their craft.",
@@ -130,6 +28,108 @@
     ],
     "ticketStatus": "available",
     "bookingUrl": "https://www.district.in/events/comedy-in-hauz-khas-a-multi-comic-lineup-show-oct31-2025-buy-tickets",
+    "source": "district",
+    "highlights": [
+      "Live event discovered from District by Zomato"
+    ]
+  },
+  {
+    "id": "district-ev-gen-why-a-millenial-spiral-by-swati-sachdeva-dec31-2025",
+    "artist": "FAMOUS COMICS ONLY @HIDEOUT",
+    "tourName": "Craving a good laugh? Hideout Comedy Club, Saket is where the night comes alive with jokes, chaos, and pure comedy gold! From razor-sharp stand-up to spontaneous crowd work, our late-night lineup has something for everyone who loves to laugh till it hurts.Step into a space buzzing with energy, killer comics from across the country, and a crowd that knows how to have fun. It’s your go-to spot to ditch the stress, grab your crew, and let loose with back-to-back laughter.When you think “comedy near me”, it’s us.When you think “Delhi comedy shows”, still us.When you think “best comedy nights of 2025” — come on, you already knowLineup is subject to artist availablity and many change without prior notice, photos used are for illustration purpose only and each lineups will have different comics on daily basis.",
+    "artistImageUrl": "https://cdn.district.in/assets/events/publisher/event_cover_image_horizontal/01KTA7XNN6ED6FXCM4FEF5W5EX.png",
+    "date": "2026-10-22",
+    "time": "19:00 IST",
+    "cityCode": "DEL",
+    "cityName": "Delhi NCR",
+    "venue": "Hideout Comedy Club",
+    "coordinates": {
+      "lat": 28.5228,
+      "lng": 77.20703089999999
+    },
+    "genres": [
+      "Live Event",
+      "District Live"
+    ],
+    "startingPriceINR": 399,
+    "ticketTiers": [
+      {
+        "tierId": "tier-ga",
+        "name": "General Entry",
+        "priceINR": 399,
+        "availability": "available"
+      }
+    ],
+    "ticketStatus": "available",
+    "bookingUrl": "https://www.district.in/events/gen-why-a-millenial-spiral-by-swati-sachdeva-dec31-2025-buy-tickets",
+    "source": "district",
+    "highlights": [
+      "Live event discovered from District by Zomato"
+    ]
+  },
+  {
+    "id": "district-ev-sexy-jokes-night-oct17-2026",
+    "artist": "Sexy Jokes Night @Hideout",
+    "tourName": "Sexy Jokes Night is a surprise-lineup comedy show where you never quite know who’s going to walk on stage next. Expect bold jokes, unfiltered stories, and some familiar faces from the comedy circuit—because yes, you might just spot your favourites in the lineup.Come for the mystery, stay for the laughs. You’re in for a night that’s anything but predictable.Please note: The comedians featured in the poster are for representational purposes only and may not be part of the actual lineup.",
+    "artistImageUrl": "https://cdn.district.in/assets/events/publisher/event_cover_image_horizontal/01M52W08B9XEV700FDHKRXN3HN.jpeg",
+    "date": "2026-10-22",
+    "time": "19:00 IST",
+    "cityCode": "DEL",
+    "cityName": "Delhi NCR",
+    "venue": "Hideout Studio",
+    "coordinates": {
+      "lat": 28.52293079999999,
+      "lng": 77.20704549999999
+    },
+    "genres": [
+      "Live Event",
+      "District Live"
+    ],
+    "startingPriceINR": 399,
+    "ticketTiers": [
+      {
+        "tierId": "tier-ga",
+        "name": "General Entry",
+        "priceINR": 399,
+        "availability": "available"
+      }
+    ],
+    "ticketStatus": "available",
+    "bookingUrl": "https://www.district.in/events/sexy-jokes-night-oct17-2026-buy-tickets",
+    "source": "district",
+    "highlights": [
+      "Live event discovered from District by Zomato"
+    ]
+  },
+  {
+    "id": "district-ev-the-lineup-sep21-2026",
+    "artist": "Comedy All Stars  I Lajpat | GK I Defence Colony I South Delhi",
+    "tourName": "TOT Studio brings its flagship,Delhi Comedy Express: A Stand-up comedy show, where regulars from the comedy circuit come together and perform new material so you can be spectators and witness how comedy gold is made. The show will be an hour and a half long.",
+    "artistImageUrl": "https://cdn.district.in/assets/events/publisher/event_cover_image_horizontal/01M3E5YWM4WMP59TE0ERXDVNSZ.jpg",
+    "date": "2026-10-22",
+    "time": "19:00 IST",
+    "cityCode": "DEL",
+    "cityName": "Delhi NCR",
+    "venue": "TOT Studio",
+    "coordinates": {
+      "lat": 28.560628,
+      "lng": 77.246222
+    },
+    "genres": [
+      "Live Event",
+      "District Live"
+    ],
+    "startingPriceINR": 249,
+    "ticketTiers": [
+      {
+        "tierId": "tier-ga",
+        "name": "General Entry",
+        "priceINR": 249,
+        "availability": "available"
+      }
+    ],
+    "ticketStatus": "available",
+    "bookingUrl": "https://www.district.in/events/the-lineup-sep21-2026-buy-tickets",
     "source": "district",
     "highlights": [
       "Live event discovered from District by Zomato"
