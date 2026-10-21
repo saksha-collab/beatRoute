@@ -1,0 +1,40 @@
+name: Scheduled Pune & Mumbai Catalog Scraper
+
+on:
+  schedule:
+    # Runs twice daily at 08:00 AM and 07:30 PM IST (02:30 and 14:00 UTC)
+    - cron: '30 2,14 * * *'
+  workflow_dispatch: # Allows manual 1-click trigger from GitHub Actions tab
+
+jobs:
+  scrape-and-sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout BeatRoute Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Run Twin-Corridor (Pune + Mumbai) Scraper & Deduplicator
+        env:
+          SCRAPER_API_KEY: ${{ secrets.SCRAPER_API_KEY }}
+          UPSTASH_REDIS_REST_URL: ${{ secrets.UPSTASH_REDIS_REST_URL }}
+          UPSTASH_REDIS_REST_TOKEN: ${{ secrets.UPSTASH_REDIS_REST_TOKEN }}
+        run: npm run scrape
+
+      - name: Commit Updated catalog.json Snapshot
+        run: |
+          git config --local user.email "bot@beatroute.in"
+          git config --local user.name "BeatRoute Catalog Bot"
+          git add lib/data/catalog.json
+          git diff --staged --quiet || git commit -m "chore(catalog): sync Pune & Mumbai entertainment snapshot [skip ci]"
+          git push

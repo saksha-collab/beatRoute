@@ -1,7 +1,12 @@
 import * as cheerio from 'cheerio';
-import { CatalogItem } from '../../lib/types';
+import { CatalogItem, TicketTier, TicketTierAvailability } from '../../lib/types';
+import { computeActiveTierPricing } from '../../lib/deduplicate';
 import { fetchHtmlWithFallback } from '../client';
-import { SUPPORTED_INDIAN_CITIES } from '../../lib/location';
+import {
+  extractAddressText,
+  getSupportedCity,
+  resolveCityCode,
+} from '../../lib/location';
 
 export interface DistrictCityConfig {
   slug: string;
@@ -11,87 +16,95 @@ export interface DistrictCityConfig {
   defaultLng: number;
 }
 
+/**
+ * Primary Twin-Corridor cities (Pune + Mumbai) for focused MVP scraping.
+ */
 export const DISTRICT_CITIES: DistrictCityConfig[] = [
-  { slug: 'mumbai', cityCode: 'BOM', cityName: 'Mumbai', defaultLat: 19.076, defaultLng: 72.8777 },
-  { slug: 'delhi', cityCode: 'DEL', cityName: 'Delhi NCR', defaultLat: 28.6139, defaultLng: 77.209 },
-  { slug: 'bengaluru', cityCode: 'BLR', cityName: 'Bengaluru', defaultLat: 12.9716, defaultLng: 77.5946 },
-  { slug: 'hyderabad', cityCode: 'HYD', cityName: 'Hyderabad', defaultLat: 17.385, defaultLng: 78.4867 },
   { slug: 'pune', cityCode: 'PNQ', cityName: 'Pune', defaultLat: 18.5204, defaultLng: 73.8567 },
-  { slug: 'kolkata', cityCode: 'CCU', cityName: 'Kolkata', defaultLat: 22.5726, defaultLng: 88.3639 },
-  { slug: 'ahmedabad', cityCode: 'AMD', cityName: 'Ahmedabad', defaultLat: 23.0225, defaultLng: 72.5714 },
+  { slug: 'mumbai', cityCode: 'BOM', cityName: 'Mumbai', defaultLat: 19.076, defaultLng: 72.8777 },
 ];
 
 /**
- * Validates if an extracted item has legitimate, high-quality data.
- * Drops generic section names or malformed fallback strings.
+ * Validates if an extracted District item has legitimate title and poster data.
  */
 function isValidDistrictItem(title: string, posterUrl?: string): boolean {
   if (!title || typeof title !== 'string') return false;
   const clean = title.trim().toLowerCase();
-  
+
   if (clean.length < 3) return false;
   if (clean === 'district' || clean === 'district by zomato') return false;
-  if (clean === 'movies' || clean === 'cinema' || clean === 'events' || clean === 'comedy' || clean === 'music') return false;
-  if (clean.startsWith('district event') || clean.includes('book navratri events') || clean.includes('venue guide')) return false;
-  if (/[0-9]{10,}/.test(clean)) return false; // Rejects timestamped fallback IDs
-
+  if (
+    clean === 'movies' ||
+    clean === 'cinema' ||
+    clean === 'events' ||
+    clean === 'comedy' ||
+    clean === 'music'
+  ) {
+    return false;
+  }
+  if (
+    clean.startsWith('district event') ||
+    clean.includes('book navratri events') ||
+    clean.includes('venue guide')
+  ) {
+    return false;
+  }
+  if (/[0-9]{10,}/.test(clean)) return false;
   if (!posterUrl || posterUrl.includes('undefined')) return false;
 
   return true;
 }
 
 /**
- * Resolves city from address or venue text against known supported Indian hubs.
+ * Scrapes live verified movies and events from District (by Zomato) for a specific city.
  */
-function resolveCityFromLocationText(text?: string, defaultCity?: DistrictCityConfig): DistrictCityConfig {
-  if (!text) return defaultCity || DISTRICT_CITIES[0];
-  const lower = text.toLowerCase();
-
-  for (const city of SUPPORTED_INDIAN_CITIES) {
-    if (city.aliases.some((alias) => lower.includes(alias))) {
-      return {
-        slug: city.name.toLowerCase().replace(/\s+/g, '-'),
-        cityCode: city.code,
-        cityName: city.name,
-        defaultLat: city.defaultLat,
-        defaultLng: city.defaultLng,
-      };
-    }
-  }
-
-  return defaultCity || DISTRICT_CITIES[0];
-}
-
-/**
- * Scrapes live verified movies and events from District (by Zomato)
- */
-export async function scrapeDistrictCatalog(city: DistrictCityConfig, limit = 10): Promise<CatalogItem[]> {
+export async function scrapeDistrictCatalog(
+  city: DistrictCityConfig,
+  limit = 10
+): Promise<CatalogItem[]> {
   console.log(`[District] Discovering verified movies & events for ${city.cityName}...`);
   const items: CatalogItem[] = [];
 
   try {
-    const homeHtml = await fetchHtmlWithFallback('https://www.district.in');
-    const $ = cheerio.load(homeHtml);
+    // Fetch both main discovery feed and city-scoped routes
+    const candidateUrls = [
+      `https://www.district.in/events/${city.slug}`,
+      `https://www.district.in/movies/${city.slug}`,
+      'https://www.district.in',
+    ];
 
-    // 1. Discover exact movie detail URLs (must end in -MV[0-9]+)
     const movieUrls = new Set<string>();
-    $('a[href]').each((_, el) => {
-      const href = $(el).attr('href') || '';
-      const fullUrl = href.startsWith('http') ? href : `https://www.district.in${href}`;
-      if (/\/movies\/[a-zA-Z0-9_-]+-MV[0-9]+/i.test(fullUrl)) {
-        movieUrls.add(fullUrl);
-      }
-    });
+    const eventUrls = new Set<string>();
 
+    for (const feedUrl of candidateUrls) {
+      try {
+        const html = await fetchHtmlWithFallback(feedUrl);
+        const $ = cheerio.load(html);
+
+        $('a[href]').each((_, el) => {
+          const href = $(el).attr('href') || '';
+          const fullUrl = href.startsWith('http') ? href : `https://www.district.in${href}`;
+
+          if (/\/movies\/[a-zA-Z0-9_-]+-MV[0-9]+/i.test(fullUrl)) {
+            movieUrls.add(fullUrl);
+          } else if (/\/events\/[a-zA-Z0-9_-]+-buy-tickets/i.test(fullUrl)) {
+            eventUrls.add(fullUrl);
+          }
+        });
+      } catch {}
+    }
+
+    // 1. Parse Discovered Movies for this City
     const selectedMovieUrls = Array.from(movieUrls).slice(0, limit);
-    console.log(`[District] Discovered ${movieUrls.size} movie links. Parsing ${selectedMovieUrls.length}...`);
+    console.log(
+      `[District] Discovered ${movieUrls.size} movie links for ${city.cityName}. Parsing ${selectedMovieUrls.length}...`
+    );
 
     for (const url of selectedMovieUrls) {
       try {
         const movieHtml = await fetchHtmlWithFallback(url);
         const m$ = cheerio.load(movieHtml);
 
-        // Deep extraction from Next.js __NEXT_DATA__
         let title = '';
         let description = '';
         let posterUrl = '';
@@ -107,13 +120,14 @@ export async function scrapeDistrictCatalog(city: DistrictCityConfig, limit = 10
               title = m.name?.trim() || '';
               description = m.description || '';
               posterUrl = m.horizontal_poster || m.appImgPath || '';
-              if (m.inLanguage) languages = [m.inLanguage];
+              if (m.inLanguage) {
+                languages = Array.isArray(m.inLanguage) ? m.inLanguage : [m.inLanguage];
+              }
               duration = m.duration_as_string;
             }
           } catch {}
         }
 
-        // OpenGraph fallback
         if (!title) {
           const rawOgTitle = m$('meta[property="og:title"]').attr('content') || '';
           title = rawOgTitle.replace(/ \([0-9]{4}\).*|- Cast, Reviews.*$/i, '').trim();
@@ -121,34 +135,33 @@ export async function scrapeDistrictCatalog(city: DistrictCityConfig, limit = 10
           description = description || m$('meta[property="og:description"]').attr('content') || '';
         }
 
-        // Validation gate
-        if (!isValidDistrictItem(title, posterUrl)) {
-          console.warn(`[District] Rejected invalid movie item: "${title}" (${url})`);
-          continue;
-        }
+        if (!isValidDistrictItem(title, posterUrl)) continue;
 
         const slugMatch = url.match(/\/movies\/([a-zA-Z0-9_-]+)/);
         const slug = slugMatch ? slugMatch[1] : `movie-${Date.now()}`;
 
         items.push({
-          id: `district-mv-${slug}`,
+          id: `district-mv-${city.cityCode.toLowerCase()}-${slug}`,
           type: 'movie',
           source: 'district',
           title,
-          description: description || `Book movie tickets for ${title} on District by Zomato`,
+          description:
+            description ||
+            `Compare District, BookMyShow & Multiplex checkout fees and card offers for ${title} in ${city.cityName}.`,
           category: 'Cinema',
           languages,
           posterUrl,
           cityCode: city.cityCode,
           cityName: city.cityName,
-          venue: `${city.cityName} Theatres`,
+          venue: `PVR INOX, Cinépolis & Partner Theatres (${city.cityName})`,
           coordinates: { lat: city.defaultLat, lng: city.defaultLng },
           date: new Date().toISOString().slice(0, 10),
-          startingPriceINR: 199,
+          startingPriceINR: undefined, // Evaluated dynamically in the Movie Checkout Calculator
           bookingUrl: url,
           rawDetails: {
             duration,
             censorRating: 'UA',
+            lastVerifiedAt: new Date().toISOString(),
           },
         });
       } catch (err: any) {
@@ -156,18 +169,11 @@ export async function scrapeDistrictCatalog(city: DistrictCityConfig, limit = 10
       }
     }
 
-    // 2. Discover exact event detail URLs (must end in -buy-tickets)
-    const eventUrls = new Set<string>();
-    $('a[href]').each((_, el) => {
-      const href = $(el).attr('href') || '';
-      const fullUrl = href.startsWith('http') ? href : `https://www.district.in${href}`;
-      if (/\/events\/[a-zA-Z0-9_-]+-buy-tickets/i.test(fullUrl)) {
-        eventUrls.add(fullUrl);
-      }
-    });
-
+    // 2. Parse Discovered Live Events & Concerts
     const selectedEventUrls = Array.from(eventUrls).slice(0, limit);
-    console.log(`[District] Discovered ${eventUrls.size} event links. Parsing ${selectedEventUrls.length}...`);
+    console.log(
+      `[District] Discovered ${eventUrls.size} event links. Parsing ${selectedEventUrls.length}...`
+    );
 
     for (const url of selectedEventUrls) {
       try {
@@ -180,7 +186,7 @@ export async function scrapeDistrictCatalog(city: DistrictCityConfig, limit = 10
             const parsed = JSON.parse(e$(el).html() || '{}');
             const arr = Array.isArray(parsed) ? parsed : [parsed];
             for (const item of arr) {
-              if (item['@type'] === 'Event') {
+              if (item['@type'] && item['@type'].includes('Event')) {
                 eventSchema = item;
                 break;
               }
@@ -190,46 +196,75 @@ export async function scrapeDistrictCatalog(city: DistrictCityConfig, limit = 10
 
         const title =
           eventSchema?.name?.trim() ||
-          (e$('meta[property="og:title"]').attr('content') || '').replace(/- Buy Tickets.*$/i, '').trim();
+          (e$('meta[property="og:title"]').attr('content') || '')
+            .replace(/- Buy Tickets.*$/i, '')
+            .trim();
 
         const posterUrl =
-          eventSchema?.image ||
+          (Array.isArray(eventSchema?.image) ? eventSchema.image[0] : eventSchema?.image) ||
           e$('meta[property="og:image"]').attr('content') ||
           '';
 
-        const cleanDesc = (eventSchema?.description || e$('meta[property="og:description"]').attr('content') || 'Live event on District by Zomato')
+        const cleanDesc = (
+          eventSchema?.description ||
+          e$('meta[property="og:description"]').attr('content') ||
+          'Live event on District by Zomato'
+        )
           .replace(/&nbsp;/g, ' ')
           .replace(/&amp;/g, '&')
           .replace(/&quot;/g, '"')
           .replace(/&#39;/g, "'")
-          .replace(/&lt;/g, '<')
-          .replace(/&gt;/g, '>')
           .replace(/<[^>]*>/g, ' ')
           .replace(/\s+/g, ' ')
           .trim();
 
-        // Validation gate
-        if (!isValidDistrictItem(title, posterUrl)) {
-          console.warn(`[District] Rejected invalid event item: "${title}" (${url})`);
-          continue;
-        }
+        if (!isValidDistrictItem(title, posterUrl)) continue;
 
-        const venueName = eventSchema?.location?.name || `${city.cityName} Arena`;
-        const address = eventSchema?.location?.address || '';
-        const eventCity = resolveCityFromLocationText(`${venueName} ${address}`, city);
+        const venueName = (eventSchema?.location?.name || `${city.cityName} Arena`).trim();
+        const addressText = extractAddressText(eventSchema?.location?.address);
+        const resolvedCityCode = resolveCityCode(
+          `${venueName} ${addressText} ${title}`,
+          city.cityCode
+        );
+        const eventCity = getSupportedCity(resolvedCityCode);
 
         const lat = Number(eventSchema?.location?.geo?.latitude) || eventCity.defaultLat;
         const lng = Number(eventSchema?.location?.geo?.longitude) || eventCity.defaultLng;
-        const startDate = eventSchema?.startDate?.slice(0, 10) || new Date().toISOString().slice(0, 10);
-        const price = Number(eventSchema?.offers?.lowPrice) || 499;
+        const startDate =
+          eventSchema?.startDate?.slice(0, 10) || new Date().toISOString().slice(0, 10);
+        const rawLowPrice = Number(eventSchema?.offers?.lowPrice) || 499;
+
+        const ticketTiers: TicketTier[] = [];
+        if (Array.isArray(eventSchema?.offers?.offers) && eventSchema.offers.offers.length > 0) {
+          eventSchema.offers.offers.forEach((o: any, idx: number) => {
+            const avail: TicketTierAvailability =
+              o.availability && o.availability.includes('InStock') ? 'available' : 'sold_out';
+            ticketTiers.push({
+              tierId: `dist-tier-${idx + 1}`,
+              name: o.name || `Phase ${idx + 1}`,
+              priceINR: Number(o.price) || rawLowPrice,
+              availability: avail,
+            });
+          });
+        }
+
+        const tierMetrics = computeActiveTierPricing(
+          ticketTiers.length > 0 ? ticketTiers : undefined,
+          rawLowPrice
+        );
 
         const slugMatch = url.match(/\/events\/([a-zA-Z0-9_-]+)/);
-        const slug = slugMatch ? slugMatch[1].replace(/-buy-tickets.*/, '') : `event-${Date.now()}`;
+        const slug = slugMatch
+          ? slugMatch[1].replace(/-buy-tickets.*/, '')
+          : `event-${Date.now()}`;
 
-        // Classify music/festivals/concerts as 'concert' so they show on Concerts tab
         const keywords = (eventSchema?.keywords || '').toLowerCase();
-        const titleLower = title.toLowerCase();
-        const isMusic = /music|concert|festival|dandiya|band|dj|singer|acoustic|gig|sufi|rock/i.test(`${titleLower} ${keywords}`);
+        const combinedText = `${title.toLowerCase()} ${keywords}`;
+        const isMusic =
+          /music|concert|festival|dandiya|band|dj|singer|acoustic|gig|sufi|rock|techno|boiler/i.test(
+            combinedText
+          );
+        const isComedy = /comedy|standup|stand-up|comic|open mic/i.test(combinedText);
 
         items.push({
           id: `district-ev-${slug}`,
@@ -237,18 +272,25 @@ export async function scrapeDistrictCatalog(city: DistrictCityConfig, limit = 10
           source: 'district',
           title,
           description: cleanDesc,
-          category: isMusic ? 'Concert' : 'Live Event',
+          category: isMusic ? 'Concert' : isComedy ? 'Stand-up Comedy' : 'Live Event',
           posterUrl,
-          cityCode: eventCity.cityCode,
-          cityName: eventCity.cityName,
+          cityCode: eventCity.code,
+          cityName: eventCity.name,
           venue: venueName,
           coordinates: { lat, lng },
           date: startDate,
-          startingPriceINR: price,
+          startingPriceINR: tierMetrics.activePriceINR,
+          lowestListedPriceINR: tierMetrics.lowestListedPriceINR,
+          activePhaseName: tierMetrics.activePhaseName,
+          hasSoldOutEarlyPhases: tierMetrics.hasSoldOutEarlyPhases,
+          ticketStatus: tierMetrics.ticketStatus,
           bookingUrl: url,
           rawDetails: {
             doorTime: eventSchema?.doorTime,
-            locationAddress: address,
+            locationAddress: addressText,
+            ticketTiers: ticketTiers.length > 0 ? ticketTiers : undefined,
+            ticketStatus: tierMetrics.ticketStatus,
+            lastVerifiedAt: new Date().toISOString(),
           },
         });
       } catch (err: any) {

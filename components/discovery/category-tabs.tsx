@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { Music, Film, Ticket, Compass } from "lucide-react";
+import { Music, Film, Ticket } from "lucide-react";
 
 export type AggregatorCategory = "concerts" | "movies" | "events" | "arbitrage";
 
@@ -39,12 +39,6 @@ export function CategoryTabs({
       icon: Ticket,
       count: counts?.events,
     },
-    {
-      id: "arbitrage" as const,
-      label: "Travel Arbitrage",
-      icon: Compass,
-      isSpecial: true,
-    },
   ];
 
   return (
@@ -74,11 +68,6 @@ export function CategoryTabs({
                 }`}
               >
                 {tab.count}
-              </span>
-            )}
-            {tab.isSpecial && (
-              <span className="px-1.5 py-0.2 rounded text-[9px] uppercase tracking-wider font-extrabold bg-accent-dune/20 text-accent-dune">
-                Calculator
               </span>
             )}
           </button>

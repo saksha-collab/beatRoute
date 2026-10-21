@@ -3,47 +3,31 @@
 import * as React from "react";
 import { useQueryState, parseAsString, parseAsStringLiteral } from "nuqs";
 import initialCatalog from "@/lib/data/catalog.json";
-import { extractLiveTours } from "@/lib/services/live-tours";
 import { useCityCatalog } from "@/hooks/use-city-catalog";
-import {
-  CityCode,
-  RailClass,
-  StayPreference,
-  TourStop,
-  TransitMode,
-  ArbitrageResult,
-  ConcertEvent,
-  CatalogItem,
-} from "@/lib/types";
-import { calculateArbitrageMatrix } from "@/lib/arbitrage";
+import { CatalogItem } from "@/lib/types";
+import { deduplicateCatalog } from "@/lib/deduplicate";
 import { HeaderNav } from "@/components/navigation/header-nav";
 import { CitySelectorModal } from "@/components/navigation/city-selector-modal";
-import { CategoryTabs, AggregatorCategory } from "@/components/discovery/category-tabs";
+import { CategoryTabs } from "@/components/discovery/category-tabs";
 import { HybridAggregatorFeed } from "@/components/discovery/hybrid-aggregator-feed";
-import { FilterBar } from "@/components/search/filter-bar";
-import { MetricsSummaryStrip } from "@/components/search/metrics-summary-strip";
-import { ArbitrageMatrix } from "@/components/matrix/arbitrage-matrix";
-import { ConcertMapWrapper } from "@/components/map/concert-map-wrapper";
-import { ExpensePlannerDrawer } from "@/components/planner/expense-planner-drawer";
 import { Skeleton } from "@/components/ui/skeleton";
 
 function BeatRouteDashboard() {
-  // 1. Primary Aggregator Category Tab (Concerts vs Movies vs Events vs Travel Arbitrage)
+  // 1. Primary Entertainment Category Tab (Concerts vs Movies vs Comedy/Events)
   const [activeCategory, setActiveCategory] = useQueryState(
     "cat",
     parseAsStringLiteral(["concerts", "movies", "events", "arbitrage"] as const).withDefault("concerts")
   );
 
-  // Backward compatibility with ?tab=arbitrage
-  const [legacyTab] = useQueryState("tab", parseAsString);
+  // Redirect legacy ?cat=arbitrage to concerts
   React.useEffect(() => {
-    if (legacyTab === "arbitrage") {
-      setActiveCategory("arbitrage");
+    if (activeCategory === "arbitrage") {
+      setActiveCategory("concerts");
     }
-  }, [legacyTab, setActiveCategory]);
+  }, [activeCategory, setActiveCategory]);
 
-  // 2. City Selection & Onboarding Modal
-  const [selectedCity, setSelectedCity] = useQueryState("city", parseAsString.withDefault("ALL"));
+  // 2. City Selection — Defaults to Pune (PNQ) as primary Twin-Corridor hub alongside Mumbai (BOM)
+  const [selectedCity, setSelectedCity] = useQueryState("city", parseAsString.withDefault("PNQ"));
   const [isCityModalOpen, setIsCityModalOpen] = React.useState(false);
   const [isFirstVisit, setIsFirstVisit] = React.useState(false);
 
@@ -51,50 +35,48 @@ function BeatRouteDashboard() {
     if (typeof window !== "undefined") {
       const savedCity = localStorage.getItem("beatroute_city");
       if (!savedCity) {
-        setIsFirstVisit(true);
-        setIsCityModalOpen(true);
+        localStorage.setItem("beatroute_city", "PNQ");
       } else if (selectedCity === "ALL" && savedCity !== "ALL") {
         setSelectedCity(savedCity);
       }
     }
   }, [selectedCity, setSelectedCity]);
 
-  // 3. 1-Hour TTL SWR live catalog hook
+  // 3. Cached Catalog Hook (Reads from Redis / catalog.json snapshot)
   const {
     items: liveCatalogItems,
     isValidating: isCatalogValidating,
     ageMinutes: catalogAgeMinutes,
     refresh: refreshCityCatalog,
-  } = useCityCatalog(selectedCity === "ALL" ? "BOM" : selectedCity);
+  } = useCityCatalog(selectedCity === "ALL" ? "PNQ" : selectedCity);
 
-  // 4. Master Catalog compiling (curated tours + local catalog.json + live SWR updates)
-  // 4. Master Catalog compiling: Pure live scraped data with strict upcoming date filter
+  // 4. Master Catalog Compilation + Cross-Platform Deduplication
   const today = React.useMemo(() => new Date().toISOString().slice(0, 10), []);
 
   const masterCatalog = React.useMemo(() => {
-    const map = new Map<string, CatalogItem>();
-
+    const rawMap = new Map<string, CatalogItem>();
     const thirtyDaysAgo = new Date(Date.now() - 30 * 24 * 60 * 60 * 1000).toISOString().slice(0, 10);
 
-    // A. Baseline catalog.json items (strictly active / upcoming)
+    // A. Baseline catalog.json snapshot
     (initialCatalog as CatalogItem[]).forEach((item) => {
       if (item.type === "movie") {
-        if (!item.date || item.date >= thirtyDaysAgo) map.set(item.id, item);
+        if (!item.date || item.date >= thirtyDaysAgo) rawMap.set(item.id, item);
       } else if (!item.date || item.date >= today) {
-        map.set(item.id, item);
+        rawMap.set(item.id, item);
       }
     });
 
-    // B. Live SWR updates from BMS & District (strictly active / upcoming)
+    // B. Cached city updates
     (liveCatalogItems || []).forEach((item) => {
       if (item.type === "movie") {
-        if (!item.date || item.date >= thirtyDaysAgo) map.set(item.id, item);
+        if (!item.date || item.date >= thirtyDaysAgo) rawMap.set(item.id, item);
       } else if (!item.date || item.date >= today) {
-        map.set(item.id, item);
+        rawMap.set(item.id, item);
       }
     });
 
-    return Array.from(map.values());
+    // C. Merge duplicate BMS + District items & fix active tier pricing
+    return deduplicateCatalog(Array.from(rawMap.values()));
   }, [liveCatalogItems, today]);
 
   const concertItems = React.useMemo(
@@ -110,99 +92,19 @@ function BeatRouteDashboard() {
     [masterCatalog]
   );
 
-  // 5. Dynamic Live Tours derived purely from upcoming live events
-  const dynamicTours = React.useMemo(
-    () => extractLiveTours(concertItems),
-    [concertItems]
-  );
-
-  // 6. Travel Arbitrage Engine State
-  const [origin, setOrigin] = useQueryState("origin", parseAsString.withDefault("BOM"));
-  const defaultTourId = dynamicTours[0]?.id || "live-tour";
-  const [tourId, setTourId] = useQueryState("tour", parseAsString.withDefault(defaultTourId));
-  const [transitMode, setTransitMode] = useQueryState(
-    "mode",
-    parseAsStringLiteral(["flight", "rail"] as const).withDefault("flight")
-  );
-  const [railClass, setRailClass] = useQueryState(
-    "railClass",
-    parseAsStringLiteral(["SL", "3AC", "2AC", "VANDE_BHARAT"] as const).withDefault("3AC")
-  );
-  const [stayPreference, setStayPreference] = useQueryState(
-    "stay",
-    parseAsStringLiteral(["budget", "comfort", "luxury"] as const).withDefault("comfort")
-  );
-  const [selectedTierId, setSelectedTierId] = useQueryState(
-    "tier",
-    parseAsString.withDefault("silver")
-  );
-  const [arbitrageView, setArbitrageView] = useQueryState(
-    "view",
-    parseAsStringLiteral(["list", "map"] as const).withDefault("list")
-  );
-  const [tourMode, setTourMode] = useQueryState(
-    "mode_type",
-    parseAsStringLiteral(["curated", "live"] as const).withDefault("curated")
-  );
-
-  // Planner Drawer State
-  const [plannerStop, setPlannerStop] = React.useState<TourStop | null>(null);
-  const [isPlannerOpen, setIsPlannerOpen] = React.useState(false);
-
-  const selectedTour =
-    dynamicTours.find((t) => t.id === tourId) || dynamicTours[0];
-  const arbitrageStops = selectedTour?.stops || [];
-
-  const arbitrageResults: ArbitrageResult[] = React.useMemo(() => {
-    return calculateArbitrageMatrix({
-      originCityCode: origin,
-      tourStops: arbitrageStops,
-      selectedTierId,
-      transitMode,
-      railClass,
-      stayPreference,
-    });
-  }, [origin, arbitrageStops, selectedTierId, transitMode, railClass, stayPreference]);
-
-  const handleOpenPlanner = (stopOrResult: TourStop | ArbitrageResult) => {
-    if ("tourStop" in stopOrResult) {
-      setPlannerStop(stopOrResult.tourStop);
-    } else {
-      setPlannerStop(stopOrResult);
-    }
-    setIsPlannerOpen(true);
-  };
-
-  const handleOpenArbitrageFromPreview = (item: CatalogItem) => {
-    const matchTour = dynamicTours.find(
-      (t) =>
-        t.artist.toLowerCase() === item.title.toLowerCase() ||
-        item.title.toLowerCase().includes(t.artist.toLowerCase()) ||
-        t.stops.some((s) => s.id === item.id)
-    );
-    if (matchTour) {
-      setTourId(matchTour.id);
-    }
-    if (selectedCity && selectedCity !== "ALL") {
-      setOrigin(selectedCity);
-    }
-    setActiveCategory("arbitrage");
-  };
-
   const handleCitySelect = (code: string) => {
     setSelectedCity(code);
-    if (code !== "ALL") {
-      setOrigin(code);
+    if (typeof window !== "undefined") {
+      localStorage.setItem("beatroute_city", code);
     }
   };
 
   return (
     <div className="min-h-screen flex flex-col bg-background text-text-primary selection:bg-accent-dune/20 selection:text-accent-dune font-sans">
-      
       {/* Top Header Navigation */}
       <HeaderNav
-        view={arbitrageView}
-        onViewChange={setArbitrageView}
+        view="list"
+        onViewChange={() => {}}
         selectedCity={selectedCity}
         onOpenCityModal={() => {
           setIsFirstVisit(false);
@@ -211,10 +113,10 @@ function BeatRouteDashboard() {
         isValidating={isCatalogValidating}
         ageMinutes={catalogAgeMinutes}
         onRefreshLive={refreshCityCatalog}
-        showViewToggle={activeCategory === "arbitrage"}
+        showViewToggle={false}
       />
 
-      {/* First-Time Visitor & Location Switcher Modal */}
+      {/* City Selector Modal */}
       <CitySelectorModal
         isOpen={isCityModalOpen}
         onClose={() => setIsCityModalOpen(false)}
@@ -225,15 +127,14 @@ function BeatRouteDashboard() {
 
       {/* Main Container */}
       <main className="flex-1 mx-auto w-full max-w-7xl px-4 py-5 sm:px-6 lg:px-8 space-y-5">
-        
-        {/* Skyscanner-Style Category Tabs & Minimalist Header */}
+        {/* Category Tabs & Header */}
         <div className="space-y-3 pb-2 border-b border-border-subtle">
           <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1">
             <h1 className="text-xl sm:text-2xl font-black tracking-tight text-text-primary">
-              Live Discovery
+              {selectedCity === "ALL" ? "India" : selectedCity === "PNQ" ? "Pune" : selectedCity === "BOM" ? "Mumbai" : selectedCity} Entertainment Radar
             </h1>
             <p className="text-xs text-text-muted">
-              Live box office prices & travel arbitrage across BookMyShow and District.
+              Unified concerts, live events & movie fee comparison across BookMyShow and District.
             </p>
           </div>
 
@@ -248,101 +149,50 @@ function BeatRouteDashboard() {
           />
         </div>
 
-        {/* TAB 1: CONCERTS & GIGS (Hybrid List + Preview) */}
+        {/* TAB 1: CONCERTS & GIGS */}
         {activeCategory === "concerts" && (
           <HybridAggregatorFeed
             items={concertItems}
-            userOriginCity={selectedCity === "ALL" ? "BOM" : selectedCity}
+            userOriginCity={selectedCity === "ALL" ? "PNQ" : selectedCity}
             category="concerts"
-            onOpenArbitragePlanner={handleOpenArbitrageFromPreview}
+            onOpenArbitragePlanner={() => {}}
             selectedCity={selectedCity}
           />
         )}
 
-        {/* TAB 2: CINEMA & MOVIES (Hybrid List + Preview) */}
+        {/* TAB 2: CINEMA & MOVIES */}
         {activeCategory === "movies" && (
           <HybridAggregatorFeed
             items={movieItems}
-            userOriginCity={selectedCity === "ALL" ? "BOM" : selectedCity}
+            userOriginCity={selectedCity === "ALL" ? "PNQ" : selectedCity}
             category="movies"
-            onOpenArbitragePlanner={handleOpenArbitrageFromPreview}
+            onOpenArbitragePlanner={() => {}}
             selectedCity={selectedCity}
           />
         )}
 
-        {/* TAB 3: COMEDY & LIVE EVENTS (Hybrid List + Preview) */}
+        {/* TAB 3: COMEDY & LIVE EVENTS */}
         {activeCategory === "events" && (
           <HybridAggregatorFeed
             items={eventItems}
-            userOriginCity={selectedCity === "ALL" ? "BOM" : selectedCity}
+            userOriginCity={selectedCity === "ALL" ? "PNQ" : selectedCity}
             category="events"
-            onOpenArbitragePlanner={handleOpenArbitrageFromPreview}
+            onOpenArbitragePlanner={() => {}}
             selectedCity={selectedCity}
           />
         )}
-
-        {/* TAB 4: TRAVEL ARBITRAGE ENGINE */}
-        {activeCategory === "arbitrage" && (
-          <div className="space-y-6">
-            <FilterBar
-              origin={origin}
-              onOriginChange={setOrigin}
-              tourId={tourId}
-              onTourIdChange={setTourId}
-              transitMode={transitMode}
-              onTransitModeChange={setTransitMode}
-              railClass={railClass}
-              onRailClassChange={setRailClass}
-              stayPreference={stayPreference}
-              onStayPreferenceChange={setStayPreference}
-              selectedTierId={selectedTierId}
-              onTierChange={setSelectedTierId}
-              tourMode={tourMode}
-              onTourModeChange={setTourMode}
-              liveArtistQuery=""
-              onLiveArtistQueryChange={() => {}}
-              onSearchLiveArtist={() => {}}
-              isSearchingLive={false}
-              availableTours={dynamicTours}
-            />
-
-            <MetricsSummaryStrip results={arbitrageResults} />
-
-            {arbitrageView === "list" ? (
-              <ArbitrageMatrix
-                results={arbitrageResults}
-                isLoading={false}
-                onPlanTrip={handleOpenPlanner}
-                onExploreFeatured={() => setTourMode("curated")}
-              />
-            ) : (
-              <ConcertMapWrapper
-                stops={arbitrageStops}
-                onPlanTrip={handleOpenPlanner}
-              />
-            )}
-          </div>
-        )}
       </main>
 
-      {/* Slide-over Expense Planner Drawer */}
-      <ExpensePlannerDrawer
-        isOpen={isPlannerOpen}
-        onClose={() => setIsPlannerOpen(false)}
-        stop={plannerStop}
-        defaultOriginCityCode={origin}
-      />
-
-      {/* Subtle Minimalist Footer */}
+      {/* Footer */}
       <footer className="w-full border-t border-border-subtle bg-surface/60 py-6 mt-12 text-center text-xs text-text-muted">
         <div className="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p>© 2026 BeatRoute — Entertainment & Travel Arbitrage Aggregator.</p>
+          <p>© 2026 BeatRoute — Indian Entertainment Discovery & Checkout Aggregator.</p>
           <div className="flex items-center gap-4 text-[11px]">
-            <span>BookMyShow & District Aggregated</span>
+            <span>Pune & Mumbai Twin-Corridor Radar</span>
             <span>•</span>
-            <span>Indian Railways & Flight Arbitrage</span>
+            <span>BookMyShow & District Deduplicated</span>
             <span>•</span>
-            <span>1-Hour SWR Cache</span>
+            <span>Active Tier & Fee Transparency</span>
           </div>
         </div>
       </footer>
