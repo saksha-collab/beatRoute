@@ -18,7 +18,7 @@ export default function ErrorBoundary({
     <div className="min-h-[70vh] flex items-center justify-center p-6">
       <ErrorState
         title="Application Exception"
-        message="BeatRoute encountered an unexpected runtime error while calculating tour arbitrage."
+        message="BeatRoute encountered an unexpected runtime error. Please refresh the page to reload the entertainment radar."
         code={error.digest || "RUNTIME_CRASH"}
         technicalDetails={error.message}
         onRetry={() => reset()}

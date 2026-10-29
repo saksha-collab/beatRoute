@@ -3,17 +3,17 @@ import "./globals.css";
 import { Providers } from "./providers";
 
 export const metadata: Metadata = {
-  title: "BeatRoute — Concert Travel Arbitrage Engine",
+  title: "BeatRoute — India Entertainment Radar",
   description:
-    "Production-grade concert travel arbitrage engine. Compare round-trip flights, Indian Railways, hotels, and ticket tiers across Indian cities to find net travel savings.",
+    "Unified entertainment discovery & ticket checkout engine for India. Compare ticket prices, active phases, and booking fees across BookMyShow, District by Zomato, and multiplex counters in Pune, Mumbai, and pan-India.",
   keywords: [
-    "concert travel",
-    "ticket arbitrage",
-    "Coldplay India",
-    "Diljit Dosanjh tour",
-    "Karan Aujla tickets",
-    "Indian Railways concert trip",
-    "flight arbitrage",
+    "concert tickets India",
+    "live events Pune Mumbai",
+    "BookMyShow vs District",
+    "movie ticket convenience fee comparison",
+    "District Zomato tickets",
+    "credit card BOGO movie offers",
+    "entertainment radar India",
   ],
 };
 

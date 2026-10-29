@@ -49,8 +49,31 @@ export function sanitizeCatalogItem(item: CatalogItem): CatalogItem {
     isFakeMoviePrice ? undefined : item.startingPriceINR
   );
 
+  // 4. Sanitize junk or empty titles (e.g. raw badges parsed as "offer")
+  let cleanTitle = item.title;
+  if (!cleanTitle || cleanTitle.trim().toLowerCase() === 'offer' || cleanTitle.trim().length < 4) {
+    if (item.bookingUrl) {
+      const slugMatch = item.bookingUrl.match(/\/events\/([^\/?#]+)/);
+      if (slugMatch) {
+        cleanTitle = slugMatch[1]
+          .replace(/-buy-tickets.*/i, '')
+          .replace(/-(?:oct|nov|dec|jan|feb|mar|apr|may|jun|jul|aug|sep)\d+-\d+/i, '')
+          .replace(/[-_]+/g, ' ')
+          .trim()
+          .replace(/\b\w/g, (c) => c.toUpperCase());
+      }
+    }
+  }
+
+  let posterUrl = item.posterUrl;
+  if (!posterUrl || posterUrl.startsWith('data:image') || posterUrl.includes('.svg')) {
+    posterUrl = 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=800&q=80';
+  }
+
   return {
     ...item,
+    title: cleanTitle || item.title,
+    posterUrl,
     type: item.type === 'movie' ? 'movie' : isMusic ? 'concert' : 'event',
     cityCode: cityMeta.code,
     cityName: cityMeta.name,

@@ -67,7 +67,12 @@ export async function discoverEventsForCity(
     console.log(`[BMS] Discovering ${vertical.category} in ${city.cityName} (${exploreUrl})...`);
 
     try {
-      const html = await fetchHtmlWithFallback(exploreUrl);
+      const html = await fetchHtmlWithFallback(exploreUrl, {
+        render: true,
+        waitForSelector: 'a[href*="/events/"]',
+        countryCode: 'in',
+        premium: true,
+      });
       const $ = cheerio.load(html);
       let countForVertical = 0;
 
@@ -112,7 +117,11 @@ export async function scrapeEventDetails(
 ): Promise<CatalogItem | null> {
   try {
     console.log(`[BMS] Scraping details for ${eventMeta.slug} (${eventMeta.code})...`);
-    const html = await fetchHtmlWithFallback(eventMeta.url);
+    const html = await fetchHtmlWithFallback(eventMeta.url, {
+      render: true,
+      waitForSelector: 'script[type="application/ld+json"]',
+      countryCode: 'in',
+    });
     const $ = cheerio.load(html);
 
     let eventSchema: any = null;
@@ -264,7 +273,12 @@ export async function scrapeBMSMovies(
   const items: CatalogItem[] = [];
 
   try {
-    const html = await fetchHtmlWithFallback(exploreUrl);
+    const html = await fetchHtmlWithFallback(exploreUrl, {
+      render: true,
+      waitForSelector: 'a[href*="/movies/"]',
+      countryCode: 'in',
+      premium: true,
+    });
     const $ = cheerio.load(html);
     const movieUrls = new Set<string>();
 
@@ -281,7 +295,11 @@ export async function scrapeBMSMovies(
 
     for (const url of selectedUrls) {
       try {
-        const movieHtml = await fetchHtmlWithFallback(url);
+        const movieHtml = await fetchHtmlWithFallback(url, {
+          render: true,
+          waitForSelector: 'script[type="application/ld+json"]',
+          countryCode: 'in',
+        });
         const m$ = cheerio.load(movieHtml);
 
         let movieSchema: any = null;

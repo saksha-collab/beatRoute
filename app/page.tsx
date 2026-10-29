@@ -83,17 +83,28 @@ function BeatRouteDashboard() {
     return deduplicateCatalog(Array.from(rawMap.values()));
   }, [liveCatalogItems, today]);
 
+  // BUG-01 Fix: Filter catalog by selected city BEFORE deriving tab counts & items
+  const cityFilteredCatalog = React.useMemo(() => {
+    if (!selectedCity || selectedCity === "ALL") return masterCatalog;
+    return masterCatalog.filter((i) => {
+      if (i.type === "movie" && (!i.cityCode || i.cityCode.toUpperCase() === "ALL")) {
+        return true;
+      }
+      return i.cityCode && i.cityCode.toUpperCase() === selectedCity.toUpperCase();
+    });
+  }, [masterCatalog, selectedCity]);
+
   const concertItems = React.useMemo(
-    () => masterCatalog.filter((i) => i.type === "concert"),
-    [masterCatalog]
+    () => cityFilteredCatalog.filter((i) => i.type === "concert"),
+    [cityFilteredCatalog]
   );
   const movieItems = React.useMemo(
-    () => masterCatalog.filter((i) => i.type === "movie"),
-    [masterCatalog]
+    () => cityFilteredCatalog.filter((i) => i.type === "movie"),
+    [cityFilteredCatalog]
   );
   const eventItems = React.useMemo(
-    () => masterCatalog.filter((i) => i.type === "event"),
-    [masterCatalog]
+    () => cityFilteredCatalog.filter((i) => i.type === "event"),
+    [cityFilteredCatalog]
   );
 
   const handleCitySelect = (code: string) => {

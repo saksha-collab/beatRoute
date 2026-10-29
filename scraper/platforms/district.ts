@@ -50,6 +50,12 @@ function isValidDistrictItem(title: string, posterUrl?: string, rawText?: string
     clean === 'events' ||
     clean === 'comedy' ||
     clean === 'music' ||
+    clean === 'offer' ||
+    clean === 'offers' ||
+    clean === 'ticket' ||
+    clean === 'tickets' ||
+    clean === 'buy now' ||
+    clean === 'book now' ||
     clean === 'list your events'
   ) {
     return false;
@@ -67,9 +73,47 @@ function isValidDistrictItem(title: string, posterUrl?: string, rawText?: string
     return false;
   }
   if (/[0-9]{10,}/.test(clean)) return false;
-  if (posterUrl && posterUrl.includes('undefined')) return false;
+  if (posterUrl && (posterUrl.includes('undefined') || posterUrl.startsWith('data:image'))) return false;
 
   return true;
+}
+
+/**
+ * Sanitizes and cleans event titles extracted from District cards.
+ * Prevents junk badges (like "offer", "discount", "tickets") from usurping the real event name.
+ */
+function cleanDistrictTitle(altText: string | undefined, slug: string): string {
+  const alt = altText?.trim() || '';
+  const cleanAlt = alt.toLowerCase();
+  const JUNK = new Set([
+    'offer',
+    'offers',
+    'ticket',
+    'tickets',
+    'event',
+    'events',
+    'district',
+    'zomato',
+    'buy now',
+    'book now',
+    'image',
+    'poster',
+    'view details',
+    'book tickets',
+  ]);
+
+  if (alt.length >= 4 && !JUNK.has(cleanAlt) && !cleanAlt.startsWith('offer') && !cleanAlt.startsWith('ticket')) {
+    return alt;
+  }
+
+  // Fallback: derive title cleanly from URL slug
+  return slug
+    .replace(/^events?[-_]/i, '')
+    .replace(/-buy-tickets.*/i, '')
+    .replace(/-(?:oct|nov|dec|jan|feb|mar|apr|may|jun|jul|aug|sep)\d+-\d+/i, '')
+    .replace(/[-_]+/g, ' ')
+    .trim()
+    .replace(/\b\w/g, (c) => c.toUpperCase());
 }
 
 /**
@@ -160,7 +204,6 @@ export async function scrapeDistrictMovies(
   limit = 16
 ): Promise<CatalogItem[]> {
   const moviePages = [
-    `https://www.district.in/movies/${city.slug}-movie-tickets`,
     'https://www.district.in/movies/',
   ];
 
@@ -195,20 +238,34 @@ export async function scrapeDistrictMovies(
 
         const cardText = $(el).text().replace(/\s+/g, ' ').trim();
         const imgEl = $(el).find('img').first();
-        const posterUrl =
+        let posterUrl =
           imgEl.attr('src') ||
           imgEl.attr('data-src') ||
           'https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=800&q=80';
+
+        if (posterUrl.startsWith('data:image') || posterUrl.includes('.svg')) {
+          posterUrl = 'https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=800&q=80';
+        }
 
         // Extract censor & language pattern like "UA16+ | Hindi" or "A | English and 1 more"
         const metaMatch = cardText.match(/\b(UA\d*\+|UA|U|A|TBA)\s*\|\s*([A-Za-z]+(?:\s+and\s+\d+\s+more)?)/);
         const censorRating = metaMatch ? metaMatch[1] : 'UA';
         const primaryLang = metaMatch ? metaMatch[2].replace(/\s+and\s+\d+\s+more/i, '').trim() : 'Hindi';
 
-        const rawTitle =
-          imgEl.attr('alt')?.trim() ||
-          cardText.split(/UA\d*\+|UA|U\s*\||A\s*\||TBA/)[0]?.trim() ||
-          slug.replace(/-movie-tickets.*/i, '').replace(/-/g, ' ');
+        let rawTitle = imgEl.attr('alt')?.trim();
+        if (!rawTitle || rawTitle.length < 3 || rawTitle.toLowerCase() === 'movie') {
+          const matchBeforeRating = cardText.match(/^(.+?)(?:UA\d*\+|UA|U|A|TBA)\s*\|/i);
+          if (matchBeforeRating && matchBeforeRating[1].trim().length >= 3) {
+            rawTitle = matchBeforeRating[1].trim();
+          } else {
+            rawTitle = slug
+              .replace(/-movie-tickets.*/i, '')
+              .replace(/-in-[a-z]+-MV.*/i, '')
+              .replace(/[-_]+/g, ' ')
+              .trim()
+              .replace(/\b\w/g, (c) => c.toUpperCase());
+          }
+        }
 
         if (!isValidDistrictItem(rawTitle, posterUrl, cardText)) return;
 
@@ -294,20 +351,20 @@ export async function scrapeDistrictEvents(
 
         const cardText = $(el).text().replace(/\s+/g, ' ').trim();
         const imgEl = $(el).find('img').first();
-        const posterUrl =
+        let posterUrl =
           imgEl.attr('src') ||
           imgEl.attr('data-src') ||
           'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=800&q=80';
+
+        if (posterUrl.startsWith('data:image') || posterUrl.includes('.svg')) {
+          posterUrl = 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=800&q=80';
+        }
 
         // Extract INR price ("₹899 onwards" or "₹1499")
         const priceMatch = cardText.match(/₹\s*([0-9,]+)/);
         const rawPrice = priceMatch ? Number(priceMatch[1].replace(/,/g, '')) : 499;
 
-        const rawTitle =
-          imgEl.attr('alt')?.trim() ||
-          slug
-            .replace(/-/g, ' ')
-            .replace(/\b\w/g, (c) => c.toUpperCase());
+        const rawTitle = cleanDistrictTitle(imgEl.attr('alt'), slug);
 
         if (!isValidDistrictItem(rawTitle, posterUrl, cardText)) return;
         seenSlugs.add(slug);
